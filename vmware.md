@@ -31,6 +31,7 @@ shell> vmware-toolbox-cmd timesync disable
 shell> vmware-checkvm
 ```
 
+#### :books: 參考網站：
 - [open-vm-tools](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2073803)
 - [vmware-tools-cli](http://www.vmware.com/pdf/vmware-tools-cli.pdf)
 
@@ -293,8 +294,13 @@ shell> esxcli software acceptance set --level=CommunitySupported
 ```console
 shell> esxcfg-nics --list
 shell> esxcfg-vswitch --list
-shell> esxcfg-route --list
+
 shell> esxcfg-vmknic --list
+
+shell> esxcfg-route --list
+shell> esxcfg-route -l
+
+shell> esxcfg-route -a default 192.168.1.151
 ```
 
 ```console
