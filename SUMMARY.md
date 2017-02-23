@@ -49,10 +49,6 @@
         * [變數](nodejs/starter.md#var)
         * [Events](nodejs/starter.md#events)
         * [Arrow functions](nodejs/starter.md#Arrow_functions)
-<<<<<<< HEAD
-    * [npm](nodejs/npm.md)
-=======
->>>>>>> e1f0afe8af02de269b75f25ff8285fce65bcb2e9
     * [手冊](nodejs/guide.md)
     * [npm](nodejs/npm.md)
     * [hapi.js](nodejs/hapijs.md)

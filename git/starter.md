@@ -165,8 +165,6 @@ shell> git commit --amend --no-edit
 ---
 
 ### Git Branching {#git-branch}
-<<<<<<< HEAD
-=======
 
 ```console
 shell> mkdir git-tutorial
@@ -181,11 +179,10 @@ shell> git commit -m 'The initial commit of my project'
 <img src="https://git-scm.com/book/en/v2/images/branch-and-history.png" width="50%" >
 <br><br>
 <img src="https://git-scm.com/book/en/v2/images/two-branches.png" width="50%" >
->>>>>>> e1f0afe8af02de269b75f25ff8285fce65bcb2e9
 
 `Creating a New Branch`
+
 ```console
-<<<<<<< HEAD
 shell> mkdir git-tutorial
 shell> cd git-tutorial 
 shell> git init
@@ -201,8 +198,6 @@ shell> git commit -m 'The initial commit of my project'
 
 `Creating a New Branch`
 ```console
-=======
->>>>>>> e1f0afe8af02de269b75f25ff8285fce65bcb2e9
 shell> git branch testing
 shell> git branch
 * master
@@ -296,36 +291,30 @@ Updating f42c576..3a0874c
 Fast-forward
  index.html | 2 ++
  1 file changed, 2 insertions(+)
-<<<<<<< HEAD
+
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-5.png" width="50%" >
 
 ```console
 shell> git branch -d hotfix
 Deleted branch hotfix (3a0874c).
-=======
->>>>>>> e1f0afe8af02de269b75f25ff8285fce65bcb2e9
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-5.png" width="50%" >
 
 ```console
-<<<<<<< HEAD
 shell> git checkout iss53
 Switched to branch "iss53"
 shell> vim index.html
 shell> git commit -a -m 'finished the new footer [issue 53]'
 [iss53 ad82d7a] finished the new footer [issue 53]
 1 file changed, 1 insertion(+)
-=======
+
 shell> git branch -d hotfix
 Deleted branch hotfix (3a0874c).
->>>>>>> e1f0afe8af02de269b75f25ff8285fce65bcb2e9
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-6.png" width="60%" >
 
 ```console
-<<<<<<< HEAD
-=======
 shell> git checkout iss53
 Switched to branch "iss53"
 shell> vim index.html
@@ -378,13 +367,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 ```
-<<<<<<< HEAD:index.html
-<div id="footer">contact : email.support@github.com</div>
-=======
 <div id="footer">
  please contact us at support@github.com
 </div>
->>>>>>> iss53:index.html
 ```
 ```console
 shell> git mergetool
@@ -483,7 +468,6 @@ shell> git log --graph
 
 ---
 
-<<<<<<< HEAD
 ```console
 shell> git ls-files
 ```
@@ -508,8 +492,6 @@ shell> git icdiff
 - [icdiff](https://github.com/jeffkaufman/icdiff)
 ---
 
-=======
->>>>>>> e1f0afe8af02de269b75f25ff8285fce65bcb2e9
 `HEAD`
 `iss53`
 `master`
@@ -573,10 +555,6 @@ $ git init
 
 $ git remote add example git://example.com/proj.git
 ```
+- [Git-Tools-Credential-Storage](https://git-scm.com/book/be/v2/Git-Tools-Credential-Storage)
 
-<<<<<<< HEAD
-- [](https://git-scm.com/book/be/v2/Git-Tools-Credential-Storage)
-
-=======
->>>>>>> e1f0afe8af02de269b75f25ff8285fce65bcb2e9
-
+`Fast Forward` `快轉` `向前快轉`

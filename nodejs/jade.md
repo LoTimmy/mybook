@@ -277,15 +277,10 @@ mixin list(id, ...items)
 </ul>
 ```
 
-
 ---
 
 #### :books: 參考網站：
 - [jade](https://www.npmjs.com/package/jade)
 - [pug](https://pugjs.org/api/getting-started.html)
 - [pug](https://github.com/pugjs/pug)
-<<<<<<< HEAD
 - [attributes](https://pugjs.org/language/attributes.html)
-=======
-- [attributes](https://pugjs.org/language/attributes.html)
->>>>>>> e1f0afe8af02de269b75f25ff8285fce65bcb2e9
