@@ -1,5 +1,6 @@
 `ip - show / manipulate routing, devices, policy routing and tunnels`
 
+### ip addr {#ip-address}
 ```
 ip addr [ add | del ] address dev ifname
 ```
@@ -48,9 +49,16 @@ shell> ip address add 192.168.4.223/24 dev eth1 label eth0:2
 
 ---
 
+### ip neigh {#ip-neighbour}
+
+
 ```console
-shell> ip neigh show
+shell> arp -i eth1 -s 192.168.2.223 00:0c:29:2e:72:81
+shell> ip neigh add 192.168.2.223 lladdr 00:0c:29:2e:72:81 nud permanent dev eth1
+
+shell> ip neigh show 
 ```
+
 ---
 
 ```console
@@ -60,6 +68,28 @@ shell> ip link ls up
 ```
 ---
 
+### ip route {#ip-route}
+
+```console
+shell> route
+shell> ip route show
+
+shell> ip route get 8.8.8.8
+
+shell> route add -net 192.168.3.0/24 dev eth3
+shell> ip route add 192.168.3.0/24 dev eth3
+
+shell> route del -net 192.168.3.0/24 dev eth3
+shell> ip route del 192.168.3.0/24 dev eth3
+
+shell> route add -net 192.168.4.0/24 gw 192.168.4.1 
+shell> ip route add 192.168.3.0/24 via 192.168.4.1
+```
+---
+
 #### :books: 參考網站：
 - [ip](http://manpages.ubuntu.com/manpages/trusty/man8/ip.8.html)
+- [ip route](http://manpages.ubuntu.com/manpages/trusty/man8/ip-route.8.html)
+- [ip neigh](http://manpages.ubuntu.com/manpages/trusty/man8/ip-neighbour.8.html)
+- [route](http://manpages.ubuntu.com/manpages/trusty/man8/route.8.html)
 - [2.3.2. Configuring a Network Interface Using ip Commands](https://docs.fedoraproject.org/en-US/Fedora/22/html/Networking_Guide/sec-Configuring_a_Network_Interface_Using_ip_commands.html)
