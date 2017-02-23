@@ -1,3 +1,5 @@
+![](https://assets-cdn.github.com/images/modules/site/node_logo.png?sn?sn)
+
 ### 安裝 {#installing}
 
 ```console
