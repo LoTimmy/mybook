@@ -16,7 +16,7 @@ Release:	8.0
 Codename:	jessie
 ```
 
-### 安裝 nginx 
+### 安裝 {#installing}
 
 ```
 nginx - small, powerful, scalable web/proxy server
