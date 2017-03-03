@@ -90,11 +90,15 @@
 * <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)
     * [手冊](vmware/guide.md)
 
+* <img src="https://help.ubuntu.com/favicon.ico" width="16"> [Ubuntu](ubuntulinux.md)
+
 * [google](google.md)
 * [docker](docker.md)
 * [golang](golang.md)
+* <img src="http://www.vim.org/images/vim_shortcut.ico" width="16"> [vim](vim.md)
 
-* [Git](git/README.md)
+
+* <img src="https://git-scm.com/favicon.ico" width="16"> [Git](git/README.md)
     * [入門](git/starter.md)
         * [安裝](git/starter.md#installing)
         * [Set Up Git](git/starter.md#set-up-git)
@@ -103,5 +107,5 @@
         * [Git Branching](git/starter.md#git-branch)
         * [Ignoring files](git/starter.md#ignoring-files)
     * [手冊](git/guide.md)
-    * [gitbook](git/gitbook.md)
+    * <img src="https://www.gitbook.com/assets/images/logo/favicon.ico?version=19.3.1" width="16"> [gitbook](git/gitbook.md)
 
