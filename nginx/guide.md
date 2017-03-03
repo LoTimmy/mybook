@@ -69,7 +69,8 @@ shell> systemctl status nginx.service
 
 ```console
 shell> cd /etc/nginx
-shell> sudo vim sites-enabled/default 
+shell> sudo vim sites-enabled/default
+shell> sudo vim conf.d/default.conf 
 ```
 
 ```
@@ -90,11 +91,12 @@ server {
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  }
 }
 
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [reverse-proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 - [load-balancer](https://www.nginx.com/resources/admin-guide/load-balancer/)
 - [Alternate-Protocol](https://www.chromium.org/spdy/spdy-protocol/spdy-protocol-draft2#TOC-Server-Advertisement-of-SPDY-through-the-HTTP-Alternate-Protocol-header)
@@ -119,7 +121,6 @@ shell> openssl pkcs12 -export -in server.crt -inkey server.key -out server.pfx -
 
 ######  提交憑證要求
 
-
 server-req.pem
 www_yourdomain_com.key
 
@@ -139,6 +140,8 @@ shell> cp full_chain.pem /etc/nginx/ssl
 ```console
 shell> openssl dhparam -out dhparam.pem 2048
 ```
+
+<img src="http://i.imgur.com/50BIcHD.png" width="300">
 
 ```console
 shell> cd /etc/nginx
@@ -191,9 +194,7 @@ server {
 shell> openssl s_client -connect www.godaddy.com:443
 ```
 
-
-
-### :books: 參考網站：
+#### :books: 參考網站：
 - [enable-ocsp-stapling-on-nginx](https://support.comodo.com/index.php?/Default/Knowledgebase/Article/View/1015/38/enable-ocsp-stapling-on-nginx)
 - [ngx_http_v2_module](http://nginx.org/en/docs/http/ngx_http_v2_module.html)
 - [enable-ocsp-stapling-on-nginx](https://support.comodo.com/index.php?/Default/Knowledgebase/Article/View/1015/0/enable-ocsp-stapling-on-nginx)
@@ -254,7 +255,7 @@ shell> nginx -V
 listen 443 ssl default_server spdy;
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [ngx_http_spdy_module](http://nginx.org/en/docs/http/ngx_http_spdy_module.html)
 
 ---
@@ -336,7 +337,7 @@ http {
 
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [worker_processes](http://nginx.org/en/docs/ngx_core_module.html#worker_processes)
 - [use](http://nginx.org/en/docs/ngx_core_module.html#use)
 - [ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
@@ -348,7 +349,7 @@ net.ipv4.ip_local_port_range = 1024	65000
 net.ipv4.tcp_fin_timeout = 15
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 -  [Changing Network Kernel Settings](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/sect-Oracle_9i_and_10g_Tuning_Guide-Adjusting_Network_Settings-Changing_Network_Kernel_Settings.html)
 
 ---
@@ -369,7 +370,7 @@ add_header Cache-Control private;
 
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [headers-more-nginx-module](https://github.com/openresty/headers-more-nginx-module#more_set_headers)
 - [ngx_http_headers_module](http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header)
 
@@ -389,8 +390,6 @@ if ($http_user_agent ~* "Baiduspider") {
         return 403;
 }
 ```
-
-
 **robots.txt**
 ```
 User-agent: Googlebot-Image
@@ -398,7 +397,7 @@ User-agent: Googlebot
 User-agent: Baiduspider
 Disallow: /
 ```
-### :books: 參考網站：
+#### :books: 參考網站：
 - [建立 robots.txt 檔案](https://support.google.com/webmasters/answer/6062596?hl=zh-Hant)
 - [robots.txt](https://support.google.com/webmasters/answer/6062608?hl=zh-Hant)
 - [透過 robots.txt 測試工具來測試 robots.txt](https://support.google.com/webmasters/answer/6062598)
@@ -459,7 +458,7 @@ nginx-module-xslt-dbg - debug symbols for the nginx-module-xslt
 --with-ipv6
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [linux_packages](http://nginx.org/en/linux_packages.html)
 
 ---
@@ -574,14 +573,14 @@ Options:
   -g directives : set global directives out of configuration file
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - https://github.com/arut/nginx-rtmp-module
 - http://www.ithome.com.tw/node/53142
 - http://brew.sh/homebrew-nginx/
 
 ---
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [ngx_http_log_module](http://nginx.org/en/docs/http/ngx_http_log_module.html)
 - [ssl_checker](https://www.geocerts.com/ssl_checker)
 - [SSL Certificate Checker](https://www.digicert.com/help/)

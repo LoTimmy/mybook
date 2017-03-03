@@ -111,6 +111,9 @@ videojs("example_video_1").ready(function(){
 <source src="http://your.static.provider.net/path/to/video.webm" type="video/webm">
 ```
 
+
+`rtmp://dev.wowza.longtailvideo.com/vod/_definst_/sintel/640.mp4`
+
 ---
 
 #### :books: 參考網站：

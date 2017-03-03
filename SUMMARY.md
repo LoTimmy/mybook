@@ -1,6 +1,6 @@
 # Summary
 
-* [macOS](apple/macos.md)
+* <img style="background: url(https://kapeli.com/sprites/platforms/sprite.png); background-position: -82px 0px; width: 16px; height: 16px; border:none;">[macOS](apple/macos.md)
 
 * [Markdown](markdown.md)
     * [Using emoji](markdown.md#using-emoji)

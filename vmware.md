@@ -1,10 +1,11 @@
-- 虛擬化系統主要可分為全虛擬化與半虛擬化兩種，前者是安裝在原本作業系統之上，如`VMware Server`；而後者則直接安裝在伺服器上、不須架構在一般作業系統上，像`Citrix XenServer`、`VMware ESX`等。兩者相較，半虛擬化的效能比較佳，因此在實務上，也都是以此建置虛擬化系統。      
-- `開放虛擬化格式` (`Open Virtualization Format`, `OVF`) 是 Distributed Management Task Force, Inc. 提供的封裝標準，其設計目的是要協助移植和部署虛擬裝置。
+> 虛擬化系統主要可分為全虛擬化與半虛擬化兩種，前者是安裝在原本作業系統之上，如`VMware Server`；而後者則直接安裝在伺服器上、不須架構在一般作業系統上，像`Citrix XenServer`、`VMware ESX`等。兩者相較，半虛擬化的效能比較佳，因此在實務上，也都是以此建置虛擬化系統。      
+> `開放虛擬化格式` (`Open Virtualization Format`, `OVF`) 是 Distributed Management Task Force, Inc. 提供的封裝標準，其設計目的是要協助移植和部署虛擬裝置。
 
-
+#### :books: 參考網站：
 - [ovf](https://www.vmware.com/support/developer/ovf/)
 - [Sample ovftool command syntax to export, deploy, and 1-step export and deploy packages in vCenter Server (1038709)](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1038709)
-
+- [VMware products and their virtual hardware version](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003746)
+- [VMware 产品及其虚拟硬件版本](https://kb.vmware.com/selfservice/search.do?cmd=displayKC&docType=kc&docTypeID=DT_KB_1_1&externalId=2048332)
 
 ```console
 shell> vmware -vl
@@ -12,13 +13,13 @@ VMware ESXi 5.0.0 build-469512
 VMware ESXi 5.0.0 GA
 ```
 
+`Power on a VM`
 ```console
-Power on a VM
 shell> vim-cmd vmsvc/power.on vmid $(vim-cmd vmsvc/getallvms | grep '' | awk '{$1}')
 ```
 ---
 
-open-vm-tools
+`open-vm-tools`
 
 ```console
 shell> vmware-toolbox-cmd help
@@ -37,9 +38,28 @@ shell> vmware-checkvm
 
 ---
 
-vmware-manager - utility to manage VMware virtual machines
+`vmware-manager - utility to manage VMware virtual machines`
 
 ---
+
+
+### OVFTool {#ovftool} 
+
+`OVFTool`
+
+
+![](http://i.imgur.com/DfZH2Pt.png)
+
+
+`C:\Program Files (x86)\VMware\VMware Workstation\OVFTool`
+
+```console
+shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\xenial\xenial.vmx" "%HOMEPATH%\Documents/xenial.ova"
+shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\yakkety\yakkety.vmx" "%HOMEPATH%\Documents/yakkety.ova"
+
+shell> ovftool "%HOMEPATH%\Documents/xenial.ova"
+shell> ovftool "%HOMEPATH%\Documents/yakkety.ova"
+```
 
 ```console
 shell> ovftool --net: "source_network_name"="destination_network_name" -ds="destination_datastore" -n="destination_virtual_machine_name" "vi://domain\username@source_vcenter_fqdn/source_datacenter_name/virtual_machine_name/virtual_machine_folder/virtual_machine" "vi://domain\username@destination_vcenter_fqdn/host/cluster_name"
@@ -53,60 +73,23 @@ shell> ovftool --acceptAllEulas ~/Documents/"Virtual Machines.localized/Windows 
 
 ```console
 shell> ovftool ~/Documents/ubuntu-1604.ova
-
-OVF version:   1.0
-VirtualApp:    false
-Name:          Ubuntu 64-bit Server 16.04.1
-
-Download Size:  581.64 MB
-
-Deployment Sizes:
-  Flat disks:   20.00 GB
-  Sparse disks: 1.56 GB
-
-Networks:
-  Name:        nat
-  Description: The nat network
-
-Virtual Machines:
-  Name:               Ubuntu 64-bit Server 16.04.1
-  Operating System:   ubuntu64guest
-  Virtual Hardware:
-    Families:         vmx-12 
-    Number of CPUs:   1
-    Cores per socket: 1
-    Memory:           1024.00 MB
-
-    Disks:
-      Index:          0
-      Instance ID:    8
-      Capacity:       20.00 GB
-      Disk Types:     SCSI-lsilogic 
-
-    NICs:
-      Adapter Type:   E1000
-      Connection:     nat
-
 ```
 
-**Rename the OVF Package**
+`Rename the OVF Package`
 
 ```console
 shell> ovftool “Windows 7.ovf” win7.ovf
 ```
 
-**Converting a VMX File to an ESXi host**
+`Converting a VMX File to an ESXi host`
 
 ```console
 shell> ovftool /ovfs/my_vm.vmx vi://username:pass@my_esx_host
 ```
 
-**Deploy an OVF Package Directly on an ESXi Host**
-
 ```console
 shell> ovftool package.ovf vi://my.esx-machine.example.com/
 shell> ovftool package.ovf vi://username:pass@my.esx-machine.example.com/
-
 
 shell> ovftool -ds=datastore1 --net:nat="VM Network" ubuntu-1604.ova vi://root@192.168.168.196
 shell> ovftool -ds=datastore2 --net:nat="VM Network" ubuntu-1604.ova vi://root@192.168.168.196
@@ -568,5 +551,43 @@ vmware-cmd -s register /vmfs/volumes/VMname/vm.vmx
 `Fusion`
 `ESXi/ESX`
 `Player`
+`Ubuntu 64-bit`
+`Other`
+
+
+`trusty` `14.04 LTS`
+`precise` `12.04 LTS`
+
+
+---
+
+`xenial` `16.04 LTS`
+`yakkety` `16.10`
+
+```console
+shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\xenial\xenial.vmx" "%HOMEPATH%\Documents/xenial.ova"
+shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\yakkety\yakkety.vmx" "%HOMEPATH%\Documents/yakkety.ova"
+
+shell> ovftool "%HOMEPATH%\Documents/xenial.ova"
+shell> ovftool "%HOMEPATH%\Documents/yakkety.ova"
+```
+
+`ubuntu`
+`insecure`
+
+
+
+```
+C:\Documents and Settings\username\My Documents\My Virtual Machines
+C:\Users\username\Documents\Virtual Machines
+
+C:\Documents and Settings\All Users\Documents\Shared Virtual Machines
+C:\Users\Public\Documents\Shared Virtual Machines
+/var/lib/vmware/Shared VMs
+```
+
+
+https://www.debian.org/releases/wheezy/example-preseed.txt
+
 
 
