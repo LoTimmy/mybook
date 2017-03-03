@@ -5,12 +5,13 @@
 * [Markdown](markdown.md)
     * [Using emoji](markdown.md#using-emoji)
 
-* [SSH](ssh/ssh.md)
-    * [Generating a new SSH key](ssh/ssh.md#generating-a-new-ssh-key)
-    * [Adding your SSH key to the ssh-agent](ssh/ssh.md#generating-a-new-ssh-key)
+* [SSH](ssh/guide.md)
+    * [手冊](ssh/guide.md) 
+    * [Generating a new SSH key](ssh/guide.md#generating-a-new-ssh-key)
+    * [Adding your SSH key to the ssh-agent](ssh/guide.md#generating-a-new-ssh-key)
     * [sshpass](ssh/sshpass.md)
     * [autossh](ssh/autossh.md)
-    
+
 * [Commands](cmd/README.md)
     * [7z](cmd/7z.md) 
     * [aria2](cmd/aria2.md)
@@ -85,6 +86,13 @@
 
 * [VPN](vpn/README.md)
     * [OpenVPN](vpn/openvpn.md)
+
+* <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)
+    * [手冊](vmware/guide.md)
+
+* [google](google.md)
+* [docker](docker.md)
+* [golang](golang.md)
 
 * [Git](git/README.md)
     * [入門](git/starter.md)

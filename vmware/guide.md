@@ -554,10 +554,8 @@ vmware-cmd -s register /vmfs/volumes/VMname/vm.vmx
 `Ubuntu 64-bit`
 `Other`
 
-
 `trusty` `14.04 LTS`
 `precise` `12.04 LTS`
-
 
 ---
 
