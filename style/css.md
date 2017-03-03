@@ -1108,7 +1108,7 @@ span[data-descr]:hover::after {
 
 ### Implementing image sprites in CSS {#Implementing_image_sprites_in_CSS}
 
-```
+```css
 .toolbtn {
   background: url(myfile.png);
   display: inline-block;
@@ -1126,11 +1126,23 @@ span[data-descr]:hover::after {
 
 ```
 
+```
 platform-iphone
 <img style="background: url(https://kapeli.com/sprites/platforms/sprite.png); background-position: -3690px 0px; width: 16px; height: 16px; border:none;">
 
 platform-Mac
 <img style="background: url(https://kapeli.com/sprites/platforms/sprite.png); background-position: -82px 0px; width: 16px; height: 16px; border:none;">
+
+<img style="background: url(https://kapeli.com/sprites/platforms/sprite.png); background-position: -533px 0px; width: 16px; height: 16px; border:none;">
+```
+
+
+```
+https://www-jp.mysql.com/common/themes/sakila/logo-sprite.png
+https://kapeli.com/sprites/platforms/sprite.png
+```
+
+
 
 #### :books: 參考網站：
 - [](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Implementing_image_sprites_in_CSS)

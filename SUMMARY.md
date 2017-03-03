@@ -1,6 +1,6 @@
 # Summary
 
-* <img style="background: url(https://kapeli.com/sprites/platforms/sprite.png); background-position: -82px 0px; width: 16px; height: 16px; border:none;">[macOS](apple/macos.md)
+* [macOS](apple/macos.md)
 
 * [Markdown](markdown.md)
     * [Using emoji](markdown.md#using-emoji)
@@ -42,12 +42,12 @@
     * [video](html5/getting-started.md#video)
     * [手冊](html5/guide.md)
 
-* [jQuery](jquery/README.md)
+* <img src="https://jquery.com/favicon.ico" width="16"> [jQuery](jquery/README.md)
     * [手冊](jquery/guide.md)
     * [AJAX](jquery/ajax.md)
     * [jQuery Validation Plugin](jquery/jquery-validation.md)
 
-* [Node.js](nodejs/README.md)
+* <img src="https://nodejs.org/static/favicon.ico" width="16"> [Node.js](nodejs/README.md)
     * [入門](nodejs/starter.md)
         * [安裝](nodejs/starter.md#installing)
         * [Hello world 範例](nodejs/starter.md#hello-world)
@@ -73,9 +73,12 @@
     * [jade](nodejs/jade.md)
     * [json-server](nodejs/json-server.md)
         
-* [Apache](apache/README.md)
+* <img src="https://httpd.apache.org/favicon.ico" width="16"> [Apache](apache/README.md)
     * [手冊](apache/guide.md)
     * [SVN](apache/svn.md)
+
+* <img src="https://www-jp.mysql.com/common/themes/sakila/favicon.ico" width="16"> [MySQL](mysql/README.md)
+    * [手冊](mysql/guide.md)
 
 * [nginx](nginx/README.md)
     * [手冊](nginx/guide.md)

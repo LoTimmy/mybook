@@ -1,7 +1,5 @@
 `cvs - Concurrent Versions System`
 
-
-
 ### 安裝 {#installing}
 ```console
 shell> sudo apt-get install cvs

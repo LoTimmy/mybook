@@ -243,6 +243,17 @@ Accept-Ranges: bytes
 ```
 
 ---
+
+```
+location /favicon.ico {
+  log_not_found off;
+  access_log off;
+}
+```
+#### :books: 參考網站：
+- [log_not_found](http://nginx.org/en/docs/http/ngx_http_core_module.html#log_not_found)
+
+---
 ```console
 shell> nginx -V
 ```
