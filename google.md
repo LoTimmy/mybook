@@ -41,14 +41,14 @@
 </html>
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [Hello, World](https://developers.google.com/maps/documentation/javascript/tutorial?hl=zh-tw#The_Hello_World_of_Google_Maps_v3)
 
 ```
 <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=zh-TW&geocode=&q=25.079264,121.482652&z=16&output=embed&t=h"></iframe>
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - http://maps.googleapis.com/maps/api/geocode/json?address=三和路四段191巷5號&sensor=false&language=zh-TW
 
 ---
@@ -59,7 +59,7 @@
 > `Chrome 連線診斷工具`是 `Chrome` 和 `Chrome 作業系統`專用的網路測試及疑難排解工具，既快速又簡便。
 
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - https://toolbox.googleapps.com/apps/main/
 - [Browserinfo](https://toolbox.googleapps.com/apps/browserinfo/)
 - [Check MX](https://toolbox.googleapps.com/apps/checkmx/)
@@ -101,7 +101,7 @@ chrome://settings/
 <kbd>⌘</kbd> + <kbd>↑</kbd>
 <kbd>⌘</kbd> + <kbd>↓</kbd>
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [快速鍵](https://support.google.com/chrome/answer/157179?hl=zh-Hant)
 
 ---
@@ -128,7 +128,7 @@ font-family: 'cwTeXHei',
 sans-serif;
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [Google Fonts](https://fonts.google.com/)
 - [earlyaccess](https://fonts.google.com/earlyaccess)
 
@@ -147,9 +147,7 @@ Google 翻譯
 ```
 ---
 
-
-
-### :books: 參考網站：
+#### :books: 參考網站：
 - https://www.google.com/finance/converter
 
 ---
@@ -208,9 +206,7 @@ function drawChart() {
 }
 ```
 
-
-
-### :books: 參考網站：
+#### :books: 參考網站：
 - https://developers.google.com/speed/libraries/
 - https://developers.google.com/loader/
 - https://developers.google.com/chart/
@@ -234,8 +230,6 @@ https://www.youtube.com/embed/D6Ac5JpCHmI?&autoplay=1" frameborder="0"
 allowfullscreen></iframe>
 
 <iframe allowfullscreen="" frameborder="0" height="315" src="http://www.youtube.com/embed/UkWd0azv3fQ#t=2m30s" width="420"></iframe>
-
-
 ```
 
 `controls=0`
