@@ -159,6 +159,21 @@ Subtitle options:
 ---
 
 ```console
+shell> ffmpeg -i input.flac -acodec libmp3lame out.mp3
+shell> find . -name "*.flac" -exec bash -c 'ffmpeg -i "{}" -y "${0/.flac}.wav"' {} \;
+
+shell> ffmpeg -i video1.webm -vf "scale=400:-1,fps=10" out.gif
+shell> ffmpeg -i input.gif -c:v libvpx -auto-alt-ref 0 out.webm     
+```
+
+```console
+shell> ffmpeg -i input.mp4 -ss 00:00:00 -vframes 1 img.png
+shell> ffmpeg -i input.mp4 -vf fps=1/60 img-%03d.png
+```
+
+---
+
+```console
 shell> ffmpeg -codecs
 shell> ffmpeg -protocols 
 shell> ffmpeg -i input.mp4 output.avi
@@ -387,6 +402,7 @@ shell> ffmpeg -i input.mp4 -i img.png -vcodec libx264 -preset ultrafast -filter_
 - https://www.ffmpeg.org/ffmpeg-all.html
 - https://ffmpeg.org/ffmpeg-protocols.html
 - https://ffmpeg.org/ffmpeg-utils.html
-- https://ffmpeg.org/ffmpeg-filters.html#overlay-1 
+- https://ffmpeg.org/ffmpeg-filters.html#overlay-1
+- http://manpages.ubuntu.com/manpages/xenial/man1/ffmpeg-codecs.1.html 
 
 

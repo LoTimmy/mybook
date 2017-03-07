@@ -1,5 +1,6 @@
 ![](https://assets-cdn.github.com/images/modules/site/docker_logo.png?sn?sn)
-![](http://i.imgur.com/KtX3yig.png)
+
+<img src="http://i.imgur.com/KtX3yig.png" width="200">
 
 - `Docker`是一項最近竄紅的`容器技術` (`Container`)，讓開發人員可以在本機撰寫並測試完應用後「打包」成大型可執行檔送到其他地方之後再執行。和傳統`Virtual Machine`技術相較，`Docker`更為輕巧、執行也更快速。
 - `Docker`是一個`Client-Server`架構的應用程式，在一個`Docker`執行環境中，包括了`Docker`用戶端程式、和在`背景執行` (`Daemon`)的Docker伺服器 (也稱為Docker Engine)，另外還有將Container封裝後的Docker映象檔，用來儲存映象檔的Registry服務。官方提供的映象檔Registry服務就稱為`Docker Hub`，這是類似`Github`程式碼`Repository`儲存服務的映象檔Repository儲存服務。
@@ -20,11 +21,9 @@
 ![](http://i.imgur.com/iUBa3dw.png)
 ![](http://i.imgur.com/lcXEoCK.png)
 
-
 ![Imgur](http://i.imgur.com/08lDi3b.png)
 
-
-### :books: 參考網站：
+#### :books: 參考網站：
 - [效能更快、資源更省 Docker虛擬化技術簡介](http://www.netadmin.com.tw/article_content.aspx?sn=1503060001)
 - [VM太肥   紅帽擁抱新型輕量級虛擬化](http://www.ithome.com.tw/news/86808)
 - [10個Q&A快速認識Docker](http://www.ithome.com.tw/news/91847)
@@ -44,7 +43,7 @@ shell> lsb_release -a
 ```
 ![Imgur](http://i.imgur.com/ci0qpEH.png)
 
-/etc/apt/sources.list.d/docker.list
+`/etc/apt/sources.list.d/docker.list`
 
 ```
 Ubuntu Precise 12.04 (LTS)
@@ -52,6 +51,8 @@ Ubuntu Trusty 14.04 (LTS)
 Ubuntu Wily 15.10
 Ubuntu Xenial 16.04 (LTS)
 ```
+
+#### :books: 參考網站：
 - [ubuntulinux](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 - [mac](https://docs.docker.com/engine/installation/mac/)
 - [docker-for-mac](https://docs.docker.com/docker-for-mac/)
@@ -90,7 +91,7 @@ WARNING: Your kernel does not support cgroup swap limit. WARNING: Your
 kernel does not support swap limit capabilities. Limitation discarded.
 ```
 
-/etc/default/grub
+`/etc/default/grub`
 
 ```
 GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
@@ -103,15 +104,16 @@ shell> sudo update-grub
 shell> curl -sSL https://get.docker.com/ | sh
 shell> wget -qO- https://get.docker.com/ | sh
 ```
-
+```
 If you would like to use Docker as a non-root user, you should now consider
 adding your user to the "docker" group with something like:
+```
 
 ```console
 shell> sudo usermod -aG docker your-user
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [ubuntulinux](https://docs.docker.com/v1.4/installation/ubuntulinux/)
 - [ubuntulinux](https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 - [compose](https://docs.docker.com/compose/gettingstarted/)
@@ -220,7 +222,7 @@ shell> docker rm <container_id>
 shell> docker run --rm ubuntu /bin/ping 8.8.8.8
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [basics](https://docs.docker.com/engine/userguide/basics/)
 
 

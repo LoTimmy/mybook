@@ -11,6 +11,9 @@
 shell> vmware -vl
 VMware ESXi 5.0.0 build-469512
 VMware ESXi 5.0.0 GA
+
+VMware ESXi 6.0.0 build-3620759
+VMware ESXi 6.0.0 Update 2
 ```
 
 `Power on a VM`
@@ -43,15 +46,21 @@ shell> vmware-checkvm
 ---
 
 
-### OVFTool {#ovftool} 
+### VMware OVF Tool {#ovftool} 
 
 `OVFTool`
-
 
 ![](http://i.imgur.com/DfZH2Pt.png)
 
 
 `C:\Program Files (x86)\VMware\VMware Workstation\OVFTool`
+`C:\Program Files\VMware\VMware OVF Tool`
+`c:\ovfs\my_vapp.ovf`
+`c:\vms\my_vm.vmx`
+`c:\VirtualMachines\MyVM.vmx`
+
+
+`--noSSLVerify`
 
 ```console
 shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\xenial\xenial.vmx" "%HOMEPATH%\Documents/xenial.ova"
@@ -59,10 +68,6 @@ shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\yakkety\yakkety.vmx" "%HOM
 
 shell> ovftool "%HOMEPATH%\Documents/xenial.ova"
 shell> ovftool "%HOMEPATH%\Documents/yakkety.ova"
-```
-
-```console
-shell> ovftool --net: "source_network_name"="destination_network_name" -ds="destination_datastore" -n="destination_virtual_machine_name" "vi://domain\username@source_vcenter_fqdn/source_datacenter_name/virtual_machine_name/virtual_machine_folder/virtual_machine" "vi://domain\username@destination_vcenter_fqdn/host/cluster_name"
 ```
 
 ```console
@@ -93,13 +98,18 @@ shell> ovftool package.ovf vi://username:pass@my.esx-machine.example.com/
 
 shell> ovftool -ds=datastore1 --net:nat="VM Network" ubuntu-1604.ova vi://root@192.168.168.196
 shell> ovftool -ds=datastore2 --net:nat="VM Network" ubuntu-1604.ova vi://root@192.168.168.196
-
 ```
 
+```console
+shell> chmod +x VMware-ovftool-4.0.0-2301625-lin.x86_64.bundle
+shell> ovftool --help
+```
+
+#### :books: 參考網站：
 - [ovftool](https://www.vmware.com/support/developer/ovf/ovf410/ovftool-410_userguide.pdf)
 - [ovftool](https://www.vmware.com/support/developer/ovf/ovf301/ovftool-301-userguide.pdf)
+- [ovftool](https://www.vmware.com/support/developer/ovf/ovf20/ovftool_201_userguide.pdf)
 - [ovftool](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=OVFTOOL410)
-
 
 ---
 
@@ -143,6 +153,7 @@ shell> vmrun -gu <user> -gp <pass> CopyFileFromHostToGuest Ubuntu/Ubuntu.vmx
 
 ```
 
+#### :books: 參考網站：
 - [vmrun](https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_player/6_0|PLAYER-600-A|drivers_tools)
 - [vmrun](http://www.vmware.com/pdf/vix160_vmrun_command.pdf)
 - [vmrun](http://www.vmware.com/pdf/vix180_vmrun_command.pdf)
@@ -155,8 +166,10 @@ shell> /usr/bin/host_shutdown.sh
 ```
 ---
 
+```
 Switch VMware Fusion to Full Screen View
 Use the ⌘+Control+F keyboard shortcut to switch to Full Screen view.
+```
 
 ---
 
@@ -480,7 +493,7 @@ ide1:0.fileName = "/vmfs/volumes/datastore1/isoimages/ubuntu/ubuntu-12.04.1-serv
 
 ---
 
-/etc/ssh/sshd_config
+`/etc/ssh/sshd_config`
 
 ```
 UseDNS no
@@ -523,7 +536,7 @@ deleteVM
 ---
 
 
-###  參考網站：
+#### :books: 參考網站：
 - [VMware-viclient-all-5.0.0-455964.exe](http://vsphereclient.vmware.com/vsphereclient/4/5/5/9/6/4/VMware-viclient-all-5.0.0-455964.exe)
 - [VMware-viclient-all-4.1.0-258902.exe](http://vsphereclient.vmware.com/vsphereclient/2/5/8/9/0/2/VMware-viclient-all-4.1.0-258902.exe)
 - [SSLIgnore](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2002617)
@@ -585,7 +598,15 @@ C:\Users\Public\Documents\Shared Virtual Machines
 ```
 
 
-https://www.debian.org/releases/wheezy/example-preseed.txt
+
+`VMware OVF Tool for Windows 32-bit`
+`VMware OVF Tool for Windows 64-bit`
+`VMware OVF Tool for Linux 32-bit`
+`VMware OVF Tool for Linux 64-bit`
+`VMware OVF Tool for Mac OSX`
+
+#### :books: 參考網站：
+- https://www.debian.org/releases/wheezy/example-preseed.txt
 
 
 
