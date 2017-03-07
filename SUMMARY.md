@@ -22,6 +22,7 @@
     * [ffmpeg](cmd/ffmpeg.md)
     * [icdiff](cmd/icdiff.md)
     * [ip](cmd/ip.md)
+    * [iptables](cmd/iptables.md)
     * [jpegoptim](cmd/jpegoptim.md)
     * [lftp](cmd/lftp.md)
     * [lnav](cmd/lnav.md)
@@ -32,7 +33,8 @@
     * [sudo](cmd/sudo.md)
     * [timedatectl](cmd/timedatectl.md)
     * [tor](cmd/tor.md)
-    * [tree](cmd/tree.md)    
+    * [tree](cmd/tree.md)
+    * <img src="http://www.vim.org/images/vim_shortcut.ico" width="16"> [vim](cmd/vim.md)    
     * [wget](cmd/wget.md)
 
 * [HTML5](html5/README.md)
@@ -86,6 +88,8 @@
 
 * [VPN](vpn/README.md)
     * [OpenVPN](vpn/openvpn.md)
+    * [pptpd](vpn/pptpd.md)
+    * [strongswan](vpn/strongswan.md)
 
 * <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)
     * [手冊](vmware/guide.md)
@@ -95,7 +99,7 @@
 * [google](google.md)
 * [docker](docker.md)
 * [golang](golang.md)
-* <img src="http://www.vim.org/images/vim_shortcut.ico" width="16"> [vim](vim.md)
+
 
 
 * <img src="https://git-scm.com/favicon.ico" width="16"> [Git](git/README.md)
