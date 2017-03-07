@@ -1,4 +1,4 @@
-![](http://i.imgur.com/VzpZv22.png)
+<img src="http://i.imgur.com/VzpZv22.png" width="100">
 
 ---
 <kbd>Ctrl</kbd> + <kbd>V</kbd>, <kbd>Ctrl</kbd> + <kbd>M</kbd>
@@ -8,13 +8,13 @@
 ```
 ---
 
-xterm-256color
+`xterm-256color`
 
 ```console
 shell> echo $TERM   
 ```
 
-.vimrc
+`.vimrc`
 ```vim
 set t_Co=256
 ```
@@ -28,7 +28,7 @@ set t_Co=256
 
 ---
 
-.vimrc
+`.vimrc`
 ```vim
 " Don't use vi-compatibility mode
 set nocompatible
@@ -67,7 +67,7 @@ set modeline
 
 ---
 
-.vimrc
+`.vimrc`
 
 ```vim
 " Maintainer: Timmy Lo <timmylo@kimo.com>
@@ -128,7 +128,7 @@ if has("autocmd")
 endif " has("autocmd")
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - https://en.opensuse.org/SDB:VIM_disable_line_resume
 - [autocmd](http://vimdoc.sourceforge.net/htmldoc/autocmd.html)
 
@@ -187,9 +187,9 @@ inoremap <Esc>OM <Enter>
 
 ---
 
-/usr/share/vim/vim73/colors
+`/usr/share/vim/vim73/colors`
 
-/usr/share/vim/vim73/filetype.vim
+`/usr/share/vim/vim73/filetype.vim`
 
 ```
 :edit $VIMRUNTIME/colors/README.txt
@@ -206,7 +206,7 @@ shell> vimdiff file1 file2
 shell> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-.vimrc
+`.vimrc`
 ```
 set nocompatible
 filetype off
@@ -224,7 +224,7 @@ map <c-f> :call JsBeautify()<cr>
 
 ```
 
-.editorconfig
+`.editorconfig`
 ```
 ;.editorconfig
 
@@ -263,6 +263,7 @@ shell> vim +PluginInstall +qall
 shell> cd ~/.vim/bundle/vim-jsbeautify && git submodule update --init --recursive
 ```
 
+#### :books: 參考網站：
 - [Vundle](https://github.com/VundleVim/Vundle.vim)
 - [vim-jsbeautify](https://github.com/maksimr/vim-jsbeautify)
 
@@ -277,12 +278,12 @@ set foldmethod=marker
 set foldlevel=0
 ```
 
-zo
-zc
-zr
-zm
+`zo`
+`zc`
+`zr`
+`zm`
 
 ---
 
-### :books: 參考網站：
-http://vimdoc.sourceforge.net/htmldoc/options.html
+#### :books: 參考網站：
+- http://vimdoc.sourceforge.net/htmldoc/options.html

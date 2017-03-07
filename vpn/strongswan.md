@@ -1,4 +1,4 @@
-![](https://www.strongswan.org/images/strongswan.png)
+<img src="https://www.strongswan.org/images/strongswan.png" width="100">
 
 `strongswan - IPsec VPN solution metapackage`
 `xl2tpd - layer 2 tunneling protocol implementation`
