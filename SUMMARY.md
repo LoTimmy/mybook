@@ -18,6 +18,7 @@
     * [cifs-utils](cmd/cifs-utils.md)
     * [curl](cmd/curl.md)
     * [curlftpfs](cmd/curlftpfs.md)
+    * [cvs](cmd/cvs.md)
     * [dig](cmd/dig.md)
     * [ffmpeg](cmd/ffmpeg.md)
     * [icdiff](cmd/icdiff.md)
@@ -26,6 +27,7 @@
     * [jpegoptim](cmd/jpegoptim.md)
     * [lftp](cmd/lftp.md)
     * [lnav](cmd/lnav.md)
+    * [ngrok](cmd/ngrok.md)
     * [ntpdate](cmd/ntpdate.md) 
     * [optipng](cmd/optipng.md)
     * [qpdf](cmd/qpdf.md)
@@ -34,6 +36,7 @@
     * [timedatectl](cmd/timedatectl.md)
     * [tor](cmd/tor.md)
     * [tree](cmd/tree.md)
+    * [tshark](cmd/tshark.md)
     * <img src="http://www.vim.org/images/vim_shortcut.ico" width="16"> [vim](cmd/vim.md)    
     * [wget](cmd/wget.md)
 

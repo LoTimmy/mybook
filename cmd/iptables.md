@@ -54,6 +54,19 @@ shell> iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 -A INPUT -m state --state NEW -m udp -p udp --dport 69 -j ACCEPT
 ```
 
+---
+
+`iprange`
+
+```console
+shell> iptables -A INPUT -m iprange --src-range 10.50.10.20-10.50.10.80 -j ACCEPT
+```
+
+#### :books: 參考網站：
+- [iptables-extensions](http://ipset.netfilter.org/iptables-extensions.man.html)
+
+---
+
 ```console
 shell> iptables -A INPUT -p tcp --dport ssh -j ACCEPT
 shell> iptables -A INPUT -p tcp --dport 80 -j DROP

@@ -51,6 +51,8 @@ referer = "http://nowhereatall.com/"
 
 ```console
 shell> curl -I https://httpd.apache.org/
+```
+```
 HTTP/1.1 200 OK
 Date: Thu, 16 Feb 2017 07:15:17 GMT
 Server: Apache/2.4.7 (Ubuntu)
@@ -60,8 +62,12 @@ Accept-Ranges: bytes
 Content-Length: 9553
 Vary: Accept-Encoding
 Content-Type: text/html
+```
 
+```console
 shell> curl -I http://expressjs.com/
+```
+```
 HTTP/1.1 200 OK
 Date: Thu, 16 Feb 2017 07:16:38 GMT
 Content-Type: text/html; charset=utf-8
@@ -75,3 +81,23 @@ X-GitHub-Request-Id: 7774:7A03:113D903:16A02D5:58A551D6
 Server: cloudflare-nginx
 CF-RAY: 331f3719242653cc-LAX
 ```
+
+```console
+shell> curl -I -H "Accept-Encoding: deflate, gzip" https://httpd.apache.org/
+```
+
+```
+HTTP/1.1 200 OK
+Date: Wed, 08 Mar 2017 05:19:04 GMT
+Server: Apache/2.4.7 (Ubuntu)
+Last-Modified: Wed, 25 Jan 2017 14:38:55 GMT
+ETag: "2551-546ec313cb061-gzip"
+Accept-Ranges: bytes
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 2759
+Content-Type: text/html
+```
+
+#### :books: 參考網站：
+- [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)

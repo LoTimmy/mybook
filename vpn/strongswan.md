@@ -136,7 +136,6 @@ shell> iptables -t nat -A POSTROUTING -s 10.2.0.0/24 -o ens32 -j MASQUERADE
 shell> iptables -A INPUT -p udp -m policy --dir in --pol ipsec -m udp --dport 1701 -j ACCEPT
 ```
 
-
 #### :books: 參考網站：
 - http://www.cisco.com/c/en/us/support/docs/ip/internet-key-exchange-ike/117258-config-l2l.html
 - http://www.cisco.com/c/en/us/support/docs/network-management/remote-access/117257-config-ios-vpn-strongswan-00.html

@@ -608,5 +608,10 @@ C:\Users\Public\Documents\Shared Virtual Machines
 #### :books: 參考網站：
 - https://www.debian.org/releases/wheezy/example-preseed.txt
 
+`Windows`
 
+`Mac OS X`
 
+`Linux`
+
+`Android`

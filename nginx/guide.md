@@ -209,6 +209,22 @@ shell> openssl s_client -connect www.godaddy.com:443
 - [root-comodo-rsa-certification-authority-sha-2](https://support.comodo.com/index.php?/Knowledgebase/Article/View/969/0/root-comodo-rsa-certification-authority-sha-2)
 - [intermediate-2-sha-2-comodo-rsa-domain-validation-secure-server-ca](https://support.comodo.com/index.php?/Knowledgebase/Article/View/970/0/intermediate-2-sha-2-comodo-rsa-domain-validation-secure-server-ca)
 
+
+---
+
+```
+location / {
+    deny  192.168.1.1;
+    allow 192.168.1.0/24;
+    allow 10.1.1.0/16;
+    allow 2001:0db8::/32;
+    deny  all;
+}
+```
+
+#### :books: 參考網站：
+- [ngx_http_access_module](http://nginx.org/en/docs/http/ngx_http_access_module.html)
+
 ---
 ```
 server_tokens off;
