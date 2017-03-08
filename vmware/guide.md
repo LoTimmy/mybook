@@ -54,9 +54,13 @@ shell> vmware-checkvm
 
 
 `C:\Program Files (x86)\VMware\VMware Workstation\OVFTool`
+
 `C:\Program Files\VMware\VMware OVF Tool`
+
 `c:\ovfs\my_vapp.ovf`
+
 `c:\vms\my_vm.vmx`
+
 `c:\VirtualMachines\MyVM.vmx`
 
 
@@ -71,8 +75,7 @@ shell> ovftool "%HOMEPATH%\Documents/yakkety.ova"
 ```
 
 ```console
-shell> ovftool --acceptAllEulas ~/Documents/"Virtual Machines.localized/Ubuntu 64-bit Server 16.04.1.vmwarevm/Ubuntu 64-bit Server 16.04.1.vmx" ~/Documents/ubuntu-1604.ovf
-shell> ovftool --acceptAllEulas ~/Documents/"Virtual Machines.localized/Ubuntu 64-bit Server 16.04.1.vmwarevm/Ubuntu 64-bit Server 16.04.1.vmx" ~/Documents/ubuntu-1604.ova
+shell> ovftool ubuntu-1604.vmwarevm/ubuntu-1604.vmx ~/Documents/ubuntu
 shell> ovftool --acceptAllEulas ~/Documents/"Virtual Machines.localized/Windows 7 x64.vmwarevm/Windows 7 x64.vmx" ~/Documents/windows7.ova
 ```
 
@@ -615,3 +618,21 @@ C:\Users\Public\Documents\Shared Virtual Machines
 `Linux`
 
 `Android`
+
+```
+ifconfig | grep -A2 vmnet
+```
+```
+vmnet1: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 00:50:56:c0:00:01 
+	inet 192.168.47.1 netmask 0xffffff00 broadcast 192.168.47.255
+--
+vmnet8: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	ether 00:50:56:c0:00:08 
+	inet 192.168.118.1 netmask 0xffffff00 broadcast 192.168.118.255
+```
+
+vmnet1（仅主机）
+vmnet8 (NAT)
+#### :books: 參考網站：
+- https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1026510
