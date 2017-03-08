@@ -3,6 +3,8 @@
 shell> mkvmerge --no-subtitles --title '' -o mymovie.mkv input.mkv
 shell> mkvmerge -o mymovie.mkv input.mkv zh-TW.idx
 shell> mkvmerge -o mymovie.mkv input.mkv zh-TW.srt  
+
+shell> mkvmerge -o mymovie.mkv -d 0 -a 2 input.mkv
 ```
 
 ```console 
@@ -37,6 +39,15 @@ shell> mkvpropedit movie.mkv --edit track:s3 --set name="中文(简体)"
 shell> mkvpropedit movie.mkv --edit track:s2 --set name="中文(香港)"
 shell> mkvpropedit movie.mkv --edit track:s1 --set name="中文(繁體)"
 
+shell> mkvpropedit movie.mkv --edit track:a1 --delete name
+shell> mkvpropedit movie.mkv --edit track:a2 --set flag-default=1
+
+shell> mkvpropedit movie.mkv --delete-attachment 2
+```
+
+```console 
+shell> mkvinfo movie.mkv
+shell> mkvmerge -i movie.mkv
 ```
 
 #### :books: 參考網站：

@@ -34,6 +34,7 @@
     * [optipng](cmd/optipng.md)
     * [packer](cmd/packer.md)
     * [qpdf](cmd/qpdf.md)
+    * [rename](cmd/rename.md)
     * [rsync](cmd/rsync.md)
     * [sudo](cmd/sudo.md)
     * [timedatectl](cmd/timedatectl.md)
