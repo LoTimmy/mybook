@@ -134,6 +134,16 @@ sans-serif;
 
 ---
 
+德國時間
+日本時間
+美國時間
+中國時間
+澳洲時間
+Greenwich時間
+台北時間
+
+---
+
 Google 翻譯
 ```
 =GOOGLETRANSLATE("", "zh-CN", "zh-TW")
