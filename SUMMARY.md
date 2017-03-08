@@ -28,6 +28,7 @@
     * [jpegoptim](cmd/jpegoptim.md)
     * [lftp](cmd/lftp.md)
     * [lnav](cmd/lnav.md)
+    * [mkvmerge](cmd/mkvmerge.md)
     * [ngrok](cmd/ngrok.md)
     * [ntpdate](cmd/ntpdate.md) 
     * [optipng](cmd/optipng.md)
