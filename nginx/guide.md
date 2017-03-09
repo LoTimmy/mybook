@@ -402,6 +402,17 @@ add_header Cache-Control private;
 
 ---
 
+```
+server {
+        client_max_body_size 100m;
+}
+```
+
+#### :books: 參考網站：
+- [client_max_body_size](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
+
+---
+
 How to test Logjam via command line?
 
 ```console

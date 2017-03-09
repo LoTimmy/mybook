@@ -3,7 +3,6 @@
 `strongswan - IPsec VPN solution metapackage`
 `xl2tpd - layer 2 tunneling protocol implementation`
 
-
 ```console
 shell> lsb_release -a
 No LSB modules are available.
@@ -24,7 +23,6 @@ Institute for Internet Technologies and Applications
 University of Applied Sciences Rapperswil, Switzerland
 See 'ipsec --copyright' for copyright information.
 ```
-
 
 `/etc/sysctl.conf`
 
@@ -181,4 +179,42 @@ dpdaction=clear
 - http://www.cisco.com/cisco/web/support/CN/113/1133/1133929_117258-config-l2l.html
 - https://libreswan.org/
 - https://download.libreswan.org/old-openswan/openswan-2.6.16/programs/examples/l2tp-psk.conf.in
+
+
+---
+
+```console
+shell> ipsec pki --gen --outform pem > caKey.pem
+shell> ipsec pki --self --in caKey.pem --dn "C=US, O=TNC Demo, CN=AIK 7" --ca --outform pem > caCert.pem
+```
+
+
+`caCert.pem`
+`caCert.der`
+`caKey.pem`
+`caKey.der`
+
+`cakey.pem`
+`cacert.pem`
+`ca_key.der`
+`ca_cert.der`
+`server.key`
+`server.key.insecure`
+`server.csr`
+
+```
+shell> ipsec pki --gen --help
+--outform der|pem
+--size
+```
+
+- https://download2.strongswan.org/private/README.txt
+- http://manpages.ubuntu.com/manpages/trusty/man1/pki.1.html
+- https://help.ubuntu.com/lts/serverguide/certificates-and-security.html
+
+```tmp
+ipsec pki --self --in ca.pem --dn "C=CN, O=strongSwan, CN=strongSwan CA" --ca --outform pem > ca.cert.pem
+```
+
+
 

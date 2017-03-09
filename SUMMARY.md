@@ -13,14 +13,14 @@
     * [autossh](ssh/autossh.md)
 
 * [Commands](cmd/README.md)
-    * [7z](cmd/7z.md) 
+    * <img src="http://www.7-zip.org/favicon.ico" width="16"> [7z](cmd/7z.md) 
     * [aria2](cmd/aria2.md)
     * [cifs-utils](cmd/cifs-utils.md)
     * [curl](cmd/curl.md)
     * [curlftpfs](cmd/curlftpfs.md)
     * [cvs](cmd/cvs.md)
     * [dig](cmd/dig.md)
-    * [ffmpeg](cmd/ffmpeg.md)
+    * <img src="https://ffmpeg.org/favicon.ico" width="16"> [ffmpeg](cmd/ffmpeg.md)
     * [fping](cmd/fping.md)
     * [icdiff](cmd/icdiff.md)
     * [ip](cmd/ip.md)
@@ -28,7 +28,7 @@
     * [jpegoptim](cmd/jpegoptim.md)
     * [lftp](cmd/lftp.md)
     * [lnav](cmd/lnav.md)
-    * [mkvmerge](cmd/mkvmerge.md)
+    * <img src="https://mkvtoolnix.download/favicon.ico" width="16"> [mkvmerge](cmd/mkvmerge.md)
     * [ngrok](cmd/ngrok.md)
     * [ntpdate](cmd/ntpdate.md) 
     * [optipng](cmd/optipng.md)
@@ -40,7 +40,7 @@
     * [timedatectl](cmd/timedatectl.md)
     * [tor](cmd/tor.md)
     * [tree](cmd/tree.md)
-    * [tshark](cmd/tshark.md)
+    * <img src="https://www.wireshark.org/favicon.ico" width="16"> [tshark](cmd/tshark.md)
     * <img src="http://www.vim.org/images/vim_shortcut.ico" width="16"> [vim](cmd/vim.md)    
     * [wget](cmd/wget.md)
 
@@ -103,9 +103,9 @@
 
 * <img src="https://help.ubuntu.com/favicon.ico" width="16"> [Ubuntu](ubuntulinux.md)
 
-* [google](google.md)
-* [docker](docker.md)
-* [golang](golang.md)
+* <img src="https://www.google.com.tw/favicon.ico" width="16"> [google](google.md)
+* <img src="https://www.docker.com/favicon.ico" width="16"> [docker](docker.md)
+* <img src="https://golang.org/favicon.ico" width="16"> [golang](golang.md)
 
 
 

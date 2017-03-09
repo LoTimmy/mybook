@@ -1,5 +1,7 @@
 <img src="https://avatars3.githubusercontent.com/u/3006190?v=3&s=200" width="50">
 
+<img src="http://i.imgur.com/UsYeOvB.png" width="150">
+
 ```
 client <---> ss-local <--[encrypted]--> ss-remote <---> target
 ```

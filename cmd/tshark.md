@@ -1,3 +1,4 @@
+<img src="https://www.wireshark.org/assets/images/wsbadge@186x57.png" width="150">
 
 ![](http://www.netadmin.com.tw/images/news/NP151111000415111111352102.png)
 
@@ -33,25 +34,30 @@
 ---
 
 `tshark`
+
+### 安裝 {#installing}
+
+```sh
+shell> apt-get install tshark
+```
  
 ```console
 shell> tshark -i 2 -f "port 25" -R "smtp.rsp.parameter contains "Sender""
+shell> tshark -i 2 -f "port 25" -T fields -e smtp.auth.username
+
 shell> tshark -i 2 -f "port 110" -R "pop.request.parameter contains "user""
 shell> tshark -f "port 110" -R "pop.request.command == "USER" || pop.request.command == "PASS""
-shell> tshark -i 2 -f "port 25" -T fields -e smtp.auth.username
-shell> tshark -i 2 -f "port 3306" -T fields -e mysql.query
 
+shell> tshark -i 2 -f "port 3306" -T fields -e mysql.query
 shell> tshark -i 2 -f "port 3306" -T fields -R mysql.query -e frame.time -e ip.src -e ip.dst -e mysql.query
 shell> tshark -i 2 -f "port 3306" -T fields -R 'mysql matches "SELECT|INSERT|DELETE|UPDATE"' -T fields -e "ip.src" -e "mysql.query"
 shell> tshark -i 2 -f "port 3306" -R 'mysql.command == 3' -T fields -e "ip.src" -e "mysql.query"
-
 
 shell> tshark  -f "port 53" -n -T fields -e dns.qry.name -e dns.resp.addr
 shell> tshark  -f "port 53" -n -T fields -e frame.time -e ip.src -e ip.dst -e dns.qry.name -e dns.resp.addr
 
 shell> tshark -R 'http.request.method == "POST"'
 shell> tshark -R 'http.request.method == "GET"'
-
 ```
 
 ```
