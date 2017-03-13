@@ -32,7 +32,7 @@ shell> DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes mysql-serve
 
 ![](http://i.imgur.com/HS5iAz1.png)
 
-### 安裝 Percona Server 5.7
+### 安裝 Percona Server 5.7 {#percona-server-server-5.7}
 ```console
 shell> sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8507EFA5
 shell> echo "deb http://repo.percona.com/apt "$(lsb_release -sc)" main" | sudo tee /etc/apt/sources.list.d/percona.list
@@ -45,7 +45,15 @@ shell> mysql -e "CREATE FUNCTION fnv_64 RETURNS INTEGER SONAME 'libfnv_udf.so'"
 shell> mysql -e "CREATE FUNCTION murmur_hash RETURNS INTEGER SONAME 'libmurmur_udf.so'"
 ```
 
+
+`/etc/mysql/percona-server.conf.d/mysqld.cnf`
+```
+bind-address = 127.0.0.1
+```
+
+
 - [percona-server-server-5.7](https://www.percona.com/doc/percona-server/5.7/installation/apt_repo.html)
+- [udf_percona_toolkit](http://www.percona.com/doc/percona-server/5.7/management/udf_percona_toolkit.html)
 
 
 ![](http://i.imgur.com/wtp11Uj.png)
