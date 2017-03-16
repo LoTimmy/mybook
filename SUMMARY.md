@@ -4,6 +4,7 @@
 
 * [Markdown](markdown.md)
     * [Using emoji](markdown.md#using-emoji)
+* [Glossary](glossary.md)
 
 ----
 
@@ -129,7 +130,7 @@
         * [Git Branching](git/starter.md#git-branch)
         * [Ignoring files](git/starter.md#ignoring-files)
     * [手冊](git/guide.md)
-    * <img src="https://www.gitbook.com/assets/images/logo/favicon.ico?version=19.3.1" width="16"> [gitbook](git/gitbook.md)
+    * <img src="https://www.gitbook.com/assets/images/logo/favicon.ico?version=19.3.1" width="16"> [GitBook](git/gitbook.md)
 
 ### Part II
 

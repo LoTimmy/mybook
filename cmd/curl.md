@@ -34,6 +34,7 @@ shell> curl -w "\n" -d '{"username":"admin", "password":"secret"}' -H "Content-T
 ```console
 shell> curl -sSL https://get.docker.com/ | sh
 shell> curl -fsSL https://experimental.docker.com/ | sh
+shell> curl -L https://npmjs.com/install.sh | sh
 ```
 
 ```
