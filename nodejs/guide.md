@@ -65,14 +65,7 @@ shell> node --v8-options
 ``` .js
 'use strict';
 ```
-
 ---
-
-
-
----
-
-<a name="boolean"></a>
 
 **布林值 (Boolean)**
 ``` .js
@@ -91,8 +84,6 @@ x = false;
 ```
 ---
 
-<a name="function"></a>
-
 **函數 (Function)**
 ``` .js
 function myFunc() {
@@ -109,8 +100,6 @@ var mynumber = calc_sales( 1, 2, 3 );
 console.log(mynumber);
 ```
 ---
-
-<a name="object"></a>
 
 **物件 (Object)**
 ``` .js

@@ -146,6 +146,15 @@ shell> git log
 `.gitignore`
 ```
 .gitignore
+
+# This is a comment
+
+# Ignore the file test.md
+test.md
+
+# Ignore everything in the directory "bin"
+bin/*
+
 *.h
 ```
 

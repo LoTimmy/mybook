@@ -252,7 +252,7 @@ allowfullscreen></iframe>
 > 「`cc_lang_pref`」可設定影片字幕的語言。
 > 「`cc_load_policy=1`」預設開啟字幕。
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - https://support.google.com/youtube/answer/6172631?hl=zh-Hant
 - https://support.google.com/youtube/answer/171780?hl=zh-Hant
 - https://developers.google.com/youtube/player_parameters
@@ -265,4 +265,6 @@ allowfullscreen></iframe>
 
 ---
 
+#### :books: 參考網站：
 - https://fonts.google.com/earlyaccess#Noto+Sans+TC
+- https://cloud.google.com/free/docs/always-free-usage-limits
