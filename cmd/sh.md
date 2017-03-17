@@ -1,13 +1,78 @@
 
 ```sh
+#!/bin/sh
+```
+
+
+```sh
 set -e
 set +e
-```
-```
-export DEBIAN_FRONTEND=noninteractive
+
+set -o xtrace
+set -o pipefail
 ```
 
 ```
+sleep 1
+```
+
+
+```sh
+sed 's/\/.*//'
+sed 's/\..*//'
+sed 's/Server*//'
+```
+
+```sh
+cut -d" " -f2,3 /proc/mounts
+cut -d= -f2
+cut -d' ' -f4
+```
+
+```sh
+test -x $DAEMON || exit 0
+```
+
+```sh
+if [ -x /usr/sbin/aa-status ]; then
+  aa-status --verbose
+else
+  cat "$AA_SFS"/profiles
+fi
+
+if [ $ret -eq 0 ] && [ -x "$node" ]; then
+else
+fi
+```
+
+```sh
+TMP="${TMPDIR}"
+if [ "x$TMP" = "x" ]; then
+  TMP="/tmp"
+fi
+
+tar="${TAR}"
+if [ -z "$tar" ]; then
+  tar="${npm_config_tar}"
+fi
+if [ -z "$tar" ]; then
+  tar=`which tar 2>&1`
+  ret=$?
+fi
+```
+
+
+
+```sh
+tr '[:upper:]' '[:lower:]'
+tr -d '[[:space:]]'
+```
+
+```sh
+export DEBIAN_FRONTEND=noninteractive
+```
+
+```sh
 lsb_dist=debian
 dist_version="$(cat /etc/debian_version | sed 's/\/.*//' | sed 's/\..*//')"
 ```
@@ -77,6 +142,14 @@ if [ "${lsb_dist}" = "redhatenterpriseserver" ]; then
   lsb_dist='redhat'
 fi
 ```
+
+```sh
+curl -f -L -s https://www.npmjs.org/install.sh > npm-install-$$.sh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+
+
 
 
 #### :books: 參考網站：
