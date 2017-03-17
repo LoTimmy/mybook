@@ -3,6 +3,10 @@
 #!/bin/sh
 ```
 
+```sh
+tar xzvf /path/to/<FILE>.tar.gz
+unzip /path/to/<FILE>.zip
+```
 
 ```sh
 set -e

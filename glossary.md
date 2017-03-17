@@ -2,13 +2,18 @@
 `字彙`
 `glossary`
 
+`Fedora`
 `fedora`
+`CentOS`
 `centos`
+`Red Hat Enterprise Linux`
 `redhat`
+`Oracle Linux`
 `oraclelinux`
 `gentoo`
 `Ubuntu`
 `ubuntu`
+`Debian`
 `debian`
 `raspbian`
 
@@ -31,6 +36,10 @@
 `uninstall`
 `tag`
 `start`
+
+`tar.gz`
+`zip`
+`tar`
 
 
 `firstname.lastname@example.com`
@@ -116,6 +125,7 @@
 `ssl`
 `utf8`
 
+`hello-world`
 `helloworld`
 `index.html`
 

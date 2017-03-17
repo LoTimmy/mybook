@@ -17,7 +17,7 @@
 
 * [Commands](cmd/README.md)
     * <img src="http://www.7-zip.org/favicon.ico" width="16"> [7z](cmd/7z.md)
-    * <img src="https://www.ansible.com/hs-fs/hub/330046/file-448313641-png/favicon.png" width="16"> [ansible](cmd/aria2.md) 
+    * <img src="https://www.ansible.com/hs-fs/hub/330046/file-448313641-png/favicon.png" width="16"> [ansible](cmd/ansible.md) 
     * [aria2](cmd/aria2.md)
     * [cifs-utils](cmd/cifs-utils.md)
     * [crontab](cmd/crontab.md)
