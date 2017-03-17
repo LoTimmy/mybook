@@ -496,7 +496,7 @@ shell> opendkim-genkey -r -D -d mydomain.com
 
 ---
 
-**swaks - SMTP command-line test tool**
+`swaks - SMTP command-line test tool`
 
 ```console
 shell> apt-get install swaks 
@@ -601,3 +601,10 @@ myserver.net.in.	3599	IN	TXT	"v=spf1 mx mx:ds1515.dyndns.info -all"
 - http://www.postfix.org/RESTRICTION_CLASS_README.html
 - http://www.postfix.org/STANDARD_CONFIGURATION_README.html
 - http://www.postfix.org/postconf.5.html#mydestination
+
+---
+
+```
+Mar 17 03:25:54 mail imapd: LOGIN, user=bob, ip=[::ffff:192.168.8.205], port=[64109], protocol=IMAP
+```
+

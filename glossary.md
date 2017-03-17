@@ -2,6 +2,8 @@
 `字彙`
 `glossary`
 
+`tw`
+
 `Fedora`
 `fedora`
 `CentOS`
@@ -41,6 +43,28 @@
 `zip`
 `tar`
 
+`start_date`
+`start_time`
+
+`database`
+
+`ntp_server`
+`database_server`
+`webservers`
+`dbservers`
+
+`myhost`
+`myiso`
+`iso`
+`mydatacenter`
+`myserver.net`
+
+`db_settings`
+`cluster_settings`
+
+`some_host`
+`aws_host`
+`freebsd_host`
 
 `firstname.lastname@example.com`
 `username@example.com`
@@ -53,10 +77,28 @@
 `mta1.example.com`
 `gateway.example.com`
 `mailhost.example.com`
+`mail.example.com`
 `firewall.example.com`
 `host.example.com`
 `www.example.com`
 `blog.example.com`
+`aserver.example.org`
+`bserver.example.org`
+`server1.example.com`
+`server2.example.com`
+`www1.example.com`
+`www2.example.com`
+`db0.example.com`
+`db1.example.com`
+`one.example.com`
+`two.example.com`
+`three.example.com`
+`foo.example.com`
+`badwolf.example.com`
+`other1.example.com`
+`other2.example.com`
+`storage.example.org`
+`bar.example.com`
 `example.com`
 `example.net`
 `new.blog.example.co.uk`
@@ -90,6 +132,15 @@
 `ubuntu`
 `centos`
 `root`
+
+`name`
+`password`
+`ssl`
+
+`bob`
+`12345`
+
+
 
 `adduser`
 `deluser`
