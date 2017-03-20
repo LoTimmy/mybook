@@ -1,9 +1,12 @@
 # Summary
 
-* [macOS](apple/macos.md)
+### Part I
 
 * [Markdown](markdown.md)
     * [Using emoji](markdown.md#using-emoji)
+* [Glossary](glossary.md)
+
+----
 
 * [SSH](ssh/guide.md)
     * [手冊](ssh/guide.md) 
@@ -13,9 +16,11 @@
     * [autossh](ssh/autossh.md)
 
 * [Commands](cmd/README.md)
-    * <img src="http://www.7-zip.org/favicon.ico" width="16"> [7z](cmd/7z.md) 
+    * <img src="http://www.7-zip.org/favicon.ico" width="16"> [7z](cmd/7z.md)
+    * <img src="https://www.ansible.com/hs-fs/hub/330046/file-448313641-png/favicon.png" width="16"> [ansible](cmd/ansible.md) 
     * [aria2](cmd/aria2.md)
     * [cifs-utils](cmd/cifs-utils.md)
+    * [crontab](cmd/crontab.md)
     * [curl](cmd/curl.md)
     * [curlftpfs](cmd/curlftpfs.md)
     * [cvs](cmd/cvs.md)
@@ -28,14 +33,18 @@
     * [jpegoptim](cmd/jpegoptim.md)
     * [lftp](cmd/lftp.md)
     * [lnav](cmd/lnav.md)
+    * [lsblk](cmd/lsblk.md)
     * <img src="https://mkvtoolnix.download/favicon.ico" width="16"> [mkvmerge](cmd/mkvmerge.md)
+    * [mount](cmd/ngrok.md)
     * [ngrok](cmd/ngrok.md)
+    * [nmap](cmd/nmap.md)
     * [ntpdate](cmd/ntpdate.md) 
     * [optipng](cmd/optipng.md)
     * [packer](cmd/packer.md)
     * [qpdf](cmd/qpdf.md)
     * [rename](cmd/rename.md)
     * [rsync](cmd/rsync.md)
+    * [ss](cmd/ss.md)
     * [sudo](cmd/sudo.md)
     * [timedatectl](cmd/timedatectl.md)
     * [tor](cmd/tor.md)
@@ -101,10 +110,13 @@
 * <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)
     * [手冊](vmware/guide.md)
 
+* <img src="https://www.docker.com/favicon.ico" width="16"> [docker](docker/README.md)
+    * [手冊](docker/guide.md)
+
 * <img src="https://help.ubuntu.com/favicon.ico" width="16"> [Ubuntu](ubuntulinux.md)
 
 * <img src="https://www.google.com.tw/favicon.ico" width="16"> [google](google.md)
-* <img src="https://www.docker.com/favicon.ico" width="16"> [docker](docker.md)
+
 * <img src="https://golang.org/favicon.ico" width="16"> [golang](golang.md)
 
 
@@ -118,5 +130,8 @@
         * [Git Branching](git/starter.md#git-branch)
         * [Ignoring files](git/starter.md#ignoring-files)
     * [手冊](git/guide.md)
-    * <img src="https://www.gitbook.com/assets/images/logo/favicon.ico?version=19.3.1" width="16"> [gitbook](git/gitbook.md)
+    * <img src="https://www.gitbook.com/assets/images/logo/favicon.ico?version=19.3.1" width="16"> [GitBook](git/gitbook.md)
 
+### Part II
+
+* [macOS](apple/macos.md)

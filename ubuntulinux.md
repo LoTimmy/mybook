@@ -212,7 +212,7 @@ shell> cat /proc/sys/fs/inode-nr
 
 ---
 
-**unattended-upgrades**
+`unattended-upgrades`
 
 ```console
 shell> apt-get install unattended-upgrades
@@ -250,7 +250,6 @@ shell> pvscan
 ![](http://i.imgur.com/BQAKJ1j.png)
 
 ks=http://172.16.7.15/ks.cfg
-
 
 ```
 #System language
@@ -339,11 +338,11 @@ ks=cdrom:/<path>
 linux ks=floppy
 ```
 
-- [Starting a Kickstart Installation](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-kickstart2-startinginstall.html)
-
 
 #### :books: 參考網站：
 - [10.2. Changing Network Kernel Settings](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/sect-Oracle_9i_and_10g_Tuning_Guide-Adjusting_Network_Settings-Changing_Network_Kernel_Settings.html)
+- [Starting a Kickstart Installation](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-kickstart2-startinginstall.html)
+
 
 ---
 
@@ -363,7 +362,7 @@ shell> debconf-get-selections
 
 ---
 
-**free - Display amount of free and used memory in the system**
+`free - Display amount of free and used memory in the system`
 
 ```console
 shell> free -b

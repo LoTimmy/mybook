@@ -1,5 +1,7 @@
 <img src="http://i.imgur.com/onUAoMT.png" width="100">
 
+`npm - javascript package manager`
+
 ```console
 shell> npm install <package_name>
 shell> npm install lodash
@@ -10,6 +12,8 @@ shell> npm uninstall --save lodash
 
 shell> npm install npm@latest -g
 
+shell> npm i -g package
+
 shell> npm init
 shell> npm init --yes
 
@@ -18,6 +22,7 @@ shell> npm set init.author.name "ag_dubs"
 shell> npm set init.license "MIT"
 
 shell> npm outdated
+shell> npm -v
 
 shell> npm install -g jshint
 shell> sudo npm install -g jshint
@@ -31,6 +36,8 @@ shell> npm cache ls
 shell> npm cache clean
 
 shell> npm update -g jshint
+
+shell> npm help npm
 ```
 
 `Updating global packages`
@@ -39,9 +46,19 @@ shell> npm outdated -g --depth=0
 shell> npm update -g
 ```
 
-```console
-shell> npm install npm@latest -g
+`package.json`
+```json
+{
+  "name": "myapp",
+  "description": "a really cool app",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "4.1.1"
+  }
+}
 ```
+
 
 #### :books: 參考網站：
 - [installing-node](https://docs.npmjs.com/getting-started/installing-node)

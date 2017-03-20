@@ -66,6 +66,7 @@ shell> systemctl status nginx.service
 
 **反向 Proxy**
 ![](http://i.imgur.com/9QNvICY.gif)
+![](https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg)
 
 ```console
 shell> cd /etc/nginx
@@ -410,6 +411,25 @@ server {
 
 #### :books: 參考網站：
 - [client_max_body_size](http://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
+
+---
+
+```
+server {
+    listen       80;
+    server_name www.example.com;
+    rewrite ^ https://$server_name$request_uri? permanent;  
+}
+```
+
+`$server_name`
+
+`$request_uri`
+
+`permanent`
+
+#### :books: 參考網站：
+- [ngx_http_rewrite_module](http://nginx.org/en/docs/http/ngx_http_rewrite_module.html)
 
 ---
 

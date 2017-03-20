@@ -27,6 +27,14 @@ shell> curl -w "\n" -d '{"username":"admin", "password":"secret"}' -H "Content-T
 -K, --config <config file>
 -L, --location
 -s, --silent
+-S, --show-error
+-f, --fail
+```
+
+```console
+shell> curl -sSL https://get.docker.com/ | sh
+shell> curl -fsSL https://experimental.docker.com/ | sh
+shell> curl -L https://npmjs.com/install.sh | sh
 ```
 
 ```
