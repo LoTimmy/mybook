@@ -121,8 +121,8 @@ shell> openssl pkcs12 -export -in server.crt -inkey server.key -out server.pfx -
 
 ######  提交憑證要求
 
-server-req.pem
-www_yourdomain_com.key
+`server-req.pem`
+`www_yourdomain_com.key`
 
 ###### 安裝憑證，並設定 SSL 的網站
 
@@ -134,7 +134,6 @@ shell> cat COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt A
 shell> cp ssl-bundle.crt /etc/ssl/certs
 shell> cp www_yourdomain_com.key /etc/ssl/private/mysite.key
 shell> cp full_chain.pem /etc/nginx/ssl
-
 ```
 
 ```console

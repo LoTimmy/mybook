@@ -66,6 +66,33 @@
 `aws_host`
 `freebsd_host`
 
+`host`
+`port`
+`email`
+`ftp`
+`smtp`
+
+`SRV (服務)`
+`MX (郵件交換器)`
+`TXT （文字）`
+`CName (別稱)`
+`AAAA (IPv6 主機)`
+`A（主機）`
+
+
+`垃圾郵件`
+`草稿`
+`刪除的郵件`
+`寄件備份`
+`收件匣`
+`封存`
+`非垃圾郵件`
+
+
+`SignUp`
+`Sign up`
+`emailAddress`
+
 `firstname.lastname@example.com`
 `username@example.com`
 `username@localdomain.local`
@@ -137,10 +164,14 @@
 `password`
 `ssl`
 
+`gmail`
+
 `bob`
 `12345`
 
-
+`Tim`
+`Timmy`
+`timmy`
 
 `adduser`
 `deluser`
