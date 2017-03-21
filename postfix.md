@@ -1,22 +1,20 @@
+![](http://www.postfix.org/mysza.gif)
 
 `MTA`
-
-`郵件傳送代理程式` (Mail Transfer Agent，MTA) 是整個電子郵件架構中最關鍵的角色，一般稱為郵件伺服器或`SMTP`郵件伺服器，主要用來寄送電子郵件，就像現實生活中的郵局角色一樣，幫忙寄發電子郵件。 
+`郵件傳送代理程式` (`Mail Transfer Agent`，`MTA`) 是整個電子郵件架構中最關鍵的角色，一般稱為郵件伺服器或`SMTP`郵件伺服器，主要用來寄送電子郵件，就像現實生活中的郵局角色一樣，幫忙寄發電子郵件。 
 另外一個重要功能為接收別台郵件伺服器所傳遞過來的電子郵件。在開源碼社群中最著名的郵件伺服器莫過於`Postfix`和`Sendmail`。
 
 `MUA`
-
-`郵件使用代理程式` (Mail User Agent，MUA) 即是平常撰寫電子郵件時所使用的軟體（如Outlook），使用者可以利用MUA軟體來建立電子郵件並寄出電子郵件，或者利用`MUA`軟體來收取郵件伺服器上的電子郵件。 
+`郵件使用代理程式` (`Mail User Agent`，`MUA`) 即是平常撰寫電子郵件時所使用的軟體（如`Outlook`），使用者可以利用MUA軟體來建立電子郵件並寄出電子郵件，或者利用`MUA`軟體來收取郵件伺服器上的電子郵件。 
 
 `MDA`
-
-所謂的郵件遞送代理人軟體 (Mail Delivery Agent，MDA)，是指當電子郵件到達目的郵件伺服器時，可先設定呼叫相關的`MDA`軟體來對電子郵件進行處理。 
+所謂的郵件遞送代理人軟體 (`Mail Delivery Agent`，`MDA`)，是指當電子郵件到達目的郵件伺服器時，可先設定呼叫相關的`MDA`軟體來對電子郵件進行處理。 
 
 `SMTP` 
 
 ![Imgur](http://i.imgur.com/xaLmV5v.png)
 
-`SMTP` (Simple Mail Transfer Protocol，簡易郵件傳輸協定) 是電子郵件在進行傳遞時所使用的標準，顧名思義，它是個簡單的通訊協定（可是管理過郵件伺服器的網管人員，都不認為管理郵件伺服器是件簡單的事）。 
+`SMTP` (`Simple Mail Transfer Protocol`，`簡易郵件傳輸協定`) 是電子郵件在進行傳遞時所使用的標準，顧名思義，它是個簡單的通訊協定（可是管理過郵件伺服器的網管人員，都不認為管理郵件伺服器是件簡單的事）。 
 
 `SMTP`通訊協定相關指令
 
@@ -25,18 +23,18 @@
 ![Imgur](http://i.imgur.com/xTv2Emy.png)
 
 `POP3`
-`POP3` (Post Office Protocol Version 3) 是用來下載郵件伺服器上之電子郵件所使用的通訊協定。使用者利用`MUA`等軟體，將郵件伺服器上的電子郵件下載至本地端的電腦上，此種方式最大的缺點在於使用者必須將所有的信件下載至本地端後，方可得知信件的內容。 
+`POP3` (`Post Office Protocol Version 3`) 是用來下載郵件伺服器上之電子郵件所使用的通訊協定。使用者利用`MUA`等軟體，將郵件伺服器上的電子郵件下載至本地端的電腦上，此種方式最大的缺點在於使用者必須將所有的信件下載至本地端後，方可得知信件的內容。 
 在垃圾郵件橫行的現在，通常都在下載之後，才發現都是垃圾郵件，也因此浪費許多的頻寬和時間，而這也是一般網管人員建議使用者利用`IMAP`通訊協定來收取信件的原因。 
 
 `IMAP` 
-`IMAP` (Internet Mail Access Protocol) 是另一種使用者讀取郵件伺服器上郵件的通訊協定，它與`POP3`最大的不同在於，`POP3`協定通常必須將信件下載至本地端電腦內，方可檢視信件的內容，而且不可瀏覽過去的舊信，因為舊信都已下載到使用者的機器上，郵件伺服器內不會保留，雖然`POP3`也支援「在伺服器上保留郵件」的選項，但預設並不會勾選此選項。 
+`IMAP` (`Internet Mail Access Protocol`) 是另一種使用者讀取郵件伺服器上郵件的通訊協定，它與`POP3`最大的不同在於，`POP3`協定通常必須將信件下載至本地端電腦內，方可檢視信件的內容，而且不可瀏覽過去的舊信，因為舊信都已下載到使用者的機器上，郵件伺服器內不會保留，雖然`POP3`也支援「在伺服器上保留郵件」的選項，但預設並不會勾選此選項。 
 
 而`IMAP`協定則是將所有信件均保存於郵件主機上，使用者可以先查看信件的主旨來決定是否要下載該電子郵件，若決定不下載，即可將該電子郵件直接從郵件主機上刪除，不必浪費頻寬來下載不需要的電子郵件。 
 
 `Relay` 
 **`Relay`是郵件伺服器轉發電子郵件的機制，電子郵件會經由`Relay`機制，將電子郵件交由下一個郵件主機來進行轉發，直到找到正確的郵件伺服器（收件者所在的伺服器）為止。** 
 
-由於原始SMTP通訊協定本身並未提供相關認證功能，因此當郵件伺服器上未設定任何的限制，即可能允許任何人透過自己的郵件伺服器發送電子郵件，而此種郵件伺服器即被稱為`Open Relay`郵件伺服器。 
+由於原始`SMTP`通訊協定本身並未提供相關認證功能，因此當郵件伺服器上未設定任何的限制，即可能允許任何人透過自己的郵件伺服器發送電子郵件，而此種郵件伺服器即被稱為`Open Relay`郵件伺服器。 
 
 一般來說，設定`Open Relay`的郵件伺服器往往是垃圾信發送者的最愛，也因此一個`Open Relay`的郵件伺服器通常會被視為垃圾信的發送站。 
 
@@ -44,7 +42,7 @@
 
 但此種方式並不實用，因為在現實生活中有非常大的機率，合法使用者並不會在該網域內，如此將造成合法使用者無法使用郵件伺服器因而產生不便，因此有了身分認證的需求（利用驗證帳號…密碼的方式）。 
 
-為解決郵件伺服器身分認證問題，而誕生了`ESMTP` (Extension SMTP) 通訊協定，`ESMTP`通訊協定主要是增加身分認證機制。 
+為解決郵件伺服器身分認證問題，而誕生了`ESMTP` (`Extension SMTP`) 通訊協定，`ESMTP`通訊協定主要是增加身分認證機制。 
 
 用戶在連接郵件伺服器時，會先認證用戶的合法性（利用帳號和密碼的機制進行驗證），一旦驗證通過，方可使用郵件伺服器收發電子郵件。 
 
@@ -95,9 +93,6 @@ smtpd_sender_restrictions = reject_unknown_sender_domain,
 myorigin = $myhostname
 myorigin = $mydomain
 
-
-
-
 accept_domain = test.net 
 mydestination = $accept_domain
 
@@ -112,6 +107,8 @@ mynetworks = 172.168.96.0/24
 mynetworks = 127.0.0.0/8
 mynetworks = 127.0.0.0/8 168.100.189.2/32
 mynetworks = 168.100.189.0/28, 127.0.0.0/8
+
+masquerade_domains = $mydomain
 
 relay_domains = $mydestination
 relay_domains =
@@ -130,6 +127,10 @@ virtual_alias_maps = hash:/etc/postfix/virtual
 ```
 
 ```
+notify_classes = resource, software
+```
+
+```
 postmaster@example.com postmaster
 info@example.com       joe
 sales@example.com      jane
@@ -140,7 +141,7 @@ shell> postmap /etc/postfix/virtual
 shell> postfix reload
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [Postfix Virtual Domain Hosting Howto](http://www.postfix.org/VIRTUAL_README.html)
 
 ```console
@@ -151,7 +152,7 @@ shell> egrep '(reject|warning|error|fatal|panic):' /some/log/file
  
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [BASIC_CONFIGURATION_README](http://www.postfix.org/BASIC_CONFIGURATION_README.html)
 
 ```
@@ -263,7 +264,7 @@ Scanned Subject Text = {Scanned}
 
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [mailscanner](https://www.mailscanner.info/)
 - [mailscanner](https://www.mailscanner.info/MailScanner.conf.index.html)
 - [mailscanner](https://www.mailscanner.info/postfix/)
@@ -451,7 +452,7 @@ MAILDIR=$HOME/Mail
 .Junk/
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [sample-nonspam.txt](http://spamassassin.apache.org/full/3.0.x/dist/sample-nonspam.txt)
 - [sample-spam.txt](http://spamassassin.apache.org/full/3.0.x/dist/sample-spam.txt)
 - [procmailrc](http://spamassassin.apache.org/full/3.0.x/dist/procmailrc.example)
@@ -491,7 +492,7 @@ shell> opendkim-genkey -r -D -d mydomain.com
 ```
 ---
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [mail-tester](http://www.mail-tester.com/)
 
 ---
@@ -542,7 +543,7 @@ shell> sa-update && /etc/init.d/spamassassin reload
 
 ---
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [zen](https://www.spamhaus.org/zen/)
 - [setup.dns](http://www.iredmail.org/docs/setup.dns.html)
 - [SPF_Record_Syntax](http://www.openspf.org/SPF_Record_Syntax)
@@ -553,6 +554,7 @@ shell> sa-update && /etc/init.d/spamassassin reload
 - [設定 MX 紀錄](https://support.google.com/a/answer/140034?hl=zh-Hant&ref_topic=2705493)
 - [使用 DKIM 驗證電子郵件](https://support.google.com/a/answer/174124?hl=zh-Hant&ref_topic=2752442&rd=1)
 - [LOCAL_RECIPIENT_README](http://www.postfix.org/LOCAL_RECIPIENT_README.html)
+- https://opensource.apple.com/source/amavisd/amavisd-124/amavisd/amavisd-new-2.6.6/amavisd.conf-default
 
 ---
 
@@ -565,6 +567,7 @@ check_recipient_access hash:/etc/postfix/recipient_access
 check_sender_access hash:/etc/postfix/access
 
 mynetworks = hash:/etc/postfix/network_table
+mynetworks = cidr:/etc/postfix/network_table.cidr
 
 postscreen_dnsbl_reply_map = texthash:/etc/postfix/dnsbl_reply
 
@@ -581,12 +584,30 @@ smtp_tls_policy_maps = hash:/etc/postfix/tls_policy
 transport_maps = hash:/etc/postfix/transport
 
 virtual_alias_maps = hash:/etc/postfix/virtual
-
 ```
 
-### :books: 參考網站：
+```
+alias_maps = hash:/etc/postfix/aliases            (local aliasing)
+header_checks = regexp:/etc/postfix/header_checks (content filtering)
+transport_maps = hash:/etc/postfix/transport      (routing table)
+virtual_alias_maps = hash:/etc/postfix/virtual    (address rewriting)
+```
+
+
+`/etc/postfix/network_table.cidr`
+```
+192.168.1.1             OK
+192.168.0.0/16          OK
+```
+
+```console
+shell> postmap -q info@example.com hash:/etc/postfix/virtual
+```
+
+#### :books: 參考網站：
 - [ADDRESS_REWRITING_README](http://www.postfix.org/ADDRESS_REWRITING_README.html)
 - [canonical](http://www.postfix.org/canonical.5.html)
+- [cidr_table](http://www.postfix.org/cidr_table.5.html)
 
 ---
 
@@ -596,7 +617,8 @@ Default password: 	secret
 ```
 myserver.net.in.	3599	IN	TXT	"v=spf1 mx mx:ds1515.dyndns.info -all"
 ```
-### :books: 參考網站：
+
+#### :books: 參考網站：
 - [企业开源电子邮件系统安全保障实战精要: 第 2 部分，Postfix 安全防护实战及垃圾邮件防范](http://www.ibm.com/developerworks/cn/linux/1304_liyang_mailsecure2/)
 - http://www.postfix.org/RESTRICTION_CLASS_README.html
 - http://www.postfix.org/STANDARD_CONFIGURATION_README.html
@@ -607,4 +629,208 @@ myserver.net.in.	3599	IN	TXT	"v=spf1 mx mx:ds1515.dyndns.info -all"
 ```
 Mar 17 03:25:54 mail imapd: LOGIN, user=bob, ip=[::ffff:192.168.8.205], port=[64109], protocol=IMAP
 ```
+---
 
+```
+mailbox_command = /usr/bin/maildrop -d ${USER}
+```
+
+`/etc/letsencrypt/live/mail.example.com`
+
+```
+.
+├── cert.pem -> ../../archive/mail.example.com/cert1.pem
+├── chain.pem -> ../../archive/mail.example.com/chain1.pem
+├── fullchain.pem -> ../../archive/mail.example.com/fullchain1.pem
+├── privkey.pem -> ../../archive/mail.example.com/privkey1.pem
+└── README
+
+0 directories, 5 files
+```
+
+```console
+shell> postconf -e 'smtpd_use_tls = yes'
+shell> postconf -e 'smtpd_tls_auth_only = yes'
+shell> postconf -e 'smtpd_tls_cert_file = /etc/letsencrypt/live/mail.example.com/fullchain.pem'
+shell> postconf -e 'smtpd_tls_key_file = /etc/letsencrypt/live/mail.example.com/privkey.pem'
+shell> postconf -e 'tls_random_source = dev:/dev/urandom'
+shell> postconf -e 'smtpd_tls_received_header = yes'
+shell> postconf -e 'smtp_use_tls = yes'
+shell> postconf -e 'smtp_tls_note_starttls_offer = yes'
+```
+
+#### :books: 參考網站：
+- https://www.checktls.com/perl/TestReceiver.pl
+- [Postfix TLS Support](http://www.postfix.org/TLS_README.html)
+
+
+```console
+shell> cat /etc/letsencrypt/live/mail.example.com/cert.pem /etc/letsencrypt/live/mail.example.com/chain.pem /etc/letsencrypt/live/mail.example.com/privkey.pem > combined.pem
+```
+
+```console
+shell> cat /etc/letsencrypt/live/mail.example.com/privkey.pem /etc/letsencrypt/live/mail.example.com/cert.pem > /etc/courier/imapd.pem
+shell> openssl dhparam 2048 >> /etc/courier/imapd.pem 
+```
+
+
+
+`/etc/courier/imapd-ssl`
+```
+SSLADDRESS=0.0.0.0
+
+TLS_CERTFILE=/etc/courier/imapd.pem
+TLS_CERTFILE=/etc/courier/combined.pem
+```
+
+`courier-imap-ssl`
+`993`
+
+```console
+shell> service courier-imap-ssl restart
+```
+---
+
+
+`/var/lib/amavis`
+`/var/lib/amavis/virusmails`
+
+---
+
+`pflogsumm - Postfix log entry summarizer`
+
+```console
+shell> apt-get install pflogsumm
+shell> pflogsumm -d yesterday /var/log/maillog
+shell> pflogsumm -d today /var/log/maillog
+```
+---
+
+`postfix-cluebringer - anti-spam plugin for Postfix`
+
+---
+
+`50-user`
+
+```
+$final_spam_destiny       = D_PASS;
+$sa_spam_subject_tag = undef;
+```
+```
+$final_virus_destiny      = D_DISCARD; # (defaults to D_BOUNCE)
+$final_banned_destiny     = D_DISCARD;  # (defaults to D_BOUNCE)
+$final_spam_destiny       = D_DISCARD;  # (defaults to D_REJECT)
+$final_bad_header_destiny = D_PASS;  # (defaults to D_PASS), D_BOUNCE suggested
+```
+
+---
+
+```
+$HOME/.mailfilter
+/etc/courier/maildroprc
+$HOME/.mailfilters
+```
+
+#### :books: 參考網站：
+- http://www.courier-mta.org/localmailfilter.html
+- http://www.courier-mta.org/maildrop/maildropfilter.html
+
+`$HOME/.mailfilter`
+```
+logfile maildrop.txt
+
+if ( /^From: root@matc.tw/ )
+{
+  to "./Maildir/.Junk/."
+}
+
+if ( /^Subject:\s*test.*/ )
+{
+  to "./Maildir/.Trash/."
+}
+```
+
+```
+if ( /^To:\s*(.*)/ && lookup( $MATCH1, "badto.dat" ))
+```
+
+```
+X-Spam-Flag: NO
+X-Spam-Score: 5.18
+X-Spam-Level: *****
+X-Spam-Status: No, score=5.18 tagged_above=2 required=6.31
+
+X-Spam-Flag: YES
+X-Spam-Score: 999
+X-Spam-Level: ****************************************************************
+X-Spam-Status: Yes, score=999 tag=2 tag2=6.31 kill=6.31
+```
+
+```
+amavis
+CLEAN
+BAD-HEADER-7
+SPAM
+```
+```
+ALL_TRUSTED
+GTUBE
+DYN_RDNS_SHORT_HELO_HTML
+FSL_HELO_NON_FQDN_1
+HTML_MESSAGE
+HTML_MIME_NO_HTML_TAG
+MIME_HTML_ONLY
+MISSING_DATE
+MISSING_MID
+RDNS_DYNAMIC
+TO_EQ_FM_DOM_SPF_FAIL
+TO_EQ_FM_DIRECT_MX
+SPF_FAIL
+TO_EQ_FM_SPF_FAIL
+```
+
+```
+autolearn=no
+```
+
+---
+
+`mutt - The Mutt Mail User Agent`
+
+
+`mutt`
+
+`~/.muttrc`
+`~/.mutt/muttrc`
+
+
+```
+set from = "user@gmail.com"
+set realname = "Timmy"
+set imap_user = "user@gmail.com"
+set imap_pass = ""
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set certificate_file=~/.mutt/certificates
+set smtp_url = "smtp://user@smtp.gmail.com:587/"
+set smtp_pass = ""
+set imap_keepalive = 900
+
+```
+
+
+```
+set mbox_type = "Maildir"
+set folder = "~/Maildir"
+set mask = "!^\\.[^.]"
+set mbox = "~/Maildir"
+set record = "+.Sent"
+set postponed = "+.Drafts"
+set spoolfile = "~/Maildir"
+```
+
+#### :books: 參考網站：
+- https://developers.google.com/gmail/oauth_overview
+- https://developers.google.com/gmail/imap_extensions
+- http://www.mutt.org/doc/manual/
