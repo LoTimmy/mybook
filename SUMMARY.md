@@ -1,20 +1,19 @@
 # Summary
-
+<!--
 ### Part I
+-->
 
 * [Markdown](markdown.md)
     * [Using emoji](markdown.md#using-emoji)
 * [Glossary](glossary.md)
 
 ----
-
 * [SSH](ssh/guide.md)
     * [手冊](ssh/guide.md) 
     * [Generating a new SSH key](ssh/guide.md#generating-a-new-ssh-key)
     * [Adding your SSH key to the ssh-agent](ssh/guide.md#generating-a-new-ssh-key)
     * [sshpass](ssh/sshpass.md)
     * [autossh](ssh/autossh.md)
-
 * [Commands](cmd/README.md)
     * <img src="http://www.7-zip.org/favicon.ico" width="16"> [7z](cmd/7z.md)
     * <img src="https://www.ansible.com/hs-fs/hub/330046/file-448313641-png/favicon.png" width="16"> [ansible](cmd/ansible.md) 
@@ -52,7 +51,6 @@
     * <img src="https://www.wireshark.org/favicon.ico" width="16"> [tshark](cmd/tshark.md)
     * <img src="http://www.vim.org/images/vim_shortcut.ico" width="16"> [vim](cmd/vim.md)    
     * [wget](cmd/wget.md)
-
 * [HTML5](html5/README.md)
     * [入門](html5/getting-started.md)
     * [doctype](html5/getting-started.md#doctype)
@@ -115,11 +113,11 @@
 
 * <img src="https://help.ubuntu.com/favicon.ico" width="16"> [Ubuntu](ubuntulinux.md)
 
+* <img src="https://ap-southeast-1.console.aws.amazon.com/favicon.ico" width="16"> [aws](aws.md)
+
 * <img src="https://www.google.com.tw/favicon.ico" width="16"> [google](google.md)
 
 * <img src="https://golang.org/favicon.ico" width="16"> [golang](golang.md)
-
-
 
 * <img src="https://git-scm.com/favicon.ico" width="16"> [Git](git/README.md)
     * [入門](git/starter.md)
@@ -132,6 +130,7 @@
     * [手冊](git/guide.md)
     * <img src="https://www.gitbook.com/assets/images/logo/favicon.ico?version=19.3.1" width="16"> [GitBook](git/gitbook.md)
 
+<!--
 ### Part II
-
+-->
 * [macOS](apple/macos.md)
