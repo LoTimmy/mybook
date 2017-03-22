@@ -12,6 +12,12 @@
 `help`
 `info`
 
+`應用程式`
+`一般`
+`網路`
+`Wi-Fi`
+`路由器`
+`VPN Server`
 `安全性檢查`
 `重新整理影像`
 `虚拟机`
@@ -21,10 +27,21 @@
 `操作系统`
 `名称`
 
+`API`
+`Apps`
+
 `vm`
 `quickstart`
 
+`javascript`
+`geoip`
+`software`
+`security`
+`sourcecode`
+
+`openstack`
 `Synology`
+`synology`
 `NAS`
 
 `Fedora`
@@ -115,6 +132,7 @@
 `SignUp`
 `Sign up`
 `emailAddress`
+`LogFiles`
 
 `Your Name`
 `you@example.com`
@@ -130,6 +148,7 @@
 `gateway.example.com`
 `mailhost.example.com`
 `mail.example.com`
+`Firewall`
 `firewall.example.com`
 `host.example.com`
 `www.example.com`
@@ -194,6 +213,8 @@
 `bob`
 `12345`
 
+`admin`
+`administrators`
 `Tim`
 `Timmy`
 `timmy`
@@ -282,6 +303,7 @@ Yakkety 16.10
 `SUMMARY.md`
 `something.md`
 `docs`
+`Docs`
 `mybook.pdf`
 `mybook.epub`
 `mybook.mobi`
