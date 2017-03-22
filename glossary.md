@@ -113,6 +113,8 @@
 `Sign up`
 `emailAddress`
 
+`Your Name`
+`you@example.com`
 `firstname.lastname@example.com`
 `username@example.com`
 `username@localdomain.local`
