@@ -24,6 +24,9 @@
 `vm`
 `quickstart`
 
+`Synology`
+`NAS`
+
 `Fedora`
 `fedora`
 `CentOS`
