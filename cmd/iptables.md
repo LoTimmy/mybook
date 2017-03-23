@@ -420,6 +420,14 @@ shell> apt install iputils-tracepath
 shell> tracepath host
 ```
 
+```console
+shell> iptables-save > /opt/bitnami/iptables-rules
+shell> crontab -e
+```
+
+```
+@reboot /sbin/iptables-restore < /opt/bitnami/iptables-rules
+```
 
 ---
 

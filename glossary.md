@@ -15,82 +15,85 @@
 - `img`
 - `logo-small.png`
 ---
-`imap`
-`pop`
-`smtp`
 
-`help`
-`info`
+- `imap`
+- `pop`
+- `smtp`
 
-`應用程式`
-`一般`
-`網路`
-`Wi-Fi`
-`路由器`
-`VPN Server`
-`安全性檢查`
-`重新整理影像`
-`虚拟机`
-`防火墙`
+- `help`
+- `info`
 
-`私有密钥`
-`操作系统`
-`名称`
+- `應用程式`
+- `一般`
+- `網路`
+- `Wi-Fi`
+- `路由器`
+- `VPN Server`
+- `安全性檢查`
+- `重新整理影像`
+- `虚拟机`
+- `防火墙`
 
-`64 位`
-`32 位`
+- `私有密钥`
+- `操作系统`
+- `名称`
 
-`API`
-`Apps`
+- `64 位`
+- `32 位`
 
-`vm`
-`quickstart`
+- `API`
+- `Apps`
 
-`javascript`
-`geoip`
-`software`
-`security`
-`sourcecode`
+- `vm`
+- `quickstart`
 
-`openstack`
-`Synology`
-`synology`
-`NAS`
+- `AdministratorPassword`
 
-`Fedora`
-`fedora`
-`CentOS`
-`centos`
-`Red Hat Enterprise Linux`
-`redhat`
-`Oracle Linux`
-`oraclelinux`
-`gentoo`
-`Ubuntu`
-`ubuntu`
-`Debian`
-`debian`
-`raspbian`
+- `javascript`
+- `geoip`
+- `software`
+- `security`
+- `sourcecode`
 
-`examples`
+- `openstack`
+- `Synology`
+- `synology`
+- `NAS`
 
-`init`
-`install`
-`logout`
-`bin`
-`bugs`
-`build`
-`config`
-`cache`
-`owner`
-`publish`
-`restart`
-`search`
-`cli`
-`update`
-`uninstall`
-`tag`
-`start`
+- `Fedora`
+- `fedora`
+- `CentOS`
+- `centos`
+- `Red Hat Enterprise Linux`
+- `redhat`
+- `Oracle Linux`
+- `oraclelinux`
+- `gentoo`
+- `Ubuntu`
+- `ubuntu`
+- `Debian`
+- `debian`
+- `raspbian`
+
+- `examples`
+
+- `init`
+- `install`
+- `logout`
+- `bin`
+- `bugs`
+- `build`
+- `config`
+- `cache`
+- `owner`
+- `publish`
+- `restart`
+- `search`
+- `cli`
+- `update`
+- `uninstall`
+- `tag`
+- `start`
 
 `tar.gz`
 `zip`
@@ -101,10 +104,10 @@
 
 `database`
 
-`ntp_server`
-`database_server`
-`webservers`
-`dbservers`
+- `ntp_server`
+- `database_server`
+- `webservers`
+- `dbservers`
 
 `myhost`
 `myiso`
