@@ -18,7 +18,6 @@ shell> ffmpeg -i input.mpg output.mp4
 ```console
 shell> ffmpeg -i input.mp4 -target ntsc-dvd output.mp4
 ```
-
 ---
 
 ```console
