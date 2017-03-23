@@ -243,6 +243,7 @@ shell> say Hello, World
 shell> hdiutil imageinfo ubuntu-16.04-server-i386.iso
 shell> hdiutil imageinfo 2016-09-23-raspbian-jessie-lite.img
 shell> hdiutil burn ubuntu-16.04-server-i386.iso
+shell> hdiutil makehybrid -iso -joliet -o myVolume.iso /Volumes/myVolume
 ```
 
 #### :books: 參考網站：

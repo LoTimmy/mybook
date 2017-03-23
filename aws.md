@@ -1,3 +1,13 @@
+- `Amazon`的`AWS`提供相當完整的雲端產品，供個人、企業組織或其它團體依自身環境的條件與需求彈性使用。
+- 亞馬遜雲端服務主要提供超過 40 多種不同的服務，例如運算、儲存、內容傳輸、資料庫、 分析作業、應用服務、管理和部署、網路等，讓使用者能輕鬆建立其應用程式或服務， 並在`AWS`雲端實際執行。
+- `AWS`的管理介面：`AWS Management Console`讓使用者可以方便管理其運算、儲存與其它雲端資源。
+- `EC2`為雲端裡的虛擬伺服器，稱之為`instance`，是一項可供使用者在雲端上彈性調整計算效能的伺服器服務。除了`Windows`外，`AWS`亦提供多項主流`Linux`分支套件可取用，像是`Red Hat Enterprise`、`SUSE`與`Ubuntu`等。
+- 亞馬遜的簡易儲存服務（`Simple Storage Service`，`Amazon S3`）
+- 亞馬遜`CloudFront`為`CDN`服務，讓企業可透過該服務加速內容遞送、降低延遲。
+
+`亞馬遜雲端服務`（`AWS`, `Amazon Web Services`）
+`虛擬私人雲`（`virtual private cloud`，簡稱`VPC`）
+
 > `Amazon`的`AWS`提供相當完整的雲端產品，供個人、企業組織或其它團體依自身環境的條件與需求彈性使用。
 
 > 亞馬遜雲端服務主要提供超過 40 多種不同的服務，例如運算、儲存、內容傳輸、資料庫、 分析作業、應用服務、管理和部署、網路等，讓使用者能輕鬆建立其應用程式或服務， 並在AWS雲端實際執行。
@@ -57,6 +67,7 @@
 
 <img src="https://d1gmaa4bv8uttx.cloudfront.net/07b61510088d1896ddeda2b8d9159a27a7e4961d/ec2/clear.cache.gif" style="width:18px;height:22px;background:url(data:image/gif;base64,R0lGODlhEgAWAPQfANrY1WFhYLOxr/nOWvv6+ebl5BQSEv3aFPTaqP7LLoWDgfzOk+XZyvHl1KuJYt66k/S0KY9uSv3z4fywT/m6bM6rbcuVVkE9OMPCwO/u7PziNLSDFqCfn8eYY9exU////yH5BAEAAB8ALAAAAAASABYAAAXA4CeOH4FxAkGu5MkFAMtmgaIElyqP2GXgBsyOp7jYDIKhCBNZWCJB5QcDSSQgSKmiohkwDLlhwQAoFGhRGeECA7g5BkNBJkASMniAL6AbZS4XGWaDCnExJAJGBW6MGAEGCitFGIyMAjiRIwQPHREADKCgDmAPIxIUCwgRFwwNrggTHRQQOgsTC7ZIEg0StgNWCCIIVhQUEwgSEgwVVQcHAyILzgdWgD4b0wg6BBIIA9QONgoeztosd3iCeBJ9UjshADs=) no-repeat 0px 0px;" border="0">
 
+<img onload="this.__gwtLastUnhandledEvent=&quot;load&quot;;" src="https://d1gmaa4bv8uttx.cloudfront.net/07b61510088d1896ddeda2b8d9159a27a7e4961d/ec2/clear.cache.gif" style="width:20px;height:20px;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACc0lEQVR42r2UTWtTQRSGg1bbarHVljQV8Q+oUF2IgosKigjiwn/gD9CVSxduXIgfIBQXVaHaapqYmzSLpPYjVq0gogiKMbZVE6y2Fgra2oIwc+b1zEy9NzcfRlx44Z3NnXnmPWfOOYHA//rwPQtVCINenIYc2Q/54DDU63NQX1LAyifUBix9gJrsBj09CTG8FzIRhIisq6zkdshMF+j5KXNpFUc50MszkKk9EOG1nuKtPsmBNVaRRnbO0NxlP1DNT4CmeuD7fuRB2Qsc5iFIh0HhgJFMbgNNnID62OvfvzQNenMeam4EATV1DeIOH0h02M35W5yjz97mxXfs4iLo/Q0fQ3GOKXcJcqwLMtYMcTfAF11nIC9uSJE6IzkYAj06BpW7yvAZD7LwDPTqLGjsAEM2QQyw60g9ZLzNSBX6NPAmhLOZIR2e+Eap4f18ILXL0uYfGxdG0XpzRgy2e3JaQIXbFijj/DMRKpfTBJneaYFzGeuGX7+S9AXKAHkRzhYTpki0+3VvI+TQbgv8Og4ZbeDUtFWVG7I0IYfKFWsCDXW6QBFt/CPQDdnmI1QmGdMOO4sc/gVQL3I15FKJEqCINHC+W6vKy6F+FH7dMnEOKe0HlnZOsVyHgrvBVzZu+bDD+xaoTA4rOzQpcppB+V7dKd22rfTP5FafRNGjlAF/Xxpv4QKvM1J5fmXo6ufRJHTla3B0vS10XVsM9MrmIQM3eCGuQmQ8yF113ML80+Ytt9oV0PgRPhD0BkJ6hwfkzjHdw87oCff9NPf38kzt2agWJ3lzDyhzFDS8z4Y8OwoaPWiHx3IB/z65v2Wtw5VZ4OdCtNb+X/gs3gJ6Pb3jAAAAAElFTkSuQmCC) no-repeat 0px 0px;" border="0">
 
 ---
 
@@ -134,6 +145,7 @@ NYiytVbZPQUQ5Yaxu2jXnimvw3rrszlaEXAMPLE
 `my-key-pair.pem`
 `---- BEGIN RSA PRIVATE KEY ----`
 `-----END RSA PRIVATE KEY-----`
+
 ```console
 shell> chmod 400 my-key-pair.pem
 ```
@@ -147,7 +159,6 @@ shell> ec2-create-group websrv -d "Web Servers"
 shell> ec2-authorize websrv -P tcp -p 80 -s 192.0.2.0/24
 shell> ec2-authorize websrv -P tcp -p 80 -s 0.0.0.0/0
 ```
-
 
 `启动实例`
 ```console
@@ -235,7 +246,6 @@ shell> aws ec2 delete-security-group --group-id sg-903004f8
 shell> aws s3 ls
 shell> aws s3 cp myfolder s3://mybucket/myfolder --recursive
 shell> aws s3 sync myfolder s3://mybucket/myfolder --exclude *.tmp
-
 ````
 
 `run-instances`
@@ -253,7 +263,7 @@ shell> aws s3 sync myfolder s3://mybucket/myfolder --exclude *.tmp
 - [啟動 Linux 虛擬機器](https://aws.amazon.com/tw/getting-started/tutorials/launch-a-virtual-machine/)
 - [啟動 Windows 虛擬機器](https://aws.amazon.com/tw/getting-started/tutorials/launch-windows-vm/)
 
-####  參考網站：
+#### :books: 參考網站：
 - [AccessingInstancesLinux](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html)
 - [ec2-cli-launch-instance](http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-launch-instance.html)
 - [http://www.bnext.com.tw/article/view/id/26928](http://www.bnext.com.tw/article/view/id/26928)
