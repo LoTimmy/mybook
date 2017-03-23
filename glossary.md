@@ -43,6 +43,10 @@
 
 - `API`
 - `Apps`
+- `apps`
+
+- `opt`
+- `home`
 
 - `vm`
 - `quickstart`
@@ -150,59 +154,62 @@
 `emailAddress`
 `LogFiles`
 
-`Your Name`
-`you@example.com`
-`firstname.lastname@example.com`
-`username@example.com`
-`username@localdomain.local`
-`postmaster@example.com`
-`abuse@example.com`
-`user@example.com`
-`user1@example.com`
-`user2@example.com`
-`mta1.example.com`
-`gateway.example.com`
-`mailhost.example.com`
-`mail.example.com`
-`Firewall`
-`firewall.example.com`
-`host.example.com`
-`www.example.com`
-`blog.example.com`
-`aserver.example.org`
-`bserver.example.org`
-`server1.example.com`
-`server2.example.com`
-`www1.example.com`
-`www2.example.com`
-`db0.example.com`
-`db1.example.com`
-`one.example.com`
-`two.example.com`
-`three.example.com`
-`foo.example.com`
-`badwolf.example.com`
-`other1.example.com`
-`other2.example.com`
-`storage.example.org`
-`bar.example.com`
-`remote.example.com`
-`example.com`
-`example.net`
-`new.blog.example.co.uk`
-`example.co.uk`
-`*.example.com`
-`https://example.com/`
-`http://api.example.com:4001/`
-`ec2.amazon.com`
+- `Your Name`
+- `you@example.com`
+- `firstname.lastname@example.com`
+- `username@example.com`
+- `username@localdomain.local`
+- `postmaster@example.com`
+- `abuse@example.com`
+- `user@example.com`
+- `user1@example.com`
+- `user2@example.com`
+- `mta1.example.com`
+- `gateway.example.com`
+- `mailhost.example.com`
+- `mail.example.com`
+- `Firewall`
+- `firewall.example.com`
+- `host.example.com`
+- `www.example.com`
+- `blog.example.com`
+- `aserver.example.org`
+- `bserver.example.org`
+- `server1.example.com`
+- `server2.example.com`
+- `www1.example.com`
+- `www2.example.com`
+- `db0.example.com`
+- `db1.example.com`
+- `one.example.com`
+- `two.example.com`
+- `three.example.com`
+- `foo.example.com`
+- `badwolf.example.com`
+- `other1.example.com`
+- `other2.example.com`
+- `storage.example.org`
+- `bar.example.com`
+- `remote.example.com`
+- `example.com`
+- `example.net`
+- `new.blog.example.co.uk`
+- `example.co.uk`
+- `*.example.com`
+- `https://example.com/`
+- `http://api.example.com:4001/`
+- `ec2.amazon.com`
 
-`private1`
-`private2`
-`private3`
-`private4`
-`private5`
+- `private1`
+- `private2`
+- `private3`
+- `private4`
+- `private5`
+
+- `conf_backup.tar.gz`
 
 `letsencrypt`
+`private_key.pem`
 `my-key-pair.pem`
 `ca_key.der`
 `ca_cert.der`
