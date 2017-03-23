@@ -1,3 +1,4 @@
+<img src="http://i.imgur.com/hiqEWWn.png" alt="ansible" width=200>
 
 ```js
 function resolveAfter2Seconds(x) {

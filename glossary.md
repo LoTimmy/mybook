@@ -43,6 +43,14 @@
 `API`
 `Apps`
 
+`oldfile`
+`newfile`
+`myfile.txt`
+`myfile2.txt`
+`myfile3.txt`
+`mylist.txt`
+`myfile.html`
+
 `vm`
 `quickstart`
 
@@ -51,6 +59,8 @@
 `software`
 `security`
 `sourcecode`
+
+`script.sed`
 
 `openstack`
 `Synology`
