@@ -93,10 +93,11 @@ shell> ssh -f -N -D 0.0.0.0:1080 matt@remotehost
 ```
 Host *
     ControlMaster auto
-    ControlPath ~/.ssh/master-%r@%h:%p
+    ControlPath ~/.ssh/sockets/%r@%h-%p
+    ControlPersist 4h
     Compression yes
     TCPKeepAlive yes
-    ServerAliveInterval 20
+    ServerAliveInterval 60
     ServerAliveCountMax 5
     VisualHostKey yes 
 
@@ -124,6 +125,9 @@ Host mail
 shell> ssh -p 12345 username@remotehost
 shell> ssh -o "User=username" -o "Port=12345" -o "HostName=remotehost"
 ```
+
+#### :books: 參考網站：
+- [Ansible 进阶技巧](https://www.ibm.com/developerworks/cn/linux/1608_lih_ansible/index.html)
 
 ---
 
@@ -314,7 +318,7 @@ shell> scp user@\[fe80::20c:29ff:fe2e:7281\]:~
 
 ---
 
-####  參考網站：
+#### :books: 參考網站：
 - [serverguide](https://help.ubuntu.com/lts/serverguide/)
 - [openssh-server](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
 - [保护 SSH 的三把锁](https://www.ibm.com/developerworks/cn/aix/library/au-sshlocks/)

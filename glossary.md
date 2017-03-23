@@ -16,6 +16,89 @@
 - `logo-small.png`
 ---
 
+`help`
+`info`
+
+`應用程式`
+`一般`
+`網路`
+`Wi-Fi`
+`路由器`
+`VPN Server`
+`安全性檢查`
+`重新整理影像`
+`虚拟机`
+`防火墙`
+
+`私有密钥`
+`操作系统`
+`名称`
+
+`64 位`
+`32 位`
+
+`API`
+`Apps`
+
+`oldfile`
+`newfile`
+`myfile.txt`
+`myfile2.txt`
+`myfile3.txt`
+`mylist.txt`
+`myfile.html`
+
+`vm`
+`quickstart`
+
+`javascript`
+`geoip`
+`software`
+`security`
+`sourcecode`
+
+`script.sed`
+
+`openstack`
+`Synology`
+`synology`
+`NAS`
+
+`Fedora`
+`fedora`
+`CentOS`
+`centos`
+`Red Hat Enterprise Linux`
+`redhat`
+`Oracle Linux`
+`oraclelinux`
+`gentoo`
+`Ubuntu`
+`ubuntu`
+`Debian`
+`debian`
+`raspbian`
+
+`examples`
+
+`init`
+`install`
+`logout`
+`bin`
+`bugs`
+`build`
+`config`
+`cache`
+`owner`
+`publish`
+`restart`
+`search`
+`cli`
+`update`
+`uninstall`
+`tag`
+`start`
+
 - `imap`
 - `pop`
 - `smtp`

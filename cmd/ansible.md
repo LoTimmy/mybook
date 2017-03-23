@@ -229,4 +229,6 @@ shell> python -c 'import crypt; print crypt.crypt("word", "salt")'
 - [playbooks_conditionals](http://docs.ansible.com/ansible/playbooks_conditionals.html)
 - [faq](http://docs.ansible.com/ansible/faq.html)
 - [galaxy](https://galaxy.ansible.com/)
+- [使用 Ansible 高效交付 Docker 容器](https://www.ibm.com/developerworks/cn/cloud/library/cl-provision-docker-containers-ansible/)
+- [使用 Ansible 管理 MySQL 复制](https://www.ibm.com/developerworks/cn/linux/1502_lih_ansible/)
 
