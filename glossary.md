@@ -2,9 +2,19 @@
 `字彙`
 `glossary`
 
-`tw`
-
-
+---
+- `tw`
+- `台灣`
+- `中国`
+- `香港`
+- `澳門`
+- `대한민국`
+- `日本`
+---
+- `assets`
+- `img`
+- `logo-small.png`
+---
 `imap`
 `pop`
 `smtp`
@@ -20,6 +30,9 @@
 `私有密钥`
 `操作系统`
 `名称`
+
+`64 位`
+`32 位`
 
 `vm`
 `quickstart`
@@ -146,12 +159,21 @@
 `other2.example.com`
 `storage.example.org`
 `bar.example.com`
+`remote.example.com`
 `example.com`
 `example.net`
 `new.blog.example.co.uk`
 `example.co.uk`
 `*.example.com`
 `https://example.com/`
+`http://api.example.com:4001/`
+`ec2.amazon.com`
+
+`private1`
+`private2`
+`private3`
+`private4`
+`private5`
 
 `letsencrypt`
 `my-key-pair.pem`
@@ -277,6 +299,8 @@ Yakkety 16.10
 `SUMMARY.md`
 `something.md`
 `docs`
+`my.json`
+`some.json`
 `mybook.pdf`
 `mybook.epub`
 `mybook.mobi`

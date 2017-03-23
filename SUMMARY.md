@@ -73,6 +73,8 @@
         * [Arrow functions](nodejs/starter.md#Arrow_functions)
     * [手冊](nodejs/guide.md)
     * [npm](nodejs/npm.md)
+        * [async](nodejs/async.md)
+        * [superagent](nodejs/superagent.md)
     * [hapi.js](nodejs/hapijs.md)
         * [安裝](nodejs/hapijs.md#installing)
         * [基本路由](nodejs/hapijs.md#basic-routing)

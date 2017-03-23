@@ -42,6 +42,16 @@ shell> nvm alias default lts/argon
 shell> nvm alias default lts/boron
 ```
 
+```console
+shell> nvm install v6.10.1 --reinstall-packages-from=v6.10.0
+shell> nvm uninstall v6.10.0
+
+shell> nvm install v7.7.4
+
+shell> nvm install 6 --reinstall-packages-from=5
+shell> nvm install v4.2 --reinstall-packages-from=iojs
+```
+
 #### :books: 參考網站：
 - [nvm](https://github.com/creationix/nvm)
 

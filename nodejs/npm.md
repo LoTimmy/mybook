@@ -38,6 +38,7 @@ shell> npm cache clean
 shell> npm update -g jshint
 
 shell> npm help npm
+shell> npm help package.json
 ```
 
 `Updating global packages`
