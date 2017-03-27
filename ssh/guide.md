@@ -139,6 +139,10 @@ shell> ssh -o "User=username" -o "Port=12345" -o "HostName=remotehost"
 `.ssh`
 `ssh-keygen`
 `.ssh/id_rsa`
+`~/.ssh/my-key-pair.pub`
+`~/.ssh/my-key-pair.pem`
+`C:\keys\my-key-pair.pub`
+`C:\keys\my-key-pair.pem`
 
 ```console
 shell> cd ~/.ssh
@@ -194,6 +198,7 @@ shell> ssh-keygen -y
 
 ```console
 shell> ssh-keygen -t rsa
+shell> chmod 400 my-key-pair.pem
 shell> chmod 600 ~/.ssh/[private_key_file]
 shell> ssh-add ~/.ssh/[private_key_file]
 

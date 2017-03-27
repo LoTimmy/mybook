@@ -1,10 +1,8 @@
-![](https://raw.githubusercontent.com/docker-library/docs/master/mysql/logo.png)
+<img src="https://raw.githubusercontent.com/docker-library/docs/master/mysql/logo.png" alt="ansible" width=100>
 
 ### 在 `Ubuntu` 14.04 LTS 上建置 `MySQL`
 
 ### 安裝 {#installing}
-
-![](https://hub.docker.com/public/images/official/ubuntu.png) + ![](https://hub.docker.com/public/images/official/mysql.png)
 
 安裝作業系統及`MySQL`相關套件。
 因本文主要介紹`MySQL`如何安裝及設定，作業系統方面就不再詳述。
@@ -30,7 +28,7 @@ shell> DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes mysql-serve
 
 ---
 
-![](http://i.imgur.com/HS5iAz1.png)
+<img src="http://i.imgur.com/HS5iAz1.png" alt="ansible" width=40>
 
 ### 安裝 Percona Server 5.7 {#percona-server-server-5.7}
 ```console
@@ -45,18 +43,16 @@ shell> mysql -e "CREATE FUNCTION fnv_64 RETURNS INTEGER SONAME 'libfnv_udf.so'"
 shell> mysql -e "CREATE FUNCTION murmur_hash RETURNS INTEGER SONAME 'libmurmur_udf.so'"
 ```
 
-
 `/etc/mysql/percona-server.conf.d/mysqld.cnf`
 ```
 bind-address = 127.0.0.1
 ```
 
-
+#### :books: 參考網站： 
 - [percona-server-server-5.7](https://www.percona.com/doc/percona-server/5.7/installation/apt_repo.html)
 - [udf_percona_toolkit](http://www.percona.com/doc/percona-server/5.7/management/udf_percona_toolkit.html)
 
-
-![](http://i.imgur.com/wtp11Uj.png)
+<img src="http://i.imgur.com/wtp11Uj.png" alt="ansible" width=40>
 
 ```console
 shell> sudo apt-get install software-properties-common
@@ -67,7 +63,7 @@ shell> sudo apt-get update
 shell> sudo apt-get install mariadb-server
 shell> sudo apt-get install mariadb-connect-engine-10.1
 ```
-### :books: 參考網站： 
+#### :books: 參考網站： 
 - [Installing Percona Server on Debian and Ubuntu](https://www.percona.com/doc/percona-server/5.6/installation/apt_repo.html)
 - [mariadb](http://downloads.mariadb.org/mariadb/repositories/)
 - [Adding the MariaDB YUM Repository](https://mariadb.com/kb/en/mariadb/yum/)
@@ -85,7 +81,7 @@ shell> sudo service mysql start
 
 shell> vim /etc/mysql/my.cnf
 ```
-註解掉「bind-address」
+註解掉「`bind-address`」
 ```ini
 [mysqld]
 ...
@@ -128,87 +124,7 @@ SHOW STATUS;
 ```
 
 ---
-
-###  {#mysqltuner}
-
-```console
-shell> apt-get install mysqltuner
-shell> mysqltuner
-```
-
-```
- >>  MySQLTuner 1.1.1 - Major Hayden <major@mhtx.net>
- >>  Bug reports, feature requests, and downloads at http://mysqltuner.com/
- >>  Run with '--help' for additional options and output filtering
-Please enter your MySQL administrative login: root
-Please enter your MySQL administrative password: 
-Warning: Using a password on the command line interface can be insecure.
-Warning: Using a password on the command line interface can be insecure.
-Warning: Using a password on the command line interface can be insecure.
-
--------- General Statistics -------------------------
-[--] Skipped version check for MySQLTuner script
-[OK] Currently running supported MySQL version 5.6.19-0ubuntu0.14.04.1
-[OK] Operating on 64-bit architecture
-
--------- Storage Engine Statistics ------------------
-[--] Status: +Archive -BDB -Federated +InnoDB -ISAM -NDBCluster 
-Warning: Using a password on the command line interface can be insecure.
-Warning: Using a password on the command line interface can be insecure.
-[--] Data in InnoDB tables: 670M (Tables: 12)
-[--] Data in PERFORMANCE_SCHEMA tables: 0B (Tables: 52)
-[!!] Total fragmented tables: 3
-
--------- Security Recommendations  ------------------
-Warning: Using a password on the command line interface can be insecure.
-[OK] All database users have passwords assigned
-Warning: Using a password on the command line interface can be insecure.
-
--------- Performance Metrics ------------------------
-[--] Up for: 26d 0h 8m 17s (30K q [0.014 qps], 2K conn, TX: 472M, RX: 13B)
-[--] Reads / Writes: 99% / 1%
-[--] Total buffers: 192.0M global + 1.1M per thread (151 max threads)
-[OK] Maximum possible memory usage: 352.4M (4% of installed RAM)
-[OK] Slow queries: 0% (30/30K)
-[OK] Highest usage of available connections: 27% (41/151)
-[OK] Key buffer size / total MyISAM indexes: 16.0M/97.0K
-[OK] Key buffer hit rate: 100.0% (6M cached / 2 reads)
-[!!] Query cache efficiency: 0.0% (0 cached / 39K selects)
-[OK] Query cache prunes per day: 0
-[OK] Sorts requiring temporary tables: 0% (35 temp sorts / 14K sorts)
-[OK] Temporary tables created on disk: 1% (859 on disk / 63K total)
-[OK] Thread cache hit rate: 63% (853 created / 2K connections)
-[!!] Table cache hit rate: 2% (122 open / 5K opened)
-[OK] Open file limit used: 0% (48/5K)
-[OK] Table locks acquired immediately: 100% (69K immediate / 69K locks)
-[!!] InnoDB data size / buffer pool: 670.2M/128.0M
-
--------- Recommendations ---
-General recommendations:
-    Run OPTIMIZE TABLE to defragment tables for better performance
-    Increase table_cache gradually to avoid file descriptor limits
-Variables to adjust:
-    query_cache_limit (> 1M, or use smaller result sets)
-    table_cache (> 2000)
-    innodb_buffer_pool_size (>= 670M)
-```
-
-```sql
-SHOW TABLE STATUS;
-SELECT TABLE_SCHEMA, TABLE_NAME, DATA_FREE / 1024 / 1024 FROM information_schema.TABLES WHERE ENGINE LIKE 'InnoDB' AND DATA_FREE > 0;
-
-
-SELECT TABLE_NAME, (DATA_LENGTH + INDEX_LENGTH) / 1024 / 1024 / 1024 FROM information_schema.TABLES WHERE TABLE_SCHEMA='';
-
-OPTIMIZE TABLE foo;
-ALTER TABLE test.t1 ENGINE='InnoDB'; 
-```
-
-#### :books: 參考網站：
-- [mysqltuner](http://mysqltuner.com/)
-
----
-<a name="create-user"></a>
+`create-user`
 
 ```sql
 CREATE USER 'jeffrey'@'localhost' IDENTIFIED BY 'mypass';
@@ -238,13 +154,13 @@ SHOW GRANTS FOR CURRENT_USER();
 ---
 <a name="storage-engines"></a>
 
-**認識`MySQL`資料庫引擎**
+### 認識MySQL資料庫引擎 {#storage-engines}
 
 - `MySQL`資料庫軟體有一個與其他資料庫軟體不同的特色，在於它提供了不同類型的資料庫引擎，以供使用者根據不同的需求來選擇，藉此提高資料庫應用的效能。
 - 如果想知道`MySQL`資料庫支援那些資料庫引擎，可在登入至`MySQL`資料庫後，以`SHOW ENGINES;`指令來查詢所使用的`MySQL`資料庫能夠支援那些資料庫引擎，其中最常見的預設資料庫引擎是`MyISAM`。 
 - 在`MySQL 5.5`之前的版本，當使用者新建資料庫時，預設使用的資料庫引擎為`MyISAM`，而之後則更改為`InnoDB`。
 
-**MyISAM** 
+`MyISAM` 
 `MyISAM`是早期`MySQL`所支援的資料庫引擎之一，其優勢在於連結執行速度快，但此種資料庫引擎並不支援`交易`(`Transaction`)功能，所謂的交易指的是資料庫確保一筆交易可完整執行的機制。 
 假如一筆交易可能需要多次的資料庫動作（如新增或更新）才能完成，交易機制就需要確保當所有的資料庫動作均成功執行時才以`提交`(`Commit`)的方式來完成此項交易。 
 反之，如果交易在執行途中發生問題，以致於無法完成交易，即可回復到交易之前的狀態(`Rollback`)用來回復為執行此筆交易之前所執行的動作，如更新(`Update`)、刪除(`Delete`)、新增(`Insert`)等資料庫動作。 
@@ -254,18 +170,18 @@ SHOW GRANTS FOR CURRENT_USER();
 `.MYD`：儲存資料庫表格內的記錄資料
 `.MYI`：儲存資料庫表格內`索引`(`Index`)的資料 
 
-**InnoDB**
+`InnoDB`
 `InnoDB`資料庫引擎提供`交易`(`Transaction`)安全的機制，可在交易無法完全執行成功時，提供`回復`(`Rollback`)功能來回復之前所執行的資料庫動作。此種的資料庫類型通常運用在對於交易的完整性有嚴格要求的應用上。 
 
-**Memory** 
+`Memory` 
 就純粹以速度來比較，記憶體的運算速度是遠超過以磁碟來運算的速度，因此`MySQL`資料庫特別提供利用`記憶體`(`Memory`)的容量來儲存資料庫表格(`Table`)的相關資料。 
 使用系統記憶體來當成資料庫表格的儲存空間，最大的好處是運算速度快，但由於記憶體揮發的特性，一旦系統關機，所有儲存在記憶體的資料庫表格紀錄也會隨之被抹除。而使用記憶體來儲存，另外還有一個很大的缺點，為其可儲存的容量遠小於以磁碟來儲存。 
 
-`TokuDB`是一種**支援交易功能且具有高效能的插入(`Insert`)功能及高資料壓縮比的資料庫引擎**，可與`MySQL`資料庫結合，提供特定的應用，通常**適用於需要經常大量寫入的應用上**。 
+> `TokuDB`是一種**支援交易功能且具有高效能的插入(`Insert`)功能及高資料壓縮比的資料庫引擎**，可與`MySQL`資料庫結合，提供特定的應用，通常**適用於需要經常大量寫入的應用上**。 
 
-「工欲善其事，必先利其器」，對於資料庫的運用也是如此。以`MySQL`為例，它提供了不同的資料庫引擎來滿足不同的應用，如果**需要嚴謹之保證交易成功的機制，即可選用`InnoDB`型態**。但如果**要求的是快速的運算能力且預期資料量並不大的話，也可考慮使用`Memory`型態**。而`TokuDB`型態，就適用於有大量的插入要求及有效縮小資料庫容量的需求。 
+> 「工欲善其事，必先利其器」，對於資料庫的運用也是如此。以`MySQL`為例，它提供了不同的資料庫引擎來滿足不同的應用，如果**需要嚴謹之保證交易成功的機制，即可選用`InnoDB`型態**。但如果**要求的是快速的運算能力且預期資料量並不大的話，也可考慮使用`Memory`型態**。而`TokuDB`型態，就適用於有大量的插入要求及有效縮小資料庫容量的需求。 
 
-![](http://i.imgur.com/GKHGeWI.png)
+<img src="http://i.imgur.com/GKHGeWI.png" alt="ansible" width=400>
 
 ```sql
 INSTALL SONAME 'ha_connect';
@@ -293,8 +209,6 @@ SHOW ENGINES;
 CREATE TABLE t (
 ) ENGINE=CONNECT DEFAULT CHARSET big5 tabname='Customers' table_type=ODBC block_size=10 
 CONNECTION='Driver={SQL Server Native Client 11.0};Server=192.168.31.33;Database=database;UID=UID;PWD=PWD'; 
-
-
 
 CREATE TABLE Customer (
   CustomerID VARCHAR(5),
@@ -326,15 +240,12 @@ CREATE TABLE xyz (
 id int(10) NOT NULL ,
 name VARCHAR(50)
 ) ENGINE=CONNECT DEFAULT CHARSET big5 CONNECTION='Driver={SQL Server Native Client 11.0};Server=localhost;Database=MS_ABC;Uid=sa;Pwd=1234;' table_type=ODBC block_size=10 tabname='TB_XYZ'
-
 ```
-
 
 ```sql
 CREATE TABLE t (i INT) ENGINE = INNODB;
 CREATE TABLE t (i INT) TYPE = MEMORY;
 CREATE TABLE t (i INT) ENGINE = MYISAM;
-
 ```
 
 ```sql
@@ -348,8 +259,7 @@ ALTER TABLE t TYPE = BDB;
 
 ---
 
-<a name="merge-storage-engine"></a>
-##### The MERGE Storage Engine
+#### The MERGE Storage Engine {#merge-storage-engine}
 ```sql
 CREATE DATABASE test;
 USE test;
@@ -387,12 +297,11 @@ SELECT * FROM total;
 
 ---
 
-<a name="federated"></a>
-##### The FEDERATED Storage Engine
+### The FEDERATED Storage Engine {#federated}
 
 ![FEDERATED Table Structure](http://dev.mysql.com/doc/refman/5.7/en/images/se-federated-structure.png)
 
-表格統合 (`FEDERATED`)
+`表格統合` (`FEDERATED`)
 
 ```sql
 SHOW PLUGINS;
@@ -482,7 +391,7 @@ DEFAULT CHARSET=latin1
 CONNECTION='mysql://fed_user@remote_host:9306/federated/test_table';
 ```
 
-```
+```sql
 CONNECTION='mysql://username:password@hostname:port/database/tablename'
 CONNECTION='mysql://username@hostname/database/tablename'
 CONNECTION='mysql://username:password@hostname/database/tablename'
@@ -508,7 +417,8 @@ CONNECTION='fedlink/test_table';
 ```
 
 ----------
-<a name="create-table"></a>
+
+`create-table`
 
 ```sql
 CREATE TABLE new_tbl LIKE orig_tbl;
@@ -539,7 +449,6 @@ CREATE TABLE t
 );
 
 salary DECIMAL(5,2)
-
 
 CREATE TABLE t (qty INT, price INT);
 
@@ -624,13 +533,13 @@ CREATE TABLE table1 (
 INSERT INTO table1 VALUES (1, 'some text',DEFAULT,DEFAULT);
 ```
 
-
+#### :books: 參考網站：
 - [virtual-computed-columns](https://mariadb.com/kb/en/mariadb/virtual-computed-columns/)
 - [data-type-defaults](https://dev.mysql.com/doc/refman/5.7/en/data-type-defaults.html)
 
 ---
 
-<a name="trigger-syntax"></a>
+`trigger-syntax`
 
 ```sql
 CREATE TABLE account (acct_num INT, amount DECIMAL(10,2));
@@ -699,7 +608,7 @@ DELIMITER ;
 
 ---
 
-##### InnoDB File-Per-Table Mode
+`InnoDB File-Per-Table Mode` 
 ```console
 shell> vim /etc/mysql/my.cnf
 ```
@@ -712,14 +621,15 @@ innodb_file_per_table
 CREATE TABLE customers (a INT, b CHAR (20), INDEX (a)) ENGINE=InnoDB;
 ```
 
-##### InnoDB Performance Tuning Tips
+`InnoDB Performance Tuning Tips`
 ```ini
 [mysqld]
 innodb_flush_log_at_trx_commit = 2
 innodb_log_file_size
 innodb_log_buffer_size
 ```
-----------
+---
+
 ##### 疑難排解 (Troubleshooting)
 
 - 出現錯誤訊息
@@ -778,7 +688,7 @@ skip-name-resolve
 
 ---
 
-<a name="insert-on-duplicate"></a>
+`insert-on-duplicate`
 
 ```sql
 INSERT INTO table (a,b,c) VALUES (1,2,3)
@@ -792,7 +702,7 @@ UPDATE table SET c=c+1 WHERE a=1;
 
 ---
 
-<a name="create-view"></a>
+`create-view`
 
 ```sql
 CREATE TABLE t (qty INT, price INT);
@@ -1374,11 +1284,9 @@ END;
 
 ---
 
-![](http://i.imgur.com/CXYPLS5.png)
+<img src="http://i.imgur.com/CXYPLS5.png" alt="ansible" width=250>
 
-<!--
-![](http://i.imgur.com/lSBPuR6.png)
--->
+<img src="http://i.imgur.com/lSBPuR6.png" alt="ansible" width=250>
 
 **`查詢日誌`**
 啟用此選項時，由於會記錄大量的查詢紀錄動作，因此可能造成大量的磁碟存取，以至於拖慢系統效率。
@@ -1394,11 +1302,11 @@ SET GLOBAL general_log = 'OFF';
 ```
 
 **`慢查詢日誌`**
-很多時候，由於不適當的SQL指令往往會造成資料庫效能低下，因為大量的資源都用來處理這些不適當的SQL指令。 
-在這種情況下，可利用啟動「慢查詢日誌」記錄功能，來追蹤是否有超出所設定執行時間的SQL指令，藉此找出執行時間過長的SQL指令。 
+很多時候，由於不適當的`SQL`指令往往會造成資料庫效能低下，因為大量的資源都用來處理這些不適當的`SQL`指令。 
+在這種情況下，可利用啟動「`慢查詢日誌`」記錄功能，來追蹤是否有超出所設定執行時間的`SQL`指令，藉此找出執行時間過長的`SQL`指令。 
 
-- log_slow_queries：設定儲存慢查詢日誌的檔案 位置。
-- long_query_time：設定執行時間的門檻值，一旦超過此門檻值，就會記錄該SQL指令的資訊，單位為秒。 
+- `log_slow_queries`：設定儲存慢查詢日誌的檔案 位置。
+- `long_query_time`：設定執行時間的門檻值，一旦超過此門檻值，就會記錄該`SQL`指令的資訊，單位為秒。 
 
 ```sql
 SET @@GLOBAL.long_query_time = 1;
@@ -1423,7 +1331,7 @@ SET GLOBAL slow_query_log = 'OFF';
 
 ---
 
-<a name="mysql-config-editor"></a>
+`mysql-config-editor`
 
 ```console
 shell> mysql_config_editor set --login-path=client --host=localhost --user=localuser --password 
@@ -1457,7 +1365,7 @@ SELECT * FROM performance_schema.events_statements_summary_by_digest;
 
 ---
 
-0~99999
+`0~99999`
 ```sql
 (SELECT (t5.i*10000 + t4.i*1000 + t3.i*100 + t2.i*10 + t1.i) mynumber FROM
  (SELECT 0 i UNION SELECT 1 UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION SELECT 7 UNION SELECT 8 UNION SELECT 9) t1,
@@ -1505,7 +1413,7 @@ CALL DateRange('2015-10-01', '2015-10-31');
 ```
 
 ---
-<a name="pvt"></a>
+`pvt`
 
 ```sql
 CREATE TABLE t1 (VendorID INT, Employee VARCHAR(32), Orders INT);
@@ -1626,11 +1534,27 @@ VendorID    Emp1    Emp2    Emp3    Emp4    Emp5
        5       5       1       5       5         5
 ```
 
+#### :books: 參考網站：
 - [使用 PIVOT 和 UNPIVOT](https://technet.microsoft.com/zh-tw/library/ms177410(v=sql.105).aspx)
 
 ---
 
-<a name="sql-syntax-prepared-statements"></a>
+```sql
+UPDATE table1
+INNER JOIN table2
+ON table1.id=table2.id
+SET table1.col1 = 1,
+    table1.col2 =2
+WHERE table1.id > 100;
+```
+
+#### :books: 參考網站：
+- [join](https://dev.mysql.com/doc/refman/5.7/en/join.html)
+- [update](https://dev.mysql.com/doc/refman/5.7/en/update.html)
+
+---
+
+`sql-syntax-prepared-statements`
 
 ```sql
 PREPARE stmt1 FROM 'SELECT SQRT(POW(?,2) + POW(?,2)) AS hypotenuse';
@@ -1653,7 +1577,6 @@ DEALLOCATE PREPARE stmt2;
 USE test;
 CREATE TABLE t1 (a INT NOT NULL);
 INSERT INTO t1 VALUES (4), (8), (11), (32), (80);
-
 
 SET @table = 't1';
 SET @s = CONCAT('SELECT * FROM ', @table);
@@ -2074,12 +1997,11 @@ Benchmark
 ---
 
 #### :books: 參考網站：
-
-- [MariaDB 10新版大躍進](http://www.ithome.com.tw/news/86622)
+- [`MariaDB 10`新版大躍進](http://www.ithome.com.tw/news/86622)
 - [A Quick Guide to Using the MySQL APT Repository](http://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
-- [甲骨文發表MySQL 5.7：效能比5.6版快三倍](http://www.ithome.com.tw/news/99416)
-- [percona-xtrabackup](https://www.percona.com/software/mysql-database/percona-xtrabackup)
-- [percona-xtradb-cluster] (https://www.percona.com/software/mysql-database/percona-xtradb-cluster)
+- [甲骨文發表`MySQL 5.7`：效能比5.6版快三倍](http://www.ithome.com.tw/news/99416)
+- [`percona-xtrabackup`](https://www.percona.com/software/mysql-database/percona-xtrabackup)
+- [`percona-xtradb-cluster`](https://www.percona.com/software/mysql-database/percona-xtradb-cluster)
 - [提高MySQL效能及壓縮率  以TokuDB優化Log資料庫](http://www.netadmin.com.tw/article_content.aspx?sn=1507020002)
 - [資料庫管理系統｜MySQL 5.5 Community Edition 新增半同步複製機制](http://www.ithome.com.tw/node/69364)
 - [威脅資料存取的SQL Injection](http://www.ithome.com.tw/node/66384)
@@ -2089,7 +2011,7 @@ Benchmark
 - [痞客邦導入MySQL 檢索1億張照片也沒問題](http://www.ithome.com.tw/tech/87416)
 - [Oracle釋出MySQL 5.6　增加添NoSQL功能](http://www.ithome.com.tw/node/67003)
 - [ALTER TABLE Partition Operations](http://docs.oracle.com/cd/E17952_01/refman-5.5-en/alter-table-partition-operations.html)
-- [MySQL](https://help.ubuntu.com/12.04/serverguide/mysql.html)
+- [`MySQL`](https://help.ubuntu.com/12.04/serverguide/mysql.html)
 - [Transportable Tablespace Examples](https://dev.mysql.com/doc/refman/5.7/en/innodb-transportable-tablespace-examples.html)
 - [Assigning Account Passwords](http://dev.mysql.com/doc/refman/5.0/en/assigning-passwords.html)
 - [Setting Up SSL Certificates and Keys for MySQL](http://dev.mysql.com/doc/refman/5.0/en/creating-ssl-certs.html)

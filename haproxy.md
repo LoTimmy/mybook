@@ -1,9 +1,18 @@
-![](http://i.imgur.com/qfadnu3.png)
+<img src="http://i.imgur.com/qfadnu3.png" alt="ansible" width=200>
 
 ```console
 shell> lsb_release -a
 shell> aptitude install build-essential
 ```
+
+```console
+shell> sudo yum grouplist
+shell> sudo yum groupinstall "Development Tools"
+```
+
+- https://docs.oracle.com/cd/E37670_01/E37355/html/ol_about_yum_groups.html
+- http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/compile-software.html
+
 
 ```console
 shell> wget http://www.haproxy.org/download/1.6/src/haproxy-1.6.6.tar.gz

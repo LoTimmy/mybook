@@ -92,4 +92,5 @@ shell> ip route add 192.168.3.0/24 via 192.168.4.1
 - [ip route](http://manpages.ubuntu.com/manpages/trusty/man8/ip-route.8.html)
 - [ip neigh](http://manpages.ubuntu.com/manpages/trusty/man8/ip-neighbour.8.html)
 - [route](http://manpages.ubuntu.com/manpages/trusty/man8/route.8.html)
+- [network_mtu](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/network_mtu.html)
 - [2.3.2. Configuring a Network Interface Using ip Commands](https://docs.fedoraproject.org/en-US/Fedora/22/html/Networking_Guide/sec-Configuring_a_Network_Interface_Using_ip_commands.html)

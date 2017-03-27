@@ -42,6 +42,7 @@
     * [ntpdate](cmd/ntpdate.md) 
     * [optipng](cmd/optipng.md)
     * [packer](cmd/packer.md)
+    * [putty-tools](cmd/putty-tools.md)
     * [qpdf](cmd/qpdf.md)
     * [rename](cmd/rename.md)
     * [rsync](cmd/rsync.md)
@@ -100,6 +101,7 @@
 
 * <img src="https://www-jp.mysql.com/common/themes/sakila/favicon.ico" width="16"> [MySQL](mysql/README.md)
     * [手冊](mysql/guide.md)
+    * [mycli](mysql/mycli.md)
 
 * [nginx](nginx/README.md)
     * [手冊](nginx/guide.md)

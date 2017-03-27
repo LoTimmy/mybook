@@ -453,6 +453,11 @@ DirectMap2M:      446464 kB
 DirectMap1G:           0 kB
 ```
 
+---
+
+```console
+shell> tracepath amazon.com
+```
 
 ---
 
@@ -476,5 +481,6 @@ shell> do-release-upgrade
 
 #### :books: 參考網站：
 - [Official Ubuntu Documentation](https://help.ubuntu.com/)
+- https://aws.amazon.com/tw/premiumsupport/knowledge-center/linux-static-hostname/
 - [vlan-interfaces](http://manpages.ubuntu.com/manpages/intrepid/man5/vlan-interfaces.5.html)
 - [Setting File Handles](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/chap-Oracle_9i_and_10g_Tuning_Guide-Setting_File_Handles.html)

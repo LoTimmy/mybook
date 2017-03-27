@@ -205,7 +205,7 @@ plugin {
 - Database (数据库)：检查针对 Vipul's Razor (razor.sourceforge.net) 的邮件签名，它是一个垃圾邮件跟踪数据库。
 
 
-sample-nonspam.txt.gz
+`sample-nonspam.txt.gz`
 
 ```console
 shell> echo "hi there" | spamc
@@ -312,24 +312,6 @@ shell> opendkim-genkey -r -D -d mydomain.com
 
 ---
 
-`swaks - SMTP command-line test tool`
-
-```console
-shell> apt-get install swaks 
-```
-
-```console
-shell> swaks --to user@example.com --server test-server.example.net
-shell> swaks --to user@example.com --from me@example.com --auth CRAM-MD5 --auth-user me@example.com --header-X-Test "test email"
-shell> swaks --to user@example.com --from me@gmail.com --auth --auth-user=me --auth-password= -tls --server smtp.gmail.com:587 --header ""
-```
-
-```console
-shell> swaks --attach-type text/html --attach report.html
-shell> swaks --body report.html --add-header "MIME-Version: 1.0" --add-header "Content-Type: text/html"
-```
-
----
 
 ```console
 shell> sa-update && /etc/init.d/spamassassin reload

@@ -16,10 +16,14 @@ set -o xtrace
 set -o pipefail
 ```
 
-```
+```sh
 sleep 1
 ```
 
+```sh
+# Turn on checkwinsize
+shopt -s checkwinsize
+```
 
 ```sh
 sed 's/\/.*//'
@@ -153,7 +157,13 @@ curl -f -L -s https://www.npmjs.org/install.sh > npm-install-$$.sh
 ```
 
 
-
+```sh
+chown -R root:www /var/www
+chmod 2775 /var/www
+find /var/www -type d -exec chmod 2775 {} +
+find /var/www -type f -exec chmod 0664 {} +
+echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+```
 
 
 #### :books: 參考網站：

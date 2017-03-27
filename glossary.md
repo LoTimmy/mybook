@@ -99,6 +99,9 @@
 `tag`
 `start`
 
+- `input.mjml`
+- `my-email.html`
+
 - `imap`
 - `pop`
 - `smtp`
@@ -182,25 +185,51 @@
 - `tag`
 - `start`
 
-`tar.gz`
-`zip`
-`tar`
+- `software.tar.gz`
+- `tar.gz`
+- `zip`
+- `tar`
 
-`start_date`
-`start_time`
+- `start_date`
+- `start_time`
 
-`database`
+- `database`
 
 - `ntp_server`
 - `database_server`
 - `webservers`
 - `dbservers`
+- `webserver`
+- `webserver.localdomain`
 
 `myhost`
 `myiso`
 `iso`
 `mydatacenter`
 `myserver.net`
+
+- `~/.ssh/my-key-pair.pub`
+- `~/.ssh/my-key-pair.pem`
+- `C:\keys\my-key-pair.pub`
+- `C:\keys\my-key-pair.pem`
+- `C:\Keys\my-key-pair.ppk`
+- `C:\KeyPairs\my-key-pair.pem`
+- `keys`
+- `public-keys`
+- `my-public-key`
+- `openssh-key`
+- `network`
+- `interfaces`
+- `macs`
+- `user-data`
+- `privateIp`
+
+- `my_bucket`
+- `my_folder`
+- `my_file.ext`
+- `my_file2.ext`
+- `my_copied_file.ext`
+- `Sample_file.txt`
 
 `db_settings`
 `cluster_settings`
@@ -282,6 +311,12 @@
 - `https://example.com/`
 - `http://api.example.com:4001/`
 - `ec2.amazon.com`
+- `example.com/mypage`
+- `example.com/MyPage`
+- `www.example.com/mypage`
+- `example.com/page?1234`
+- `webserver.mydomain.com`
+- `ip-12-34-56-78`
 
 - `private1`
 - `private2`
@@ -319,9 +354,13 @@
 `centos`
 `root`
 
-`name`
-`password`
-`ssl`
+- `Name`
+- `name`
+- `password`
+- `ssl`
+
+- `Status`
+- `Description`
 
 `gmail`
 
@@ -407,7 +446,7 @@ Yakkety 16.10
 `yum_url`
 `do_install`
 
-
+`images`
 `cli`
 `My page`
 `GitBook`
@@ -424,6 +463,7 @@ Yakkety 16.10
 `mybook.pdf`
 `mybook.epub`
 `mybook.mobi`
+`example_image.png`
 `myimage.png`
 `mypage.md`
 `myfile.css`
@@ -453,6 +493,9 @@ Yakkety 16.10
 `json`
 `cover.jpg`
 `ebook`
+`version`
+
+- `my-package.rpm`
 
 
 ---

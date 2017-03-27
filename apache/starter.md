@@ -10,6 +10,18 @@ shell> apt-get install libapache2-mod-php5 php5 php5-gd php5-gd php5-mysql php5-
 ```
 
 ```console
+shell> sudo yum update -y
+shell> sudo yum install -y httpd24 php70 mysql56-server php70-mysqlnd
+shell> sudo service httpd start
+shell> sudo chkconfig httpd on
+shell> chkconfig --list httpd
+
+shell> sudo yum-config-manager --enable epel
+shell> sudo yum install -y phpMyAdmin
+```
+
+
+```console
 shell> cp /etc/apache2/sites-available/default /etc/apache2/sites-available/mynewsite
 shell> a2ensite mynewsite
 shell> service apache2 restart
