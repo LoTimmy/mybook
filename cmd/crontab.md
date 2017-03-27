@@ -40,16 +40,18 @@ HOME=/
 ```
 string         meaning
 ------         -------
-@reboot        Run once, at startup.
-@yearly        Run once a year, "0 0 1 1 *".
-@annually      (same as @yearly)
-@monthly       Run once a mont
-h, "0 0 1 * *".
-@weekly        Run once a week, "0 0 * * 0".
-@daily         Run once a day, "0 0 * * *".
-@midnight      (same as @daily)
-@hourly        Run once an hour, "0 * * * *".
+@reboot	   Run once, at	startup	of cron.
+@yearly	   Run once a year, "0 0 1 1 *".
+@annually	   (same as @yearly)
+@monthly	   Run once a month, "0	0 1 * *".
+@weekly	   Run once a week, "0 0 * * 0".
+@daily	   Run once a day, "0 0	* * *".
+@midnight	   (same as @daily)
+@hourly	   Run once an hour, "0	* * * *".
+@every_minute   Run once a minute, "*/1 * * * *".
+@every_second   Run once a second.
 ```
 
 #### :books: 參考網站：
 - https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/ch-Automating_System_Tasks.html
+- https://docs.fedoraproject.org/en-US/Fedora/14/html/Deployment_Guide/ch-Automated_Tasks.html
