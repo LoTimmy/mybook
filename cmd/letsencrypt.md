@@ -7,6 +7,11 @@
 ---
 
 > `電子前線基金會` (`EFF`)、`Mozilla`、`Cisco`、`Akamai`、`IdenTrust`與密西根大學研究人員於2014年共同成立非營利組織「`網際網路安全研究小組`」 (`Internet Security Research Group, ISRG`)，隨後推出`Let's Encrypt`免費憑證服務，希望藉由簡化憑證的申請與部署，推動全球網站採用`HTTPS`加密傳輸。
+> `Let's Encrypt`的用意在於推動網路的加密傳輸
+> `Let's Encrypt`於2016年1月正式啟動
+> `電子前線基金會` (`EFF`)、`Mozilla`、`Cisco`、`Akamai`、`IdenTrust`與密西根大學研究人員在2014年創立了非營利的`網際網路安全研究組織``Internet Security Research Group`(`ISRG`)，為了推動加密通訊而設立`Let's Encrypt`憑證組織，提供免費且自動化的憑證服務，並把原本需要耗時數小時的憑證申請流程縮短到30秒。
+
+
 
 ---
 
@@ -52,7 +57,7 @@ shell> ./certbot-auto renew --dry-run
 ![Imgur](http://i.imgur.com/3w8fptF.png)
 ![Imgur](http://i.imgur.com/szPIxbh.png)
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [renewing-certificates](https://certbot.eff.org/docs/using.html#renewing-certificates)
 
 ---
@@ -105,7 +110,7 @@ shell> letsencrypt renew
 ```
 
 ---
-### :books: 參考網站：
+#### :books: 參考網站：
 
 - [letsencrypt](https://letsencrypt.org/)
 - [certbot](https://github.com/certbot/certbot)

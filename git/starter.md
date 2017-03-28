@@ -38,6 +38,8 @@ shell> git config --global alias.co checkout
 shell> git config --global alias.br branch
 shell> git config --global alias.ci commit
 shell> git config --global alias.st status
+shell> git config --global alias.diffc diff --cached
+shell> git config --global alias.remotev remote -v
 shell> git config --global alias.last 'log -1 HEAD'
 ```
 
