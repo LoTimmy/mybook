@@ -636,3 +636,24 @@ vmnet1（仅主机）
 vmnet8 (NAT)
 #### :books: 參考網站：
 - https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1026510
+
+---
+
+
+```
+swapoff /dev/sdXY
+resize2fs /dev/sdXY
+
+mkswap /dev/sdXY
+swapon /dev/sdXY
+```
+
+`ext4`
+
+
+#### :books: 參考網站：
+- https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1007907
+- https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2075729
+- https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1004071
+- https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2076593
+- https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1006371
