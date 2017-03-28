@@ -14,6 +14,7 @@
     * [Adding your SSH key to the ssh-agent](ssh/guide.md#generating-a-new-ssh-key)
     * [sshpass](ssh/sshpass.md)
     * [autossh](ssh/autossh.md)
+    * [stormssh](ssh/stormssh.md)
 * [Commands](cmd/README.md)
     * <img src="http://www.7-zip.org/favicon.ico" width="16"> [7z](cmd/7z.md)
     * <img src="https://www.ansible.com/hs-fs/hub/330046/file-448313641-png/favicon.png" width="16"> [ansible](cmd/ansible.md) 
