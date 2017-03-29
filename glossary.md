@@ -409,7 +409,6 @@
 
 `hello-world`
 `helloworld`
-`index.html`
 
 `pi`
 `raspberry`
@@ -497,6 +496,7 @@ Yakkety 16.10
 
 - `my-package.rpm`
 
+- `Me`
 
 ---
 
@@ -504,3 +504,23 @@ Yakkety 16.10
 
 `lsb_dist="$(lsb_release -si)"`
 `dist_version="$(lsb_release --codename | cut -f2)"`
+
+---
+
+`Dear Lo Timmy,`
+`Dear Timmy Lo,`
+`Dear Timmy,`
+`Lo Timmy，你好:`
+`Hi Timmy Lo,`
+`Hi everyone!`
+`Hi there,`
+`Hello Timmy,`
+`Hello,`
+
+
+`Enjoy!`
+`Cheers,`
+`Sincerely,`
+`Best regards,`
+`Regards,`
+`Thanks,`

@@ -262,6 +262,8 @@ gulp.task('javascript', function() {
 #### :books: 參考網站：
 - [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps)
 
+---
+
 ### gulp-html-beautify {#gulp-html-beautify}
 ```.js
 var gulp = require('gulp');
@@ -280,6 +282,59 @@ gulp.task('htmlbeautify', function() {
 
 #### :books: 參考網站：
 - [gulp-html-beautify](https://www.npmjs.com/package/gulp-html-beautify)
+
+---
+
+### critical {#critical}
+```js
+var gulp = require('gulp');
+var gutil = require('gulp-util');
+var critical = require('critical').stream;
+
+// Generate & Inline Critical-path CSS
+gulp.task('critical', function () {
+    return gulp.src('dist/*.html')
+        .pipe(critical({base: 'dist/', inline: true, css: ['dist/styles/components.css','dist/styles/main.css']}))
+        .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
+        .pipe(gulp.dest('dist'));
+});
+```
+
+#### :books: 參考網站：
+- https://github.com/addyosmani/critical
+
+---
+
+```js
+var gulp = require('gulp')
+var mjml = require('gulp-mjml')
+
+gulp.task('default', function () {
+  return gulp.src('./test.mjml')
+    .pipe(mjml())
+    .pipe(gulp.dest('./html'))
+})
+```
+
+```js
+var gulp = require('gulp')
+var mjml = require('gulp-mjml')
+
+// Require your own components if needed, and your mjmlEngine (possibly with options)
+// require('./components')
+var mjmlEngine = require('mjml')
+
+gulp.task('default', function () {
+  return gulp.src('./test.mjml')
+    .pipe(mjml(mjmlEngine, {minify: true}))
+    .pipe(gulp.dest('./html'))
+})
+```
+
+#### :books: 參考網站：
+- https://github.com/mjmlio/gulp-mjml
+
+---
 
 #### :books: 參考網站：
 - [gulp-git](https://www.npmjs.com/package/gulp-git)
