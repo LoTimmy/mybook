@@ -16,26 +16,26 @@
 - `logo-small.png`
 ---
 
-`help`
-`info`
+- `help`
+- `info`
 
-`應用程式`
-`一般`
-`網路`
-`Wi-Fi`
-`路由器`
-`VPN Server`
-`安全性檢查`
-`重新整理影像`
-`虚拟机`
-`防火墙`
+- `應用程式`
+- `一般`
+- `網路`
+- `Wi-Fi`
+- `路由器`
+- `VPN Server`
+- `安全性檢查`
+- `重新整理影像`
+- `虚拟机`
+- `防火墙`
 
-`私有密钥`
-`操作系统`
-`名称`
+- `私有密钥`
+- `操作系统`
+- `名称`
 
-`64 位`
-`32 位`
+- `64 位`
+- `32 位`
 
 `API`
 `Apps`
@@ -231,40 +231,43 @@
 - `my_copied_file.ext`
 - `Sample_file.txt`
 
-`db_settings`
-`cluster_settings`
+- `db_settings`
+- `cluster_settings`
 
-`some_host`
-`aws_host`
-`freebsd_host`
+- `some_host`
+- `aws_host`
+- `freebsd_host`
 
-`host`
-`port`
-`email`
-`ftp`
-`smtp`
+- `host`
+- `port`
+- `email`
+- `ftp`
+- `smtp`
 
-`SRV (服務)`
-`MX (郵件交換器)`
-`TXT （文字）`
-`CName (別稱)`
-`AAAA (IPv6 主機)`
-`A（主機）`
-
-
-`垃圾郵件`
-`草稿`
-`刪除的郵件`
-`寄件備份`
-`收件匣`
-`封存`
-`非垃圾郵件`
+- `SRV (服務)`
+- `MX (郵件交換器)`
+- `TXT （文字）`
+- `CName (別稱)`
+- `AAAA (IPv6 主機)`
+- `A（主機）`
 
 
-`SignUp`
-`Sign up`
-`emailAddress`
-`LogFiles`
+- `垃圾郵件`
+- `草稿`
+- `刪除的郵件`
+- `寄件備份`
+- `收件匣`
+- `封存`
+- `非垃圾郵件`
+
+
+- `SignUp`
+- `Sign up`
+- `emailAddress`
+- `LogFiles`
+
+- `John Doe`
+- `johndoe@example.com`
 
 - `Your Name`
 - `you@example.com`

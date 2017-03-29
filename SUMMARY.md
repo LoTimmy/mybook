@@ -81,6 +81,8 @@
     * [npm](nodejs/npm.md)
         * [async](nodejs/async.md)
         * [superagent](nodejs/superagent.md)
+        * [bower](nodejs/bower.md)
+        * [await](nodejs/await.md)
     * [hapi.js](nodejs/hapijs.md)
         * [安裝](nodejs/hapijs.md#installing)
         * [基本路由](nodejs/hapijs.md#basic-routing)
