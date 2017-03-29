@@ -41,7 +41,7 @@
 </div>
  
 <script>
-$( "#accordion" ).accordion();
+  $( "#accordion" ).accordion();
 </script>
  
 </body>

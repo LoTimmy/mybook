@@ -67,6 +67,8 @@
     * [手冊](jquery/guide.md)
     * [AJAX](jquery/ajax.md)
     * [jQuery Validation Plugin](jquery/jquery-validation.md)
+    * [jquery-TWzipcode](jquery/jQuery-TWzipcode.md)
+    * [jquery-tinyMap](jquery/jQuery-tinyMap.md)
 
 * <img src="https://nodejs.org/static/favicon.ico" width="16"> [Node.js](nodejs/README.md)
     * [入門](nodejs/starter.md)
