@@ -185,6 +185,19 @@ vmk0  192.168.31.200  255.255.255.0  192.168.31.255  STATIC           false
 shell> esxcli network ip interface ipv4 set -i vmk0 I 10.27.51.143 -N 255.255.255.0 -t static    
 ```
 
+`VirtualMachineName`
+
+
+```console
+shell> smbiosDump
+shell> esxcfg-info | less -I
+```
+#### :books: 參考網站：
+- https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003587
+- https://kb.vmware.com/selfservice/search.do?cmd=displayKC&docType=kc&docTypeID=DT_KB_1_1&externalId=2086454
+
+
+
 
 ```console
 List active TCP/IP connections.
@@ -213,14 +226,15 @@ List ARP table entries.
 shell> esxcli network ip neighbor list
 
 shell> esxcli system welcomemsg get
+shell> esxcli system version get
+shell> esxcli system time get
 
 shell> esxcli system syslog mark --message="this is a message!"
-shell> esxcli hardware memory get
-shell> esxcli hardware cpu list
-shell> esxcli hardware pci list
+
+
+
 shell> esxcli system syslog config get
 
-VirtualMachineName
 shell> esxcli vm process list
 shell> esxcli vm process kill --type=[soft,hard,force] --world-id=WorldNumber
 shell> esxcli vm process kill --type soft --world-id 1268395
@@ -231,8 +245,14 @@ shell> esxcfg-nics -l
 List all of the CPUs on this host.        
 shell> esxcli hardware cpu list
 
+List all of the PCI devices on this host.	
+shell> esxcli hardware pci list
+
 Get information about memory.        
 shell> esxcli hardware memory get
+
+Get information about the platform
+shell> esxcli hardware platform get
 
 shell> esxcli system hostname get
 
@@ -289,6 +309,9 @@ shell> esxcli software acceptance get
 PartnerSupported
 shell> esxcli software acceptance set --level=CommunitySupported
 ```
+
+#### :books: 參考網站：
+- https://pubs.vmware.com/vsphere-50/index.jsp?topic=%2Fcom.vmware.vcli.ref.doc_50%2Fesxcli_hardware.html
 
 ```console
 shell> esxcfg-nics --list

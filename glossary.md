@@ -137,6 +137,7 @@
 - `vm`
 - `quickstart`
 
+- `Administrator`
 - `AdministratorPassword`
 
 - `javascript`

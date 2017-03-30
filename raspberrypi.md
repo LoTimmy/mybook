@@ -276,7 +276,6 @@ shell> iwlist scan
 ```
 
 ```
-
 [   76.978192] usb 1-1.3: new high-speed USB device number 5 using dwc_otg
 [   77.079273] usb 1-1.3: New USB device found, idVendor=2001, idProduct=3315
 [   77.079299] usb 1-1.3: New USB device strings: Mfr=1, Product=2, SerialNumber=3
@@ -293,7 +292,6 @@ Bus 001 Device 005: ID 0bda:8176 Realtek Semiconductor Corp. RTL8188CUS 802.11n 
 [  625.257465] usb 1-1.2: SerialNumber: 00e04c000001
 [  625.483819] usbcore: registered new interface driver rtl8192cu
 
-
 Bus 001 Device 004: ID 2001:3314 D-Link Corp. 
 
 [   27.586281] usb 1-1.4: new high-speed USB device number 4 using dwc_otg
@@ -302,15 +300,11 @@ Bus 001 Device 004: ID 2001:3314 D-Link Corp.
 [   27.687701] usb 1-1.4: Product: 802.11n WLAN Adapter
 [   27.687717] usb 1-1.4: Manufacturer: Realtek
 [   27.687732] usb 1-1.4: SerialNumber: 00e04c000001
-
-
-
-
 ```
 
-ndiswrapper-common - Common scripts required to use the utilities for ndiswrapper
-ndiswrapper-dkms - Source for the ndiswrapper Linux kernel module (DKMS)
-ndiswrapper-source - Source for the ndiswrapper Linux kernel module
+`ndiswrapper-common - Common scripts required to use the utilities for ndiswrapper`
+`ndiswrapper-dkms - Source for the ndiswrapper Linux kernel module (DKMS)`
+`ndiswrapper-source - Source for the ndiswrapper Linux kernel module`
 
 ```
 ndiswrapper-common
@@ -318,15 +312,13 @@ ndiswrapper
 
 ndiswrapper-common ndiswrapper-dkms
 
-
 modprobe ndiswrapper
-
 ```
 
 
 ---
 
-**timedatectl - Control the system time and date**
+`timedatectl - Control the system time and date`
 
 ```console
 shell> timedatectl
@@ -342,7 +334,7 @@ shell> ntpstat
 
 ---
 
-**hciconfig - configure Bluetooth devices**
+`hciconfig - configure Bluetooth devices`
 
 ```console
 shell> hciconfig
