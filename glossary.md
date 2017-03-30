@@ -1,6 +1,6 @@
-`Glossary`
-`字彙`
-`glossary`
+- `Glossary`
+- `字彙`
+- `glossary`
 
 ---
 - `tw`
@@ -10,94 +10,112 @@
 - `澳門`
 - `대한민국`
 - `日本`
+- `台北市`
+- `內湖區`
 ---
 - `assets`
 - `img`
 - `logo-small.png`
 ---
 
-`help`
-`info`
+- `running`
+- `mykey`
+- `deny`
+- `grant`
+- `yes`
+- `no`
+- `True`
+- `true`
+- `false`
+- `latest`
+- `help`
+- `info`
 
-`應用程式`
-`一般`
-`網路`
-`Wi-Fi`
-`路由器`
-`VPN Server`
-`安全性檢查`
-`重新整理影像`
-`虚拟机`
-`防火墙`
+- `x86_64`
 
-`私有密钥`
-`操作系统`
-`名称`
+- `應用程式`
+- `一般`
+- `網路`
+- `Wi-Fi`
+- `路由器`
+- `VPN Server`
+- `安全性檢查`
+- `重新整理影像`
+- `虚拟机`
+- `防火墙`
 
-`64 位`
-`32 位`
+- `私有密钥`
+- `操作系统`
+- `名称`
 
-`API`
-`Apps`
+- `64 位`
+- `32 位`
 
-`oldfile`
-`newfile`
-`myfile.txt`
-`myfile2.txt`
-`myfile3.txt`
-`mylist.txt`
-`myfile.html`
+- `API`
+- `Apps`
 
-`vm`
-`quickstart`
+- `oldfile`
+- `newfile`
+- `mysecret`
+- `myfile.txt`
+- `myfile2.txt`
+- `myfile3.txt`
+- `mylist.txt`
+- `list`
+- `myfile.html`
+- `home.htm`
+- `errors/404.htm`
 
-`javascript`
-`geoip`
-`software`
-`security`
-`sourcecode`
+- `vm`
+- `quickstart`
 
-`script.sed`
+- `javascript`
+- `geoip`
+- `software`
+- `security`
+- `sourcecode`
 
-`openstack`
-`Synology`
-`synology`
-`NAS`
+- `script.sed`
 
-`Fedora`
-`fedora`
-`CentOS`
-`centos`
-`Red Hat Enterprise Linux`
-`redhat`
-`Oracle Linux`
-`oraclelinux`
-`gentoo`
-`Ubuntu`
-`ubuntu`
-`Debian`
-`debian`
-`raspbian`
+- `openstack`
+- `Synology`
+- `synology`
+- `NAS`
 
-`examples`
+- `Fedora`
+- `fedora`
+- `CentOS`
+- `centos`
+- `Red Hat Enterprise Linux`
+- `redhat`
+- `Oracle Linux`
+- `oraclelinux`
+- `gentoo`
+- `Ubuntu`
+- `ubuntu`
+- `Debian`
+- `debian`
+- `raspbian`
 
-`init`
-`install`
-`logout`
-`bin`
-`bugs`
-`build`
-`config`
-`cache`
-`owner`
-`publish`
-`restart`
-`search`
-`cli`
-`update`
-`uninstall`
-`tag`
-`start`
+- `examples`
+
+- `init`
+- `install`
+- `logout`
+- `bin`
+- `bugs`
+- `build`
+- `config`
+- `cache`
+- `owner`
+- `publish`
+- `restart`
+- `search`
+- `cli`
+- `update`
+- `uninstall`
+- `tag`
+- `start`
 
 - `input.mjml`
 - `my-email.html`
@@ -139,6 +157,8 @@
 
 - `Administrator`
 - `AdministratorPassword`
+- `Admin`
+- `administrators`
 
 - `javascript`
 - `geoip`
@@ -196,6 +216,8 @@
 
 - `database`
 
+- `local`
+- `localhost`
 - `ntp_server`
 - `database_server`
 - `webservers`
@@ -203,11 +225,27 @@
 - `webserver`
 - `webserver.localdomain`
 
-`myhost`
-`myiso`
-`iso`
-`mydatacenter`
-`myserver.net`
+- `mylogs`
+- `mydata`
+- `myservice`
+- `daemon`
+- `myredis`
+- `redis`
+- `myapplication`
+- `always`
+- `myhost`
+- `myiso`
+- `iso`
+- `mydatacenter`
+- `myserver.net`
+- `mywebsite.com`
+- `foo.com`
+- `new.foo.com`
+- `localhost.foo.com`
+- `host1.foo.com`
+- `www.foo.com`
+- `www`
+- `web01`
 
 - `~/.ssh/my-key-pair.pub`
 - `~/.ssh/my-key-pair.pem`
@@ -224,6 +262,8 @@
 - `macs`
 - `user-data`
 - `privateIp`
+- `somecert.pem`
+- `aws.pem`
 
 - `my_bucket`
 - `my_folder`
@@ -232,40 +272,50 @@
 - `my_copied_file.ext`
 - `Sample_file.txt`
 
-`db_settings`
-`cluster_settings`
+- `db_settings`
+- `cluster_settings`
 
-`some_host`
-`aws_host`
-`freebsd_host`
+- `some_host`
+- `aws_host`
+- `freebsd_host`
 
-`host`
-`port`
-`email`
-`ftp`
-`smtp`
+- `host`
+- `port`
+- `email`
+- `ftp`
+- `smtp`
+- `user`
 
-`SRV (服務)`
-`MX (郵件交換器)`
-`TXT （文字）`
-`CName (別稱)`
-`AAAA (IPv6 主機)`
-`A（主機）`
-
-
-`垃圾郵件`
-`草稿`
-`刪除的郵件`
-`寄件備份`
-`收件匣`
-`封存`
-`非垃圾郵件`
+- `SRV (服務)`
+- `MX (郵件交換器)`
+- `TXT （文字）`
+- `CName (別稱)`
+- `AAAA (IPv6 主機)`
+- `A（主機）`
 
 
-`SignUp`
-`Sign up`
-`emailAddress`
-`LogFiles`
+- `垃圾郵件`
+- `草稿`
+- `刪除的郵件`
+- `寄件備份`
+- `收件匣`
+- `封存`
+- `非垃圾郵件`
+
+
+- `SignUp`
+- `Sign up`
+- `emailAddress`
+- `LogFiles`
+
+- `John Doe`
+- `johndoe@example.com`
+- `j.d@example.org`
+- `John Smith`
+- `john.smith@example.com`
+- `Jane Jolie`
+- `jane@example.net`
+- `sue@example.com`
 
 - `Your Name`
 - `you@example.com`
@@ -285,6 +335,8 @@
 - `firewall.example.com`
 - `host.example.com`
 - `www.example.com`
+- `host1.example.com`
+- `devel.example.com`
 - `blog.example.com`
 - `aserver.example.org`
 - `bserver.example.org`
@@ -311,6 +363,7 @@
 - `*.example.com`
 - `https://example.com/`
 - `http://api.example.com:4001/`
+- `http://proxy.example.com:8080`
 - `ec2.amazon.com`
 - `example.com/mypage`
 - `example.com/MyPage`
@@ -318,42 +371,44 @@
 - `example.com/page?1234`
 - `webserver.mydomain.com`
 - `ip-12-34-56-78`
+- `s3`
 
 - `private1`
 - `private2`
 - `private3`
 - `private4`
 - `private5`
+- `my_node_app`
 
 - `conf_backup.tar.gz`
 
-`letsencrypt`
-`private_key.pem`
-`my-key-pair.pem`
-`ca_key.der`
-`ca_cert.der`
-`cacert.pem`
-`server.key`
-`server.key.insecure`
-`server.csr`
-`server.crt`
-`certs`
-`private`
-`CA`
-`newcerts`
-`private_key.pem`
-`public_key.pem`
-`server-cert.pem`
-`server-key.pem`
-`client-key.pem`
-`client-cert.pem`
-`ca.pem`
-`ca-key.pem`
+- `letsencrypt`
+- `private_key.pem`
+- `my-key-pair.pem`
+- `ca_key.der`
+- `ca_cert.der`
+- `cacert.pem`
+- `server.key`
+- `server.key.insecure`
+- `server.csr`
+- `server.crt`
+- `certs`
+- `private`
+- `CA`
+- `newcerts`
+- `private_key.pem`
+- `public_key.pem`
+- `server-cert.pem`
+- `server-key.pem`
+- `client-key.pem`
+- `client-cert.pem`
+- `ca.pem`
+- `ca-key.pem`
 
-`ec2-user`
-`ubuntu`
-`centos`
-`root`
+- `ec2-user`
+- `ubuntu`
+- `centos`
+- `root`
 
 - `Name`
 - `name`
@@ -363,66 +418,75 @@
 - `Status`
 - `Description`
 
-`gmail`
+- `gmail`
+- `username@gmail.com`
+- `smtp.gmail.com`
 
-`bob`
-`12345`
+- `bob`
+- `12345`
 
-`admin`
-`administrators`
-`Tim`
-`Timmy`
-`timmy`
+- `admin`
+- `administrators`
+- `Tim`
+- `Timmy`
+- `timmy`
 
-`adduser`
-`deluser`
-`username`
-`addgroup`
-`delgroup`
-`groupname`
-`passwd`
-`exampleuser`
+- `adduser`
+- `deluser`
+- `username`
+- `addgroup`
+- `delgroup`
+- `groupname`
+- `passwd`
+- `exampleuser`
 
-`myfiles`
-`bigfile`
-`LargeFile`
-`BigFile.txt`
-`CopiedFile.txt`
-`BigFile.xlsx`
-`fileName`
+- `my`
+- `myfiles`
+- `files`
+- `bigfile`
+- `LargeFile`
+- `BigFile.txt`
+- `CopiedFile.txt`
+- `BigFile.xlsx`
+- `fileName`
 
-`NAME`                                              
-`FSTYPE`
-`LABEL`
-`UUID`
-`MOUNTPOINT`
+- `NAME`                                              
+- `FSTYPE`
+- `LABEL`
+- `UUID`
+- `MOUNTPOINT`
 
-`Gateway`
-`IPAddress`
-`MacAddress`
-`Id`
-`Created`
+- `Gateway`
+- `IPAddress`
+- `MacAddress`
+- `Id`
+- `Created`
 
-`socks4`
-`socks5`
-`ssl`
-`utf8`
+- `socks4`
+- `socks5`
+- `ssl`
+- `utf8`
 
-`hello-world`
-`helloworld`
+- `hello-world`
+- `helloworld`
 
-`pi`
-`raspberry`
+- `pi`
+- `raspberry`
 
-`名稱`
-`地址行 1` `ADDRESS_LINE_1`
-`地址行 2` `ADDRESS_LINE_2`
-`城市`
-`郵遞區號` `POSTAL_CODE`
-`電話號碼` `contact-phone`
-`信用卡號碼` `cardnumber`
-`信用卡安全碼` `cvc`
-`持卡人姓名` `ccname`
+- `名稱`
+- `地址行 1` `ADDRESS_LINE_1`
+- `地址行 2` `ADDRESS_LINE_2`
+- `城市`
+- `郵遞區號` `POSTAL_CODE`
+- `電話號碼` `contact-phone`
+- `信用卡號碼` `cardnumber`
+- `信用卡安全碼` `cvc`
+- `持卡人姓名` `ccname`
+
+- `street-address-1`
+- `地址、郵政信箱、公司名稱、代收`
+- `street-address-2`
+- `公寓、套房、單位、大樓、樓層等等`
 
 ```
 Ubuntu Precise 12.04 (LTS)
@@ -432,96 +496,129 @@ Ubuntu Xenial 16.04 (LTS)
 Yakkety 16.10
 ```
 
-`app`
-`resources`
-`package.json`
-`main.js`
-`index.html`
+- `app`
+- `resources`
+- `package.json`
+- `main.js`
+- `index.html`
 
-`Hello World`
+- `Hello World`
 
 
-`url`
-`apt_url`
-`yum_url`
-`do_install`
+- `url`
+- `apt_url`
+- `yum_url`
+- `do_install`
 
-`images`
-`cli`
-`My page`
-`GitBook`
-`hello`
-`hello.txt`
-`book.json`
-`README.md`
-`SUMMARY.md`
-`something.md`
-`docs`
-`my.json`
-`some.json`
-`Docs`
-`mybook.pdf`
-`mybook.epub`
-`mybook.mobi`
-`example_image.png`
-`myimage.png`
-`mypage.md`
-`myfile.css`
-`mylib.js"`
-`Markdown`
-`markdown`
-`AsciiDoc`
-`asciidoc`
-`pdf`
-`epub`
-`capitalize`
-`test.md`
-`page.md`
-`page.html`
-`title`
-`readme`
-`glossary`
-`content`
-`summary`
-`languages`
-`output`
-`config`
-`page`
-`file`
-`everyone`
-`website`
-`json`
-`cover.jpg`
-`ebook`
-`version`
+- `images`
+- `cli`
+- `My page`
+- `GitBook`
+- `hello`
+- `hello.txt`
+- `book.json`
+- `README.md`
+- `SUMMARY.md`
+- `something.md`
+- `docs`
+- `my.json`
+- `some.json`
+- `Docs`
+- `mybook.pdf`
+- `mybook.epub`
+- `mybook.mobi`
+- `example_image.png`
+- `myimage`
+- `myimage.png`
+- `mypage.md`
+- `myfile.css`
+- `mylib.js"`
+- `Markdown`
+- `markdown`
+- `AsciiDoc`
+- `asciidoc`
+- `pdf`
+- `epub`
+- `capitalize`
+- `test.md`
+- `page.md`
+- `page.html`
+- `title`
+- `readme`
+- `glossary`
+- `content`
+- `summary`
+- `languages`
+- `output`
+- `config`
+- `page`
+- `file`
+- `everyone`
+- `website`
+- `json`
+- `cover.jpg`
+- `ebook`
+- `version`
+- `mybucket`
+- `mys3bucket`
+- `create`
+- `delete`
+- `get`
+- `tag1`
+- `tag2`
+- `logs`
+- `enabled`
+- `disabled`
+- `present`
+- `absent`
+- `force`
 
 - `my-package.rpm`
 
 - `Me`
+- `myFunction`
+- `HelloWorld`
+- `ByeBye`
+- `health_checks`
+- `my_health_check`
+- `Dev`
+- `QA`
+- `Prod`
+- `stream`
+- `all`
+- `default`
+- `memcached`
+- `group`
+- `privcertkey`
+- `docker`
+- `ssh_pub_key`
+- `github_key`
+- `testuser`
+- `9s36?;fyNp`
+- `oedu2eGh`
 
 ---
 
-`# This is a comment`
+- `# This is a comment`
 
-`lsb_dist="$(lsb_release -si)"`
-`dist_version="$(lsb_release --codename | cut -f2)"`
+- `lsb_dist="$(lsb_release -si)"`
+- `dist_version="$(lsb_release --codename | cut -f2)"`
 
 ---
 
-`Dear Lo Timmy,`
-`Dear Timmy Lo,`
-`Dear Timmy,`
-`Lo Timmy，你好:`
-`Hi Timmy Lo,`
-`Hi everyone!`
-`Hi there,`
-`Hello Timmy,`
-`Hello,`
+- `Dear Lo Timmy,`
+- `Dear Timmy Lo,`
+- `Dear Timmy,`
+- `Lo Timmy，你好:`
+- `Hi Timmy Lo,`
+- `Hi everyone!`
+- `Hi there,`
+- `Hello Timmy,`
+- `Hello,`
 
-
-`Enjoy!`
-`Cheers,`
-`Sincerely,`
-`Best regards,`
-`Regards,`
-`Thanks,`
+- `Enjoy!`
+- `Cheers,`
+- `Sincerely,`
+- `Best regards,`
+- `Regards,`
+- `Thanks,`

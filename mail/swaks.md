@@ -57,6 +57,7 @@ shell> swaks -s test-server.example.net -p 25 \
 --header "Subject: Hello World" -S \
 --protocol ESMTP -a -au me -ap passwd  \
 --body "This is a test mailing" \
+--body "Hello, this is an e-mail. I hope you like it ;-)" \
 --attach-type text/html --attach report.html \
 --attach-type text/html --attach report.html
 ```

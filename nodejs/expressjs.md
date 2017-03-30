@@ -176,8 +176,14 @@ http://localhost:3000/static/hello.html
 ```
 
 ```js
-app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 ```
+
+```
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+```
+
 
 #### :books: 參考網站：
 - [static-files](http://expressjs.com/en/starter/static-files.html)

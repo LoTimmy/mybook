@@ -22,8 +22,15 @@ shell> git config --global core.autocrlf true
 shell> git config --global core.autocrlf input
 # Configure Git on OS X or Linux to properly handle line endings
 
+shell> git config --global core.editor emacs
+
 shell> git config --global color.ui true
+
+shell> git config --global commit.template ~/.gitmessage.txt
+shell> git commit
 ```
+
+`~/.gitmessage.txt`
 
 `.gitconfig`
 
