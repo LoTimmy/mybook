@@ -420,6 +420,8 @@
 
 - `gmail`
 - `username@gmail.com`
+- `example@gmail.com`
+- 
 - `smtp.gmail.com`
 
 - `bob`
@@ -610,11 +612,14 @@ Yakkety 16.10
 - `Dear Timmy Lo,`
 - `Dear Timmy,`
 - `Lo Timmy，你好:`
+- `Timmy 您好，`
 - `Hi Timmy Lo,`
 - `Hi everyone!`
 - `Hi there,`
 - `Hello Timmy,`
+- `Hi Timmy,`
 - `Hello,`
+- `您好,`
 
 - `Enjoy!`
 - `Cheers,`
@@ -622,3 +627,7 @@ Yakkety 16.10
 - `Best regards,`
 - `Regards,`
 - `Thanks,`
+- `謝謝！`
+- `謝謝,`
+- `祝您一切順心。` 
+ 
