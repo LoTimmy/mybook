@@ -99,6 +99,7 @@
     * [lodash](nodejs/lodash.md)
     * [jade](nodejs/jade.md)
     * [json-server](nodejs/json-server.md)
+    * [validate-chain.md](nodejs/validate-chain.md)
         
 * <img src="https://httpd.apache.org/favicon.ico" width="16"> [Apache](apache/README.md)
     * [手冊](apache/guide.md)
@@ -115,6 +116,8 @@
     * [OpenVPN](vpn/openvpn.md)
     * [pptpd](vpn/pptpd.md)
     * [strongswan](vpn/strongswan.md)
+
+* [adobe-fonts](adobe-fonts.md)
 
 * <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)
     * [手冊](vmware/guide.md)

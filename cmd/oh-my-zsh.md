@@ -25,8 +25,15 @@ shell> ./install.sh
 shell> cd ..
 shell> rm -rf fonts
 ```
+```console
+shell> git clone git://github.com/altercation/solarized.git
+shell> mkdir .vim/colors
+shell> cd vim-colors-solarized/colors
+mv solarized.vim ~/.vim/colors/
+```
 
 
 #### :books: 參考網站：
 - [iterm2](https://www.iterm2.com/)
 - https://github.com/powerline/fonts
+- https://github.com/altercation/vim-colors-solarized
