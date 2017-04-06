@@ -27,11 +27,22 @@ shell> rm -rf fonts
 ```
 ```console
 shell> git clone git://github.com/altercation/solarized.git
-shell> mkdir .vim/colors
+shell> mkdir -p ~/.vim/colors/
 shell> cd vim-colors-solarized/colors
-mv solarized.vim ~/.vim/colors/
+shell> mv solarized.vim ~/.vim/colors/
 ```
 
+`~/.vimrc`
+```
+syntax enable
+set background=dark
+colorscheme solarized
+```
+```
+syntax enable
+set background=light
+colorscheme solarized
+```
 
 #### :books: 參考網站：
 - [iterm2](https://www.iterm2.com/)
