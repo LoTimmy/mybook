@@ -41,6 +41,7 @@
     * [ngrok](cmd/ngrok.md)
     * [nmap](cmd/nmap.md)
     * [ntpdate](cmd/ntpdate.md) 
+    * [ohmyz](cmd/oh-my-zsh.md) 
     * [optipng](cmd/optipng.md)
     * [packer](cmd/packer.md)
     * [putty-tools](cmd/putty-tools.md)
