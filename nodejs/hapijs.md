@@ -297,10 +297,211 @@ server.register([
 
 <img src="https://raw.github.com/hapijs/joi/master/images/joi.png" width="200">
 
-
 #### :books: 參考網站：
 - [hapi-swagger](https://github.com/glennjones/hapi-swagger)
 - [usageguide](https://github.com/glennjones/hapi-swagger/blob/master/usageguide.md)
+
+---
+
+```js
+server.route({
+  method: 'POST',
+  path: '/items',
+  config: {
+    tags: ['api'],
+    handler: (request, reply) => {
+
+    },
+    validate: {
+      payload: Joi.object({
+        a: Joi.number(),
+        b: Joi.number()
+      })
+    }
+  }
+});
+```
+
+
+```js
+reply(request.payload.a);
+reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
+```
+
+---
+
+<img src="https://camo.githubusercontent.com/575791dedbd0f604aeda72ab878464bf4b0f0a9f/68747470733a2f2f7261772e6769746875622e636f6d2f686170696a732f6a6f692f6d61737465722f696d616765732f76616c69646174696f6e2e706e67" width="200">
+
+```js
+username: Joi.string().alphanum().min(3).max(30).required(),
+password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/),
+birthyear: Joi.number().integer().min(1900).max(2013),
+email: Joi.string().email()
+```
+
+---
+
+```console
+node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
+```
+
+---
+
+### hapi-auth-jwt2 {#hapi-auth-jwt2}
+
+```console
+shell> npm install hapi
+shell> npm install hapi-auth-jwt2 --save
+```
+
+```js
+const Hapi = require('hapi');
+const Inert = require('inert');
+const Vision = require('vision');
+const HapiSwagger = require('hapi-swagger');
+const Joi = require('joi');
+const hapiAuthJWT = require('hapi-auth-jwt2');
+const port = process.env.PORT || 3000;
+
+const server = new Hapi.Server();
+server.connection({
+  host: 'localhost',
+  port: port
+});
+
+const options = {
+  info: {
+    'title': 'Test API Documentation',
+    'version': '0.0.2',
+  }
+};
+
+var people = {
+  1: {
+    id: 1,
+    name: 'John Doe'
+  }
+};
+
+var secret = 'NeverShareYourSecret';
+
+var validate = function(decoded, request, callback) {
+  if (!people[decoded.id]) {
+    return callback(null, false);
+  } else {
+    return callback(null, true);
+  }
+};
+
+server.route({
+  method: 'GET',
+  path: '/{name}',
+  config: {
+    auth: false,
+    tags: ['api'],
+    validate: {
+      params: {
+        name: Joi.string().required()
+      },
+    },
+    handler: function(request, reply) {
+      reply('Hello, ' + encodeURIComponent(request.params.name) + '!');
+    }
+  }
+});
+
+server.route({
+  method: 'POST',
+  path: '/items',
+  config: {
+    tags: ['api'],
+    handler: (request, reply) => {
+      reply('OK');
+    },
+    validate: {
+      payload: Joi.object({
+        a: Joi.number(),
+        b: Joi.number()
+      }),
+      headers: Joi.object({
+        'authorization': Joi.string().required()
+      }).unknown()
+
+    }
+  }
+});
+
+server.route({
+  method: 'GET',
+  path: '/items/{pageNo}',
+  config: {
+    handler: (request, reply) => {
+      reply('OK');
+    },
+    tags: ['api'],
+    validate: {
+      params: {
+        pageNo: Joi.number()
+      },
+      query: {
+        search: Joi.string()
+      },
+      headers: Joi.object({
+        'authorization': Joi.string().required()
+      }).unknown()
+    }
+  }
+});
+
+server.register([
+  Inert,
+  Vision, {
+    'register': HapiSwagger,
+    'options': options
+  },
+  hapiAuthJWT
+], (err) => {
+
+  server.auth.strategy('jwt', 'jwt', {
+    key: secret,
+    validateFunc: validate,
+    verifyOptions: {
+      ignoreExpiration: true
+    }
+  });
+
+  server.auth.default('jwt');
+
+  server.start((err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Server running at:', server.info.uri);
+    }
+  });
+});
+```
+
+```console
+shell> curl -H "Authorization: <TOKEN>" http://localhost:8000/restricted
+```
+
+```console
+shell> curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNDkxODE5OTgzfQ.9NOyEW5zbZslW9Whs75p38OhtREh0G6bg1ZyJcHc6jw' -d '{
+  "a": 0,
+  "b": 0
+}' 'http://192.168.1.55:3000/items'
+```
+
+
+`iat` `IssuedAt`
+
+
+#### :books: 參考網站：
+- https://jwt.io/
+- [hapi-auth-jwt2](https://www.npmjs.com/package/hapi-auth-jwt2)
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-token-and-claims
 
 ---
 
@@ -310,4 +511,5 @@ server.register([
 - [hapijs](https://hapijs.com/)
 - [tutorials](https://hapijs.com/tutorials)
 - [api](https://hapijs.com/api)
+- https://github.com/hapijs/joi/blob/v10.4.1/API.md
 
