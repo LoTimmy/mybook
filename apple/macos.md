@@ -92,6 +92,7 @@
 ```console
 shell> sips -s format jpeg --out rose.jpg rose.png
 shell> sips -s format png  --out rose.png rose.jpg
+shell> sips -Z 640 *.jpg
 ```
 
 ---
