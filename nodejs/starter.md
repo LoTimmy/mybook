@@ -202,5 +202,31 @@ var a3 = a.map(s => s.length);
 console.log(a3); // logs [8, 6, 7, 9]
 ```
 
+---
+
+```js
+var myObj = {
+  nickname: "Jack",
+  registration_date: new Date(1995, 11, 25)
+}
+
+var {
+  nickname,
+  registration_date
+} = myObj;
+
+console.log(nickname);
+console.log(registration_date);
+```
+```js
+var nickname = 'Jack';
+var registration_date = new Date(1995, 11, 25);
+var myObj = {nickname, registration_date};
+
+console.log(myObj);
+```
+
+---
+
 #### :books: 參考網站：
 - [events](https://nodejs.org/api/events.html)
