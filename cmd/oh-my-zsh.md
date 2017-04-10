@@ -1,4 +1,9 @@
+![](http://ohmyz.sh/img/OMZLogo_BnW.png)
+
 `zsh-syntax-highlighting`
+![](img/Fohy3tah.png)
+![](img/Leig8tie.png)
+
 
 ```console
 shell> sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -28,8 +33,11 @@ shell> rm -rf fonts
 ```console
 shell> git clone git://github.com/altercation/solarized.git
 shell> mkdir -p ~/.vim/colors/
+shell> cd solarized
 shell> cd vim-colors-solarized/colors
-shell> mv solarized.vim ~/.vim/colors/
+shell> cp solarized.vim ~/.vim/colors/
+shell> cd ../../..
+shell> rm -rf solarized
 ```
 
 `~/.vimrc`
