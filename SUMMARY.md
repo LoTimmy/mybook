@@ -87,6 +87,7 @@
     * [hapi.js](nodejs/hapijs.md)
         * [安裝](nodejs/hapijs.md#installing)
         * [基本路由](nodejs/hapijs.md#basic-routing)
+        * [hapi-auth-jwt2](nodejs/hapijs.md#hapi-auth-jwt2) 
     * [Express](nodejs/expressjs.md)
     * [Koa](nodejs/koa.md)
     * [gulpjs](nodejs/gulpjs.md)

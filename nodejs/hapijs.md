@@ -347,6 +347,8 @@ node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
 
 ---
 
+### hapi-auth-jwt2 {#hapi-auth-jwt2}
+
 ```console
 shell> npm install hapi
 shell> npm install hapi-auth-jwt2 --save
