@@ -257,6 +257,28 @@ shell> mjml --watch index.mjml index.html
 - https://mjml.io/try-it-live/templates/basic
 
 
+---
+```
+const mjml2html = require('mjml');
+const htmlOutput = mjml2html(`
+  <mjml>
+    <mj-body>
+      <mj-container>
+        <mj-section>
+          <mj-column>
+            <mj-text>
+              Hello World!
+            </mj-text>
+          </mj-column>
+        </mj-section>
+      </mj-container>
+    </mj-body>
+  </mjml>
+`)
+console.log(htmlOutput)
+```
+
+
 #### :books: 參考網站：
 - [Documentation](https://mjml.io/documentation)
 - [Try it live](https://mjml.io/try-it-live)
