@@ -195,7 +195,7 @@ db.createCollection("people", { size: 2147483648 } )
 
 #### :books: 參考網站：
 - [db.createCollection](https://docs.mongodb.org/manual/reference/method/db.createCollection/#db.createCollection)
-- [db.collection.insert](https://docs.mongodb.org/manual/reference/method/db.collection.insert/#db.collection.insert)
+- [db.collection.insert](https://docs.mongodb.com/manual/reference/method/db.collection.insert/)
 
 ---
 
@@ -221,6 +221,14 @@ db.inventory.find( { $or: [ { quantity: { $lt: 20 } }, { price: 10 } ] } )
 db.testData.find( { "name": /m+/ } )
 
 db.orders.find().sort( { amount: -1 } )
+
+db.books.find().pretty()
+```
+
+
+```js
+db.testData.find(ObjectId("507f191e810c19729de860ea"));
+ObjectId("507f191e810c19729de860ea").str
 ```
 
 #### :books: 參考網站：
@@ -231,6 +239,7 @@ db.orders.find().sort( { amount: -1 } )
 - [nin](https://docs.mongodb.com/manual/reference/operator/query/nin/)
 - [or](https://docs.mongodb.com/manual/reference/operator/query/or/)
 - [sort](https://docs.mongodb.com/v3.2/reference/method/cursor.sort/)
+- https://docs.mongodb.com/manual/reference/method/ObjectId/
 
 ---
 

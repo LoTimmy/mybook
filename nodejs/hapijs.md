@@ -357,8 +357,6 @@ shell> npm install hapi-auth-jwt2 --save
 shell> node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
 ```
 
-
-
 ```js
 const Hapi = require('hapi');
 const Inert = require('inert');
@@ -506,6 +504,120 @@ shell> curl -X POST --header 'Content-Type: application/json' --header 'Accept: 
 - [hapi-auth-jwt2](https://www.npmjs.com/package/hapi-auth-jwt2)
 - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 - https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-token-and-claims
+
+
+---
+
+### hapi-mongodb {#hapi-mongodb}
+
+```console
+shell> npm install hapi-mongodb
+shell> npm install hapi-mongodb --save
+```
+
+```js
+const Hapi = require('hapi');
+const Boom = require('boom');
+
+const dbOpts = {
+  url: 'mongodb://localhost:27017/test',
+  settings: {
+    poolSize: 10
+  },
+  decorate: true
+};
+
+const server = new Hapi.Server();
+
+server.register({
+  register: require('hapi-mongodb'),
+  options: dbOpts
+}, function(err) {
+  if (err) {
+    console.error(err);
+    throw err;
+  }
+
+  server.route({
+    method: 'GET',
+    path: '/users/{id}',
+    handler(request, reply) {
+      const db = request.mongo.db;
+      const ObjectID = request.mongo.ObjectID;
+
+      db.collection('users').findOne({        _id: new ObjectID(request.params.id)      }, function(err, result) {
+
+        if (err) {
+          return reply(Boom.internal('Internal MongoDB error', err));
+        }
+
+        reply(result);
+      });
+    }
+  });
+
+  server.start(function() {
+    console.log(`Server started at ${server.info.uri}`);
+  });
+});
+```
+
+```
+const Hapi = require('hapi');
+const Boom = require('boom');
+const port = process.env.PORT || 5000;
+
+const dbOpts = {
+  url: 'mongodb://localhost:27017/automodules_development',
+  settings: {
+    poolSize: 10
+  },
+  decorate: true
+};
+
+const server = new Hapi.Server();
+server.connection({
+  port: port
+});
+
+server.register({
+  register: require('hapi-mongodb'),
+  options: dbOpts
+}, function(err) {
+  if (err) {
+    console.error(err);
+    throw err;
+  }
+
+  server.route({
+    method: 'GET',
+    path: '/test',
+    handler(request, reply) {
+      const db = request.mongo.db;
+
+      db.collection('users').insertOne({
+        name: 'John',
+        age: 25,
+        gender: 'boy'
+      }, function(err, result) {
+        if (err) {
+          return reply(Boom.internal('Internal MongoDB error', err));
+        }
+        reply(result);
+      });
+
+    }
+  });
+
+  server.start(function() {
+    console.log(`Server started at ${server.info.uri}`);
+  });
+});
+```
+
+
+#### :books: 參考網站：
+- [hapi-mongodb](https://www.npmjs.com/package/hapi-mongodb)
 
 ---
 

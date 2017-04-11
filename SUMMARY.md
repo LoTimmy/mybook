@@ -113,7 +113,7 @@
 * <img src="https://www-jp.mysql.com/common/themes/sakila/favicon.ico" width="16"> [MySQL](mysql/README.md)
     * [手冊](mysql/guide.md)
     * [mycli](mysql/mycli.md)
-* <img src="https://www.mongodb.com/assets/images/global/favicon.ico" width="16"> [mongodb](mongodb.md)
+* <img src="https://www.mongodb.com/assets/images/global/favicon.ico" width="16"> [MongoDB](mongodb.md)
 * [nginx](nginx/README.md)
     * [手冊](nginx/guide.md)
 * [VPN](vpn/README.md)
@@ -122,7 +122,6 @@
     * [strongswan](vpn/strongswan.md)
 
 * [adobe-fonts](adobe-fonts.md)
-
 
 * <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)
     * [手冊](vmware/guide.md)
