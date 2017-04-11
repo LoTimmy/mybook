@@ -341,9 +341,6 @@ email: Joi.string().email()
 
 ---
 
-```console
-node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
-```
 
 ---
 
@@ -353,6 +350,14 @@ node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
 shell> npm install hapi
 shell> npm install hapi-auth-jwt2 --save
 ```
+
+`Generating Your Secret Key`
+
+```console
+shell> node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
+```
+
+
 
 ```js
 const Hapi = require('hapi');
@@ -461,7 +466,6 @@ server.register([
   },
   hapiAuthJWT
 ], (err) => {
-
   server.auth.strategy('jwt', 'jwt', {
     key: secret,
     validateFunc: validate,
