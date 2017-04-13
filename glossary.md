@@ -35,6 +35,49 @@
 - `help`
 - `info`
 
+- `macOS`
+- `macos`
+- `Sierra`
+- `iphone`
+- `iPhone`
+- `ipad`
+- `iPad`
+- `mac`
+- `Mac`
+- `macbook`
+- `MacBook`
+- `macbook-pro`
+- `macbookpro`
+- `MacBook Pro`
+- `macbook-pro-13`
+- `macbook-air`
+- `MacBook Air`
+- `iMac`
+- `Mac mini`
+- `Mac Pro`
+- `zh_TW`
+- `apple`
+- `com`
+- `support`
+
+- `Apple Pay`
+- `Touch ID`
+- `Siri`
+- `Wireless`
+- `Wi-Fi`
+- `Bluetooth`
+- `Camera`
+- `Processor`
+- `Memory`
+- `Storage`
+- `Operating System`
+- `顯示器`
+- `處理器`
+- `記憶體`
+- `儲存容量`
+- `無線技術`
+- `藍牙`
+
 - `x86_64`
 
 - `應用程式`
