@@ -72,6 +72,7 @@ shell> dhcping -s 255.255.255.255 -r -v
 
 #### :books: 參考網站：
 - [dhcping](http://manpages.ubuntu.com/manpages/precise/man8/dhcping.8.html)
+
 ---
 
 `dnscrypt-proxy - Tool for securing communications between a client and a DNS resolver`
@@ -101,7 +102,7 @@ server=127.0.0.1#40
 ```
 
 #### :books: 參考網站：
-- https://dnscrypt.org/
-- https://simplednscrypt.org/
+- [dnscrypt](https://dnscrypt.org/)
+- [simplednscrypt](https://simplednscrypt.org/)
 - https://www.opendns.com/about/innovations/dnscrypt/
 - https://github.com/alterstep/dnscrypt-osxclient
