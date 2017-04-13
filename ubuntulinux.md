@@ -129,6 +129,10 @@ iface eth0 inet static
                post-up arp -f
 ```
 
+---
+
+`/etc/ethers`
+
 ```console
 shell> vim /etc/ethers
 ```
@@ -141,6 +145,10 @@ f0:b4:29:73:2d:05 192.168.42.56
 00:10:18:03:92:7a 192.168.42.200
 00:0e:38:5e:f3:c0 192.168.42.253
 ```
+
+---
+
+`vlan`
 
 ```console
 shell> modprobe 8021q
@@ -193,12 +201,18 @@ shell> vim /etc/default/grub
 ```ini
 [...]
 GRUB_CMDLINE_LINUX="ipv6.disable=1"
+GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
+
 [...]
 ```
 
 ```console
 shell> update-grub
 shell> reboot
+```
+
+```console
+shell> grub-mkconfig -o /boot/grub/grub.cfg 
 ```
 
 ---
