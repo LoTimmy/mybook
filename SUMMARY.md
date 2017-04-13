@@ -121,6 +121,8 @@
     * [pptpd](vpn/pptpd.md)
     * [strongswan](vpn/strongswan.md)
 
+* [dnsmasq](dnsmasq.md)
+
 * [adobe-fonts](adobe-fonts.md)
 
 * <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)

@@ -1,4 +1,7 @@
 `dnsmasq - Small caching DNS proxy and DHCP/TFTP server`
+
+`dnsmasq - A lightweight DHCP and caching DNS server.`
+
 `dnsmasq-utils - Utilities for manipulating DHCP leases`
 
 > 为`DHCP`和`DNS`使用`dnsmasq`是一个不错的主意，因为`dnsmasq`的配置过程很容易。
