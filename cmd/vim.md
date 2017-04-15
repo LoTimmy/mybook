@@ -287,3 +287,4 @@ set foldlevel=0
 
 #### :books: 參考網站：
 - http://vimdoc.sourceforge.net/htmldoc/options.html
+- http://public.dhe.ibm.com/software/dw/aix/sample.vimrc

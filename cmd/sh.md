@@ -165,6 +165,11 @@ find /var/www -type f -exec chmod 0664 {} +
 echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
 ```
 
+```sh
+for i in `seq 1 3`; do
+done
+```
+
 
 #### :books: 參考網站：
 - https://get.docker.com/
