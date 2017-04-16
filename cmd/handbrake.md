@@ -7,6 +7,9 @@ shell> brew install handbrake
 ```console
 shell> HandBrakeCLI
 shell> HandBrakeCLI -i input.mkv -o output.mp4 --preset="High Profile" -s scan -F --subtitle-burned -N chi
+
+shell> HandBrakeCLI -i input.mkv -o output.mp4 --preset="Very Fast 1080p30" -s 1 -F --subtitle-burned
+shell> HandBrakeCLI -i input.mkv -o output.mp4 --preset="Fast 1080p30" -s 1 -F --subtitle-burned
 shell> HandBrakeCLI -i input.avi -o output.mp4 --preset="iPhone & iPod touch"
 ```
 
@@ -17,4 +20,5 @@ shell> HandBrakeCLI --preset-list
 
 #### :books: 參考網站：
 - https://handbrake.fr/docs/en/latest/cli/cli-guide.html
+- https://handbrake.fr/docs/en/latest/technical/official-presets.html
 
