@@ -67,6 +67,7 @@
     * [socat](cmd/socat.md)
     * [ss](cmd/ss.md)
     * [sudo](cmd/sudo.md)
+    * [supervisor](cmd/supervisor.md)
     * [sysv-rc-conf](cmd/sysv-rc-conf.md)
     * [timedatectl](cmd/timedatectl.md)
     * [tor](cmd/tor.md)
@@ -129,37 +130,29 @@
 * <img src="https://httpd.apache.org/favicon.ico" width="16"> [Apache](apache/README.md)
     * [手冊](apache/guide.md)
     * [SVN](apache/svn.md)
+* [nginx](nginx/README.md)
+    * [手冊](nginx/guide.md)
+* [haproxy](haproxy.md)
 * <img src="https://www-jp.mysql.com/common/themes/sakila/favicon.ico" width="16"> [MySQL](mysql/README.md)
     * [手冊](mysql/guide.md)
     * [mycli](mysql/mycli.md)
 * <img src="https://www.mongodb.com/assets/images/global/favicon.ico" width="16"> [MongoDB](mongodb.md)
-* [nginx](nginx/README.md)
-    * [手冊](nginx/guide.md)
+
 * [VPN](vpn/README.md)
     * [OpenVPN](vpn/openvpn.md)
     * [pptpd](vpn/pptpd.md)
     * [strongswan](vpn/strongswan.md)
-
 * [dnsmasq](dnsmasq.md)
-* [supervisor](supervisor.md)
-
 * [adobe-fonts](adobe-fonts.md)
-
 * <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)
     * [手冊](vmware/guide.md)
-
 * <img src="https://www.docker.com/favicon.ico" width="16"> [docker](docker/README.md)
     * [手冊](docker/guide.md)
-
 * <img src="https://help.ubuntu.com/favicon.ico" width="16"> [Ubuntu](ubuntulinux.md)
 * <img src="https://www.raspberrypi.org/favicon.ico" width="16"> [raspberrypi](raspberrypi.md)
-
 * <img src="https://ap-southeast-1.console.aws.amazon.com/favicon.ico" width="16"> [aws](aws.md)
-
 * <img src="https://www.google.com.tw/favicon.ico" width="16"> [google](google.md)
-
 * <img src="https://golang.org/favicon.ico" width="16"> [golang](golang.md)
-
 * <img src="https://git-scm.com/favicon.ico" width="16"> [Git](git/README.md)
     * [入門](git/starter.md)
         * [安裝](git/starter.md#installing)
@@ -170,8 +163,4 @@
         * [Ignoring files](git/starter.md#ignoring-files)
     * [手冊](git/guide.md)
     * <img src="https://www.gitbook.com/assets/images/logo/favicon.ico?version=19.3.1" width="16"> [GitBook](git/gitbook.md)
-
-<!--
-### Part II
--->
 * [macOS](apple/macos.md)

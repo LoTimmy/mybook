@@ -1,5 +1,7 @@
 `kms-server`
+
 `vlmcsd - a fully Microsoft compatible KMS server`
+
 `vlmcs - a client for testing and/or charging KMS servers`
 
 
@@ -109,9 +111,6 @@ _vlmcs._tcp.my-home-net.local. 10800 IN SRV 100 100 kms1.my-home-net.local.
 kms1.my-home-net.local. 10800 IN A 192.168.1.17
 ```
 
-### :books: 參考網站：
-- https://technet.microsoft.com/zh-tw/library/ff793405.aspx
-
 `/etc/dnsmasq.conf`
 
 ```
@@ -146,6 +145,9 @@ BN3D2-R7TKB-3YPBD-8DRP2-27GG4 - Windows 8 Core
 4K36P-JN4VD-GDC6V-KDT89-DYFKP - Windows 8 Core Country Specific
 ```
 
+### :books: 參考網站：
+- https://technet.microsoft.com/zh-tw/library/ff793405.aspx
+
 ---
 
 ```console
@@ -166,7 +168,6 @@ Big Endian
 ---
 
 ### :books: 參考網站：
-- [kms-server](http://forums.mydigitallife.info/threads/50234-Emulated-KMS-Servers-on-non-Windows-platforms)
 - [大量啟用的 Slmgr.vbs 選項](https://technet.microsoft.com/zh-tw/library/dn502540.aspx)
 - [附錄 A：KMS 用戶端安裝識別碼](https://technet.microsoft.com/zh-tw/library/jj612867.aspx)
 - [Office 2010](https://technet.microsoft.com/en-us/library/ee624355(v=office.14).aspx#section2_3)
