@@ -32,17 +32,35 @@ dhcp-leasefile=/var/lib/misc/dnsmasq.leases
 ```
 
 ```
+no-resolv
+no-poll
+server=8.8.8.8
+server=8.8.4.4
+
+server=/example.com/example.org/192.168.1.88
+```
+
+```
 listen-address=127.0.0.1
 listen-address=127.0.0.1,192.168.0.1
 
-cache-size=150
+cache-size=1000
 log-queries
+log-facility=/var/log/dnsmasq.log
 
 server=/localnet/192.168.0.1
+server=/localnet/127.0.0.1#10053
+server=/in-addr.arpa/127.0.0.1#10053
+server=/ip6.arpa/127.0.0.1#10053
 
 address=/double-click.net/127.0.0.1
+local-ttl=
 ```
 
+```console
+shell> dnsmasq --test
+dnsmasq: syntax check OK.
+```
 
 ---
 
@@ -54,6 +72,7 @@ address=/double-click.net/127.0.0.1
 - https://simplednscrypt.org/
 - https://www.opendns.com/about/innovations/dnscrypt/
 - https://github.com/alterstep/dnscrypt-osxclient
+- http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html
 
 
 ---
