@@ -183,7 +183,44 @@ server.register({
     server.log('info', 'Server running at: ' + server.info.uri);
   });
 });
+```
 
+```js
+const plugin = {
+  register: Good,
+  options: {
+    reporters: {
+      console: [{
+        module: 'good-squeeze',
+        name: 'Squeeze',
+        args: [{
+          response: '*',
+          log: '*'
+        }]
+      }, {
+        module: 'good-console'
+      }, 'stdout']
+    }
+  }
+};
+
+
+server.register(plugin, (err) => {
+  server.start(() => {});
+});
+
+server.register(plugin, (err) => {
+  if (err) {
+    throw err; // something bad happened loading the plugin
+  }
+
+  server.start((err) => {
+    if (err) {
+      throw err;
+    }
+    server.log('info', 'Server running at: ' + server.info.uri);
+  });
+});
 ```
 
 ```
@@ -618,6 +655,25 @@ server.register({
 
 #### :books: 參考網站：
 - [hapi-mongodb](https://www.npmjs.com/package/hapi-mongodb)
+
+---
+
+```
+var plugins = [
+  {
+    register: require('hapi-auth-basic')
+  },
+  {
+    register: require('hapi-authorization'),
+    options: {
+      roles: ['OWNER', 'MANAGER', 'EMPLOYEE'] // Can also reference a function which returns an array of roles
+    }
+  }
+];
+
+server.register(plugins, function(err) {
+      ...
+```
 
 ---
 

@@ -120,4 +120,6 @@ shell> sysctl -p
 - [shadowsocks](https://github.com/shadowsocks)
 - [shadowsocks](https://shadowsocks.org/en/index.html)
 - [clients](https://shadowsocks.org/en/download/clients.html)
+- https://github.com/Wind4/docker-library/blob/master/shadowsocks-libev/debian/Dockerfile
+- https://github.com/Wind4/docker-library/blob/master/shadowsocks-libev/Dockerfile
 

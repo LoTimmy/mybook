@@ -631,6 +631,40 @@ dbstore
  
 ---
 
+```
+FROM ubuntu:16.04
+
+RUN apt-get update && apt-get install -y openssh-server apache2 supervisor
+RUN mkdir -p /var/lock/apache2 /var/run/apache2 /var/run/sshd /var/log/supervisor
+
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+EXPOSE 22 80
+CMD ["/usr/bin/supervisord"]
+```
+
+`supervisord.conf`
+```
+[supervisord]
+nodaemon=true
+
+[program:sshd]
+command=/usr/sbin/sshd -D
+
+[program:apache2]
+command=/bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"
+```
+
+```
+docker build -t mysupervisord .
+docker run -p 22 -p 80 -t -i mysupervisord
+```
+
+#### :books: 參考網站：
+- https://docs.docker.com/engine/admin/using_supervisord/#exposing-ports-and-running-supervisor
+
+---
+
 #### :books: 參考網站：
 - [Docker新版網路功能升級終於支援IPv6，容器可設唯讀強化控管，新增統計API即時監控運作狀態](http://www.ithome.com.tw/news/94137)
 - http://docs.docker.com/installation/ubuntulinux/
@@ -646,3 +680,4 @@ dbstore
 - https://registry.hub.docker.com/_/nginx/
 - https://registry.hub.docker.com/_/ubuntu/
 - https://registry.hub.docker.com/_/mysql/
+- https://docs.docker.com/engine/admin/ansible/#usage

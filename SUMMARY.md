@@ -122,6 +122,7 @@
     * [strongswan](vpn/strongswan.md)
 
 * [dnsmasq](dnsmasq.md)
+* [supervisor](supervisor.md)
 
 * [adobe-fonts](adobe-fonts.md)
 

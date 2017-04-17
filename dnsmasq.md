@@ -1,7 +1,4 @@
 `dnsmasq - Small caching DNS proxy and DHCP/TFTP server`
-
-`dnsmasq - A lightweight DHCP and caching DNS server.`
-
 `dnsmasq-utils - Utilities for manipulating DHCP leases`
 
 > 为`DHCP`和`DNS`使用`dnsmasq`是一个不错的主意，因为`dnsmasq`的配置过程很容易。
@@ -10,17 +7,12 @@
 
 ```console
 shell> apt-get install dnsmasq 
-
-shell> brew install dnsmasq
-
-shell> cp $(brew list dnsmasq | grep dnsmasq.conf.example) $(brew --prefix)/etc/dnsmasq.conf
-shell> cp $(brew --prefix dnsmasq)/dnsmasq.conf.example $(brew --prefix)/etc/dnsmasq.conf
-
-shell> sudo brew services start dnsmasq
-shell> sudo brew services stop dnsmasq
-shell> sudo brew services restart dnsmasq
-shell> sudo brew services list
 ```
+
+`/etc/default/dnsmasq`
+
+`/etc/dnsmasq.conf`
+
 
 ```
 interface=
@@ -40,11 +32,6 @@ dhcp-leasefile=/var/lib/misc/dnsmasq.leases
 ```
 
 ```
-no-resolv
-server=8.8.8.8
-```
-
-```
 listen-address=127.0.0.1
 listen-address=127.0.0.1,192.168.0.1
 
@@ -54,12 +41,20 @@ log-queries
 server=/localnet/192.168.0.1
 
 address=/double-click.net/127.0.0.1
-address=/.facebook.com/127.0.0.1
 ```
 
+
+---
+
+`dnscrypt-proxy - Tool for securing communications between a client and a DNS resolver`
+
 #### :books: 參考網站：
-- https://github.com/Homebrew/homebrew-services
 - http://www.thekelleys.org.uk/dnsmasq/docs/dnsmasq-man.html
+- https://dnscrypt.org/
+- https://simplednscrypt.org/
+- https://www.opendns.com/about/innovations/dnscrypt/
+- https://github.com/alterstep/dnscrypt-osxclient
+
 
 ---
 
@@ -73,36 +68,11 @@ shell> dhcping -s 255.255.255.255 -r -v
 #### :books: 參考網站：
 - [dhcping](http://manpages.ubuntu.com/manpages/precise/man8/dhcping.8.html)
 
----
+`DNS spoofing` (`DNS 詐騙`)
+因採用另一系統的`網域名稱系統` (`DNS`) 而導致破壞信任關係的行為。其實施模式通常是破壞受侵害系統的名稱服務快取，或者破壞有效網域的網域名稱伺服器。
 
-`dnscrypt-proxy - Tool for securing communications between a client and a DNS resolver`
 
-```console
-shell> brew install dnscrypt-proxy
 
-shell> /usr/local/opt/dnscrypt-proxy/bin/dnscrypt-update-resolvers
-shell> sudo brew services start dnscrypt-proxy
-shell> sudo brew services stop dnscrypt-proxy
-shell> sudo brew services restart dnscrypt-proxy
-shell> sudo brew services list
-
-shell> scutil --dns
-```
-
-`/usr/local/etc/dnscrypt-proxy.conf`
-```
-ResolverName random
-ResolverName cisco
-LocalAddress 127.0.0.1:40
-```
-
-`dnsmasq.conf`
-```
-server=127.0.0.1#40
-```
-
-#### :books: 參考網站：
-- [dnscrypt](https://dnscrypt.org/)
-- [simplednscrypt](https://simplednscrypt.org/)
-- https://www.opendns.com/about/innovations/dnscrypt/
-- https://github.com/alterstep/dnscrypt-osxclient
+<!--
+https://www.l68.net/2745.html
+-->

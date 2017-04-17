@@ -32,10 +32,18 @@
 - `台北市`
 - `內湖區`
 ---
+
 - `assets`
 - `img`
 - `logo-small.png`
+- `shop`
+
 ---
+
+- `not_found`
+
+- `xyz123`
+- `abc123`
 
 - `running`
 - `mykey`
@@ -50,11 +58,17 @@
 - `help`
 - `info`
 
+- `myPublicIP`
+- `myLoadBalancer`
+
 - `macOS`
 - `macos`
 - `Sierra`
 - `iphone`
 - `iPhone`
+- `iphone-7`
+- `iphone6s`
+- `iphone-se`
 - `ipad`
 - `iPad`
 - `mac`
@@ -74,6 +88,8 @@
 - `apple`
 - `com`
 - `support`
+- `ios`
+- `ios-10`
 
 - `Apple Pay`
 - `Touch ID`
@@ -128,6 +144,18 @@
 - `myfile.html`
 - `home.htm`
 - `errors/404.htm`
+- `myTester`
+- `myUserAdmin`
+
+- `MyApp`
+- `MyApp.exe`
+- `My Application`
+- `MyDatabase`
+
+- `firewall`
+- `Firewall`
+
+- `LogFiles`
 
 - `vm`
 - `quickstart`
@@ -234,6 +262,7 @@
 - `synology`
 - `NAS`
 
+- `linux`
 - `Fedora`
 - `fedora`
 - `CentOS`
@@ -693,3 +722,7 @@ Yakkety 16.10
 - `謝謝,`
 - `祝您一切順心。` 
  
+---
+
+- `抱歉，找不到該頁面。`
+- `Sorry, the page you’re looking for can’t be found.`

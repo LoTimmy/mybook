@@ -15,6 +15,8 @@ shell> dig +short TXT yourdomain.com
 shell> dig apple.com any
 shell> dig @8.8.8.8 apple.com 
 
+shell> dig @8.8.8.8 -p 40 apple.com 
+
 shell> dig ANY yourdomain.com
 shell> dig AXFR yourdomain.com @xfrout1.dynect.net
 
