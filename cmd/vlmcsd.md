@@ -102,47 +102,33 @@ shell> slmgr.vbs /ato
 shell> slmgr.vbs /dlv
 ```
 
+---
+
 ```
 _vlmcs._tcp.my-home-net.local. 10800 IN SRV 100 100 kms1.my-home-net.local.
 kms1.my-home-net.local. 10800 IN A 192.168.1.17
 ```
 
+### :books: 參考網站：
 - https://technet.microsoft.com/zh-tw/library/ff793405.aspx
 
-```
-_vlmcs._tcp
-SRV
+`/etc/dnsmasq.conf`
 
 ```
-
-
-
-
-<!--
+srv-host=_vlmcs._tcp,192.168.1.55,1688,0,100
 ```
-srv-host=_vlmcs._tcp.lan,cubietruck.lan,1688,0,100
-nslookup -type=srv _vlmcs._tcp.lan
 
-srv-host=_vlmcs._tcp,192.168.1.17,1688,0,100
-
-nslookup -type=srv _vlmcs._tcp.lan
-nslookup -type=srv _vlmcs._tcp
-
-dig -t srv -q _vlmcs._tcp.lan
-dig -t srv -q _vlmcs._tcp
-
-https://www.l68.net/2685.html
+```console
+shell> dig -t SRV -q _vlmcs._tcp
+shell> nslookup -type=SRV _vlmcs._tcp 
 ```
--->
 
 `GVLK`
 `KMS Client Setup Key`
-<!--
-Windows 10 Professional
-W269N-WFGWX-YVC9B-4J6C9-T83GX
 
-Windows 7 專業版
-FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4
+```
+W269N-WFGWX-YVC9B-4J6C9-T83GX - Windows 10 Professional
+FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4 - Windows 7 專業版
 
 TX9XD-98N7V-6WMQ6-BX7FG-H8Q99 - Windows 10 Home
 3KHY7-WNT83-DGQKR-F7HPR-844BM - Windows 10 Home N
@@ -158,7 +144,7 @@ BN3D2-R7TKB-3YPBD-8DRP2-27GG4 - Windows 8 Core
 8N2M2-HWPGY-7PGT9-HGDD8-GVGGY - Windows 8 Core N
 2WN2H-YGCQR-KFX6K-CD6TF-84YXQ - Windows 8 Core Single Language
 4K36P-JN4VD-GDC6V-KDT89-DYFKP - Windows 8 Core Country Specific
--->
+```
 
 ---
 
@@ -179,9 +165,7 @@ Big Endian
 
 ---
 
-
 ### :books: 參考網站：
-
 - [kms-server](http://forums.mydigitallife.info/threads/50234-Emulated-KMS-Servers-on-non-Windows-platforms)
 - [大量啟用的 Slmgr.vbs 選項](https://technet.microsoft.com/zh-tw/library/dn502540.aspx)
 - [附錄 A：KMS 用戶端安裝識別碼](https://technet.microsoft.com/zh-tw/library/jj612867.aspx)
