@@ -1,8 +1,23 @@
 - `Glossary`
-- `字彙`
 - `glossary`
+- `字彙`
+- `詞彙`
 
 ---
+
+- `漏洞`
+- `vulnerabilities`
+- `間諜軟體`
+- `spyware`
+- `垃圾郵件`
+- `spam`
+- `網路釣魚`
+- `phishing`
+- `惡意軟體`
+- `malware`
+
+---
+
 - `Jane Doe`
 - `John Doe`
 
