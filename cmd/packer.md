@@ -1,0 +1,65 @@
+
+```
+packer build
+```
+
+`<bs>` - Backspace
+`<del>` - Delete
+`<enter>` and `<return>` - Simulates an actual "enter" or "return" keypress.
+`<esc>` - Simulates pressing the escape key.
+`<f1>` - `<f12>` - Simulates pressing a function key.
+
+
+```json
+{
+  "variables": {
+  },
+  "builders": [{
+    "type": "vmware-iso",
+    "boot_command": [
+      "<enter><wait><<f6><esc><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+      "<bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+       "/install/vmlinuz noapic ",
+       "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
+       "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+       "hostname={{ .Name }} ",
+       "fb=false debconf/frontend=noninteractive ",
+       "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=USA ",
+       "keyboard-configuration/variant=USA console-setup/ask_detect=false ",
+       "initrd=/install/initrd.gz -- <enter><wait>"
+    ],
+    "http_directory": "httpdir",
+    "disk_size": "20000",
+    "vm_name": "ubuntu-1604",
+    "vmx_data": {
+      "cpuid.coresPerSocket": "1",
+      "memsize": "1024",
+      "numvcpus": "2"
+    },
+    "output_directory": "ubuntu-1604.vmwarevm",
+    "boot_wait": "5s",
+    "tools_upload_flavor": "linux",
+    "guest_os_type": "ubuntu-64",
+    "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04.1-server-amd64.iso",
+    "iso_checksum": "d2d939ca0e65816790375f6826e4032f",
+    "iso_checksum_type": "md5",
+    "ssh_username": "ubuntu",
+    "ssh_password": "insecure",
+    "ssh_port": 22,
+    "ssh_wait_timeout": "30000s",
+    "shutdown_command": "echo 'insecure' | sudo -S shutdown -P now"
+  }]
+}
+
+```            
+
+#### :books: 參考網站：
+
+- https://www.packer.io/docs/builders/virtualbox-iso.html
+- https://www.packer.io/docs/builders/vmware-iso.html
+- https://www.packer.io/docs/builders/vmware-vmx.html
+- https://www.packer.io/docs/builders/virtualbox-iso.html
+
+
