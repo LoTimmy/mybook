@@ -597,6 +597,10 @@ http {
 ```
 
 ```
+shell> ffplay 'rtmp://192.168.1.55:1935/mytv'
+```
+
+```
 nginx path prefix: "/usr/local/nginx"
 nginx binary file: "/usr/local/nginx/sbin/nginx"
 nginx modules path: "/usr/local/nginx/modules"

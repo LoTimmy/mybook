@@ -71,6 +71,13 @@ shell> sudo service mongod stop
 shell> sudo service mongod restart
 ```
 
+```console
+shell> sudo systemctl --system daemon-reload
+shell> sudo systemctl enable mongod.service
+shell> sudo systemctl start mongod.service
+```
+
+
 `/etc/mongod.conf`
 ```
 storage:
