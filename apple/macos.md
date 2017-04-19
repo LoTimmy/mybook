@@ -87,6 +87,12 @@
 
 ---
 
+```console
+shell> dscl . -read /Users/$(whoami) UserShell
+```
+
+---
+
 `sips -- scriptable image processing system.`
 
 ```console

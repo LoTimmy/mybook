@@ -77,7 +77,6 @@ shell> sudo systemctl enable mongod.service
 shell> sudo systemctl start mongod.service
 ```
 
-
 `/etc/mongod.conf`
 ```
 storage:
