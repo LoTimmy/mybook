@@ -519,6 +519,8 @@ nginx-module-xslt-dbg - debug symbols for the nginx-module-xslt
 
 ---
 
+### with-rtmp-module {#with-rtmp-module}
+
 > 最常見的串流技術，包括：`HTTP Adaptive Bitrate Streaming`（簡稱`ABS`）、`RTSP`、`RTMP`和`HLS`等四種。
 > 其中，**`RTMP`來自於`Adobe`，也是`YouTube`正在使用的串流技術，最普遍也最穩定**；另外一個`HLS`串流技術，則是蘋果公司進行線上轉播所使用的技術，同樣也兼具新技術和穩定的特性；至於，`RSTP`目前則是比較少見的技術，但也具有技術穩定的特色。
 > `即時傳訊協定` (`Real-Time Messaging Protocol`，`RTMP`) ，這是`Adobe`的串流技術規格，提供有關音訊、視訊，及資料等各種`Adobe Flash`平台技術的高效能傳輸。
@@ -526,14 +528,13 @@ nginx-module-xslt-dbg - debug symbols for the nginx-module-xslt
 > `HLS`能將`H.264`影片轉換為多個時間長度約10秒的`MPEG2`片段，透過`HTTP`通信協定傳輸。
 > `HTTP`傳輸速度雖然遜於`Adobe`先前制定的`即時訊息協定` (`Real Time Message Protocol`, `RTMP`)，但大部分的`內容傳輸網路`(`CDN`，如`Akamai`)均支援`HTTP`協定，因此網站內容可以藉由`CDN`代為傳送。另外`HTTP`對於網路設備的通透性也比其他通訊協定好，除非管理人員刻意阻擋，`HTTP`可以通過大部分的分享器或防火牆。
 
-
 ```console
 shell> brew install nginx-full --with-rtmp-module
 ```
 
 ```console
 shell> sudo apt-get update
-shell> sudo apt-get install curl build-essential libpcre3-dev libpcre++-dev zlib1g-dev libcurl4-openssl-dev libssl-dev  git
+shell> sudo apt-get install curl build-essential libpcre3-dev libpcre++-dev zlib1g-dev libcurl4-openssl-dev libssl-dev  git supervisor
 
 shell> cd /usr/local/src
 shell> wget http://nginx.org/download/nginx-1.10.2.tar.gz
@@ -542,6 +543,7 @@ shell> tar zxvf nginx-1.10.2.tar.gz
 
 shell> cd nginx-1.10.2
 shell> ./configure --add-module=../nginx-rtmp-module
+shell> ./configure --add-module=../nginx-rtmp-module --with-http_ssl_module --with-http_secure_link_module --with-stream --with-stream_ssl_module
 shell> make
 shell> make install
 
@@ -553,13 +555,47 @@ shell> /usr/local/nginx/sbin/nginx -s stop
 shell> /usr/local/nginx/sbin/nginx -s reload
 ```
 
+- `notify_method`
+- `publish_time_fix`
+- `buflen`
+
+```
+log_format new '$remote_addr';
+access_log logs/rtmp_access.log new;
+```
+
+```
+rtmp {
+  server {
+    listen 1935;
+    chunk_size 4000;
+    notify_method get;
+    publish_time_fix off;
+    buflen 30s;
+
+    application live {
+      live on;
+      wait_key on;
+      wait_video on;
+      idle_streams off;
+      drop_idle_publisher 10s;
+    }
+
+    application push {
+      live on;
+      drop_idle_publisher 10s;
+    }
+  }
+}
+```
+
 ```
 rtmp {
   server {
     listen 1935;
     chunk_size 4000;
 
-    application mytv {
+    application live {
       # enable live streaming
       live on;
 
@@ -582,22 +618,67 @@ rtmp {
 
 http {
   server {
-    listen 8080;
+    location /control {
+      rtmp_control all;
+    }
+  }
+}
 
-    location / hls {
-      types {
-        application/vnd.apple.mpegurl m3u8;
-        video/mp2t ts;
-      }
-      root /tmp;
-      add_header Cache-Control no-cache;
+http {
+  include       mime.types;
+  default_type  application/octet-stream;
+  sendfile        on;
+  keepalive_timeout  65;
+
+  server {
+    listen       80;
+    server_name  localhost;
+    add_header X-Frame-Options SAMEORIGIN;
+
+    location / {
+      root   html;
+      index  index.html index.htm;
+    }
+
+    location /stat {
+      rtmp_stat all;
+      rtmp_stat_stylesheet stat.xsl;
+    }
+
+    location /stat.xsl {
+      root /path/to/stat/xsl/file;
+    }
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+      root   html;
+    }
+  }
+
+  server {
+    listen       8080;
+    server_name  localhost;
+
+    location /on_play {
+    }
+
+    location /on_publish {
+    }
+
+    location /control {
+      rtmp_control all;
     }
   }
 }
 ```
 
+```console
+shell> ffmpeg -re -i input.mp4 -c copy -f flv rtmp://192.168.1.55:1935/live
+shell> ffmpeg -re -i input.mp4 -c copy -vcodec libx264 -f flv rtmp://192.168.1.55:1935/live  
 ```
-shell> ffplay 'rtmp://192.168.1.55:1935/mytv'
+
+```console
+shell> ffplay 'rtmp://192.168.1.55:1935/live'
 ```
 
 ```
@@ -637,6 +718,84 @@ Options:
 - https://github.com/arut/nginx-rtmp-module
 - http://www.ithome.com.tw/node/53142
 - http://brew.sh/homebrew-nginx/
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+- http://nginx.org/en/docs/http/ngx_http_secure_link_module.html
+
+---
+
+`ssl_handshake_timeout`
+`5m`
+
+```
+stream {
+  upstream backend {
+    server 127.0.0.1:1935;
+  }
+
+  server {
+    listen 443 ssl;
+    proxy_pass backend;
+    ssl_certificate     /usr/local/nginx/conf/cert.pem;
+    ssl_certificate_key /usr/local/nginx/conf/cert.key;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_protocols TLSv1.1 TLSv1.2;
+    ssl_session_timeout 4h;
+    ssl_handshake_timeout 30s;
+  }
+}
+```
+
+```
+proxy_ssl_certificate     /etc/ssl/certs/backend.crt;
+proxy_ssl_certificate_key /etc/ssl/certs/backend.key;
+proxy_ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+proxy_ssl_ciphers   HIGH:!aNULL:!MD5;
+proxy_pass backend;
+proxy_ssl  on;
+```
+
+```
+ms	milliseconds
+s	seconds
+m	minutes
+h	hours
+d	days
+w	weeks
+M	months, 30 days
+y	years, 365 days
+```
+
+
+
+#### :books: 參考網站：
+- https://nginx.org/en/docs/stream/ngx_stream_core_module.html
+- http://nginx.org/en/docs/http/ngx_http_ssl_module.html
+- http://nginx.org/en/docs/syntax.html
+- https://www.nginx.com/resources/admin-guide/nginx-tcp-ssl-upstreams/ 
+
+
+---
+
+```
+error_page 404             /404.html;
+error_page 500 502 503 504 /50x.html;
+
+location = /50x.html {
+    root /usr/share/nginx/html;
+}
+
+location ~ \.php$ {
+    try_files $uri =404;            
+    fastcgi_split_path_info       ^(.+\.php)(.*)$;
+    fastcgi_pass unix/var/run/php/php7.0-fpm.sock;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    include fastcgi_params;
+}
+```
+
+#### :books: 參考網站：
+- http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html
 
 ---
 
