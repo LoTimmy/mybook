@@ -7,7 +7,13 @@
 
 ```console
 shell> apt-get install dnsmasq 
+
+shell> brew install dnsmasq
+shell> cp /usr/local/opt/dnsmasq/dnsmasq.conf.example /usr/local/etc/dnsmasq.conf
+shell> sudo brew services start dnsmasq
 ```
+
+`/usr/local/etc/dnsmasq.conf`
 
 `/etc/default/dnsmasq`
 
