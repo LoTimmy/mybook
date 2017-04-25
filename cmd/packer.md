@@ -1,6 +1,8 @@
 
-```
-packer build
+### 安裝 {#installing}
+
+```console
+shell> packer build
 ```
 
 `<bs>` - Backspace
@@ -62,7 +64,6 @@ packer build
 - https://www.packer.io/docs/builders/vmware-vmx.html
 - https://www.packer.io/docs/builders/virtualbox-iso.html
 
-
 ---
 
 ```
@@ -94,6 +95,10 @@ shell> esxcli network firewall ruleset list
 
 #### :books: 參考網站：
 - https://www.netiq.com/documentation/cloudmanager22/ncm22_reference/data/bxzaz5n.html
+
+`PACKER_LOG=1`
+
+`PACKER_LOG_PATH="packerlog.txt"`
 
 
 ```json
@@ -156,7 +161,9 @@ shell> esxcli network firewall ruleset list
 }
 ```
 
+#### :books: 參考網站：
 - https://help.ubuntu.com/12.04/installation-guide/example-preseed.txt
 - https://help.ubuntu.com/16.04/installation-guide/example-preseed.txt
 - https://www.packer.io/docs/builders/vmware-iso.html
 - https://www.ibm.com/support/knowledgecenter/pl//SSPLFC_7.3.0/com.ibm.taddm.doc_7.3/SensorGuideRef/r_cmdb_sensor_vmware_troubleshooting.html
+- https://www.packer.io/docs/other/debugging.html
