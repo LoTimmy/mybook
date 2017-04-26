@@ -186,6 +186,7 @@
 - `centos`
 - `Red Hat Enterprise Linux`
 - `redhat`
+- `RedHat`
 - `Oracle Linux`
 - `oraclelinux`
 - `gentoo`
@@ -616,6 +617,7 @@ Yakkety 16.10
 - `GitBook`
 - `hello`
 - `hello.txt`
+- `goodbye`
 - `book.json`
 - `README.md`
 - `SUMMARY.md`
