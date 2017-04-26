@@ -159,8 +159,19 @@ if Process.arguments.count != 2 {
 }
 ```
 
+```
+com.example.app1
+com.example.app2
+com.example.app.app1
+com.example.app.app2
+```
+
+
+#### :books: 參考網站：
 - [Swift_Programming_Language](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)
 - [Functions](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html)
+- [Configuring Your Xcode Project for Distribution](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/ConfiguringYourApp/ConfiguringYourApp.html)
+- https://developer.apple.com/reference/uikit/uidevice/1620059-identifierforvendor
 
 ---
 
@@ -208,8 +219,6 @@ for score in individualScores {
 }
 println(teamScore)
 ```
-
-`edu.self`
 
 ---
 

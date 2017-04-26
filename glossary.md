@@ -153,6 +153,8 @@
 - `errors/404.htm`
 - `myTester`
 - `myUserAdmin`
+- `my_group_1`
+- `my_group_2` 
 
 - `MyApp`
 - `MyApp.exe`
@@ -161,6 +163,8 @@
 
 - `firewall`
 - `Firewall`
+
+- `disk_size`
 
 - `LogFiles`
 
@@ -191,6 +195,7 @@
 - `gentoo`
 - `Ubuntu`
 - `ubuntu`
+- `ubuntu-14-04-x64`
 - `Debian`
 - `debian`
 - `raspbian`
@@ -246,6 +251,12 @@
 - `API`
 - `Apps`
 - `apps`
+- `app-01`
+- `app-02`
+
+- `playbook_file`
+- `ansible`
+- `digitalocean`
 
 - `opt`
 - `home`
@@ -321,6 +332,8 @@
 - `database_server`
 - `webservers`
 - `dbservers`
+- `db-01`
+- `db-02`
 - `webserver`
 - `webserver.localdomain`
 
@@ -569,6 +582,7 @@
 
 - `hello-world`
 - `helloworld`
+- `sayHello`
 
 - `pi`
 - `raspberry`
@@ -615,12 +629,15 @@ Yakkety 16.10
 - `My page`
 - `GitBook`
 - `hello`
+- `Hello`
 - `hello.txt`
 - `book.json`
 - `README.md`
 - `SUMMARY.md`
 - `something.md`
 - `docs`
+- `params`
+- `message`
 - `my.json`
 - `some.json`
 - `Docs`
@@ -652,7 +669,13 @@ Yakkety 16.10
 - `output`
 - `config`
 - `page`
+- `inline`
+- `shell`
+- `powershell`
+- `type`
 - `file`
+- `source`
+- `destination`
 - `everyone`
 - `website`
 - `json`
