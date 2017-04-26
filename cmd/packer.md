@@ -182,9 +182,11 @@ shell> esxcli network firewall ruleset list
 
 d-i debian-installer/language string en
 d-i debian-installer/locale string en_US.UTF-8
+d-i localechooser/supported-locales en_US.UTF-8
 
 d-i console-setup/ask_detect boolean false
 d-i keyboard-configuration/xkb-keymap select us
+
 d-i netcfg/choose_interface select auto
 d-i netcfg/get_hostname string ubuntu
 d-i netcfg/get_domain string unassigned-domain

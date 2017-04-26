@@ -218,6 +218,42 @@ shell> python -c 'import crypt; print crypt.crypt("word", "salt")'
 ```
 ---
 
+```
+- name:
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^UseDNS'
+    line: 'UseDNS no'
+    insertafter: EOF
+    state: present
+    register: sshd_config
+
+- name:
+  service:
+    name: ssh
+    state: restarted
+    when: sshd_config.changed
+```
+
+#### :books: 參考網站：
+- http://docs.ansible.com/ansible/common_return_values.html#id4
+
+---
+
+```
+- name: this command prints FAILED when it fails
+  command: /usr/bin/example-command -x -y -z
+  register: command_result
+  ignore_errors: True
+
+- name: fail the play if the previous command did not succeed
+  fail: msg="the command failed"
+  when: "'FAILED' in command_result.stderr"
+```
+
+
+---
+
 #### :books: 參考網站：
 - [ansible](http://www.ithome.com.tw/news/99354)
 - [ansible](http://www.ithome.com.tw/news/99306)
