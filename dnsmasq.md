@@ -1,4 +1,5 @@
 `dnsmasq - Small caching DNS proxy and DHCP/TFTP server`
+
 `dnsmasq-utils - Utilities for manipulating DHCP leases`
 
 > 为`DHCP`和`DNS`使用`dnsmasq`是一个不错的主意，因为`dnsmasq`的配置过程很容易。
@@ -59,6 +60,7 @@ server=/localnet/127.0.0.1#10053
 server=/in-addr.arpa/127.0.0.1#10053
 server=/ip6.arpa/127.0.0.1#10053
 
+address=/local/127.0.0.1
 address=/double-click.net/127.0.0.1
 local-ttl=
 ```
@@ -66,11 +68,56 @@ local-ttl=
 ```console
 shell> dnsmasq --test
 dnsmasq: syntax check OK.
+
+shell> scutil --dns
+```
+
+```
+*.lan
+*.local
+*.localdomain
+*.workgroup
+```
+
+```
+listen-address=127.0.0.1
+
+no-resolv
+no-poll
+
+address=/local/127.0.0.1
+
+server=127.0.0.1#10053
+server=/google.com/8.8.8.8
+server=/google.com/8.8.4.4
+
+server=/taobao.com/223.5.5.5
+server=/taobao.com/223.6.6.6
+server=/tmall.com/223.5.5.5
+server=/tmall.com/223.6.6.6
 ```
 
 ---
 
 `dnscrypt-proxy - Tool for securing communications between a client and a DNS resolver`
+
+```console
+shell> brew install dnscrypt-proxy
+shell> sudo brew services start dnscrypt-proxy
+
+shell> dnscrypt-update-resolvers
+```
+
+`dnscrypt-proxy.conf`
+
+```
+# ResolverName random
+ResolverName cisco
+
+ResolversList /usr/local/opt/dnscrypt-proxy/share/dnscrypt-proxy/dnscrypt-resolvers.csv
+
+LocalAddress 127.0.0.1:10053
+```
 
 #### :books: 參考網站：
 - http://www.thekelleys.org.uk/dnsmasq/docs/dnsmasq-man.html

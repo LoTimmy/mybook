@@ -190,6 +190,7 @@
 - `centos`
 - `Red Hat Enterprise Linux`
 - `redhat`
+- `RedHat`
 - `Oracle Linux`
 - `oraclelinux`
 - `gentoo`
@@ -631,6 +632,7 @@ Yakkety 16.10
 - `hello`
 - `Hello`
 - `hello.txt`
+- `goodbye`
 - `book.json`
 - `README.md`
 - `SUMMARY.md`
