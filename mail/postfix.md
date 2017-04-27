@@ -456,9 +456,49 @@ shell> postconf -e 'smtp_use_tls = yes'
 shell> postconf -e 'smtp_tls_note_starttls_offer = yes'
 ```
 
+
+```console
+shell> openssl req -new -newkey rsa:2048 -nodes -out server.csr -keyout server.key -subj "/C=TW/ST=Taiwan/L=Taipei/O=Microsoft Corp./CN=*.example.com"
+
+shell> cat www_yourdomain_com.crt COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt > ssl-bundle.crt
+```
+
+```
+smtpd_use_tls = yes
+smtpd_tls_security_level = may
+smtpd_tls_auth_only = no
+smtpd_tls_cert_file = /etc/postfix/ssl/cert.pem
+smtpd_tls_key_file = /etc/postfix/ssl/key.pem
+smtpd_tls_CAfile = /etc/postfix/ssl/ssl-bundle.crt
+smtpd_tls_session_cache_database = btree:/var/run/smtpd_tls_session_cache
+smtpd_tls_received_header = yes
+smtpd_tls_mandatory_ciphers = medium
+smtpd_tls_mandatory_protocols = !SSLv2, !SSLv3
+smtpd_tls_protocols = !SSLv2, !SSLv3
+smtpd_tls_exclude_ciphers = EXP, MEDIUM, LOW, DES, 3DES, SSLv2
+smtpd_tls_ciphers = high
+smtpd_tls_loglevel = 1
+smtpd_tls_session_cache_timeout = 3600s
+smtpd_tls_dh1024_param_file = /etc/postfix/ssl/postfix.dh.param
+
+tls_random_source = dev:/dev/urandom
+tls_high_cipherlist = kEECDH:+kEECDH+SHA:kEDH:+kEDH+SHA:+kEDH+CAMELLIA:kECDH:+kECDH+SHA:kRSA:+kRSA+SHA:+kRSA+CAMELLIA:!aNULL:!eNULL:!SSLv2:!RC4:!MD5:!DES:!EXP:!SEED:!IDEA:!3DES
+tls_medium_cipherlist = kEECDH:+kEECDH+SHA:kEDH:+kEDH+SHA:+kEDH+CAMELLIA:kECDH:+kECDH+SHA:kRSA:+kRSA+SHA:+kRSA+CAMELLIA:!aNULL:!eNULL:!SSLv2:!MD5:!DES:!EXP:!SEED:!IDEA:!3DES
+
+smtp_tls_session_cache_database = btree:/var/run/smtp_tls_session_cache
+
+smtp_use_tls = yes
+smtp_tls_mandatory_protocols = !SSLv2, !SSLv3
+smtp_tls_protocols = !SSLv2, !SSLv3
+smtp_tls_exclude_ciphers = EXP, MEDIUM, LOW, DES, 3DES, SSLv2
+smtp_tls_ciphers = high
+```
+
+
 #### :books: 參考網站：
 - https://www.checktls.com/perl/TestReceiver.pl
 - [Postfix TLS Support](http://www.postfix.org/TLS_README.html)
+- https://access.redhat.com/articles/1468593
 
 
 ```console
