@@ -306,6 +306,10 @@ shell> openssl pkcs12 -in user.p12
 ```
 ----------
 
+`什麼是 AES？`
+> Advanced Encryption Standard (AES) 為進階加密標準，是用來加密電子資料的一種規格。自 2001 年起，AES 即受到美國政府採用，現今已廣泛應用於世界各處。AES 採行對稱加密演算法，也就是同一組加密金鑰可用於加密及解密。如果沒有加密金鑰，便無法存取加密資料，藉此保障資訊安全。
+
+
 ###### openssl_private_encrypt — Encrypts data with private key
 ```console
 shell> echo HelloWorld | openssl rsautl -inkey private_key.pem -sign | openssl enc -base64 -out crypted

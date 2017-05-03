@@ -457,6 +457,13 @@ shell> tell application "Finder" to quit
 shell> tell application "Finder" to launch
 ```
 
+```console
+shell> osascript -e "tell application \"Safari\" to activate"
+```
+
+#### :books: 參考網站：
+- https://developer.apple.com/library/content/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_cmds.html
+
 ---
 
 `.bash_profile`
