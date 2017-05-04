@@ -1,4 +1,4 @@
-![](https://assets-cdn.github.com/images/modules/site/node_logo.png?sn?sn)
+<img src="http://i.imgur.com/yrb3Srt.png" width="100">
 
 ### 安裝 {#installing}
 
