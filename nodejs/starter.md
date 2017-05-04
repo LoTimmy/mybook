@@ -72,6 +72,12 @@ shell> node hello.js
 
 ### 變數 (Variable) {#var}
 
+> `JavaScript` 有兩個範圍：**全域**和**區域**。在函式定義之外宣告的變數就是**全域變數**，其值可在整個程式中存取和修改。
+> 宣告變數。在函式定義內宣告的變數則是**區域變數**。
+> 可以宣告變數而不使用 `var` 關鍵字，並為變數指派值。 這稱為「`隱含宣告`」，但不建議使用。 隱含宣告會提供全域範圍給變數。
+> 如果未初始化 `var` 中的變數，系統會自動指派 `JavaScript` 值 `undefined` 給此變數。
+> 下列程式碼是示範如何宣告整數變數、指派其值，然後再為其指派新值的簡單範例。
+
 ```js
 var a;
 var a = 1;
@@ -85,12 +91,25 @@ var myFunc = function() {};
 var text = null;
 var myObj = {}, myobject = { nickname: 'Jack', "registration_date": new Date(1995, 11, 25), "privileged_user": true };
 var myarray = [], someArray = [ 1, 2, 3 ];
+
+var greeting = "Hello, World!";
+var bigNumber = 1e100;
+
+var index;  
+var name = "Thomas Jefferson";  
+var answer = 42, counter, numpages = 10;  
+var myarray = new Array();
 ```
 
 ```js
 var mynumber = 99;
 console.log(`my favorite number is: ${mynumber}`);
 ```
+
+### 常數 (Constant) {#const}
+
+> 常數會使用 `const` 宣告
+> 在這個範例中，常數 `MY_FAV` 永遠會是 7
 
 ```js
 // define MY_FAV as a constant and give it the value 7
@@ -106,6 +125,29 @@ var MY_FAV = 20;
 // MY_FAV is still 7
 console.log("my favorite number is " + MY_FAV);
 ```
+
+```js
+const months = 12, weeks = 52, days = 365;
+const daysPerWeek = days / weeks;
+const daysPerMonth = days / months;
+
+const speedLimit = 55;
+const pi = 3.14159265358979323846264338327950;
+const Pi = 3.14159;
+const SpeedOfLight = 300000; // km per sec.
+```
+
+`範例`
+
+```js
+var radius = 5.3; // Radius 半徑
+const pi = 3.14159265358979323846264338327950; // PI 圓周率
+var area = pi * (radius * radius); // Area 面積
+```
+
+> 宣告區塊範圍變數。
+> 「`區域變數`」(`Local Variable`)
+> 使用 `let` 來宣告變數，其範圍限於宣告所在的區塊。
 
 ``` .js
 'use strict';
@@ -131,7 +173,9 @@ function letTest() {
 
 #### :books: 參考網站：
 - [let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+- [let 陳述式 (JavaScript)](https://msdn.microsoft.com/zh-tw/library/dn263046(v=vs.94).aspx)
 - [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+- https://docs.microsoft.com/en-us/scripting/javascript/advanced/variable-scope-javascript
 
 
 

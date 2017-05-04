@@ -18,6 +18,15 @@
 
 ---
 
+- `產品金鑰`
+- `產品名稱`
+- `零售`
+- `多次啟用`
+- `Windows 10 Pro`
+- `Windows 10 Home`
+
+---
+
 - `Jane Doe`
 - `John Doe`
 
