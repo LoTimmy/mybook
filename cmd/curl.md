@@ -131,5 +131,25 @@ Content-Length: 2759
 Content-Type: text/html
 ```
 
+`.curlrc`
+
+`_curlrc`
+
+```
+# --- Example file ---
+# this is a comment
+proxy = "http://127.0.0.1:8888"
+url = "example.com"
+output = "curlhere.html"
+user-agent = "superagent/1.0"
+
+# and fetch another URL too
+url = "example.com/docs/manpage.html"
+-O
+referer = "http://nowhereatall.example.com/"
+# --- End of example file ---
+```
+
+
 #### :books: 參考網站：
 - [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)
