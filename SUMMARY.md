@@ -29,6 +29,7 @@
     * [cvs](cmd/cvs.md)
     * [dig](cmd/dig.md)
     * [dmidecode](cmd/dmidecode.md)
+    * [enca](cmd/enca.md)
     * [ext4](cmd/ext4.md)
     * <img src="https://ffmpeg.org/favicon.ico" width="16"> [ffmpeg](cmd/ffmpeg.md)
     * [figlet](cmd/figlet.md)
