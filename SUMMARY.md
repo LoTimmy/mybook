@@ -134,6 +134,7 @@
 * [nginx](nginx/README.md)
     * [手冊](nginx/guide.md)
 * [haproxy](haproxy.md)
+* [caddy](caddy.md)
 * <img src="https://www-jp.mysql.com/common/themes/sakila/favicon.ico" width="16"> [MySQL](mysql/README.md)
     * [手冊](mysql/guide.md)
     * [mycli](mysql/mycli.md)
@@ -165,3 +166,5 @@
     * [手冊](git/guide.md)
     * <img src="https://www.gitbook.com/assets/images/logo/favicon.ico?version=19.3.1" width="16"> [GitBook](git/gitbook.md)
 * [macOS](apple/macos.md)
+    * [alfredapp](apple/alfredapp.md)
+    * [swift](apple/swift.md)
