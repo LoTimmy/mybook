@@ -6,6 +6,7 @@
 * [Markdown](markdown.md)
     * [Using emoji](markdown.md#using-emoji)
 * [Glossary](glossary.md)
+* [學英語](學英語.md)
 
 ----
 * [SSH](ssh/guide.md)
@@ -30,6 +31,7 @@
     * [dmidecode](cmd/dmidecode.md)
     * [ext4](cmd/ext4.md)
     * <img src="https://ffmpeg.org/favicon.ico" width="16"> [ffmpeg](cmd/ffmpeg.md)
+    * [figlet](cmd/figlet.md)
     * [file](cmd/file.md)
     * [fping](cmd/fping.md)
     * [fswatch](cmd/fswatch.md)
@@ -58,6 +60,7 @@
     * [optipng](cmd/optipng.md)
     * [packer](cmd/packer.md)
     * [putty-tools](cmd/putty-tools.md)
+    * [pwgen](cmd/pwgen.md)
     * [qpdf](cmd/qpdf.md)
     * [recode](cmd/recode.md)
     * [rename](cmd/rename.md)
@@ -92,6 +95,7 @@
     * [jquery-TWzipcode](jquery/jQuery-TWzipcode.md)
     * [jquery-tinyMap](jquery/jQuery-tinyMap.md)
 
+* [php](php.md)
 * <img src="https://nodejs.org/static/favicon.ico" width="16"> [Node.js](nodejs/README.md)
     * [入門](nodejs/starter.md)
         * [安裝](nodejs/starter.md#installing)
