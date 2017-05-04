@@ -1,4 +1,4 @@
-`p7zip - 7z file archiver with high compression ratio`
+`arp-scan - arp scanning and fingerprinting tool`
 
 ### 安裝 {#installing}
 
@@ -14,3 +14,10 @@ shell> sudo arp-scan -I en0 192.168.31.0/24
 shell> sudo arp-scan -I en0 192.168.31.1-192.168.31.50
 ```
 
+`/usr/share/arp-scan/ieee-oui.txt`
+`/usr/share/arp-scan/ieee-iab.txt`
+
+```console
+shell> get-iab
+shell> get-oui
+```
