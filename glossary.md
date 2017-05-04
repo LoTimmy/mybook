@@ -268,6 +268,7 @@
 - `Administrator`
 - `AdministratorPassword`
 - `Admin`
+- `admin`
 - `administrators`
 
 - `javascript`

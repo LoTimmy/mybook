@@ -9,6 +9,30 @@ Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL 
 ```
 
 ```console
+shell> curl-config --protocols
+DICT
+FILE
+FTP
+FTPS
+GOPHER
+HTTP
+HTTPS
+IMAP
+IMAPS
+LDAP
+LDAPS
+POP3
+POP3S
+RTSP
+SMB
+SMBS
+SMTP
+SMTPS
+TELNET
+TFTP
+```
+
+```console
 shell> curl -s --head http://127.0.0.1/
 
 shell> if curl -s --head http://100.101.102.103/ | grep "200 OK" > /dev/null; then ; fi
