@@ -89,7 +89,7 @@ do
 done </samples/comics.lst
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - https://www.ibm.com/support/knowledgecenter/SSLTBW_1.13.0/com.ibm.zos.r13.bpxa500/read.htm
 - https://www.ibm.com/support/knowledgecenter/zh/ssw_aix_71/com.ibm.aix.cmds4/read.htm
 
@@ -121,7 +121,7 @@ ip=$(curl -s https://api.ipify.org)
 echo "My public IP address is: $ip"
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [ipify](https://www.ipify.org/)
 
 ---
@@ -135,7 +135,41 @@ fi
 
 ---
 
-### :books: 參考網站：
+`daemon - turns other processes into daemons`
+
+### 安裝 {#installing}
+```console
+shell> sudo apt-get install daemon
+shell> daemon -r ./test.sh
+```
+
+`test.sh`
+
+```sh
+#!/bin/bash
+
+# 無限迴圈
+while true; do
+  echo "$(date +"%Y-%m-%d %T") > /dev/shm/date.txt 
+  sleep 2
+done
+```
+
+```console
+shell> start-stop-daemon --start --background --exec /root/test.sh
+shell> start-stop-daemon --stop --name test.sh
+```
+
+
+
+#### :books: 參考網站：
+- https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/
+- http://manpages.ubuntu.com/manpages/zesty/en/man8/start-stop-daemon.8.html
+
+
+---
+
+#### :books: 參考網站：
 - [Unix /Linux 的Bash Shell 出現重大漏洞，危險等級可能超越 Heartbleed](http://www.ithome.com.tw/news/91107)
 - [Bash 漏洞已出現攻擊行動，又傳出修補後仍有漏洞！](http://www.ithome.com.tw/news/91148)
 - [Bash 漏洞連環爆：第二波修補還未完，第三波漏洞又來襲！](http://www.ithome.com.tw/news/91233)

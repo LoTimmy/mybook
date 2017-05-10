@@ -23,6 +23,9 @@
 
 `Fn`
 
+<img src="http://i.imgur.com/TyG4Hnl.png" width="600">
+
+
 #### :books: 參考網站：
 - [Keyboard_Shortcuts](http://www.sequelpro.com/docs/Keyboard_Shortcuts)
 

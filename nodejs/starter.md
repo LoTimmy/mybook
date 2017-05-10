@@ -55,10 +55,9 @@ shell> nvm install v4.2 --reinstall-packages-from=iojs
 #### :books: 參考網站：
 - [nvm](https://github.com/creationix/nvm)
 
-
 ### Hello world 範例 {#hello-world}
 
-建立名為 hello.js 的檔案，並新增下列程式碼：
+建立名為 `hello.js` 的檔案，並新增下列程式碼：
 
 ```js
 console.log('Hello World!');
@@ -70,7 +69,7 @@ console.log('Hello World!');
 shell> node hello.js
 ```
 
-### 變數 (Variable) {#var}
+### `變數` (`Variable`) {#var}
 
 > `JavaScript` 有兩個範圍：**全域**和**區域**。在函式定義之外宣告的變數就是**全域變數**，其值可在整個程式中存取和修改。
 > 宣告變數。在函式定義內宣告的變數則是**區域變數**。
@@ -106,7 +105,7 @@ var mynumber = 99;
 console.log(`my favorite number is: ${mynumber}`);
 ```
 
-### 常數 (Constant) {#const}
+### `常數` (`Constant`) {#const}
 
 > 常數會使用 `const` 宣告
 > 在這個範例中，常數 `MY_FAV` 永遠會是 7
@@ -176,7 +175,6 @@ function letTest() {
 - [let 陳述式 (JavaScript)](https://msdn.microsoft.com/zh-tw/library/dn263046(v=vs.94).aspx)
 - [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 - https://docs.microsoft.com/en-us/scripting/javascript/advanced/variable-scope-javascript
-
 
 
 ### Events {#events}
