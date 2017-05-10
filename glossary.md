@@ -49,6 +49,11 @@
 
 ---
 
+- `ipaddr`
+- `subnetmask`
+- `gateway`
+- `metric`
+
 - `not_found`
 
 - `xyz123`
@@ -177,6 +182,8 @@
 
 - `LogFiles`
 
+- `MyVM`
+- `MyVM2`
 - `vm`
 - `quickstart`
 

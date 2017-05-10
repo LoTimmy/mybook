@@ -220,6 +220,7 @@ SetBlockedNetworks() {
 
 #### :books: 參考網站：
 - [Simple Firewall Configuration Using NetFilter/iptables](https://www.novell.com/coolsolutions/feature/18139.html)
+- https://www.netfilter.org/documentation/HOWTO/NAT-HOWTO-6.html
 - [Linux 下网络性能优化方法简析](https://www.ibm.com/developerworks/cn/linux/l-cn-network-pt/)
 
 ```
@@ -293,6 +294,7 @@ shell> ip6tables -A INPUT -i eth0 -p tcp -s 3ffe:ffff:100::1/128 --dport 22 -j A
 - [packet-filtering-HOWTO](http://www.netfilter.org/documentation/HOWTO/packet-filtering-HOWTO-5.html)
 - [NAT-HOWTO](http://www.netfilter.org/documentation/HOWTO/NAT-HOWTO-4.html)
 - [NAT-HOWTO](http://www.netfilter.org/documentation/HOWTO/NAT-HOWTO-6.html)
+- https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-firewall-ipt-fwd.html
 
 ---
 ```console
@@ -398,6 +400,7 @@ http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveform
 - [ipset](http://ipset.netfilter.org/)
 - [ipset](http://ipset.netfilter.org/ipset.man.html)
 - [ipset](http://manpages.ubuntu.com/manpages/xenial/man8/ipset.8.html)
+- http://manpages.ubuntu.com/manpages/zesty/man8/ipset.8.html
 - [ChangeLog](http://ipset.netfilter.org/changelog.html)
 - [iptables](http://ipset.netfilter.org/iptables.man.html)
 - [iptables-extensions](http://ipset.netfilter.org/iptables-extensions.man.html)
