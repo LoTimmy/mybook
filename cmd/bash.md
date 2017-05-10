@@ -135,6 +135,29 @@ fi
 
 ---
 
+```
+# You may uncomment the following lines if you want `ls' to be colorized:
+export LS_OPTIONS='--color=auto'
+eval "`dircolors`"
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -l'
+alias l='ls $LS_OPTIONS -lA'
+
+# Some more alias to avoid making mistakes:
+# alias rm='rm -i'
+# alias cp='cp -i'
+# alias mv='mv -i'
+```
+
+```
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+```
+
+---
+
 ### :books: 參考網站：
 - [Unix /Linux 的Bash Shell 出現重大漏洞，危險等級可能超越 Heartbleed](http://www.ithome.com.tw/news/91107)
 - [Bash 漏洞已出現攻擊行動，又傳出修補後仍有漏洞！](http://www.ithome.com.tw/news/91148)
