@@ -2,13 +2,19 @@
 
 `supervisorctl - supervisorctl Documentation`
 
-
-
-Installing Supervisor
+`Installing Supervisor`
 
 ```console
 shell> apt-get update && apt-get install -y supervisor
 shell> mkdir -p /var/log/supervisor
+```
+
+
+`echo_supervisord_conf - Supervisor Configuration Documentation`
+
+
+```console
+shell> echo_supervisord_conf > /etc/supervisor/supervisord.conf
 ```
 
 `/etc/supervisor/conf.d/supervisord.conf`
@@ -23,6 +29,17 @@ command=/usr/sbin/sshd -D
 [program:apache2]
 command=/bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"
 ```
+
+
+```
+[program:gitbook]
+command=/home/chrism/bin/httpd -c "ErrorLog /dev/stdout" -DFOREGROUND
+user=chrism
+environment=HOME="/home/chrism",USER="chrism"
+```
+
+
+
 
 ```
 [inet_http_server]         ; inet (TCP) server disabled by default
