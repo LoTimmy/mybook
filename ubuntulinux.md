@@ -493,6 +493,25 @@ shell> do-release-upgrade
 
 ---
 
+```console
+shell> dhclient -r eth0
+shell> dhclient eth0
+```
+
+---
+
+`hostnamectl - Control the system hostname`
+
+```console
+shell> hostnamectl status
+shell> hostnamectl set-hostname name
+```
+
+#### :books: 參考網站：
+- https://access.redhat.com/documentation/zh-CN/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html
+
+---
+
 #### :books: 參考網站：
 - [Official Ubuntu Documentation](https://help.ubuntu.com/)
 - https://aws.amazon.com/tw/premiumsupport/knowledge-center/linux-static-hostname/

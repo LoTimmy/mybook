@@ -65,6 +65,7 @@ shell> iwlist wlan0 scan
 shell> vim /etc/wpa_supplicant/wpa_supplicant.conf
 ```
 
+
 ```
 country=GB
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -89,6 +90,15 @@ network={
 }
 ```
 
+`wpa_supplicant.conf`
+```
+network={
+	ssid="N500RD-EC38"
+	key_mgmt=WPA-PSK
+	psk="12345678"
+}
+```
+
 ---
 
 #### :books: 參考網站：
@@ -109,6 +119,15 @@ shell> diskutil list
 shell> diskutil unmountDisk /dev/disk3
 shell> sudo dd bs=4m if=~/Downloads/2016-09-23-raspbian-jessie-lite.img of=/dev/disk3
 shell> dd if=~/Downloads/2016-09-23-raspbian-jessie-lite.img | pv | sudo dd bs=4m of=/dev/disk3
+shell> diskutil eject /dev/disk3
+```
+
+```console
+shell> aria2c https://downloads.raspberrypi.org/raspbian_lite_latest.torrent
+shell> unzip ~/Downloads/2017-04-10-raspbian-jessie-lite.zip
+shell> diskutil list
+shell> diskutil unmountDisk /dev/disk3
+shell> dd if=~/Downloads/2017-04-10-raspbian-jessie-lite.img | pv | sudo dd bs=4M of=/dev/disk3
 shell> diskutil eject /dev/disk3
 ```
 

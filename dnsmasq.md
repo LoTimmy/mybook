@@ -126,6 +126,9 @@ LocalAddress 127.0.0.1:10053
 - https://www.opendns.com/about/innovations/dnscrypt/
 - https://github.com/alterstep/dnscrypt-osxclient
 - http://manpages.ubuntu.com/manpages/xenial/man8/dnsmasq.8.html
+- http://manpages.ubuntu.com/manpages/trusty/man8/dnsmasq.8.html
+- http://www.cisco.com/c/en/us/td/docs/net_mgmt/network_registrar/7-1/user/guide/cnr71book/UGB_Opts.html
+- https://technet.microsoft.com/en-us/library/cc958941.aspx
 
 
 ---
