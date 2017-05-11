@@ -149,6 +149,7 @@
     * [OpenVPN](vpn/openvpn.md)
     * [pptpd](vpn/pptpd.md)
     * [strongswan](vpn/strongswan.md)
+    * [gvpe](vpn/gvpe.md)
 * [dnsmasq](dnsmasq.md)
 * [adobe-fonts](adobe-fonts.md)
 * <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)
