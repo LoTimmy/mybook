@@ -139,6 +139,7 @@
 * [nginx](nginx/README.md)
     * [手冊](nginx/guide.md)
 * [haproxy](haproxy.md)
+* [fail2ban](fail2ban.md)
 * [caddy](caddy.md)
 * <img src="https://www-jp.mysql.com/common/themes/sakila/favicon.ico" width="16"> [MySQL](mysql/README.md)
     * [手冊](mysql/guide.md)

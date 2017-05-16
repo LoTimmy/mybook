@@ -101,7 +101,8 @@ shell> vim /etc/default/gvpe
 ```
 
 ```
-START_DAEMON="1"
+START_DAEMON=1
+DAEMON_ARGS=" branch1"
 ```
 
 `/usr/share/doc/gvpe/examples`
@@ -131,12 +132,13 @@ shell> gvpectrl -c /etc/gvpe/ -g
 -g, --generate-keys
 ```
 
+```
+mtu = bytes
+Recommended values are 1500 (ethernet), 1492 (pppoe), 1472 (pptp).
+```
+
 #### :books: 參考網站：
 - [gvpe](http://ftp.gnu.org/gnu/gvpe/)
-
----
-
-```console
-shell> apt-get install n2n
-```
+- http://manpages.ubuntu.com/manpages/zesty/man5/gvpe.conf.5.html
+- https://manpages.debian.org/unstable/gvpe/gvpectrl.8.en.html
 

@@ -72,6 +72,18 @@
 - `help`
 - `info`
 
+- `Inv. Number`
+- `Invoice Number`
+- `Qty.`
+- `Date`
+- `2017-04-06 12:51`
+- `2018-04-11`
+- `Type`
+- `Status`
+- `Details`
+- `COMPLETE`
+- `YES`
+
 - `myPublicIP`
 - `myLoadBalancer`
 
