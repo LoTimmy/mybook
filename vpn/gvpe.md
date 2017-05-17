@@ -2,6 +2,14 @@
 
 `GNU Virtual Private Ethernet (GVPE)`
 
+`GNU Virtual Private Ethernet` 的安全性通过 `OpenSSL` 库，借助公共/私有密匙机制进行处理。虚拟网络中的每个主机都被提供一个惟一的主机密匙，公共版本用于加密通信信道。
+
+同时，由于虚拟专用网基于支持的、以太网级网络环境的，为每个主机都提供一个惟一的 `MAC` 地址，和一个本地以太网上的情况一样。这意味着您可以通过发送者（和接收者，如果必要的话）的 `MAC` 地址来验证信息的来源，额外提供了一级安全性。
+
+`GVPE` 支持 `aes-128`、`aes-192`、`aes-256` 和 `bf` (`blowfish`) 密码，支持 `sha512`、`sha256`、`sha1`、`ripemd160`、`md5` 和 `md4` 摘要算法。
+
+
+
 ### 安裝 {#installing}
 
 ```console
@@ -136,6 +144,23 @@ shell> gvpectrl -c /etc/gvpe/ -g
 mtu = bytes
 Recommended values are 1500 (ethernet), 1492 (pppoe), 1472 (pptp).
 ```
+
+```
+shell> ip -4 addr list dev vpn0
+shell> ip -4 route list dev vpn0
+```
+
+---
+`MAXIMIZE SECURITY`
+```
+   ./configure --enable-hmac-length=16 --enable-rand-length=12 --enable-digest=ripemd610
+```
+
+`MINIMIZE CPU TIME REQUIRED`
+```
+   ./configure --enable-cipher=bf --enable-digest=md4
+```
+
 
 #### :books: 參考網站：
 - [gvpe](http://ftp.gnu.org/gnu/gvpe/)

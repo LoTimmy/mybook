@@ -449,6 +449,7 @@ shell> crontab -e
 - https://www.cert.org/downloads/IPv6/ip6tables_rules.txt
 - http://manpages.ubuntu.com/manpages/trusty/man8/iptables.8.html
 - http://manpages.ubuntu.com/manpages/wily/man8/xtables-addons.8.html
+- https://www.netfilter.org/documentation/HOWTO/netfilter-extensions-HOWTO-4.html
 
 ---
 

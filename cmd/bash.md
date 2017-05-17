@@ -157,9 +157,6 @@ fi
 ```
 
 ---
-
-### :books: 參考網站：
-=======
 `daemon - turns other processes into daemons`
 
 ### 安裝 {#installing}
@@ -185,12 +182,32 @@ shell> start-stop-daemon --start --background --exec /root/test.sh
 shell> start-stop-daemon --stop --name test.sh
 ```
 
-
-
 #### :books: 參考網站：
 - https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/
 - http://manpages.ubuntu.com/manpages/zesty/en/man8/start-stop-daemon.8.html
 
+---
+
+`-n     do not output the trailing newline`
+
+`-e     enable interpretation of backslash escapes`
+
+`\r     carriage return`
+
+`Carriage Return`
+`歸位字元`
+`↵`
+
+```sh
+#!/bin/bash
+
+echo -ne '#####                     (33%)\r'
+sleep 1
+echo -ne '#############             (66%)\r'
+sleep 1
+echo -ne '#######################   (100%)\r'
+echo -ne '\n'
+```
 
 ---
 
