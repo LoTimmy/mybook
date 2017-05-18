@@ -22,6 +22,7 @@
     * [aria2](cmd/aria2.md)
     * [arp-scan](cmd/arp-scan.md)
     * [autojump](cmd/autojump.md)
+    * [bash](cmd/bash.md)
     * [cifs-utils](cmd/cifs-utils.md)
     * [crontab](cmd/crontab.md)
     * [curl](cmd/curl.md)
