@@ -24,6 +24,16 @@ iptables -t mangle -o "$PPP_IFACE" --insert FORWARD 1 -p tcp --tcp-flags SYN,RST
 #### :books: 參考網站：
 - http://www.cisco.com/c/en/us/td/docs/ios/12_2sb/12_2sba/feature/guide/sb_admss.html
 
+---
+
+
+```
+iptables -A INPUT -i 10.10.10.200 -m state --state NEW -m multiport -p tcp -s 10.10.10.0/24 -d 10.10.10.0/24 --dports 50006,50008,50009 -j ACCEPT
+```
+
+#### :books: 參考網站：
+- https://www.centos.org/docs/5/html/5.1/Cluster_Administration/s2-iptables-examples-CA.html
+
 `Masquerade everything out ppp0.`
 ```console
 shell> iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE
@@ -461,7 +471,21 @@ shell> crontab -e
 - https://www.cert.org/downloads/IPv6/ip6tables_rules.txt
 - http://manpages.ubuntu.com/manpages/trusty/man8/iptables.8.html
 - http://manpages.ubuntu.com/manpages/wily/man8/xtables-addons.8.html
+- http://manpages.ubuntu.com/manpages/zesty/man8/xtables-addons.8.html
 - https://www.netfilter.org/documentation/HOWTO/netfilter-extensions-HOWTO-4.html
+- http://manpages.ubuntu.com/manpages/trusty/man8/iptables-extensions.8.html
+
+---
+
+```consolev
+shell> apt install conntrack
+shell> conntrack -L
+shell> conntrack -L -o extended
+shell> conntrack -L --src-nat
+```
+
+#### :books: 參考網站：
+- http://manpages.ubuntu.com/manpages/trusty/man8/conntrack.8.html
 
 ---
 
