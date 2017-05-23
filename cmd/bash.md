@@ -208,6 +208,11 @@ sleep 1
 echo -ne '#######################   (100%)\r'
 echo -ne '\n'
 ```
+---
+
+```
+export HISTCONTROL='ignoredups'
+```
 
 ---
 
@@ -216,3 +221,4 @@ echo -ne '\n'
 - [Bash 漏洞已出現攻擊行動，又傳出修補後仍有漏洞！](http://www.ithome.com.tw/news/91148)
 - [Bash 漏洞連環爆：第二波修補還未完，第三波漏洞又來襲！](http://www.ithome.com.tw/news/91233)
 - [Linux大廠二度釋出Shellshock漏洞的修補程式！](http://www.ithome.com.tw/news/91180)
+- https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html

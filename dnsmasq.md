@@ -97,6 +97,10 @@ server=/tmall.com/223.5.5.5
 server=/tmall.com/223.6.6.6
 ```
 
+```
+dig google.com | grep "Query time"
+```
+
 ---
 
 `dnscrypt-proxy - Tool for securing communications between a client and a DNS resolver`
@@ -143,10 +147,29 @@ shell> dhcping -s 255.255.255.255 -r -v
 #### :books: 參考網站：
 - [dhcping](http://manpages.ubuntu.com/manpages/precise/man8/dhcping.8.html)
 
+---
+
+`dhcpdump - DHCP packet dumper`
+
+```console
+shell> sudo dhcpdump -i en0
+shell> dhcpdump -i eth0
+```
+
+---
+
 `DNS spoofing` (`DNS 詐騙`)
 因採用另一系統的`網域名稱系統` (`DNS`) 而導致破壞信任關係的行為。其實施模式通常是破壞受侵害系統的名稱服務快取，或者破壞有效網域的網域名稱伺服器。
 
 
+```
+--ipset=/<domain>/<ipset>[,<ipset>..Specify ipsets to which matching domains should be added
+-q, --log-queries                       Log DNS queries.
+-R, --no-resolv                         Do NOT read resolv.conf.
+-S, --server=/<domain>/<ipaddr>         Specify address(es) of upstream servers with optional domains.
+--all-servers                       Always perform DNS queries to all servers.
+--test                              Check configuration syntax.
+```
 
 <!--
 https://www.l68.net/2745.html
