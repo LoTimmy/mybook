@@ -46,6 +46,7 @@
     * [ip](cmd/ip.md)
     * [iptables](cmd/iptables.md)
     * [jpegoptim](cmd/jpegoptim.md)
+    * [jq](cmd/jq.md)
     * [letsencrypt](cmd/letsencrypt.md) 
     * [lftp](cmd/lftp.md)
     * [lnav](cmd/lnav.md)
