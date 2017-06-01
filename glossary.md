@@ -376,6 +376,7 @@
 - `db-02`
 - `webserver`
 - `webserver.localdomain`
+- `localdomain`
 
 - `mylogs`
 - `mydata`

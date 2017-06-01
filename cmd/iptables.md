@@ -1,5 +1,18 @@
-
 <img src="http://i.imgur.com/3gzXLPj.png" width="100">
+
+對於連接到網絡上的 `Linux` 系統來說，防火牆是必不可少的防禦機制， 它只允許合法的網絡流量進出系統，而禁止其它任何網絡流量。
+`netfilter`/`iptables` IP 信息包過濾系統是一種功能強大的工具， 可用於添加、編輯和除去規則，這些規則是在做信息包過濾決定時，防火牆所遵循和組成的規則。
+這些規則存儲在專用的信息包過濾表中， 而這些表集成在 `Linux` 內核中。在信息包過濾表中，規則被分組放在我們所謂的 `鏈`（`chain`）中。
+雖然 `netfilter`/`iptables` IP 信息包過濾系統被稱為單個實體，但它實際上由兩個組件 `netfilter`和 `iptables` 組成。
+`netfilter` 組件也稱為 內核空間（`kernelspace`），是內核的一部分，由一些信息包過濾表組成， 這些表包含內核用來控制信息包過濾處理的規則集。
+`iptables` 組件是一種工具，也稱為 用戶空間（`userspace`），它使插入、修改和除去信息包過濾表中的規則變得容易。
+通過使用用戶空間，可以構建自己的定制規則，這些規則存儲在內核空間的信息包過濾表中。這些規則具有 目標，它們告訴內核對來自某些源、前往某些目的地或具有某些協議類型的信息包做些什麼。如果某個信息包與規則匹配，那麼使用目標 `ACCEPT` 允許該信息包通過。還可以使用目標 `DROP` 或 `REJECT` 來阻塞並殺死信息包。對於可對信息包執行的其它操作，還有許多其它目標。
+
+
+
+
+
+
 
 ---
 
@@ -472,9 +485,11 @@ shell> crontab -e
 - http://manpages.ubuntu.com/manpages/trusty/man8/iptables.8.html
 - http://manpages.ubuntu.com/manpages/wily/man8/xtables-addons.8.html
 - http://manpages.ubuntu.com/manpages/zesty/man8/xtables-addons.8.html
-- https://www.netfilter.org/documentation/HOWTO/netfilter-extensions-HOWTO-4.html
 - http://manpages.ubuntu.com/manpages/trusty/man8/iptables-extensions.8.html
+- https://www.netfilter.org/documentation/HOWTO/netfilter-extensions-HOWTO-4.html
 - https://www.ibm.com/developerworks/cn/opensource/os-iptables/
+- https://www.ibm.com/developerworks/cn/linux/network/dif/index.html
+- https://www.ibm.com/developerworks/cn/linux/network/s-netip/index.html
 
 ---
 
@@ -487,7 +502,6 @@ shell> conntrack -L --src-nat
 
 #### :books: 參考網站：
 - http://manpages.ubuntu.com/manpages/trusty/man8/conntrack.8.html
-
 ---
 
 ![](https://i.imgur.com/qqG1RsI.png)

@@ -162,6 +162,8 @@ Your identification has been saved in /home/schacon/.ssh/id_rsa.
 Your public key has been saved in /home/schacon/.ssh/id_rsa.pub.
 The key fingerprint is:
 d0:82:24:8e:d7:f1:bb:9b:33:53:96:93:49:da:9b:e3 schacon@mylaptop.local
+
+shell> ssh-keygen -t ecdsa
 ```
 
 ```console
@@ -312,13 +314,17 @@ shell> autossh -M 20000 -t remotehost 'screen -raAd sessionname'
 shell> ssh -t remotehost screen -xRR
 ```
 
-
-
 ---
 
 ```console
 shell> ssh user@fe80::20c:29ff:fe2e:7281
 shell> scp user@\[fe80::20c:29ff:fe2e:7281\]:~
+```
+---
+
+```console
+shell> ssh-keygen -t ed25519
+shell> ssh-copy-id -i id_ecdsa.pub matt@remotehost
 ```
 
 ---
