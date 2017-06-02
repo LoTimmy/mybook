@@ -1,5 +1,7 @@
 <img src="http://i.imgur.com/3gzXLPj.png" width="100">
 
+<img src="http://i.imgur.com/07ypsdy.png" width="200">
+
 對於連接到網絡上的 `Linux` 系統來說，防火牆是必不可少的防禦機制， 它只允許合法的網絡流量進出系統，而禁止其它任何網絡流量。
 `netfilter`/`iptables` IP 信息包過濾系統是一種功能強大的工具， 可用於添加、編輯和除去規則，這些規則是在做信息包過濾決定時，防火牆所遵循和組成的規則。
 這些規則存儲在專用的信息包過濾表中， 而這些表集成在 `Linux` 內核中。在信息包過濾表中，規則被分組放在我們所謂的 `鏈`（`chain`）中。
@@ -7,12 +9,6 @@
 `netfilter` 組件也稱為 內核空間（`kernelspace`），是內核的一部分，由一些信息包過濾表組成， 這些表包含內核用來控制信息包過濾處理的規則集。
 `iptables` 組件是一種工具，也稱為 用戶空間（`userspace`），它使插入、修改和除去信息包過濾表中的規則變得容易。
 通過使用用戶空間，可以構建自己的定制規則，這些規則存儲在內核空間的信息包過濾表中。這些規則具有 目標，它們告訴內核對來自某些源、前往某些目的地或具有某些協議類型的信息包做些什麼。如果某個信息包與規則匹配，那麼使用目標 `ACCEPT` 允許該信息包通過。還可以使用目標 `DROP` 或 `REJECT` 來阻塞並殺死信息包。對於可對信息包執行的其它操作，還有許多其它目標。
-
-
-
-
-
-
 
 ---
 
@@ -39,6 +35,7 @@ iptables -t mangle -o "$PPP_IFACE" --insert FORWARD 1 -p tcp --tcp-flags SYN,RST
 
 ---
 
+`multiport`
 
 ```
 iptables -A INPUT -i 10.10.10.200 -m state --state NEW -m multiport -p tcp -s 10.10.10.0/24 -d 10.10.10.0/24 --dports 50006,50008,50009 -j ACCEPT
@@ -171,7 +168,6 @@ NET_PUB=10.0.0.0/24
 # Others
 ANYWHERE=0.0.0.0/0
 
-
 SetDefaultPolicy() {
 	# Drop everything
 	iptables -P INPUT DROP
@@ -248,9 +244,6 @@ SetBlockedNetworks() {
 	iptables -A INPUT -i $IF_PUB -s 10.220.232.0/24 -j REJECT --reject-with icmp-net-prohibited
 	iptables -A FORWARD -i $IF_PUB -d $IP_PUB -s 10.220.232.0/24 -j REJECT --reject-with icmp-net-prohibited
 }
-
-
-
 ```
 
 #### :books: 參考網站：
@@ -304,7 +297,7 @@ shell> modprobe nf_conntrack_pptp
 shell> modprobe nf_nat_pptp
 ```
 
-/etc/modules
+`/etc/modules`
 ```
 nf_conntrack_ftp
 nf_conntrack_pptp
@@ -340,7 +333,6 @@ shell> sudo apt-get install netfilter-persistent
 shell> service netfilter-persistent save
 ```
 
-
 ---
 
 ```console
@@ -359,7 +351,6 @@ References: 0
 Members:
 192.168.0.0/24
 ```
-
 
 ```console
 shell> ipset create test hash:net family inet hashsize 131072 maxelem 236294

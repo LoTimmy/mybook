@@ -511,6 +511,12 @@ shell> hostnamectl status
 shell> hostnamectl set-hostname name
 ```
 
+```
+Description:	Ubuntu 14.04.5 LTS
+```
+
+
+
 #### :books: 參考網站：
 - https://access.redhat.com/documentation/zh-CN/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html
 

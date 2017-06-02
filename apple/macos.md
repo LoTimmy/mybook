@@ -1,9 +1,10 @@
+<img src="http://i.imgur.com/raVIz4v.png" width="100">
 
-<img src="http://i.imgur.com/Dd0Sffn.png" width="200">
-
-<!-- <img src="http://i.imgur.com/t51VWq9.png" width="100"> -->
+<img src="http://i.imgur.com/t51VWq9.png" width="50">
 
 `app`
+
+`vnc`
 
 `osx`
 
@@ -24,7 +25,6 @@
 `Fn`
 
 <img src="http://i.imgur.com/TyG4Hnl.png" width="600">
-
 
 #### :books: 參考網站：
 - [Keyboard_Shortcuts](http://www.sequelpro.com/docs/Keyboard_Shortcuts)
