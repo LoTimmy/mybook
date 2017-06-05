@@ -29,6 +29,7 @@
     * [curl](cmd/curl.md)
     * [curlftpfs](cmd/curlftpfs.md)
     * [cvs](cmd/cvs.md)
+    * [date](cmd/date.md)
     * [dhcpcd](cmd/dhcpcd.md)
     * [dig](cmd/dig.md)
     * [dmidecode](cmd/dmidecode.md)
@@ -169,6 +170,9 @@
     * [strongswan](vpn/strongswan.md)
     * [gvpe](vpn/gvpe.md)
 * [dnsmasq](dnsmasq.md)
+
+* <img src="http://www.cacti.net/favicon.ico" width="16"> [cacti](cacti.md)
+
 * [adobe-fonts](adobe-fonts.md)
 * <img src="http://www.vmware.com/favicon.ico" width="16"> [VMware](vmware/README.md)
     * [手冊](vmware/guide.md)
