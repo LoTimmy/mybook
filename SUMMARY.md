@@ -189,6 +189,7 @@
         * [Ignoring files](git/starter.md#ignoring-files)
     * [手冊](git/guide.md)
     * <img src="https://www.gitbook.com/assets/images/logo/favicon.ico?version=19.3.1" width="16"> [GitBook](git/gitbook.md)
+    * [gitlab](git/gitlab.md)
 * [macOS](apple/macos.md)
     * [alfredapp](apple/alfredapp.md)
     * [swift](apple/swift.md)
