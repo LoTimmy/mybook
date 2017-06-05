@@ -42,19 +42,15 @@ cacti	cacti/missing-db-package-error	select	abort
 cacti	cacti/passwords-do-not-match	error	
 ```
 
-
 `/usr/share/cacti/site/lib/functions.php`
-```
-<?php
 
+```php
+<?php
 
 setlocale(LC_ALL, 'zh_TW.UTF-8');
 
-
-setlocale(LC_CTYPE,"zh_TW.UTF-8"); 
-
+setlocale(LC_CTYPE,"zh_TW.UTF-8");
 ```
-
 
 ---
 
@@ -83,8 +79,17 @@ shell> cd /usr/share/cacti/cli
 shell> php -q rebuild_poller_cache.php -d
 ```
 
+---
+
+```console
+shell> dpkg --purge javascript-common
+shell> apt-get install javascript-common
+```
+
+
 ----------
 ### :books: 參考網站：
+- http://www.cacti.net/index.php
 - [unix_configure_cacti](http://www.cacti.net/downloads/docs/html/unix_configure_cacti.html)
 - [輕鬆做好流量管理—Cacti（上）](http://www.netadmin.com.tw/article_content.aspx?sn=1212060003)
 - [輕鬆做好流量管理—Cacti（下）](http://www.netadmin.com.tw/article_content.aspx?sn=1301020001)

@@ -79,6 +79,7 @@
     * [screen](cmd/screen.md)
     * [sed](cmd/sed.md)
     * [sh](cmd/sh.md)
+    * [snmp](cmd/snmp.md) 
     * [socat](cmd/socat.md)
     * [ss](cmd/ss.md)
     * [sudo](cmd/sudo.md)
