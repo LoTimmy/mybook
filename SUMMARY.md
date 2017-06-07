@@ -7,6 +7,7 @@
     * [Using emoji](markdown.md#using-emoji)
 * [Glossary](glossary.md)
 * [學英語](學英語.md)
+* [blah](blah.md)
 
 ----
 * [SSH](ssh/guide.md)
@@ -23,6 +24,8 @@
     * [arp-scan](cmd/arp-scan.md)
     * [autojump](cmd/autojump.md)
     * [bash](cmd/bash.md)
+    * [brew](cmd/brew.md)
+    * [chocolatey](cmd/chocolatey.md)
     * [cifs-utils](cmd/cifs-utils.md)
     * [crontab](cmd/crontab.md)
     * [csvkit](cmd/csvkit.md)
@@ -33,6 +36,7 @@
     * [dhcpcd](cmd/dhcpcd.md)
     * [dig](cmd/dig.md)
     * [dmidecode](cmd/dmidecode.md)
+    * [dns-configuration](cmd/dns-configuration.md)
     * [dnsyo](cmd/dnsyo.md)
     * [enca](cmd/enca.md)
     * [ext4](cmd/ext4.md)
