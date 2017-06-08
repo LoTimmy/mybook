@@ -1,5 +1,3 @@
----
-
 ```console
 shell> nsupdate
 > update delete oldhost.example.com A
