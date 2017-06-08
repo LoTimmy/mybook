@@ -349,3 +349,15 @@ https://tunnelblick.net/downloads.html
 
 #### :books: 參考網站：
 - [viscosity](https://www.sparklabs.com/viscosity/)
+
+
+---
+
+shell> apt-get install openvpn
+
+
+#### :books: 參考網站：
+- https://openvpn.net/index.php/open-source/documentation/miscellaneous/78-static-key-mini-howto.html
+- https://openvpn.net/index.php/open-source/documentation/miscellaneous/88-1xhowto.html
+
+

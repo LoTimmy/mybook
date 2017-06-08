@@ -160,6 +160,21 @@ nameserver 2001:b000:168::2
 
 ---
 
+```console
+shell> ifconfig eth0 | grep "inet6 addr"
+          inet6 addr: fe80::20c:29ff:fe12:f198/64 Scope:Link
+
+shell> ip -6 addr add 2001::1/64 dev eth0
+
+shell> ifconfig eth0 | grep "inet6 addr"
+          inet6 addr: fe80::20c:29ff:fe12:f198/64 Scope:Link
+          inet6 addr: 2001::1/64 Scope:Global
+
+shell> ip -6 addr delete 2001::1/64 dev eth0
+```
+
+---
+
 ```
 eth0      Link encap:Ethernet  HWaddr 00:0c:29:12:f1:98  
           inet addr:192.168.88.1  Bcast:192.168.88.255  Mask:255.255.255.0
@@ -202,6 +217,11 @@ Windows IP 設定
    IPv4 位址 . . . . . . . . . . . . : 192.168.88.254
    子網路遮罩 . . . . . . . . . . . .: 255.255.255.0
    預設閘道 . . . . . . . . . . . . .: 192.168.88.1
+```
+
+```console
+shell> ping6 fe80::20c:29ff:fe62:1307
+connect: Invalid argument
 ```
 
 ```console
@@ -258,18 +278,82 @@ ff02::1:ff75:9db4                             33-33-ff-75-9d-b4  永久
 ```
 
 ```console
+shell> ip -6 neigh show
+```
+
+```
+fe80::226:73ff:fe68:9cd0 dev eth0 lladdr 00:26:73:68:9c:d0 STALE
+fe80::20c:29ff:fee7:74a7 dev eth0 lladdr 00:0c:29:e7:74:a7 STALE
+fe80::42f2:e9ff:fe32:94c4 dev eth0 lladdr 40:f2:e9:32:94:c4 STALE
+fe80::3ac9:86ff:fe27:cdd6 dev eth0 lladdr 38:c9:86:27:cd:d6 STALE
+fe80::20c:29ff:fe15:1d77 dev eth0 lladdr 00:0c:29:15:1d:77 STALE
+fe80::211:32ff:fe0b:a7e8 dev eth0 lladdr 00:11:32:0b:a7:e8 STALE
+fe80::2d0:41ff:fedf:7ad8 dev eth0 lladdr 00:d0:41:df:7a:d8 STALE
+fe80::6eae:8bff:fe56:6764 dev eth0 lladdr 6c:ae:8b:56:67:64 STALE
+fe80::20c:29ff:fe74:1ca3 dev eth0 lladdr 00:0c:29:74:1c:a3 STALE
+fe80::5ef3:fcff:fe2c:c426 dev eth0 lladdr 5c:f3:fc:2c:c4:26 STALE
+fe80::220:6bff:fe91:2705 dev eth0 lladdr 00:20:6b:91:27:05 STALE
+fe80::211:32ff:fe29:94eb dev eth0 lladdr 00:11:32:29:94:eb STALE
+fe80::6ab5:99ff:fe44:36ae dev eth0 lladdr 68:b5:99:44:36:ae STALE
+fe80::20c:29ff:fe33:c1bf dev eth0 lladdr 00:0c:29:33:c1:bf STALE
+fe80::29c6:4c36:4eca:9bbe dev eth0 lladdr 00:26:18:fc:91:26 STALE
+fe80::20c:29ff:fe2e:7281 dev eth0 lladdr 00:0c:29:2e:72:81 STALE
+fe80::20c:29ff:fe62:1307 dev eth0 lladdr 00:0c:29:62:13:07 STALE
+fe80::20c:29ff:fee4:af00 dev eth0 lladdr 00:0c:29:e4:af:00 STALE
+fe80::20c:29ff:fe46:f111 dev eth0 lladdr 00:0c:29:46:f1:11 STALE
+fe80::20c:29ff:fe4e:a66d dev eth0 lladdr 00:0c:29:4e:a6:6d STALE
+fe80::20c:29ff:fe42:efb9 dev eth0 lladdr 00:0c:29:42:ef:b9 REACHABLE
+fe80::10a6:606:1457:599e dev eth0 lladdr 70:70:0d:b7:f2:5e STALE
+fe80::5ef3:fcff:fe2c:c42a dev eth0 lladdr 5c:f3:fc:2c:c4:2a STALE
+fe80::6eae:8bff:fe24:cb42 dev eth0 lladdr 6c:ae:8b:24:cb:42 STALE
+fe80::6231:97ff:fe75:9db4 dev eth0 lladdr 60:31:97:75:9d:b4 STALE
+fe80::211:32ff:fe61:685f dev eth0 lladdr 00:11:32:61:68:5f STALE
+fe80::6eae:8bff:fe57:4f4 dev eth0 lladdr 6c:ae:8b:57:04:f4 STALE
+fe80::6eae:8bff:fe24:c4b2 dev eth0 lladdr 6c:ae:8b:24:c4:b2 STALE
+fe80::9e8e:99ff:fef2:e6fd dev eth0 lladdr 9c:8e:99:f2:e6:fd STALE
+fe80::6eae:8bff:fe57:4f6 dev eth0 lladdr 6c:ae:8b:57:04:f6 STALE
+fe80::21f:f3ff:fe05:d52e dev eth0 lladdr 00:1f:f3:05:d5:2e STALE
+fe80::20c:29ff:fe37:2271 dev eth0 lladdr 00:0c:29:37:22:71 STALE
+fe80::1408:9434:b01d:c7f9 dev eth0 lladdr a0:99:9b:08:cb:87 STALE
+fe80::6231:97ff:fe75:9db4 dev eth1  FAILED
+```
+
+```console
 shell> ping6 fe80::1408:9434:b01d:c7f9%en0
 ```
 
+```console
+shell> ping6 -c4 ::1
+shell> ping6 -I eth0 -c4 ff02::1
+shell> netstat -A inet6 -rn
+```
+
+```console
+shell> ndp -an
+shell> netstat -f inet -rn
+shell> netstat -f inet6 -rn
+shell> traceroute6
+```
+
+#### :books: 參考網站：
 - https://technet.microsoft.com/en-us/library/cc753156(v=ws.10).aspx
 
 ---
 
 ```console
 shell> ssh -6 ::1
-shell> ssh -6 fe80::6231:97ff:fe75:9db4%eth0
+shell> ssh -6 fe80::20c:29ff:fe42:efb9%eth0
+shell> ssh -l userid1 -6 fe80::20c:29ff:fe42:efb9%eth0
 ```
 
+```console
+shell> sftp userid1@[fe80::20c:29ff:fe42:efb9%eth0]
+shell> scp myfile.txt userid1@\[fe80::20c:29ff:fe42:efb9%eth0\]:
+```
+
+```console
+shell> telnet fe80::20c:29ff:fe42:efb9%eth0 22
+```
 
 ---
 
@@ -325,3 +409,4 @@ shell> ssh -6 fe80::6231:97ff:fe75:9db4%eth0
 
 -->
 
+nmap -6 fe80::8886:46ff:feb1:8d03%eth0
