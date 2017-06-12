@@ -1,6 +1,6 @@
 {
   "plugins": [
-    "-lunr", "-search", "search-pro", "advanced-emoji", "jsfiddle", "youtube", "emphasize", "splitter", "tbfed-pagefooter", "toggle-chapters", "autocover"
+    "-lunr", "-search", "search-pro", "advanced-emoji", "jsfiddle", "youtube", "emphasize", "splitter", "tbfed-pagefooter", "toggle-chapters"
   ],
   "pluginsConfig": {
     "fontsettings": {
