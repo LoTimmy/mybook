@@ -5,6 +5,7 @@
     * [Using emoji](markdown.md#using-emoji)
 * [Glossary](glossary.md)
 * [學英語](學英語.md)
+* [ipv6](ipv6.md)
 
 -----
 * [SSH](ssh/guide.md)
