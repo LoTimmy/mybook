@@ -57,6 +57,28 @@ shell> testsaslauthd -u zeus -p blah -s openvpn
 ```
 
 ---
+
+`pam_tally2.so`
+`pam_tally2`
+
+`/lib/x86_64-linux-gnu/security/pam_tally2.so`
+
+`/sbin/pam_tally2`
+
+```
+auth       required     pam_tally2.so deny=3 unlock_time=5 even_deny_root root_unlock_time=10
+auth     required       pam_tally2.so deny=4 even_deny_root unlock_time=1200
+```
+
+```console 
+shell> pam_tally2 --user janedoe
+shell> pam_tally2 --user janedoe --reset
+shell> faillog -r
+```
+
+---
+
+
 ```
 libpam-pwdfile - PAM module allowing authentication via an /etc/passwd-like file
 libpam-google-authenticator - Two-step verification

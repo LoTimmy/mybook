@@ -38,7 +38,10 @@
 ---
 
 - `Jane Doe`
+- `janedoe`
 - `John Doe`
+- `foobar`
+- `alex`
 
 ---
 - `tw`
@@ -56,6 +59,113 @@
 - `img`
 - `logo-small.png`
 - `shop`
+
+---
+
+- `IPv4`
+- `IPv6`
+- `Enable`
+- `Disable`
+- `IP Address`
+- `Subnet Mask`
+- `Gateway`
+- `DNS Server 1`
+- `DNS Server 2`
+- `System Name`
+- `System Location`
+- `System Contact`
+- `Location`
+- `Contact`
+- `Port`
+- `VLAN`
+- `Link aggregation`
+- `Link Aggregation`
+- `QoS`
+- `State`
+- `Speed`
+- `Copper`
+- `Fiber`
+- `PoE`
+- `default`
+- `Default`
+- `MAC Address`
+- `MAC address`
+- `Dynamic`
+- `Retry`
+- `Statistics`
+- `Spanning Tree`
+- `Yes`
+- `No`
+- `Time`
+- `Time Zone`
+- `None`
+- `UTC+08:00`
+- `Egress`
+- `Ingress`
+- `RADIUS`
+- `Server`
+- `Key`
+- `Timeout`
+- `SNMP`
+- `Community`
+- `Community Name`
+- `HTTP`
+- `HTTPS`
+
+---
+
+- `DES-CBC`
+- `IDEA-CBC`
+- `RC2-CBC`
+- `DES-EDE-CBC`
+- `DES-EDE3-CBC`
+- `DESX-CBC`
+- `BF-CBC`
+- `RC2-40-CBC`
+- `CAST5-CBC`
+- `RC2-64-CBC`
+- `AES-128-CBC`
+- `AES-192-CBC`
+- `AES-256-CBC`
+- `CAMELLIA-128-CBC`
+- `CAMELLIA-192-CBC`
+- `CAMELLIA-256-CBC`
+- `SEED-CBC`
+
+- `MD5`
+- `RSA-MD5`
+- `SHA`
+- `RSA-SHA`
+- `SHA1`
+- `RSA-SHA1`
+- `DSA-SHA`
+- `DSA-SHA1-old`
+- `MDC2`
+- `RSA-MDC2`
+- `DSA-SHA1`
+- `RSA-SHA1-2`
+- `DSA`
+- `RIPEMD160`
+- `RSA-RIPEMD160`
+- `MD4`
+- `RSA-MD4`
+- `ecdsa-with-SHA1`
+- `RSA-SHA256`
+- `RSA-SHA384`
+- `RSA-SHA512`
+- `RSA-SHA224`
+- `SHA256`
+- `SHA384`
+- `SHA512`
+- `SHA224`
+- `whirlpool`
+
+- `DNS Server`
+- `Apache HTTP Server 2.2`
+- `Mail Server`
+- `Proxy Server`
+- `VPN Server`
+- `WebDAV Server`
 
 ---
 
@@ -806,3 +916,10 @@ Yakkety 16.10
 
 - `抱歉，找不到該頁面。`
 - `Sorry, the page you’re looking for can’t be found.`
+
+---
+
+```
+password: oedu2eGh
+password: '9s36?;fyNp'
+```
