@@ -496,5 +496,16 @@ shell> conntrack -L --src-nat
 - http://manpages.ubuntu.com/manpages/trusty/man8/conntrack.8.html
 ---
 
+```
+-N DOS_PROTECT
+-A INPUT -p tcp -m multiport --dports 25,465,587,220,993,110,995 -j DOS_PROTECT
+-I DOS_PROTECT -i bond0 -p tcp --syn -j DROP
+-I DOS_PROTECT -i bond0 -p tcp --syn -m limit --limit 10000/s --limit-burst 100 -j RETURN
+-I DOS_PROTECT -i bond0 -p tcp --tcp-flags SYN,ACK,FIN,RST RST -j DROP
+-I DOS_PROTECT -i bond0 -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j RETURN
+-I DOS_PROTECT -i bond0 -p icmp --icmp-type echo-request -j DROP
+-I DOS_PROTECT -i bond0 -p icmp --icmp-type echo-request -m limit --limit 1/s -j RETURN
+```
+
 ![](https://i.imgur.com/qqG1RsI.png)
 ![](https://i.imgur.com/ijCrsH6.png)
