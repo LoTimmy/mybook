@@ -21,3 +21,10 @@ shell> sudo arp-scan -I en0 192.168.31.1-192.168.31.50
 shell> get-iab
 shell> get-oui
 ```
+
+
+```console
+shell> arp-fingerprint 192.168.0.1
+shell> arp-fingerprint -o "-N -I eth1" 192.168.0.202
+```
+

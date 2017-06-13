@@ -69,6 +69,14 @@
 - `xyz123`
 - `abc123`
 
+- `traffic-analysis`
+- `ntop`
+- `products`
+- `blog`
+- `documentation`
+- `support`
+- `faq`
+
 - `running`
 - `mykey`
 - `deny`

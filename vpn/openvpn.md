@@ -434,7 +434,6 @@ shell> htpasswd -d /etc/openvpn/passwdfile janedoe
 -d     Use crypt() encryption for passwords.
 ```
 
-
 ```console 
 shell> apt-get install sasl2-bin
 shell> saslauthd -v
@@ -458,3 +457,6 @@ shell> testsaslauthd -u zeus -p blah -s openvpn
 - http://docs.ansible.com/ansible/htpasswd_module.html
 - `/usr/share/doc/libpam-pwdfile`
 - http://www.netadmin.com.tw/article_content.aspx?sn=1110060001
+- https://openvpn.net/index.php/open-source/documentation/miscellaneous/78-static-key-mini-howto.html
+- https://openvpn.net/index.php/open-source/documentation/miscellaneous/88-1xhowto.html
+

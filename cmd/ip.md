@@ -59,6 +59,10 @@ shell> ip neigh add 192.168.2.223 lladdr 00:0c:29:2e:72:81 nud permanent dev eth
 shell> ip neigh show 
 ```
 
+```console
+shell> ip -6 neigh show 
+```
+
 ---
 
 ```console

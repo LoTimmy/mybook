@@ -260,6 +260,14 @@ Scenario 情節
 「前端開發者」 (Front-End Developer)
 「後端開發者」 (Back-End Developer)
 
+「網路釣魚」(Phishing)
+「網域名稱系統」 (Domain Name System，DNS)
+
+「跨網站請求偽造」 (Cross-Site Request Forgery，CSRF)
+
+ARP (Address Resolution Protocol)
+DNS Security Extensions (DNSSEC)
+
 「尖峰頻寬」 (Peak BW, Peak Bandwidth)
 
 「中國互聯網絡信息中心」 (China Internet Network Information Center, CNNIC)
