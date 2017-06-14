@@ -132,12 +132,6 @@ shell> synoservice --restart crond
 shell> synoservice --restart pkgctl-VPNCenter
 ```
 
-
-
- 
-
-
-
 ---
 
 ```console
@@ -184,8 +178,6 @@ shell> synoschedtask --get id=4
            Status: [No last run record]
 ```
 
-
-
 ---
 
 `/var/log`
@@ -200,6 +192,6 @@ shell> synoschedtask --get id=4
 
 `停止嗶聲`
 
-「`硬體 & 電源`」-> 「`一般`」 -> 「`停止嗶聲`」
+「`硬體 & 電源`」→「`一般`」→ 「`停止嗶聲`」
 
 ---

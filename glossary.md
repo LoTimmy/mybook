@@ -18,6 +18,13 @@
 
 ---
 
+- `ESTABLISHED`
+- `ESTAB`
+- `LISTEN`
+- `tcp`
+
+---
+
 - `WAN`
 - `LAN`
 - `USB`

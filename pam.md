@@ -17,10 +17,32 @@
 `requisite`：**如果認證模組驗證失敗，即直接回覆失敗的訊息，而不再繼續執行其他的認證模組**。 
 `sufficient`：**如果這個模組驗證成功，則不執行後面的認證模組，但如果之前已設定Required的認證模組，則此模組的結果將會被忽略**。 
 
-
-
 #### :books: 參考網站：
 - [透過pam_mysql模組連接資料庫  為PAM認證系統建立帳號管理機制](http://www.netadmin.com.tw/article_content.aspx?sn=1110060001)
+
+---
+
+```
+pam_mkhomedir - PAM module to create users home directory
+pam_nologin - Prevent non-root users from login
+pam_limits - PAM module to limit resources
+pam_time - PAM module for time control access
+pam_userdb - PAM module to authenticate against a db database
+pam_rootok - Gain only root access
+pam_permit - The promiscuous module
+pam_tally2 - The login counter (tallying) module
+
+libpam-pwdfile - PAM module allowing authentication via an /etc/passwd-like file
+libpam-geoip - PAM module checking access of source IPs with a GeoIP database
+libpam-google-authenticator - Two-step verification
+libpam-ssh - Authenticate using SSH keys
+libpam-sshauth - authenticate using an SSH server
+libpam-radius-auth - The PAM RADIUS authentication module
+
+```
+
+
+---
 
 ```console 
 shell> apt-get install libpam-pwdfile apache2-utils
