@@ -355,10 +355,13 @@ shell> scp myfile.txt userid1@\[fe80::20c:29ff:fe42:efb9%eth0\]:
 shell> telnet fe80::20c:29ff:fe42:efb9%eth0 22
 ```
 
+```console
+shell> nmap -6 fe80::20c:29ff:fe42:efb9%eth0
+```
+
 ---
 
 `http://[fe80::6231:97ff:fe75:9db4]/`
-
 
 ---
 
@@ -409,4 +412,4 @@ shell> telnet fe80::20c:29ff:fe42:efb9%eth0 22
 
 -->
 
-nmap -6 fe80::8886:46ff:feb1:8d03%eth0
+

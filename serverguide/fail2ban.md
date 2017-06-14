@@ -1,5 +1,8 @@
 ### 在 `Ubuntu` 14.04 LTS 上建置 `fail2ban`
 
+`自動封鎖`
+
+
 安裝作業系統及`fail2ban`相關套件。
 因本文主要介紹`Apache`如何安裝及設定，作業系統方面就不再詳述。
 
@@ -63,19 +66,28 @@ fail2ban> status set postfix-sasl unbanip <IP>
 ```
 
 
-
-
-
-/etc/fail2ban/jail.conf
+`/etc/fail2ban/jail.conf`
 
 ```
 [DEFAULT]
 ignoreip = 127.0.0.1/8 192.168.0.0/16
-bantime  = 600
+# bantime  = 600
+bantime  = -1
+# findtime  = 600
+findtime  = 300
+# maxretry = 3
+maxretry = 10
+
 
 # banaction = iptables-multiport
 banaction = iptables-ipset-proto4
 ```
+
+嘗試登入次數: `10`
+幾分鐘內: `5`
+
+啟動封鎖過期
+當啟動封鎖過期功能時，在下列天數後，被封鎖的 IP 將會被解除封鎖。
 
 
 ```
