@@ -497,14 +497,14 @@ shell> conntrack -L --src-nat
 ---
 
 ```
--N DOS_PROTECT
--A INPUT -p tcp -m multiport --dports 25,465,587,220,993,110,995 -j DOS_PROTECT
--I DOS_PROTECT -i bond0 -p tcp --syn -j DROP
--I DOS_PROTECT -i bond0 -p tcp --syn -m limit --limit 10000/s --limit-burst 100 -j RETURN
--I DOS_PROTECT -i bond0 -p tcp --tcp-flags SYN,ACK,FIN,RST RST -j DROP
--I DOS_PROTECT -i bond0 -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j RETURN
--I DOS_PROTECT -i bond0 -p icmp --icmp-type echo-request -j DROP
--I DOS_PROTECT -i bond0 -p icmp --icmp-type echo-request -m limit --limit 1/s -j RETURN
+iptables -N DOS_PROTECT
+iptables -A INPUT -j DOS_PROTECT
+iptables -I DOS_PROTECT -i bond0 -p tcp --syn -j DROP
+iptables -I DOS_PROTECT -i bond0 -p tcp --syn -m limit --limit 10000/s --limit-burst 100 -j RETURN
+iptables -I DOS_PROTECT -i bond0 -p tcp --tcp-flags SYN,ACK,FIN,RST RST -j DROP
+iptables -I DOS_PROTECT -i bond0 -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limit 1/s -j RETURN
+iptables -I DOS_PROTECT -i bond0 -p icmp --icmp-type echo-request -j DROP
+iptables -I DOS_PROTECT -i bond0 -p icmp --icmp-type echo-request -m limit --limit 1/s -j RETURN
 ```
 
 ![](https://i.imgur.com/qqG1RsI.png)
