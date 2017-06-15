@@ -86,10 +86,40 @@ shell> dpkg --purge javascript-common
 shell> apt-get install javascript-common
 ```
 
-
-----------
-### :books: 參考網站：
+---
+#### :books: 參考網站：
 - http://www.cacti.net/index.php
 - [unix_configure_cacti](http://www.cacti.net/downloads/docs/html/unix_configure_cacti.html)
 - [輕鬆做好流量管理—Cacti（上）](http://www.netadmin.com.tw/article_content.aspx?sn=1212060003)
 - [輕鬆做好流量管理—Cacti（下）](http://www.netadmin.com.tw/article_content.aspx?sn=1301020001)
+
+---
+
+```console
+shell> esxcli system snmp set -c public
+shell> esxcli system snmp set -e yes
+```
+
+`Cacti` → `Console` → `Import Templates`
+
+```console
+shell> wget http://docs.cacti.net/_media/usertemplate:host:cacti_esxi_template.02.tar.gz -O cacti_esxi_template.02.tar.gz
+shell> tar zxvf cacti_esxi_template.02.tar.gz
+shell> mkdir /var/lib/cacti/scripts
+shell> cd cacte_esxi_template
+shell> cp -r scripts /var/lib/cacti
+shell> cp -r resource/snmp_queries /usr/share/cacti/resource
+```
+
+- `/var/lib/cacti`
+- `/usr/share/cacti/resource/snmp_queries`
+
+#### :books: 參考網站：
+- http://docs.cacti.net/usertemplate:host:esxi
+- http://www.cacti.net/downloads/docs/html/snmp_query_xml.html
+- http://docs.cacti.net/plugins
+- http://docs.cacti.net/templates
+
+#### :books: 參考網站：
+- http://docs.cacti.net/usertemplate:host:microsoft:sqlserver
+- http://docs.cacti.net/usertemplate:data:informant:memory_stats
