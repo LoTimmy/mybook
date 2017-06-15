@@ -139,6 +139,11 @@
 - `CAMELLIA-256-CBC`
 - `SEED-CBC`
 
+- `3des`
+- `aes128-cbc`
+- `aes192-cbc`
+- `aes256-cbc`
+
 - `MD5`
 - `RSA-MD5`
 - `SHA`
@@ -167,6 +172,11 @@
 - `SHA224`
 - `whirlpool`
 
+- `hmac-md5`
+- `hmac-md5-96`
+- `hmac-sha1`
+- `hmac-sha1-96`
+
 - `DNS Server`
 - `Apache HTTP Server 2.2`
 - `Mail Server`
@@ -174,9 +184,14 @@
 - `VPN Server`
 - `WebDAV Server`
 
+- `snmp-server`
+- `ipv6`
+
 ---
 
+- `ip-addr`
 - `ipaddr`
+- `hostname`
 - `subnetmask`
 - `gateway`
 - `metric`
@@ -525,6 +540,7 @@
 - `www`
 - `web01`
 
+- `ssh`
 - `~/.ssh/my-key-pair.pub`
 - `~/.ssh/my-key-pair.pem`
 - `C:\keys\my-key-pair.pub`
