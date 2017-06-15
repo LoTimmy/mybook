@@ -70,7 +70,17 @@ shell> sudo apt-get install mariadb-connect-engine-10.1
 - [installing-and-using-mariadb-via-docker](https://mariadb.com/kb/en/mariadb/installing-and-using-mariadb-via-docker/)
 - [installing-mariadb-deb-files](https://mariadb.com/kb/en/mariadb/installing-mariadb-deb-files/)
 
+
+
 ### 安裝 MySQL 5.6
+
+```console
+shell> apt-get install mysql-server-5.7
+```
+
+
+### 安裝 MySQL 5.6
+
 ```console
 shell> apt-get install mysql-server-5.6
 shell> netstat -tap | grep mysql

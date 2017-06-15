@@ -485,6 +485,8 @@ shell> crontab -e
 
 ---
 
+`conntrack`
+
 ```consolev
 shell> apt install conntrack
 shell> conntrack -L
@@ -506,6 +508,8 @@ iptables -I DOS_PROTECT -i bond0 -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit
 iptables -I DOS_PROTECT -i bond0 -p icmp --icmp-type echo-request -j DROP
 iptables -I DOS_PROTECT -i bond0 -p icmp --icmp-type echo-request -m limit --limit 1/s -j RETURN
 ```
+
+---
 
 ![](https://i.imgur.com/qqG1RsI.png)
 ![](https://i.imgur.com/ijCrsH6.png)
