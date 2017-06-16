@@ -32,5 +32,15 @@ shell> screen /dev/cu.usbserial 38400
 
 `Ctrl+a` `Ctrl+\`
 
+---
+
+```
+IPV4: <System>ipsetup ip-address 192.168.1.2 24 default-gateway 192.168.1.1
+IPV6: <System>ipsetup ipv6 address 2001::2 64 default-gateway 2001::1
+<System> summary
+```
+
+
 #### :books: 參考網站：
 - http://www.prolific.com.tw/TW/ShowProduct.aspx?pcid=79
+- http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=mmr_kc-0118664
