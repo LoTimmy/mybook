@@ -1,3 +1,12 @@
+> `遠程驗證撥接使用服務` (`Remote Authentication Dial-In User Service`, `RADIUS`)
+> `RADIUS` (`Remote Authentication Dial In User Service`)
+> `AAA`
+> `Authentication` `驗證`
+> `Authorization` `授權`
+> `Accounting` `計量`
+> `NAS`
+> `802.1 x`
+> `可延伸驗證通訊協定` (`EAP`)
 
 ### 在 `Ubuntu` 16.04.2 LTS 上建置 `freeradius`
 
@@ -18,9 +27,8 @@ freeradius-mysql - MySQL module for FreeRADIUS server
 
 ### 安裝 `freeradius` 
 ```console
-shell> apt-get install mysql-server-5.7
+shell> sudo apt-get install -y mysql-server-5.7
 shell> sudo apt-get install -y freeradius freeradius-mysql 
-shell> freeradius
 shell> sudo service freeradius stop
 ```
 
@@ -30,8 +38,6 @@ shell> sudo service freeradius stop
 shell> sudo cp /etc/freeradius/users /etc/freeradius/users.original
 shell> sudo chmod a-w /etc/freeradius/users.original
 ```
-
-
 
 `users`
 ```
@@ -45,14 +51,18 @@ steve	Cleartext-Password := "testing"
 	Framed-MTU = 1500,
 	Framed-Compression = Van-Jacobson-TCP-IP
 ```
-
-
+```
+janedoe	User-Password := "6KqrYDRq"
+janedoe	Crypt-Password := "Rqz3xDrdrkLAk"
+janedoe	MD5-Password := "cdac0771bac5c2d1f4f0399af81fe317"
+```
 
 ```console
 shell> freeradius -X
 ```
 ```console
 shell> radtest steve testing localhost 1812 testing123
+shell> radtest janedoe 6KqrYDRq localhost 1812 testing123
 ```
 
 ```
@@ -73,11 +83,32 @@ rad_recv: Access-Accept packet from host 127.0.0.1 port 1812, id=38, length=71
 	Framed-Compression = Van-Jacobson-TCP-IP
 ```
 
+- `Access-Request`
+- `Access-Accept`
+- `Access-Reject`
+- `Access-Challenge`
+
+
+
 `clients.conf`
 ```
 client localhost {
 	secret		= testing123
 }
+```
+
+```
+client 192.168.88.120 {
+	ipaddr = 192.168.88.120
+	secret		= testing123
+	require_message_authenticator = no
+	nastype     = other
+}
+```
+
+
+```console
+shell> lsof -n -i -P | grep -E '^COMMAND|freeradiu'
 ```
 
 ```
@@ -89,14 +120,11 @@ freeradiu 12276 freerad    8u  IPv4 195722      0t0  UDP *:1814
 freeradiu 12276 freerad    9u  IPv4 195723      0t0  UDP *:54563 
 ```
 
-```
-client 192.168.88.120 {
-	ipaddr = 192.168.88.120
-	secret		= testing123
-	require_message_authenticator = no
-	nastype     = other
-}
-```
+#### :books: 參考網站：
+- http://www.cisco.com/c/en/us/td/docs/net_mgmt/access_registrar/1-7/concepts/guide/radius.html
+- https://www.ibm.com/support/knowledgecenter/zh-tw/ssw_aix_61/com.ibm.aix.security/radius_config_dictionary.htm
+- https://www.intel.com.tw/content/www/tw/zh/support/network-and-i-o/wireless-networking/000006999.html
+- https://technet.microsoft.com/zh-tw/library/dd197481(v=ws.10).aspx
 
 ---
 
@@ -191,8 +219,6 @@ post-auth {
 +------------------+
 ```
 
-
-
 `radcheck`
 ```
 +-----------+------------------+------+-----+---------+----------------+
@@ -218,6 +244,19 @@ post-auth {
 +-----------+-------------+------+-----+---------+-------+
 ```
 
+`radreply`
+```
++-----------+------------------+------+-----+---------+----------------+
+| Field     | Type             | Null | Key | Default | Extra          |
++-----------+------------------+------+-----+---------+----------------+
+| id        | int(11) unsigned | NO   | PRI | NULL    | auto_increment |
+| username  | varchar(64)      | NO   | MUL |         |                |
+| attribute | varchar(64)      | NO   |     |         |                |
+| op        | char(2)          | NO   |     | =       |                |
+| value     | varchar(253)     | NO   |     |         |                |
++-----------+------------------+------+-----+---------+----------------+
+```
+
 `radgroupreply`
 ```
 +-----------+------------------+------+-----+---------+----------------+
@@ -231,23 +270,23 @@ post-auth {
 +-----------+------------------+------+-----+---------+----------------+
 ```
 
+```
+INSERT INTO radcheck (username, attribute, op, value) VALUES ('janedoe', 'User-Password', ':=' ,'6KqrYDRq');
+INSERT INTO radcheck (username, attribute, op, value) VALUES ('janedoe', 'Crypt-Password', ':=' ,'Rqz3xDrdrkLAk');
+INSERT INTO radcheck (username, attribute, op, value) VALUES ('janedoe', 'MD5-Password', ':=' ,'cdac0771bac5c2d1f4f0399af81fe317');
 
+INSERT INTO radreply (username, attribute, op, value) VALUES ('janedoe', 'Framed-IP-Address', ':=', '172.16.3.33'); 
+```
 
 ```
 INSERT INTO radgroupreply (groupname, attribute, op, value) VALUES ('user', 'Auth-Type', ':=','LOCAL');
 INSERT INTO radgroupreply (groupname, attribute, op, value) VALUES ('user', 'Service-Type', ':=', 'Framed-User');
 INSERT INTO radgroupreply (groupname, attribute, op, value) VALUES ('user', 'Framed-IP-Address', ':=', '172.16.3.33');
-
-INSERT INTO radcheck (username, attribute, value) VALUES ('test', 'User-Password', 'test');
-INSERT INTO radusergroup (username, groupname) VALUES ('test', 'user');
+INSERT INTO radusergroup (username, groupname) VALUES ('janedoe', 'user');
 ```
 
 ```console
-shell> radtest test test localhost 0 testing123
-```
-
-```
-rad_recv: Access-Reject packet from host 127.0.0.1 port 1812, id=164, length=20
+shell> radtest janedoe 6KqrYDRq localhost 0 testing123
 ```
 
 ```
@@ -261,3 +300,62 @@ rad_recv: Access-Accept packet from host 127.0.0.1 port 1812, id=37, length=32
 	Service-Type = Framed-User
 	Framed-IP-Address = 172.16.3.33
 ```
+
+#### :books: 參考網站：
+- https://opensource.apple.com/source/freeradius/freeradius-32/freeradius/raddb/sql/mssql/schema.sql
+
+
+---
+
+- `radwho`
+- `radlast`
+- `radwatch`
+
+
+---
+
+`daloradius`
+
+```console
+shell> sudo apt install apache2 libapache2-mod-php php7.0-gd php-pear php-db php-mysql
+shell> wget --content-disposition https://sourceforge.net/projects/daloradius/files/latest/download?source=files
+shell> tar zxvf daloradius-0.9-9.tar.gz
+shell> mv daloradius-0.9-9 /var/www/daloradius 
+
+shell> chown www-data:www-data /var/www/daloradius -R
+shell> chmod 644 /var/www/daloradius/library/daloradius.conf.php
+
+shell> /var/www/daloradius/contrib/db
+shell> mysql -u root -p radius < mysql-daloradius.sql
+
+/var/www/daloradius/library
+daloradius.conf.php
+
+```
+
+```php
+$configValues['FREERADIUS_VERSION'] = '2';
+$configValues['CONFIG_DB_ENGINE'] = 'mysqli';
+$configValues['CONFIG_DB_NAME'] = 'radius';
+$configValues['CONFIG_DB_USER'] = 'radius';
+$configValues['CONFIG_DB_PASS'] = 'radpass';
+$configValues['CONFIG_DB_TBL_RADUSERGROUP'] = 'radusergroup';
+```
+
+`opendb.php`
+
+```php
+[...]
+$dbSocket->query("SET GLOBAL sql_mode = '';");
+```
+
+
+http://192.168.88.120/daloradius/
+`administrator`
+`radius`
+
+```
+Database connection error
+Error Message: DB Error: extension not found
+```
+
