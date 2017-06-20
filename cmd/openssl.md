@@ -337,6 +337,43 @@ shell> openssl enc -aes-256-cbc -e -a -in testfile.txt -out testfile.txt.enc
 shell> openssl enc -aes-256-cbc -d -a -in testfile.txt.enc -out testfile.txt
 ```
 
+```
+Message Digest commands (see the `dgst' command for more details)
+md4               md5               rmd160            sha               
+sha1              
+
+Cipher commands (see the `enc' command for more details)
+aes-128-cbc       aes-128-ecb       aes-192-cbc       aes-192-ecb       
+aes-256-cbc       aes-256-ecb       base64            bf                
+bf-cbc            bf-cfb            bf-ecb            bf-ofb            
+camellia-128-cbc  camellia-128-ecb  camellia-192-cbc  camellia-192-ecb  
+camellia-256-cbc  camellia-256-ecb  cast              cast-cbc          
+cast5-cbc         cast5-cfb         cast5-ecb         cast5-ofb         
+des               des-cbc           des-cfb           des-ecb           
+des-ede           des-ede-cbc       des-ede-cfb       des-ede-ofb       
+des-ede3          des-ede3-cbc      des-ede3-cfb      des-ede3-ofb      
+des-ofb           des3              desx              rc2               
+rc2-40-cbc        rc2-64-cbc        rc2-cbc           rc2-cfb           
+rc2-ecb           rc2-ofb           rc4               rc4-40            
+seed              seed-cbc          seed-cfb          seed-ecb          
+seed-ofb
+```
+
+```console
+shell> openssl aes-256-cbc -a -salt -in testfile.txt -out testfile.txt.enc
+shell> openssl aes-256-cbc -d -a -in testfile.txt.enc -out testfile.txt
+```
+
+
+```console
+shell> openssl aes-256-cbc -e -k "xyz123" -P
+shell> openssl aes-256-cbc -e -K '' -iv '' -P
+```
+
+```console
+shell> openssl speed aes-256-cbc
+```
+
 ----------
 ##### 文件加密
 使用`2,048`位元`RSA`和`AES`加密技術。
@@ -352,7 +389,7 @@ shell> openssl rsa -in private_key.pem -pubout -out public_key.pem
 ###### 以一個隨機產生的`256`位元金鑰，針對檔案文件以`AES-256 CBC`對稱加密進行加密。
 ```console
 shell> openssl rand -base64 32 > passwd.txt
-shell> openssl enc -aes-256-cbc -salt -in testfile.txt -out testfile.txt.enc -pass file:passwd.txt
+shell> openssl aes-256-cbc -salt -in testfile.txt -out testfile.txt.enc -pass file:passwd.txt 
 ```
 ```console
 shell> openssl rsautl -encrypt -inkey public_key.pem -pubin -in passwd.txt -out passwd.txt.enc
@@ -361,7 +398,7 @@ shell> openssl rsautl -encrypt -inkey public_key.pem -pubin -in passwd.txt -out 
 `解密方式`
 ```console
 shell> openssl rsautl -decrypt -inkey private_key.pem -in passwd.txt.enc -out passwd.txt
-shell> openssl enc -d -aes-256-cbc -in testfile.txt.enc -out testfile.txt -pass file:passwd.txt
+shell> openssl aes-256-cbc -d -in testfile.txt.enc -out testfile.txt -pass file:passwd.txt
 ```
 
 ```console
@@ -429,8 +466,8 @@ shell> perl check-ssl-heartbleed.pl login.yahoo.com:443
 
 一般憑證有效期限為1至3年，視發行者而定，長度最低為40位元，假如要破解目前採用的`1024`位元`RSA密鑰`，在短時間內是完全不可能的，所以憑證的安全性是非常高的，但需留意私鑰的保管，這些檔案最好是不能連上網路的地方，例如儲存於磁片。
 
-強制解除一般密碼時，若用高效能電腦花上一定時間就能解開，但特殊規格加密的資料就沒有這麼容易。以RSA-1024加密規格來說，目前一般家用電腦最少需要花費2000年才能解開，而動用日本超級電腦ES2的640個節點資源，找出RSA-1024密碼使用的解密金鑰，也要花上10年的時間。
-因此，按照「`摩爾定律`」（`Moore's Law`）推算，RSA-1024的安全期限應該在2019年內，故此加密法應無安全疑慮。
+強制解除一般密碼時，若用高效能電腦花上一定時間就能解開，但特殊規格加密的資料就沒有這麼容易。以`RSA-1024`加密規格來說，目前一般家用電腦最少需要花費`2000`年才能解開，而動用日本超級電腦`ES2`的`640`個節點資源，找出`RSA-1024`密碼使用的解密金鑰，也要花上10年的時間。
+因此，按照「`摩爾定律`」（`Moore's Law`）推算，`RSA-1024`的安全期限應該在2019年內，故此加密法應無安全疑慮。
 
 ---
 - `DES` (`Data Encryption Standard`)

@@ -932,7 +932,6 @@ Yakkety 16.10
 - `Hi Timmy,`
 - `Hello,`
 - `您好,`
-
 - `Enjoy!`
 - `Cheers,`
 - `Sincerely,`
@@ -947,6 +946,7 @@ Yakkety 16.10
 
 - `抱歉，找不到該頁面。`
 - `Sorry, the page you’re looking for can’t be found.`
+- `Complete!`
 
 ---
 

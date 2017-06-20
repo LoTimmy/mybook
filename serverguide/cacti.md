@@ -123,3 +123,16 @@ shell> cp -r resource/snmp_queries /usr/share/cacti/resource
 #### :books: 參考網站：
 - http://docs.cacti.net/usertemplate:host:microsoft:sqlserver
 - http://docs.cacti.net/usertemplate:data:informant:memory_stats
+
+---
+
+
+`Cacti` → `Console` → `Settings` → `Visual` → `Maximum Field Length` → ~`15`~ → `30` 
+`Cacti` → `Console` → `Graph Templates` → `Interface - Traffic (bits/sec)` → `Title (--title)` → ~`|host_description| - Traffic`~ → `|host_description| - Traffic - |query_ifName|`
+
+
+console–Graph Templates–Interface – Traffic Graph Template -> Title (--title)
+将|host_description| - Traffic 修改为 |host_description| - Traffic– |query_ifName|
+在后面的框框里面加上了 – |query_ifName| 这部分内容，以前这里是没有的!
+
+
