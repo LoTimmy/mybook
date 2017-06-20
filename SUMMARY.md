@@ -169,6 +169,7 @@
 * [cacti](serverguide/cacti.md)
 * [dnsmasq](serverguide/dnsmasq.md) 
 * [fail2ban](serverguide/fail2ban.md)
+* [freeradius](serverguide/freeradius.md)
 * [haproxy](serverguide/haproxy.md)
 * [mongodb](serverguide/mongodb.md)
 * [ntop](serverguide/ntop.md)

@@ -402,6 +402,14 @@
 - `input.mjml`
 - `my-email.html`
 
+- `infilename`
+- `outfilename`
+- `user-password`
+- `owner-password`
+- `infile.pdf`
+- `outfile.pdf`
+- `encrypted.pdf`
+
 - `imap`
 - `pop`
 - `smtp`

@@ -32,12 +32,60 @@ shell> screen /dev/cu.usbserial 38400
 
 `Ctrl+a` `Ctrl+\`
 
+
+---
+
+```console
+shell> kextstat | grep prolific
+  155    0 0xffffff7f84140000 0x6000     0x6000     com.prolific.driver.PL2303 (1.6.0) F6A6805D-685D-3E6D-BF81-106EBBC0A386 <130 41 5 4 3>
+
+shell> ioreg -c IOSerialBSDClient | grep usbserial
+```
+
+
 ---
 
 ```
 IPV4: <System>ipsetup ip-address 192.168.1.2 24 default-gateway 192.168.1.1
 IPV6: <System>ipsetup ipv6 address 2001::2 64 default-gateway 2001::1
 <System> summary
+```
+
+```
+Vlan-interface:                 1
+
+Select menu option:             Summary
+IP Method:                      DHCP
+IP address:                     169.254.74.52
+Subnet mask:                    255.255.0.0
+Default gateway:
+
+IPv6 Method:
+IPv6 link-local address:
+IPv6 subnet mask length:
+IPv6 global address:
+IPv6 subnet mask length:
+IPv6 default gateway:
+
+Mac address: 40B9-3C33-4A34
+
+Current boot app is: flash:/jg924a-cmw520-r1115.bin
+Next main boot app is: flash:/jg924a-cmw520-r1115.bin
+Next backup boot app is: flash:/jg924a-cmw520-r1115_bak.bin
+
+HPE Comware Platform Software
+Comware Software, Version 5.20.99, Release 1115
+Copyright (c) 2010-2016 Hewlett Packard Enterprise Development LP
+HPE 1920-24G Switch uptime is 0 week, 6 days, 2 hours, 24 minutes
+
+HPE 1920-24G Switch
+128M    bytes DRAM
+32M     bytes Flash Memory
+Config Register points to Flash
+
+Hardware Version is REV.A
+Bootrom Version is 117
+[SubSlot 0] 24GE+4SFP Hardware Version is REV.A
 ```
 
 
