@@ -230,18 +230,26 @@ WS-Management 通訊協定的實作，它可以使用 Web 服務，在
 
 
 ```
-winrm quickconfig
-```
+winrm quickconfig -q
+winrm set winrm/config @{MaxTimeoutms = "1800000"}
+winrm set winrm/config/winrs @{MaxMemoryPerShellMB="1024"}
+winrm set winrm/config/service @{AllowUnencrypted="true"}
+winrm set winrm/config/service/auth @{Basic="true"}
+winrm set winrm/config/service/auth @{CredSSP="true"}
 
+winrm set winrm/config/client @{AllowUnencrypted="true"}
+winrm set winrm/config/client/auth @{Basic="true"}
+
+net stop winrm
+sc config winrm start= auto
+net start winrm
+```
 
 #### :books: 參考網站：
 - https://www.ibm.com/support/knowledgecenter/zh-tw/SS2JEC_7.2.1/com.ibm.license.mgmt.admin.doc/t_configuring_winrm.html
 - https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx
-
-
-
-
-
+- https://www.ibm.com/support/knowledgecenter/zh-tw/SS4GSP_6.2.3/com.ibm.udeploy.install.doc/topics/agent_install_winrs.html
+- https://pubs.vmware.com/orchestrator-plugins/index.jsp#com.vmware.using.powershell.plugin.doc_10/GUID-D4ACA4EF-D018-448A-866A-DECDDA5CC3C1.html
 
 
 
@@ -266,10 +274,9 @@ reg add "HKCU\Control Panel\International" /f /v LocaleName /t REG_SZ /d "zh-TW"
 ```
 wmic cpu get name
 wmic os get caption
-
 ```
 
-
+#### :books: 參考網站：
 - https://technet.microsoft.com/en-us/library/cc742162(v=ws.11).aspx
 
 
