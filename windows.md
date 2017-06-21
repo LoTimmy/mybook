@@ -167,8 +167,7 @@
 
 ```
 
-### :books: 參考網站：
-
+#### :books: 參考網站：
 - [執行 Windows 安裝程式的方法](https://technet.microsoft.com/zh-tw/library/cc749415(v=ws.10).aspx)
 - [iT自救術─x86和x64到底有什麼差異？](http://www.ithome.com.tw/node/56880)
 - [Windows 7：常見問題](http://www.dell.com/learn/tw/zh/twbsd1/operating-systems/windows7_smb_faq)
@@ -184,6 +183,277 @@
 - https://technet.microsoft.com/zh-tw/library/cc722150(v=ws.10).aspx
 - https://technet.microsoft.com/zh-tw/library/ff716385.aspx
 - https://winscp.net/eng/docs/guide_windows_openssh_server
+
+
+---
+
+`winrm`
+
+
+
+```
+Windows 遠端管理命令列工具
+
+Windows 遠端管理 (WinRM) 是 Microsoft 對於
+WS-Management 通訊協定的實作，它可以使用 Web 服務，在
+本機與遠端電腦之間提供安全的通訊方式。
+
+使用方式:
+  winrm OPERATION RESOURCE_URI [-SWITCH:VALUE [-SWITCH:VALUE] ...]
+        [@{KEY=VALUE[;KEY=VALUE]...}]
+
+特定操作的說明:
+  winrm g[et] -?        抓取管理資訊。
+  winrm s[et] -?        修改管理資訊。
+  winrm c[reate] -?     建立管理資源的新執行個體。
+  winrm d[elete] -?     移除管理資源的執行個體。
+  winrm e[numerate] -?  列出管理資源的所有執行個體。
+  winrm i[nvoke] -?     在管理資源上執行方法。
+  winrm id[entify] -?   判斷 WS-Management 實作是否正在
+                        遠端上電腦執行。
+  winrm quickconfig -?  設定此電腦以接受來自其他電腦的
+                        WS-Management 要求。
+  winrm configSDDL -?   修改 URI 現有的安全描述元。
+  winrm helpmsg -?      顯示錯誤碼的錯誤訊息。
+
+相關主題的說明:
+  winrm help uris       如何建構資源 URI。
+  winrm help aliases    URI 的縮寫。
+  winrm help config     設定 WinRM 用戶端與服務設定。
+  winrm help certmapping 設定用戶端憑證存取。
+  winrm help remoting   如何存取遠端電腦。
+  winrm help auth       提供遠端存取的認證。
+  winrm help input      提供輸入以建立、設定和叫用。
+  winrm help switches   其他參數，例如格式化、選項等。
+  winrm help proxy      提供 Proxy 資訊。
+```
+
+
+```
+winrm quickconfig
+```
+
+
+#### :books: 參考網站：
+- https://www.ibm.com/support/knowledgecenter/zh-tw/SS2JEC_7.2.1/com.ibm.license.mgmt.admin.doc/t_configuring_winrm.html
+- https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx
+
+
+
+
+
+
+
+
+---
+
+#### :books: 參考網站：
+- https://technet.microsoft.com/zh-tw/library/ff793405.aspx
+
+---
+
+
+```
+reg add "HKCU\Control Panel\International" /f /v sShortTime /t REG_SZ /d "tt hh:mm"
+reg add "HKCU\Control Panel\International" /f /v sTimeFormat /t REG_SZ /d "tt hh:mm:ss"
+
+reg add "HKCU\Control Panel\International" /f /v sShortTime /t REG_SZ /d "HH:mm"
+reg add "HKCU\Control Panel\International" /f /v sTimeFormat /t REG_SZ /d "HH:mm:ss"
+reg add "HKCU\Control Panel\International" /f /v LocaleName /t REG_SZ /d "zh-TW"
+```
+
+
+```
+wmic cpu get name
+wmic os get caption
+
+```
+
+
+- https://technet.microsoft.com/en-us/library/cc742162(v=ws.11).aspx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
