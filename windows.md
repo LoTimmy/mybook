@@ -231,6 +231,8 @@ WS-Management 通訊協定的實作，它可以使用 Web 服務，在
 
 ```
 winrm quickconfig -q
+winrm quickconfig -transport:https
+
 winrm set winrm/config @{MaxTimeoutms = "1800000"}
 winrm set winrm/config/winrs @{MaxMemoryPerShellMB="1024"}
 winrm set winrm/config/service @{AllowUnencrypted="true"}
@@ -250,6 +252,8 @@ net start winrm
 - https://msdn.microsoft.com/en-us/library/aa384372(v=vs.85).aspx
 - https://www.ibm.com/support/knowledgecenter/zh-tw/SS4GSP_6.2.3/com.ibm.udeploy.install.doc/topics/agent_install_winrs.html
 - https://pubs.vmware.com/orchestrator-plugins/index.jsp#com.vmware.using.powershell.plugin.doc_10/GUID-D4ACA4EF-D018-448A-866A-DECDDA5CC3C1.html
+- https://support.symantec.com/en_US/article.TECH97514.html
+- https://support.symantec.com/en_US/article.TECH94458.html
 
 
 

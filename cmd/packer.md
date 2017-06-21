@@ -257,7 +257,6 @@ shell> packer build -var-file=variables.json ubuntu-16.04.2-server-amd64.json
 "winrm_timeout": "30m"
 
 
-
-
 #### :books: 參考網站：
 - https://www.packer.io/docs/templates/communicator.html
+- https://www.packer.io/docs/builders/hyperv-iso.html
