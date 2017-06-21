@@ -5,6 +5,10 @@
 
 ---
 
+- `MyPassword`
+- `MyUsername`
+- `ComputerName`
+- `MyComputer`
 - `漏洞`
 - `vulnerabilities`
 - `間諜軟體`
@@ -954,3 +958,4 @@ Yakkety 16.10
 password: oedu2eGh
 password: '9s36?;fyNp'
 ```
+

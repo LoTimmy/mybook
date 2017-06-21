@@ -567,3 +567,12 @@ $ git remote add example git://example.com/proj.git
 - [Git-Tools-Credential-Storage](https://git-scm.com/book/be/v2/Git-Tools-Credential-Storage)
 
 `Fast Forward` `快轉` `向前快轉`
+
+```
+git difftool --extcmd icdiff
+git diff --name-status HEAD~1..HEAD
+```
+
+
+
+
