@@ -18,3 +18,4 @@ shell> find . -type f -name "*.jpg" -exec jpegoptim {} \;
 - [jpegoptim](http://www.kokkonen.net/tjko/projects.html)
 - [jpegoptim](https://github.com/tjko/jpegoptim)
 - [jpegoptim](http://manpages.ubuntu.com/manpages/trusty/man1/jpegoptim.1.html)
+

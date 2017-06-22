@@ -4,4 +4,11 @@
 
 http://wiki.ocsinventory-ng.org/index.php?title=Install_ocs_ubuntu_server
 
+<!--
+
+https://shazi.info/centos-6-5-資產管理系統-ocsng-安裝/
+-->
+
 - [ocsinventory-ng](https://www.ocsinventory-ng.org/en/)
+- https://github.com/OCSInventory-NG/OCSInventory-Server
+- http://glpi-project.org/spip.php?lang=en

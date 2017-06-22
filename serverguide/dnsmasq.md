@@ -171,6 +171,17 @@ shell> dhcpdump -i eth0
 --test                              Check configuration syntax.
 ```
 
+sudo ipset create 列表名 hash:ip
+
+```console
+shell> ipset create facebook hash:ip
+shell> ipset create facebook hash:ip timeout 300
+```
+
+```
+ipset=/.facebook.com/facebook
+```
+
 <!--
 https://www.l68.net/2745.html
 -->

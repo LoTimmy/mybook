@@ -307,7 +307,7 @@ shell> openssl pkcs12 -in user.p12
 ----------
 
 `什麼是 AES？`
-> Advanced Encryption Standard (AES) 為進階加密標準，是用來加密電子資料的一種規格。自 2001 年起，AES 即受到美國政府採用，現今已廣泛應用於世界各處。AES 採行對稱加密演算法，也就是同一組加密金鑰可用於加密及解密。如果沒有加密金鑰，便無法存取加密資料，藉此保障資訊安全。
+> `Advanced Encryption Standard` (`AES`) 為`進階加密標準`，是用來加密電子資料的一種規格。自 2001 年起，`AES` 即受到美國政府採用，現今已廣泛應用於世界各處。`AES` 採行`對稱加密演算法`，也就是**同一組加密金鑰可用於加密及解密**。如果沒有加密金鑰，便無法存取加密資料，藉此保障資訊安全。
 
 
 ###### openssl_private_encrypt — Encrypts data with private key
@@ -328,6 +328,7 @@ shell> echo HelloWorld | openssl rsautl -encrypt -inkey public_key.pem -pubin | 
 shell> openssl enc -base64 -d -in crypted | openssl rsautl -inkey private_key.pem -decrypt
 ```
 ----------
+
 ```console
 shell> openssl enc -des3 -e -a -in testfile.txt -out testfile.txt.enc
 shell> openssl enc -des3 -d -a -in testfile.txt.enc -out testfile.txt
@@ -335,36 +336,82 @@ shell> openssl enc -des3 -d -a -in testfile.txt.enc -out testfile.txt
 shell> openssl enc -aes-256-cbc -e -a -in testfile.txt -out testfile.txt.enc
 shell> openssl enc -aes-256-cbc -d -a -in testfile.txt.enc -out testfile.txt
 ```
+
+```
+Message Digest commands (see the `dgst' command for more details)
+md4               md5               rmd160            sha               
+sha1              
+
+Cipher commands (see the `enc' command for more details)
+aes-128-cbc       aes-128-ecb       aes-192-cbc       aes-192-ecb       
+aes-256-cbc       aes-256-ecb       base64            bf                
+bf-cbc            bf-cfb            bf-ecb            bf-ofb            
+camellia-128-cbc  camellia-128-ecb  camellia-192-cbc  camellia-192-ecb  
+camellia-256-cbc  camellia-256-ecb  cast              cast-cbc          
+cast5-cbc         cast5-cfb         cast5-ecb         cast5-ofb         
+des               des-cbc           des-cfb           des-ecb           
+des-ede           des-ede-cbc       des-ede-cfb       des-ede-ofb       
+des-ede3          des-ede3-cbc      des-ede3-cfb      des-ede3-ofb      
+des-ofb           des3              desx              rc2               
+rc2-40-cbc        rc2-64-cbc        rc2-cbc           rc2-cfb           
+rc2-ecb           rc2-ofb           rc4               rc4-40            
+seed              seed-cbc          seed-cfb          seed-ecb          
+seed-ofb
+```
+
+```console
+shell> openssl aes-256-cbc -a -salt -in testfile.txt -out testfile.txt.enc
+shell> openssl aes-256-cbc -d -a -in testfile.txt.enc -out testfile.txt
+```
+
+
+```console
+shell> openssl aes-256-cbc -e -k "xyz123" -P
+shell> openssl aes-256-cbc -e -K '' -iv '' -P
+```
+
+```console
+shell> openssl speed aes-256-cbc
+```
+
 ----------
 ##### 文件加密
-使用2,048位元RSA和AES加密技術。
-此種加密技術唯一解密方式即是取得RSA-2048私鑰，否則所有加密文件將會無法解開文件的加密。
+使用`2,048`位元`RSA`和`AES`加密技術。
+此種加密技術唯一解密方式即是取得`RSA-2048`私鑰，否則所有加密文件將會無法解開文件的加密。
 「`加密`」(`Encryption`)、「`解密`」(`Decryption`)
 
-###### 產生一組RSA-2048金鑰。
+###### 產生一組`RSA-2048`金鑰。
 ```console
 shell> openssl genrsa -out private_key.pem 2048
 shell> openssl rsa -in private_key.pem -pubout -out public_key.pem
 ```
 
-###### 以一個隨機產生的256位元金鑰，針對檔案文件以AES-256 CBC對稱加密進行加密。
+###### 以一個隨機產生的`256`位元金鑰，針對檔案文件以`AES-256 CBC`對稱加密進行加密。
 ```console
 shell> openssl rand -base64 32 > passwd.txt
-shell> openssl enc -aes-256-cbc -salt -in testfile.txt -out testfile.txt.enc -pass file:passwd.txt
+shell> openssl aes-256-cbc -salt -in testfile.txt -out testfile.txt.enc -pass file:passwd.txt 
 ```
 ```console
 shell> openssl rsautl -encrypt -inkey public_key.pem -pubin -in passwd.txt -out passwd.txt.enc
 ```
-解密方式
+
+`解密方式`
 ```console
 shell> openssl rsautl -decrypt -inkey private_key.pem -in passwd.txt.enc -out passwd.txt
-shell> openssl enc -d -aes-256-cbc -in testfile.txt.enc -out testfile.txt -pass file:passwd.txt
+shell> openssl aes-256-cbc -d -in testfile.txt.enc -out testfile.txt -pass file:passwd.txt
+```
 
+```console
 shell> openssl dgst -sha1 -sign private_key.pem -out sign.txt testfile.txt    
 shell> openssl dgst -sha1 -verify public_key.pem -signature sign.txt testfile.txt
 Verified OK    
 ```
+
+#### :books: 參考網站：
+- https://zh.wikipedia.org/wiki/高级加密标准
+
 ---
+
 ```console
 shell> openssl list-message-digest-commands
 shell> openssl list-cipher-commands
@@ -374,7 +421,7 @@ shell> openssl list-standard-commands
 ---
 
 ```console
-shell> openssl rand -out testfile.txt -base64 $(( 1024**3 * 2 )) 
+shell> openssl rand -out testfile.txt -base64 $(( 1024 ** 3 )) 
 ```
 ---
 
@@ -390,18 +437,13 @@ shell> openssl s_client -connect servername:443
 shell> openssl rand -hex 10
 ```
 
-
-
-
 - 安全漏洞`DROWN`是一個典型的`跨協定攻擊` (`cross protocol attack`)，這類的攻擊透過`SSLv2`協定漏洞去攻擊採用`TLS`協定的安全連結。駭客可藉機進行中間人攻擊，破解加密傳輸，讀取機密流量，涵蓋密碼、信用卡號碼或金融等資料。
 - `DROWN的`全名為`Decrypting RSA with Obsolete and Weakened eNcryption`，指的是破解基於老舊及脆弱加密的`RSA`演算法，駭客利用特製的連結存取`SSLv2`伺服器就能截取並解密`TLS`流量。
 - `DROWN`是一個典型的`跨協定攻擊` (`cross protocol attack`)，這類的攻擊透過`SSLv2`協定漏洞去攻擊採用`TLS`協定的安全連結，雖然`SSLv2`與`TLS`皆支援`RSA`加密，但`TLS`能夠防禦針對`RSA`加密的攻擊，`SSLv2`則否。
 - `DROWN`的漏洞編號為`CVE-2016-0800`，而另兩個`OpenSSL`漏洞則會讓形勢更嚴重，這兩個`OpenSSL`編號分別是`CVE-2015-3197`與`CVE-2016-0703`。
 
-
-
-
-[研究人員揭露重大的DROWN安全漏洞，全球1/3的HTTPS網站安全拉警報](http://www.ithome.com.tw/news/104246)
+#### :books: 參考網站：
+- [研究人員揭露重大的DROWN安全漏洞，全球1/3的HTTPS網站安全拉警報](http://www.ithome.com.tw/news/104246)
 
 ![Note](https://help.ubuntu.com/libs/admon/note.png)
 
@@ -422,24 +464,32 @@ shell> perl check-ssl-heartbleed.pl login.yahoo.com:443
 ---
 ![Note](https://help.ubuntu.com/libs/admon/note.png)
 
-一般憑證有效期限為1至3年，視發行者而定，長度最低為40位元，假如要破解目前採用的1024位元RSA密鑰，在短時間內是完全不可能的，所以憑證的安全性是非常高的，但需留意私鑰的保管，這些檔案最好是不能連上網路的地方，例如儲存於磁片。
+一般憑證有效期限為1至3年，視發行者而定，長度最低為40位元，假如要破解目前採用的`1024`位元`RSA密鑰`，在短時間內是完全不可能的，所以憑證的安全性是非常高的，但需留意私鑰的保管，這些檔案最好是不能連上網路的地方，例如儲存於磁片。
 
-強制解除一般密碼時，若用高效能電腦花上一定時間就能解開，但特殊規格加密的資料就沒有這麼容易。以RSA-1024加密規格來說，目前一般家用電腦最少需要花費2000年才能解開，而動用日本超級電腦ES2的640個節點資源，找出RSA-1024密碼使用的解密金鑰，也要花上10年的時間。
-因此，按照「`摩爾定律`」（`Moore's Law`）推算，RSA-1024的安全期限應該在2019年內，故此加密法應無安全疑慮。
-
----
-- DES (Data Encryption Standard)
-- 「憑證管理中心」 (Certificate Authority, CA)
-- 「根憑證管理中心」 (Root CA)
-- 「中繼憑證管理中心」 (Intermediate CA)
-- 「X.509數位認證標準」 (X.509)
+強制解除一般密碼時，若用高效能電腦花上一定時間就能解開，但特殊規格加密的資料就沒有這麼容易。以`RSA-1024`加密規格來說，目前一般家用電腦最少需要花費`2000`年才能解開，而動用日本超級電腦`ES2`的`640`個節點資源，找出`RSA-1024`密碼使用的解密金鑰，也要花上10年的時間。
+因此，按照「`摩爾定律`」（`Moore's Law`）推算，`RSA-1024`的安全期限應該在2019年內，故此加密法應無安全疑慮。
 
 ---
+- `DES` (`Data Encryption Standard`)
+- 「`憑證管理中心`」 (`Certificate Authority, CA`)
+- 「`根憑證管理中心`」 (`Root CA`)
+- 「`中繼憑證管理中心`」 (`Intermediate CA`)
+- 「`X.509數位認證標準`」 (`X.509`)
+
+---
+![](https://upload.wikimedia.org/wikipedia/commons/c/c4/Ecb_encryption.png)
+![](https://upload.wikimedia.org/wikipedia/commons/6/66/Ecb_decryption.png)
+
+
 ![](http://upload.wikimedia.org/wikipedia/commons/thumb/8/80/CBC_encryption.svg/601px-CBC_encryption.svg.png)
 ![](http://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/CBC_decryption.svg/601px-CBC_decryption.svg.png)
+
+#### :books: 參考網站：
+- https://zh.wikipedia.org/wiki/分组密码工作模式
+
 ---
 
-- 在2010年時便傳出1024-bit的`SSL`金鑰遭到破解，「`美國國家標準技術研究所`」(`National Institute of Standards and Technology`, `NIST`)建議別再使用1024-bit的金鑰。
+- 在2010年時便傳出`1024-bit`的`SSL`金鑰遭到破解，「`美國國家標準技術研究所`」(`National Institute of Standards and Technology`, `NIST`)建議別再使用1024-bit的金鑰。
 - 雖然金鑰長度愈長也愈安全，但難免會影響到服務的效能。
 - 「`公開金鑰`」、「`私密金鑰`」 (`Public Key`、`Private Key`)
 - 使用「`非對稱加密演算法`」，加密端及解密端會分別使用不同的金鑰。
@@ -453,13 +503,13 @@ OPENSSL_UI_PATH
 
 C:\openssl
 
-SSL Keys
+`SSL Keys`
 ![](http://opensslui.sourceforge.net/imgs/keys.png)
 
-Certificate Signing Requests (CSR)
+`Certificate Signing Requests` (`CSR`)
 ![](http://opensslui.sourceforge.net/imgs/csrreq.png)
 
-Self Signed Certificates
+`Self Signed Certificates`
 ![](http://opensslui.sourceforge.net/imgs/selfsigned.png)
 
 Sign CSR
@@ -474,7 +524,6 @@ PKCS 12 Utility
 
 ---
 
-
 ```console
 shell> openssl req -x509 -nodes -newkey rsa:2048 -sha1 -keyout ca-key.pem -out ca-cert.pem -days 7305 -subj "/CN=172.16.7.103" -config openssl.cnf
 
@@ -482,8 +531,6 @@ shell> openssl req -newkey rsa:2048 -days 365 -nodes -keyout server-key.pem -out
 shell> openssl x509 -req -in server-req.pem -days 7305 -CA ca-cert.pem -CAkey ca-key.pem -set_serial 101 -out server-cert.pem
 
 ```
-
-
 
 #### :books: 參考網站：
 - [openssl](http://support.citrix.com/article/CTX135602)
@@ -494,11 +541,10 @@ shell> openssl x509 -req -in server-req.pem -days 7305 -CA ca-cert.pem -CAkey ca
 
 - [x509v3_config](https://www.openssl.org/docs/apps/x509v3_config.html)
 - [配置單向 SSL 的伺服器憑證](https://publib.boulder.ibm.com/tividd/td/ITIM/SC32-1150-02/zh_TW/HTML/svrcfg45mst88.htm)
-- [http://pic.dhe.ibm.com/infocenter/tivihelp/v53r1/index.jsp?topic=%2Fcom.ibm.lmt75.doc%2Fcom.ibm.license.mgmt.security.doc%2Ft_creating_certificate_ca_max.html&lang%3Dzh_TW](http://pic.dhe.ibm.com/infocenter/tivihelp/v53r1/index.jsp?topic=%2Fcom.ibm.lmt75.doc%2Fcom.ibm.license.mgmt.security.doc%2Ft_creating_certificate_ca_max.html&lang%3Dzh_TW)
+- [建立 CA 簽署的憑證](http://pic.dhe.ibm.com/infocenter/tivihelp/v53r1/index.jsp?topic=/com.ibm.lmt75.doc/com.ibm.license.mgmt.security.doc/t_creating_certificate_ca_max.html&lang=zh_TW)
 - [善用加密技術，讓網路更為安全](http://www.ithome.com.tw/node/49651)
 - [OpenSSL加密出包　全球網路安全淌血](http://www.ithome.com.tw/news/86879)
 - [IT產品Heartbleed災情大清查](http://www.ithome.com.tw/news/86881)
 - [連鎖都失效了，不換新怎會安全](http://www.ithome.com.tw/voice/86876)
 - [全面解讀電子簽章法（三）](http://www.ithome.com.tw/node/14824)
-- [http://zh.wikipedia.org/wiki/块密码的工作模式](http://zh.wikipedia.org/wiki/块密码的工作模式)
 - [http://www.ithome.com.tw/news/89871](http://www.ithome.com.tw/news/89871)

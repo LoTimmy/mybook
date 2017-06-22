@@ -820,6 +820,12 @@ location ~ \.php$ {
 - [Disabling SSLv3](https://www.vultr.com/docs/disabling-sslv3)
 - [Setup Nginx as Reverse Proxy Over Apache on Debian/Ubuntu](https://www.vultr.com/docs/setup-nginx-as-reverse-proxy-over-apache-on-debian-ubuntu)
 
+---
+
+#### :books: 參考網站：
+- http://nginx.org/en/docs/http/ngx_http_index_module.html
+- http://nginx.org/en/docs/http/ngx_http_autoindex_module.html
+
 
 MacGyver
 馬蓋先

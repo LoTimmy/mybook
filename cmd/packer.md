@@ -241,3 +241,22 @@ shell> packer build -var-file=variables.json ubuntu-16.04.2-server-amd64.json
 - https://www.ibm.com/support/knowledgecenter/pl//SSPLFC_7.3.0/com.ibm.taddm.doc_7.3/SensorGuideRef/r_cmdb_sensor_vmware_troubleshooting.html
 - https://www.packer.io/docs/other/debugging.html
 - https://www.packer.io/docs/templates/user-variables.html
+
+
+
+---
+
+
+
+
+      "communicator": "ssh"
+      "communicator": "winrm"
+
+"winrm_username": ""
+"winrm_password": ""
+"winrm_timeout": "30m"
+
+
+#### :books: 參考網站：
+- https://www.packer.io/docs/templates/communicator.html
+- https://www.packer.io/docs/builders/hyperv-iso.html

@@ -18,6 +18,8 @@ PermitRootLogin no
 
 **`OpenSSH Server`**
 
+`/usr/share/doc/openssh-server/examples/sshd_config`
+
 `/etc/ssh/sshd_config`
 ```
 UseDNS no
@@ -35,6 +37,27 @@ shell> man sshd_config
 shell> sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.original
 shell> sudo chmod a-w /etc/ssh/sshd_config.original
 shell> sudo service ssh restart
+```
+
+---
+
+`/etc/ssh/sshd_config`
+```
+Ciphers aes256-cbc,aes256-ctr
+```
+
+`~/.ssh/config`
+```
+Host 192.168.31.1
+    ciphers aes256-cbc,aes256-ctr
+    hostname 192.168.31.1
+    proxycommand ssh remotehost -W %h:%p
+    user ubuntu
+    port 22
+```
+
+```console
+shell> ssh -Q cipher
 ```
 
 ---
@@ -329,9 +352,16 @@ shell> ssh-copy-id -i id_ecdsa.pub matt@remotehost
 
 ---
 
+```console
+shell> ssh -vv remotehost
+```
+
+---
+
 #### :books: 參考網站：
 - [serverguide](https://help.ubuntu.com/lts/serverguide/)
 - [openssh-server](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
 - [保护 SSH 的三把锁](https://www.ibm.com/developerworks/cn/aix/library/au-sshlocks/)
 - http://www.ibm.com/support/knowledgecenter/SSWT7D_1.0.0/com.ibm.commercecloud.administering.doc/tasks/tad_connect_jumphosts_cyg.htm
 - [实战 SSH 端口转发](https://www.ibm.com/developerworks/cn/linux/l-cn-sshforward/)
+- http://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_usr_ssh/configuration/15-s/sec-usr-ssh-15-s-book/sec-secure-shell-algorithm-ccc.html
