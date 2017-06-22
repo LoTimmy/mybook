@@ -47,11 +47,19 @@ RUN wget -q --content-disposition https://minergate.com/download/deb-cli \
     && rm *.deb
 
 ENTRYPOINT ["minergate-cli"]
-CMD ["-user", "YOUR-EMAIL", "-xmr"]
 ```
 
 ```
-shell> sudo docker build -t xmr .
+shell> sudo docker build -t minergate-cli .
+
+shell> docker run --rm minergate-cli -help
+shell> docker run --rm minergate-cli -version
+shell> docker run -d --name test minergate-cli -user YOUR-EMAIL -xmr
+shell> docker run --rm --name test -d minergate-cli -user YOUR-EMAIL -xmr
+shell> docker run --rm --name test -d minergate-cli -user YOUR-EMAIL -bcn 2 -fcn+dsh 2
+
+shell> docker logs test
+shell> docker stop test
 ```
 
 `-bcn`
