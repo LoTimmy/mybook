@@ -479,6 +479,7 @@ shell> git log --graph
 
 ```console
 shell> git ls-files
+shell> git ls-files --ignored --exclude-standard
 ```
 
 #### :books: 參考網站：
@@ -567,3 +568,11 @@ $ git remote add example git://example.com/proj.git
 - [Git-Tools-Credential-Storage](https://git-scm.com/book/be/v2/Git-Tools-Credential-Storage)
 
 `Fast Forward` `快轉` `向前快轉`
+
+```
+git clean -f
+git clean -f -d
+```
+
+
+
