@@ -479,6 +479,7 @@ shell> git log --graph
 
 ```console
 shell> git ls-files
+shell> git ls-files --ignored --exclude-standard
 ```
 
 #### :books: 參考網站：
@@ -569,10 +570,18 @@ $ git remote add example git://example.com/proj.git
 `Fast Forward` `快轉` `向前快轉`
 
 ```
+<<<<<<< HEAD
+git clean -f
+git clean -f -d
+=======
 git difftool --extcmd icdiff
 git diff --name-status HEAD~1..HEAD
+>>>>>>> 77fcd0d94dce404b4e108da9890955eb0c01b423
 ```
 
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 77fcd0d94dce404b4e108da9890955eb0c01b423
