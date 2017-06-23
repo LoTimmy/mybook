@@ -13,9 +13,14 @@
 相較於比特幣可追踨金額及流向，`Monero` <img src="http://i.imgur.com/gFdgubO.png" width="16"> 基於`CryptoNote`協定，具有更高的交易隱匿性，外界只能得知交易金額，無法追踨交易流向。
 2014年4月才現身的`Monero` (`XMR`) <img src="http://i.imgur.com/gFdgubO.png" width="16"> 奠基於`CryptoNote`協定，採用`CryptoNote`協定的貨幣雖然也利用分散式的公共分類帳來記錄所有的交易，但它的交易紀錄無法用來追蹤送款人或收款人，因此外界只能窺得交易金額，卻無法得知流向。相較於只有匿名特質、但可同時追蹤交易金額及流向的比特幣，`Monero`顯然是個更隱密的交易工具。
 
+> `Intel`® `進階加密標準新增指令` (`Intel`® `AES NI`) 是一組新的加密指令集，改善了`進階加密標準` (`AES`) 演算法，可加速 `Intel`® `Xeon`® 處理器產品與 `Intel`® Core™ 處理器產品中的資料加密。
+
+
+
 
 #### :books: 參考網站：
 - http://www.ithome.com.tw/news/107993
+- https://www.intel.com.tw/content/www/tw/zh/architecture-and-technology/advanced-encryption-standard--aes-/data-protection-aes-general-technology.html
 
 
 ---
@@ -60,3 +65,30 @@ shell> sudo docker build -t xmr .
 #### :books: 參考網站：
 - https://minergate.com/faq/how-minergate-console
 - https://minergate.com/faq/what-pool-address
+
+---
+
+```
+shell> grep aes /proc/cpuinfo
+shell> openssl speed aes-128-cbc
+shell> openssl speed -evp aes-128-cbc
+shell> dd if=/dev/zero count=100 bs=1M | ssh -c aes128-cbc localhost "cat >/dev/null"
+```
+
+#### :books: 參考網站：
+- https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Security_Guide/sect-Security_Guide-Encryption-OpenSSL_Intel_AES-NI_Engine.html
+- https://software.intel.com/zh-cn/articles/improving-openssl-performance
+- https://technet.microsoft.com/zh-tw/library/cc811537(v=ws.11).aspx
+
+`演算法`
+`加密演算法`
+
+`AES-GCM 256`
+`AES-GCM 192`
+`AES-GCM 128`
+`AES-CBC 256`
+`AES-CBC 192`
+`AES-CBC 128`
+`3DES`
+`DES`
+ 
