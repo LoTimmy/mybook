@@ -46,9 +46,48 @@ shell> ioreg -c IOSerialBSDClient | grep usbserial
 ---
 
 ```
-IPV4: <System>ipsetup ip-address 192.168.1.2 24 default-gateway 192.168.1.1
+******************************************************************************
+* Copyright (c) 2010-2016 Hewlett Packard Enterprise Development LP          *
+* Without the owner's prior written consent,                                 *
+* no decompiling or reverse-engineering shall be allowed.                    *
+******************************************************************************
+
+User interface aux0 is available.
+
+
+
+Please press ENTER.
+
+Login authentication
+
+
+Username:admin
+Password:
+
+<HPE>?
+User view commands:
+  initialize  Delete the startup configuration file and reboot system
+  ipsetup     Assign an IP address to VLAN-interface 1
+  password    Specify password of local user
+  ping        Ping function
+  quit        Exit from current command view
+  reboot      Reboot system/board/card
+  summary     Display summary information of the device.
+  telnet      Establish one TELNET connection
+  upgrade     Upgrade the system boot file or the Boot ROM program
+
+<HPE>
+```
+
+```
+IPV4: <System>ipsetup ip-address 192.168.88.57 24 default-gateway 192.168.88.1
+IPV4: <System>ipsetup ip-address 192.168.88.60 24 default-gateway 192.168.88.1
 IPV6: <System>ipsetup ipv6 address 2001::2 64 default-gateway 2001::1
 <System> summary
+<System> ping 192.168.88.1
+<System> password
+<System> quit
+<System> reboot
 ```
 
 ```
@@ -92,3 +131,4 @@ Bootrom Version is 117
 #### :books: 參考網站：
 - http://www.prolific.com.tw/TW/ShowProduct.aspx?pcid=79
 - http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=mmr_kc-0118664
+- http://h22208.www2.hpe.com/eginfolib/networking/docs/switches/K-KA-KB/15-18/5998-8160_ssw_mcg/content/ch06s10.html
