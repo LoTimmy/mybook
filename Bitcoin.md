@@ -10,9 +10,6 @@
 由於`比特幣`的匿名性，過去常常與犯罪行為連結，例如在「`暗網`」（`dark net`）中的各種非法交易，往往是以`比特幣`來支付。然而`比特幣`帶給世界最大的價值或許不是貨幣或商品本身，而是底層的「`區塊鍊`」技術（`blockchain`）。
 `Maicoin`是台灣第一個比特幣買賣的交易平台，也提供比特幣電子錢包的服務。
 
-相較於比特幣可追踨金額及流向，`Monero` <img src="http://i.imgur.com/gFdgubO.png" width="16"> 基於`CryptoNote`協定，具有更高的交易隱匿性，外界只能得知交易金額，無法追踨交易流向。
-2014年4月才現身的`Monero` (`XMR`) <img src="http://i.imgur.com/gFdgubO.png" width="16"> 奠基於`CryptoNote`協定，採用`CryptoNote`協定的貨幣雖然也利用分散式的公共分類帳來記錄所有的交易，但它的交易紀錄無法用來追蹤送款人或收款人，因此外界只能窺得交易金額，卻無法得知流向。相較於只有匿名特質、但可同時追蹤交易金額及流向的比特幣，`Monero`顯然是個更隱密的交易工具。
-
 > `Intel`® `進階加密標準新增指令` (`Intel`® `AES NI`) 是一組新的加密指令集，改善了`進階加密標準` (`AES`) 演算法，可加速 `Intel`® `Xeon`® 處理器產品與 `Intel`® Core™ 處理器產品中的資料加密。
 
 
@@ -25,7 +22,7 @@
 
 - `Bitcoin` <img src="http://i.imgur.com/Yt7azjn.png" width="18"> `比特幣` `BTC` `SHA-256`
 - `Ethereum` <img src="http://i.imgur.com/fjj36UT.png" width="20"> `以太坊` `ETH` `Ethash`
-- `Monero` <img src="http://i.imgur.com/gFdgubO.png" width="16"> `墨內羅幣` `門羅幣` `XMR` `Cryptonight` 
+ 
 - `Dashcoin` <img src="http://i.imgur.com/1Caweri.png" width="16"> `達世幣` `DASH` `X11` 
 - `Account Balance` `帳戶餘額`
 - `Chart` `圖表`
@@ -36,6 +33,21 @@
 - https://poloniex.com
 
 ---
+
+
+- `Monero` <img src="http://i.imgur.com/gFdgubO.png" width="16"> `墨內羅幣` `門羅幣` `XMR` `Cryptonight`
+
+相較於比特幣可追踨金額及流向，`Monero` <img src="http://i.imgur.com/gFdgubO.png" width="16"> 基於`CryptoNote`協定，具有更高的交易隱匿性，外界只能得知交易金額，無法追踨交易流向。
+2014年4月才現身的`Monero` (`XMR`) <img src="http://i.imgur.com/gFdgubO.png" width="16"> 奠基於`CryptoNote`協定，採用`CryptoNote`協定的貨幣雖然也利用分散式的公共分類帳來記錄所有的交易，但它的交易紀錄無法用來追蹤送款人或收款人，因此外界只能窺得交易金額，卻無法得知流向。相較於只有匿名特質、但可同時追蹤交易金額及流向的比特幣，`Monero`顯然是個更隱密的交易工具。
+
+<a href="https://youtu.be/TZi9xx6aiuY" target="_blank">
+  <img src="http://img.youtube.com/vi/TZi9xx6aiuY/0.jpg" alt="" width="240" height="180" >
+</a>
+
+
+
+---
+
 
 `Dockerfile`
 ```
