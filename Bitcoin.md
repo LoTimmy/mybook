@@ -16,8 +16,6 @@
 > `Intel`® `進階加密標準新增指令` (`Intel`® `AES NI`) 是一組新的加密指令集，改善了`進階加密標準` (`AES`) 演算法，可加速 `Intel`® `Xeon`® 處理器產品與 `Intel`® Core™ 處理器產品中的資料加密。
 
 
-
-
 #### :books: 參考網站：
 - http://www.ithome.com.tw/news/107993
 - https://www.intel.com.tw/content/www/tw/zh/architecture-and-technology/advanced-encryption-standard--aes-/data-protection-aes-general-technology.html
@@ -73,7 +71,6 @@ shell> docker stop test
 #### :books: 參考網站：
 - https://minergate.com/faq/how-minergate-console
 - https://minergate.com/faq/what-pool-address
-<<<<<<< HEAD
 
 ---
 
@@ -89,17 +86,23 @@ shell> dd if=/dev/zero count=100 bs=1M | ssh -c aes128-cbc localhost "cat >/dev/
 - https://software.intel.com/zh-cn/articles/improving-openssl-performance
 - https://technet.microsoft.com/zh-tw/library/cc811537(v=ws.11).aspx
 
-`演算法`
-`加密演算法`
+---
 
-`AES-GCM 256`
-`AES-GCM 192`
-`AES-GCM 128`
-`AES-CBC 256`
-`AES-CBC 192`
-`AES-CBC 128`
-`3DES`
-`DES`
+- `演算法`
+- `加密演算法`
+- `AES-GCM 256`
+- `AES-GCM 192`
+- `AES-GCM 128`
+- `AES-CBC 256`
+- `AES-CBC 192`
+- `AES-CBC 128`
+- `3DES`
+- `DES`
  
-=======
->>>>>>> 462e221c8fd54fbe2621bbea96cf690385772d9e
+---
+
+- 名為「`影子經紀人`」 （`The Shadow Brokers`, `TSB`）的駭客組織
+- 駭客組織「`影子掮客`」 (`The Shadow Brokers`, `TSB`)
+- 駭客組織「`方程式團體`」 (`Equation Group`)
+- 「`零時差漏洞`」（**指還沒有修補程式的安全漏洞**，`Zero Day Exploit`）
+

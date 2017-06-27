@@ -6,6 +6,8 @@
 * [Glossary](glossary.md)
 * [學英語](學英語.md)
 * [ipv6](ipv6.md)
+* [Bitcoin](Bitcoin.md)
+* [usbserial](usbserial.md)
 
 -----
 * [SSH](ssh/guide.md)
