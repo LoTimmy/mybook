@@ -655,13 +655,51 @@ command=/usr/sbin/sshd -D
 command=/bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"
 ```
 
-```
-docker build -t mysupervisord .
-docker run -p 22 -p 80 -t -i mysupervisord
+```console
+shell> docker build -t mysupervisord .
+shell> docker run -p 22 -p 80 -t -i mysupervisord
 ```
 
 #### :books: 參考網站：
 - https://docs.docker.com/engine/admin/using_supervisord/#exposing-ports-and-running-supervisor
+
+---
+
+`Build with PATH`
+```console
+shell> docker build .
+```
+
+`Build with URL`
+```console
+shell> docker build github.com/creack/docker-firefox
+```
+
+`Build with -`
+```console
+shell> docker build - < Dockerfile
+shell> docker build - < context.tar.gz
+```
+
+`Tag an image (-t)`
+
+```console
+shell> docker build -t vieux/apache:2.0 .
+```
+
+`Specify a Dockerfile (-f)`
+
+```console
+shell> docker build -f Dockerfile.debug .
+shell> docker build -f dockerfiles/Dockerfile.debug -t myapp_debug .
+shell> docker build -f dockerfiles/Dockerfile.prod  -t myapp_prod .
+```
+
+`.dockerignore`
+
+#### :books: 參考網站：
+- https://docs.docker.com/engine/reference/commandline/build/
+- https://docs.docker.com/engine/reference/builder/#dockerignore-file
 
 ---
 
