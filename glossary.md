@@ -532,6 +532,7 @@
 
 - `mylogs`
 - `mydata`
+- `mydir`
 - `myservice`
 - `daemon`
 - `myredis`
