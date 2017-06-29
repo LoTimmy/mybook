@@ -216,8 +216,6 @@ shell> sudo docker run --name some-mysql -v /docker/mariadb:/var/lib/mysql -p 33
 shell> sudo docker run --name some-mysql -P -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
 shell> sudo docker run -it --link some-mysql:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'
 
-
-
 shell> sudo docker run  -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql:latest
 
 shell> sudo docker run --name mysql -p 3306:3306 \
@@ -227,8 +225,6 @@ shell> sudo docker run --name mysql -p 3306:3306 \
        -d mysql:latest                
 
 shell> docker exec -ti mysql /bin/bash
-
-
 
 shell> mkdir -p /docker/mariadb
 shell> sudo docker run --name some-mariadb -v /docker/mariadb:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mariadb
@@ -665,6 +661,8 @@ shell> docker run -p 22 -p 80 -t -i mysupervisord
 
 ---
 
+### docker build {#build}
+
 `Build with PATH`
 ```console
 shell> docker build .
@@ -700,6 +698,14 @@ shell> docker build -f dockerfiles/Dockerfile.prod  -t myapp_prod .
 #### :books: 參考網站：
 - https://docs.docker.com/engine/reference/commandline/build/
 - https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
+---
+
+### docker cp {#cp}
+
+
+#### :books: 參考網站：
+- https://docs.docker.com/engine/reference/commandline/cp/
 
 ---
 
