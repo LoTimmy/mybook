@@ -74,6 +74,7 @@
     * [pip](cmd/pip.md)
     * [pppoeconf](cmd/pppoeconf.md)
     * [privoxy](cmd/privoxy.md)
+    * [proxychains4](cmd/proxychains4.md)
     * [putty-tools](cmd/putty-tools.md)
     * [pwgen](cmd/pwgen.md)
     * [qpdf](cmd/qpdf.md)
