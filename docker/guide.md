@@ -725,3 +725,37 @@ shell> docker build -f dockerfiles/Dockerfile.prod  -t myapp_prod .
 - https://registry.hub.docker.com/_/ubuntu/
 - https://registry.hub.docker.com/_/mysql/
 - https://docs.docker.com/engine/admin/ansible/#usage
+
+
+---
+
+```
+NETWORK ID          NAME                DRIVER              SCOPE
+a504c8634d9f        bridge              bridge              local
+f77976b89791        host                host                local
+186018641fd1        none                null                local
+```
+
+```
+shell> docker network ls --no-trunc
+shell> docker network ls
+shell> docker run --network=<NETWORK>
+shell> docker run -it --network="bridge" ubuntu bash
+```
+
+```
+docker run --network none
+--network=host
+--network="bridge"
+
+docker run -it alpine env
+```
+
+#### :books: 參考網站：
+- https://docs.docker.com/engine/reference/commandline/network_ls/
+- https://docs.docker.com/engine/reference/run/
+
+
+
+
+

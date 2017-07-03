@@ -26,6 +26,10 @@
 - `ESTAB`
 - `LISTEN`
 - `tcp`
+- `networking`
+- `active`
+- `inactive`
+- `bridge`
 
 ---
 
@@ -246,6 +250,7 @@
 
 - `macOS`
 - `macos`
+- `mac`
 - `Sierra`
 - `iphone`
 - `iPhone`
@@ -399,6 +404,8 @@
 - `owner`
 - `publish`
 - `restart`
+- `restarted`
+- `started`
 - `search`
 - `cli`
 - `update`
@@ -524,8 +531,13 @@
 - `local`
 - `localhost`
 - `ntp_server`
+- `databases`
 - `database_server`
 - `webservers`
+- `httpd`
+- `nginx`
+- `apache`
+- `memcached`
 - `dbservers`
 - `db-01`
 - `db-02`
@@ -627,6 +639,7 @@
 - `sue@example.com`
 
 - `Your Name`
+- `yourname`
 - `you@example.com`
 - `firstname.lastname@example.com`
 - `username@example.com`
