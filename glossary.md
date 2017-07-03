@@ -70,6 +70,9 @@
 - `img`
 - `logo-small.png`
 - `shop`
+- `commandline`
+- `engine`
+- `reference`
 
 ---
 
