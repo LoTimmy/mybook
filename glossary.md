@@ -247,6 +247,7 @@
 
 - `myPublicIP`
 - `myLoadBalancer`
+- `my-net`
 
 - `macOS`
 - `macos`
@@ -926,6 +927,8 @@ Yakkety 16.10
 - `group`
 - `privcertkey`
 - `docker`
+- `c1`
+- `c2`
 - `ssh_pub_key`
 - `github_key`
 - `testuser`

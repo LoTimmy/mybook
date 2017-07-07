@@ -7,7 +7,6 @@
 * [學英語](學英語.md)
 * [ipv6](ipv6.md)
 * [Bitcoin](Bitcoin.md)
-* [usbserial](usbserial.md)
 
 -----
 * [SSH](ssh/guide.md)
@@ -205,6 +204,8 @@
     * [gitlab](git/gitlab.md)
 * [macOS](apple/macos.md)
     * [alfredapp](apple/alfredapp.md)
+    * [bettertouchtool](apple/bettertouchtool.md)
+    * [usbserial](apple/usbserial.md)
     * [swift](apple/swift.md)
 
 * [cisco](cisco.md)

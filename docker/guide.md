@@ -749,6 +749,9 @@ docker run --network none
 --network="bridge"
 
 docker run -it alpine env
+docker run -it fedora bash
+docker run -it centos bash
+docker run -it ubuntu:14.04 /bin/bash
 ```
 
 #### :books: 參考網站：
@@ -756,6 +759,9 @@ docker run -it alpine env
 - https://docs.docker.com/engine/reference/run/
 
 
+---
 
+#### :books: 參考網站：
+- https://docs.docker.com/get-started/
 
 
