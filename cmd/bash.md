@@ -1,3 +1,5 @@
+<img src="http://i.imgur.com/qsEtN4L.png" width="100">
+
 - `Bash Shell`為`UNIX`的殼層程式，不但是`GNU`作業系統的殼層程式，也是`Linux`及`Mac OS X`的預設殼層程式，算是各種`Linux`版本上最常見的公用程式。它採用命令列介面，允許使用者輸入文字命令，也可讓使用者遠端下達指令（如透過`ssh`或` telnet`）。
 - `Bash`是一個指令列`shell` （殼層）程式，廣泛存在於 `Linux`、`BSD` 和 `Mac OS X` 等`UNIX-based`的作業系統，使用者只要將指令輸入到一個簡單的文字式視窗，作業系統便會依指令運作。
 

@@ -806,6 +806,18 @@ location ~ \.php$ {
 
 ---
 
+```
+location /mod_pagespeed_example {
+  location ~* \.(jpg|jpeg|gif|png|js|css)$ {
+    add_header Cache-Control "public, max-age=600";
+  }
+}
+```
+
+#### :books: 參考網站：
+- https://modpagespeed.com/doc/filter-cache-extend
+---
+
 #### :books: 參考網站：
 - [ngx_http_log_module](http://nginx.org/en/docs/http/ngx_http_log_module.html)
 - [ssl_checker](https://www.geocerts.com/ssl_checker)

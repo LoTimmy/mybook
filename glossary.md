@@ -549,6 +549,8 @@
 - `mylogs`
 - `mydata`
 - `mydir`
+- `relativeDir`
+- `absoluteDir`
 - `myservice`
 - `daemon`
 - `myredis`
