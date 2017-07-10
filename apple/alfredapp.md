@@ -1,4 +1,5 @@
 `Alfred 3 for Mac`
+<img src="http://i.imgur.com/9yrOzBq.png" width="100">
 
 ```console
 shell> brew cask install alfred

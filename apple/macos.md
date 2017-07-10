@@ -506,3 +506,9 @@ GC1HA-01Z14-H8D2P-04NNZ-Z6RY0
 - https://support.apple.com/zh-tw/HT201253
 - [使用 AirDrop 從 Mac 傳送內容](https://support.apple.com/zh-tw/HT203106)
 - [透過 Apple ID 裝置列表來查看您所登入的裝置](https://support.apple.com/zh-tw/HT205064)
+
+---
+
+#### :books: 參考網站：
+- [mounty](http://enjoygineering.com/mounty)
+- https://lhc70000.github.io/iina/
