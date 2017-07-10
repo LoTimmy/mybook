@@ -195,14 +195,14 @@ plugin {
 
 ### 服务器使用 SpamAssassin 防治垃圾邮件
 
-> SpamAssassin 是免費的垃圾郵件篩選器
-> SpamAssassin 是一个邮件过滤器，它部署在邮件服务器端，可以使用一系列的机制来确认垃圾邮件，这些机制包括：文本分析、Bayesian （贝叶斯判决规则）过滤、DNS 数据块列表，以及合作性的过滤数据库。
-> SpamAssassin 包括 spamd 守护进程和 spamc 客户端。
+> `SpamAssassin` 是免費的垃圾郵件篩選器
+> `SpamAssassin` 是一个邮件过滤器，它部署在邮件服务器端，可以使用一系列的机制来确认垃圾邮件，这些机制包括：文本分析、`Bayesian` （`贝叶斯判决规则`）过滤、DNS 数据块列表，以及合作性的过滤数据库。
+> SpamAssassin 包括 `spamd` 守护进程和 `spamc` 客户端。
 
-- Headeranalysis (标题分析)：检查疑似垃圾邮件的标题，有些垃圾邮件被人采用某种技巧处理后，可能会被误认为是合法的电子邮件。
-- Text analysis (文本分析)：检查电子邮件正文中的垃圾邮件特征。
-- Blacklists (黑名单)：检查名单，看看发件人是否在现有垃圾邮件发送者列表中。
-- Database (数据库)：检查针对 Vipul's Razor (razor.sourceforge.net) 的邮件签名，它是一个垃圾邮件跟踪数据库。
+- `Headeranalysis` (`标题分析`)：检查疑似垃圾邮件的标题，有些垃圾邮件被人采用某种技巧处理后，可能会被误认为是合法的电子邮件。
+- `Text analysis` (`文本分析`)：检查电子邮件正文中的垃圾邮件特征。
+- `Blacklists` (`黑名单`)：检查名单，看看发件人是否在现有垃圾邮件发送者列表中。
+- `Database` (`数据库`)：检查针对 `Vipul's Razor` (`razor.sourceforge.net`) 的邮件签名，它是一个垃圾邮件跟踪数据库。
 
 
 `sample-nonspam.txt.gz`
@@ -312,10 +312,78 @@ shell> opendkim-genkey -r -D -d mydomain.com
 
 ---
 
+<img src="http://spamassassin.apache.org/images/apache-feather.png" alt="" width=58 >
+
+
+
+`/usr/bin/sa-update`
+`sa-update`
 
 ```console
 shell> sa-update && /etc/init.d/spamassassin reload
 ```
+
+
+```console
+shell> sa-update -D
+Jul  3 12:10:40.526 [22759] dbg: logger: adding facilities: all
+Jul  3 12:10:40.526 [22759] dbg: logger: logging level is DBG
+Jul  3 12:10:40.526 [22759] dbg: generic: SpamAssassin version 3.3.1
+Jul  3 12:10:40.526 [22759] dbg: generic: Perl 5.010001, PREFIX=/usr, DEF_RULES_DIR=/usr/share/spamassassin, LOCAL_RULES_DIR=/etc/spamassassin, LOCAL_STATE_DIR=/var/lib/spamassassin
+Jul  3 12:10:40.526 [22759] dbg: config: timing enabled
+Jul  3 12:10:40.527 [22759] dbg: config: score set 0 chosen.
+Jul  3 12:10:40.531 [22759] dbg: dns: no ipv6
+Jul  3 12:10:40.531 [22759] dbg: dns: is Net::DNS::Resolver available? yes
+Jul  3 12:10:40.531 [22759] dbg: dns: Net::DNS version: 0.65
+Jul  3 12:10:40.531 [22759] dbg: generic: sa-update version svn917659
+Jul  3 12:10:40.531 [22759] dbg: generic: using update directory: /var/lib/spamassassin/3.003001
+Jul  3 12:10:40.623 [22759] dbg: diag: perl platform: 5.010001 linux
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: Digest::SHA1, version 2.12
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: HTML::Parser, version 3.64
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: Net::DNS, version 0.65
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: NetAddr::IP, version 4.024
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: Time::HiRes, version 1.9719
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: Archive::Tar, version 1.52
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: IO::Zlib, version 1.09
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: Digest::SHA1, version 2.12
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: MIME::Base64, version 3.08
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: DB_File, version 1.82
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: Net::SMTP, version 2.31
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: Mail::SPF, version v2.007
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module not installed: IP::Country::Fast ('require' failed)
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module not installed: Razor2::Client::Agent ('require' failed)
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module not installed: Net::Ident ('require' failed)
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: IO::Socket::INET6, version 2.54
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module not installed: IO::Socket::SSL ('require' failed)
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: Compress::Zlib, version 2.02
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module not installed: Mail::DKIM ('require' failed)
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: DBI, version 1.609
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: Getopt::Long, version 2.38
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: LWP::UserAgent, version 5.834
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module installed: HTTP::Date, version 5.831
+Jul  3 12:10:40.623 [22759] dbg: diag: [...] module not installed: Encode::Detect ('require' failed)
+Jul  3 12:10:40.624 [22759] dbg: gpg: Searching for 'gpg'
+Jul  3 12:10:40.624 [22759] dbg: util: current PATH is: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+Jul  3 12:10:40.624 [22759] dbg: util: executable for gpg was found at /usr/bin/gpg
+Jul  3 12:10:40.624 [22759] dbg: gpg: found /usr/bin/gpg
+Jul  3 12:10:40.624 [22759] dbg: gpg: release trusted key id list: 5E541DC959CB8BAC7C78DFDC4056A61A5244EC45 26C900A46DD40CD5AD24F6D7DEE01987265FA05B 0C2B1D7175B852C64B3CDC716C55397824F434CE
+Jul  3 12:10:40.630 [22759] dbg: channel: attempting channel updates.spamassassin.org
+Jul  3 12:10:40.630 [22759] dbg: channel: update directory /var/lib/spamassassin/3.003001/updates_spamassassin_org
+Jul  3 12:10:40.631 [22759] dbg: channel: channel cf file /var/lib/spamassassin/3.003001/updates_spamassassin_org.cf
+Jul  3 12:10:40.631 [22759] dbg: channel: channel pre file /var/lib/spamassassin/3.003001/updates_spamassassin_org.pre
+Jul  3 12:10:40.631 [22759] dbg: channel: metadata version = 1799552
+Jul  3 12:10:40.844 [22759] dbg: dns: 1.3.3.updates.spamassassin.org => 1799552, parsed as 1799552
+Jul  3 12:10:40.844 [22759] dbg: channel: current version is 1799552, new version is 1799552, skipping channel
+Jul  3 12:10:40.844 [22759] dbg: diag: updates complete, exiting with code 1
+shell> /etc/init.d/spamassassin reload
+```
+
+
+
+
+#### :books: 參考網站：
+- https://spamassassin.apache.org/full/3.1.x/doc/sa-update.html
+
 ---
 
 `轉發` (`Relay`)

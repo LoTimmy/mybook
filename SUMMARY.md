@@ -6,6 +6,7 @@
 * [Glossary](glossary.md)
 * [學英語](學英語.md)
 * [ipv6](ipv6.md)
+* [Bitcoin](Bitcoin.md)
 
 -----
 * [SSH](ssh/guide.md)
@@ -72,6 +73,7 @@
     * [pip](cmd/pip.md)
     * [pppoeconf](cmd/pppoeconf.md)
     * [privoxy](cmd/privoxy.md)
+    * [proxychains4](cmd/proxychains4.md)
     * [putty-tools](cmd/putty-tools.md)
     * [pwgen](cmd/pwgen.md)
     * [qpdf](cmd/qpdf.md)
@@ -181,6 +183,8 @@
     * [手冊](vmware/guide.md)
 * [docker](docker/README.md)
     * [手冊](docker/guide.md)
+        * [docker build](docker/guide.md#build)
+        * [docker cp](docker/guide.md#cp)
 * [mininet](mininet.md)
 * [Ubuntu](ubuntulinux.md)
 * [raspberrypi](raspberrypi.md)
@@ -200,6 +204,8 @@
     * [gitlab](git/gitlab.md)
 * [macOS](apple/macos.md)
     * [alfredapp](apple/alfredapp.md)
+    * [bettertouchtool](apple/bettertouchtool.md)
+    * [usbserial](apple/usbserial.md)
     * [swift](apple/swift.md)
 
 * [cisco](cisco.md)

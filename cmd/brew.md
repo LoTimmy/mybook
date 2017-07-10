@@ -2,7 +2,6 @@
 
 `Homebrew` 
 
-
 ---
 
 ```console
@@ -127,10 +126,16 @@ shell> brew install coreutils
 shell> brew install vim --with-override-system-vi
 
 s3cmd
+
+
+shell> brew cask install vmware-fusion
+
+
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md
+- https://caskroom.github.io/search
 
 <!--
 ```
@@ -208,7 +213,7 @@ shell> HandBrakeCLI -i MyMovie.mkv -o MyMovie.avi --preset="High Profile" -s sca
 shell> HandBrakeCLI --help
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - https://handbrake.fr/docs/en/latest/cli/cli-guide.html
 
 ---
@@ -251,6 +256,6 @@ shell> brew cask install tuntap
 
 ---
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [brew](http://brew.sh/)
 - [brew cask](http://caskroom.io/)

@@ -522,6 +522,12 @@ Description:	Ubuntu 14.04.5 LTS
 
 ---
 
+```console
+shell> ls --quoting-style=shell
+```
+
+---
+
 #### :books: 參考網站：
 - [Official Ubuntu Documentation](https://help.ubuntu.com/)
 - https://aws.amazon.com/tw/premiumsupport/knowledge-center/linux-static-hostname/

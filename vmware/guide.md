@@ -174,7 +174,6 @@ Use the ⌘+Control+F keyboard shortcut to switch to Full Screen view.
 
 `VirtualMachineName`
 
-
 ```console
 shell> smbiosDump
 shell> esxcfg-info | less -I
@@ -182,9 +181,6 @@ shell> esxcfg-info | less -I
 #### :books: 參考網站：
 - https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003587
 - https://kb.vmware.com/selfservice/search.do?cmd=displayKC&docType=kc&docTypeID=DT_KB_1_1&externalId=2086454
-
-
-
 
 ```console
 shell> esxcfg-nics --list
@@ -224,11 +220,9 @@ RemoteDisplay.vnc.enabled = "TRUE"
 RemoteDisplay.vnc.port = "portnumber"
 ```
 
-**5901 to 6001**
+**`5901` to `6001`**
 
 ---
-
-
 
 ```console
 shell> sshpass -p 12345 ssh -l username remotehost "vim-cmd vmsvc/getallvms"
@@ -282,7 +276,7 @@ shell> /etc/init.d/SSH restart
 ---
 
 
-```
+```console
 shell> vmkfstools -X 20GB srcDisk
 shell> vmkfstools -extendvirtualdisk srcDisk
 
@@ -329,7 +323,6 @@ examplevm
 ```
 vmware-cmd -s unregister /vmfs/volumes/VMname/vm.vmx
 vmware-cmd -s register /vmfs/volumes/VMname/vm.vmx
-
 ```
 
 `Fusion`
@@ -357,8 +350,6 @@ shell> ovftool "%HOMEPATH%\Documents/yakkety.ova"
 `ubuntu`
 `insecure`
 
-
-
 ```
 C:\Documents and Settings\username\My Documents\My Virtual Machines
 C:\Users\username\Documents\Virtual Machines
@@ -367,8 +358,6 @@ C:\Documents and Settings\All Users\Documents\Shared Virtual Machines
 C:\Users\Public\Documents\Shared Virtual Machines
 /var/lib/vmware/Shared VMs
 ```
-
-
 
 `VMware OVF Tool for Windows 32-bit`
 `VMware OVF Tool for Windows 64-bit`
@@ -387,8 +376,8 @@ C:\Users\Public\Documents\Shared Virtual Machines
 
 `Android`
 
-```
-ifconfig | grep -A2 vmnet
+```console
+shell> ifconfig | grep -A2 vmnet
 ```
 ```
 vmnet1: flags=8863<UP,BROADCAST,SMART,RUNNING,SIMPLEX,MULTICAST> mtu 1500
@@ -408,12 +397,12 @@ vmnet8 (NAT)
 ---
 
 
-```
-swapoff /dev/sdXY
-resize2fs /dev/sdXY
+```console
+shell> swapoff /dev/sdXY
+shell> resize2fs /dev/sdXY
 
-mkswap /dev/sdXY
-swapon /dev/sdXY
+shell> mkswap /dev/sdXY
+shell> swapon /dev/sdXY
 ```
 
 `ext4`
@@ -427,12 +416,9 @@ swapon /dev/sdXY
 - https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1006371
 - https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2075199
 
-
-
 ---
 
-
-```
+```console
 shell> esxcli system settings advanced set -o /Net/GuestIPHack -i 1
 ```
 
@@ -461,3 +447,4 @@ shell> esxcli network firewall ruleset list
 
 #### :books: 參考網站：
 - https://www.netiq.com/documentation/cloudmanager22/ncm22_reference/data/bxzaz5n.html
+- https://docs.vmware.com/en/VMware-Fusion/8.0/rn/fusion-858-release-notes.html

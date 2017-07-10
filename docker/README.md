@@ -1,4 +1,4 @@
-![](https://assets-cdn.github.com/images/modules/site/docker_logo.png?sn?sn)
+![](http://i.imgur.com/KtX3yig.png)
 
 > `Docker`是一項最近竄紅的`容器技術` (`Container`)，讓開發人員可以在本機撰寫並測試完應用後「打包」成大型可執行檔送到其他地方之後再執行。和傳統`Virtual Machine`技術相較，`Docker`更為輕巧、執行也更快速。
 

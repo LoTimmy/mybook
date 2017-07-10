@@ -214,6 +214,10 @@ echo -ne '\n'
 export HISTCONTROL='ignoredups'
 ```
 
+```console
+shell> dpkg --print-architecture
+```
+
 ---
 
 #### :books: 參考網站：

@@ -26,6 +26,10 @@
 - `ESTAB`
 - `LISTEN`
 - `tcp`
+- `networking`
+- `active`
+- `inactive`
+- `bridge`
 
 ---
 
@@ -70,6 +74,9 @@
 - `img`
 - `logo-small.png`
 - `shop`
+- `commandline`
+- `engine`
+- `reference`
 
 ---
 
@@ -241,9 +248,11 @@
 
 - `myPublicIP`
 - `myLoadBalancer`
+- `my-net`
 
 - `macOS`
 - `macos`
+- `mac`
 - `Sierra`
 - `iphone`
 - `iPhone`
@@ -397,6 +406,8 @@
 - `owner`
 - `publish`
 - `restart`
+- `restarted`
+- `started`
 - `search`
 - `cli`
 - `update`
@@ -522,8 +533,13 @@
 - `local`
 - `localhost`
 - `ntp_server`
+- `databases`
 - `database_server`
 - `webservers`
+- `httpd`
+- `nginx`
+- `apache`
+- `memcached`
 - `dbservers`
 - `db-01`
 - `db-02`
@@ -533,6 +549,7 @@
 
 - `mylogs`
 - `mydata`
+- `mydir`
 - `myservice`
 - `daemon`
 - `myredis`
@@ -624,6 +641,7 @@
 - `sue@example.com`
 
 - `Your Name`
+- `yourname`
 - `you@example.com`
 - `firstname.lastname@example.com`
 - `username@example.com`
@@ -910,6 +928,8 @@ Yakkety 16.10
 - `group`
 - `privcertkey`
 - `docker`
+- `c1`
+- `c2`
 - `ssh_pub_key`
 - `github_key`
 - `testuser`

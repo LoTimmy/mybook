@@ -4,6 +4,7 @@ ngrok
 Step 1: Download ngrok
 ```console
 shell> wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+shell> wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
 ```
 
 Step 2: Unzip it

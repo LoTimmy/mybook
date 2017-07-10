@@ -1,4 +1,7 @@
 
+<img src="http://i.imgur.com/DBvZ6Zw.png" width="200">
+
+
 `pi` 
 
 `raspberry`
@@ -359,28 +362,28 @@ shell> ntpstat
 shell> hciconfig
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [dphys-swapfile](http://manpages.ubuntu.com/manpages/trusty/man8/dphys-swapfile.8.html)
-
 
 ---
 
-EDIMAX EW-7811Un無線網路卡
+`EDIMAX EW-7811Un無線網路卡`
 
-<img src="http://www.edimax.com.tw/edimax/mw/cufiles/images/products/pics/ew-7811un/big/EW-7811Un_01_1000x1000.jpg" alt="" width=30% height=30%>
+<img src="http://www.edimax.com.tw/edimax/mw/cufiles/images/products/pics/ew-7811un/big/EW-7811Un_01_1000x1000.jpg" width="100">
 
-<img src="http://www.edimax.com.tw/edimax/mw/cufiles/images/products/pics/ew-7811un/download/EW-7811Un_03_side_1000x1000.png" alt="" width=30% height=30%>
+<img src="http://www.edimax.com.tw/edimax/mw/cufiles/images/products/pics/ew-7811un/download/EW-7811Un_03_side_1000x1000.png" width="100">
 
-<img src="http://www.edimax.com.tw/edimax/mw/cufiles/images/products/pics/ew-7811un/big/EW-7811Un_02_top_1000x1000.jpg" alt="" width=30% height=30%>
-
-<img src="http://www.edimax.com.tw/edimax/mw/cufiles/images/products/pics/ew-7811un/big/EW-7811Un_05_Raspberry_Pi.jpg" alt="" width=50% height=50%>
+<img src="http://www.edimax.com.tw/edimax/mw/cufiles/images/products/pics/ew-7811un/big/EW-7811Un_02_top_1000x1000.jpg" width="100">
 
 
-### :books: 參考網站：
+<img src="http://www.edimax.com.tw/edimax/mw/cufiles/images/products/pics/ew-7811un/big/EW-7811Un_05_Raspberry_Pi.jpg" width="200">
+
+
+#### :books: 參考網站：
 - [ew-7811un](http://www.edimax.com.tw/edimax/merchandise/merchandise_detail/data/edimax/tw/wireless_adapters_n150/ew-7811un/)
 
 ---
-### :books: 參考網站：
+#### :books: 參考網站：
 
 - [raspi-config](http://www.raspberrypi.org/documentation/configuration/raspi-config.md)
 - [config-txt](http://www.raspberrypi.org/documentation/configuration/config-txt.md)
@@ -388,4 +391,46 @@ EDIMAX EW-7811Un無線網路卡
 - [losetup](http://manpages.ubuntu.com/manpages/precise/man8/losetup.8.html)
 - [archlinuxarm](http://archlinuxarm.org/platforms/armv6/raspberry-pi)
 - [archlinuxarm](http://archlinuxarm.org/support/reinstallation)
+
+---
+
+```console
+shell> wget -qO- https://get.docker.com/ | sh
+shell> docker pull resin/rpi-raspbian
+shell> docker run --rm -i -t resin/rpi-raspbian
+```
+
+```
+FROM resin/rpi-raspbian:wheezy-20170628
+FROM resin/rpi-raspbian:latest
+
+MAINTAINER Timmy Lo
+
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
+unzip /path/to/ngrok.zip
+
+```
+
+
+#### :books: 參考網站：
+- https://hub.docker.com/r/resin/rpi-raspbian/
+- https://hub.docker.com/r/resin/rpi-raspbian/tags/
+
+---
+
+`M2`
+
+<img src="http://i.imgur.com/C8jRmHu.png" width="200">
+
+<img src="http://i.imgur.com/AtIVN6N.jpg" width="200">
+
+<img src="http://i.imgur.com/T9fD1Nj.png" width="200">
+
+
+
+
+
+
+
+
 

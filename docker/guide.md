@@ -216,8 +216,6 @@ shell> sudo docker run --name some-mysql -v /docker/mariadb:/var/lib/mysql -p 33
 shell> sudo docker run --name some-mysql -P -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
 shell> sudo docker run -it --link some-mysql:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'
 
-
-
 shell> sudo docker run  -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql:latest
 
 shell> sudo docker run --name mysql -p 3306:3306 \
@@ -227,8 +225,6 @@ shell> sudo docker run --name mysql -p 3306:3306 \
        -d mysql:latest                
 
 shell> docker exec -ti mysql /bin/bash
-
-
 
 shell> mkdir -p /docker/mariadb
 shell> sudo docker run --name some-mariadb -v /docker/mariadb:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mariadb
@@ -655,13 +651,61 @@ command=/usr/sbin/sshd -D
 command=/bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"
 ```
 
-```
-docker build -t mysupervisord .
-docker run -p 22 -p 80 -t -i mysupervisord
+```console
+shell> docker build -t mysupervisord .
+shell> docker run -p 22 -p 80 -t -i mysupervisord
 ```
 
 #### :books: 參考網站：
 - https://docs.docker.com/engine/admin/using_supervisord/#exposing-ports-and-running-supervisor
+
+---
+
+### docker build {#build}
+
+`Build with PATH`
+```console
+shell> docker build .
+```
+
+`Build with URL`
+```console
+shell> docker build github.com/creack/docker-firefox
+```
+
+`Build with -`
+```console
+shell> docker build - < Dockerfile
+shell> docker build - < context.tar.gz
+```
+
+`Tag an image (-t)`
+
+```console
+shell> docker build -t vieux/apache:2.0 .
+```
+
+`Specify a Dockerfile (-f)`
+
+```console
+shell> docker build -f Dockerfile.debug .
+shell> docker build -f dockerfiles/Dockerfile.debug -t myapp_debug .
+shell> docker build -f dockerfiles/Dockerfile.prod  -t myapp_prod .
+```
+
+`.dockerignore`
+
+#### :books: 參考網站：
+- https://docs.docker.com/engine/reference/commandline/build/
+- https://docs.docker.com/engine/reference/builder/#dockerignore-file
+
+---
+
+### docker cp {#cp}
+
+
+#### :books: 參考網站：
+- https://docs.docker.com/engine/reference/commandline/cp/
 
 ---
 
@@ -681,3 +725,43 @@ docker run -p 22 -p 80 -t -i mysupervisord
 - https://registry.hub.docker.com/_/ubuntu/
 - https://registry.hub.docker.com/_/mysql/
 - https://docs.docker.com/engine/admin/ansible/#usage
+
+
+---
+
+```
+NETWORK ID          NAME                DRIVER              SCOPE
+a504c8634d9f        bridge              bridge              local
+f77976b89791        host                host                local
+186018641fd1        none                null                local
+```
+
+```
+shell> docker network ls --no-trunc
+shell> docker network ls
+shell> docker run --network=<NETWORK>
+shell> docker run -it --network="bridge" ubuntu bash
+```
+
+```
+docker run --network none
+--network=host
+--network="bridge"
+
+docker run -it alpine env
+docker run -it fedora bash
+docker run -it centos bash
+docker run -it ubuntu:14.04 /bin/bash
+```
+
+#### :books: 參考網站：
+- https://docs.docker.com/engine/reference/commandline/network_ls/
+- https://docs.docker.com/engine/reference/run/
+
+
+---
+
+#### :books: 參考網站：
+- https://docs.docker.com/get-started/
+
+

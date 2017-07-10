@@ -186,7 +186,7 @@ shell> synoschedtask --get id=4
 
 
 
-### :books: 參考網站：
+#### :books: 參考網站：
 
 ---
 
@@ -195,3 +195,15 @@ shell> synoschedtask --get id=4
 「`硬體 & 電源`」→「`一般`」→ 「`停止嗶聲`」
 
 ---
+
+透過`WebDAV`存取資料
+
+什麼是 `WebDAV`？
+> `WebDAV` (`Web-based Distributed Authoring and Versioning`)，是一個`HTTP(S)`的延伸通訊協定，讓你的網頁伺服器成為一個標準的網路磁碟。
+> `Windows XP`/`Vista`，`Mac OS X`皆有原生支援`WebDAV`的連接。你可以輕鬆的掛載一個`NAS`上的網路分享資料夾。
+
+
+#### :books: 參考網站：
+- https://www.qnap.com/zh-hk/how-to/tutorial/article/從-windows-7-利用-webdav-連線到-qnap-nas-上的共享資料夾
+- https://www.qnap.com/zh-hk/how-to/tutorial/article/如何透過-webdav-遠端存取您的-nas
+

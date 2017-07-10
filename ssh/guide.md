@@ -156,6 +156,9 @@ shell> ssh -o "User=username" -o "Port=12345" -o "HostName=remotehost"
 
 ### Generating a new SSH key {#generating-a-new-ssh-key}
 
+<img src="http://i.imgur.com/5X8oTsG.png" width="200">
+
+
 `~/.ssh`
 `id_dsa`
 `id_rsa`
@@ -219,6 +222,10 @@ shell> ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 ```console
 shell> ssh-keygen -y
+```
+
+```console
+shell> ssh-keygen -y -f ~/.ssh/id_rsa > .ssh/id_rsa.pub
 ```
 
 ```console
