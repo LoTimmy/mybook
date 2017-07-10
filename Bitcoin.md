@@ -34,7 +34,6 @@
 
 ---
 
-
 - `Monero` <img src="http://i.imgur.com/gFdgubO.png" width="16"> `墨內羅幣` `門羅幣` `XMR` `Cryptonight`
 
 相較於比特幣可追踨金額及流向，`Monero` <img src="http://i.imgur.com/gFdgubO.png" width="16"> 基於`CryptoNote`協定，具有更高的交易隱匿性，外界只能得知交易金額，無法追踨交易流向。
@@ -44,10 +43,7 @@
   <img src="http://img.youtube.com/vi/TZi9xx6aiuY/0.jpg" alt="" width="240" height="180" >
 </a>
 
-
-
 ---
-
 
 `Dockerfile`
 ```
@@ -64,7 +60,7 @@ RUN wget -q --content-disposition https://minergate.com/download/deb-cli \
 ENTRYPOINT ["minergate-cli"]
 ```
 
-```
+```console
 shell> sudo docker build -t minergate-cli .
 
 shell> docker run --rm minergate-cli -help
@@ -79,6 +75,104 @@ shell> docker stop test
 
 `-bcn`
 `-xmr`
+
+```
+FROM ubuntu:16.04
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN set -ex; \
+    \
+    apt-get update; \
+    apt-get install -y --no-install-recommends libmicrohttpd10 libssl1.0.0; \
+    rm -rf /var/lib/apt/lists/*;
+
+RUN set -ex; \
+    \
+    fetchDeps='ca-certificates wget curl g++ libmicrohttpd-dev libssl-dev make git'; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends $fetchDeps; \
+    rm -rf /var/lib/apt/lists/*; \
+    curl -SL https://cmake.org/files/v3.8/cmake-3.8.2-Linux-x86_64.tar.gz \
+    | tar --strip=1 -xzC /usr/local; \
+    git clone https://github.com/fireice-uk/xmr-stak-cpu.git; \
+    cd xmr-stak-cpu; \
+    cmake .; \
+    make -j$(nproc); \
+    apt-get purge -y --auto-remove $fetchDeps
+
+WORKDIR /xmr-stak-cpu
+
+EXPOSE 62787
+ENTRYPOINT ["bin/xmr-stak-cpu"]
+CMD ["/conf/config.txt"]
+```
+
+`dockerfiles/Dockerfile.alpine`
+```
+FROM alpine:3.5
+
+RUN apk add --no-cache libcurl \
+    libstdc++ \
+    libgcc \
+    openssl
+
+RUN apk add --no-cache --virtual .build-deps  \
+    autoconf \
+    automake \
+    build-base \
+    curl \
+    curl-dev \
+    git
+
+RUN git clone https://github.com/wolf9466/cpuminer-multi
+RUN cd cpuminer-multi && ./autogen.sh
+RUN cd cpuminer-multi && ./configure CFLAGS="-O3"
+RUN cd cpuminer-multi && make
+RUN apk del .build-deps
+
+WORKDIR /cpuminer-multi
+
+ENTRYPOINT ["./minerd"]
+CMD ["-c", "/conf/minerd.json"]
+```
+
+`conf/minerd.json`
+```json
+{
+  "url": "stratum+tcp://198.251.81.82:3333",
+  "user": "47HtbDvpVQwDsiegiDZqYxcQEDZtj3DGxHcdeaqem4jqQxkBQtpxgopUZ5oVg2HaWfTjGye2MBZZJTPvDpeL1Koq5ZtaFH1",
+  "pass": "x",
+  "algo": "cryptonight"
+}
+```
+
+docker build -f dockerfiles/Dockerfile.alpine -t minerd .
+docker run --rm -v "$(pwd)/conf:/conf:ro" -d minerd -c /conf/minerd.json
+
+`conf/config.txt`
+```
+"cpu_threads_conf" :
+[
+   { "low_power_mode" : true, "no_prefetch" : true, "affine_to_cpu" : 0 },
+   { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : 1 },
+   { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : 2 },
+   { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : 3 },
+   { "low_power_mode" : false, "no_prefetch" : true, "affine_to_cpu" : 4 },
+],
+"use_slow_memory" : "warn",
+"nicehash_nonce" : false,
+"pool_address" : "198.251.81.82:3333",
+"wallet_address" : "47HtbDvpVQwDsiegiDZqYxcQEDZtj3DGxHcdeaqem4jqQxkBQtpxgopUZ5oVg2HaWfTjGye2MBZZJTPvDpeL1Koq5ZtaFH1",
+"pool_password" : "x",
+"httpd_port" : 62787,
+"prefer_ipv4" : true,
+```
+
+```console
+shell> docker build -f dockerfiles/Dockerfile -t xmr-stak-cpu .
+shell> docker run --rm -v "$(pwd)/conf:/conf:ro" -p 62787:62787 -d xmr-stak-cpu
+```
+
 
 #### :books: 參考網站：
 - https://minergate.com/faq/how-minergate-console

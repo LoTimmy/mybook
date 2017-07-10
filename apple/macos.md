@@ -84,6 +84,9 @@
 - `小牛` (`Mavericks`, 10.9)
 - `優勝美地` (`Yosemite`, 10.10)
 
+
+<img src="http://i.imgur.com/3jgoirW.png" width="75">
+
 #### :books: 參考網站：
 - [sierra](http://www.apple.com/tw/macos/sierra/)
 - [macOS Sierra](https://itunes.apple.com/tw/app/macos-sierra/id1127487414?l=zh&mt=12)
