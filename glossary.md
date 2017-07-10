@@ -215,6 +215,7 @@
 
 - `running`
 - `mykey`
+- `mydir`
 - `deny`
 - `grant`
 - `yes`
