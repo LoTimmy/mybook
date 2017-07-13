@@ -25,6 +25,8 @@
 
 > 因為不需要多一個`Hypervisor`軟體層，`Linux Container`最大的訴求就是輕量級的架構，它的映像檔只需包含一個小型的作業系統核心，比起虛擬機器是一個完整的作業系統來得小。也因為容量小、輕量化，部署或移動`Container`的速度比虛擬機器快很多，產生一個`Container`是以秒計算，然而產生一個虛擬機器卻是以分計算。
 
+> 在提到`Docker`的外部第三方協力專案時，如果沒有提到`Kubernetes`，就表示遺漏了重要項目。`Kubernetes`是一個由`Google`所發展出來的`Docker`管理工具開放原始碼專案，用來協助在不同叢集群和不同電腦中部署`Container`。除了透過在叢集群中保持`Container`的部署平衡來協助管理`Docker`節點的工作負載，`Kubernetes`同時提供了讓`Container`之間彼此溝通的功能，以減少開放網路埠的需求，也能增加其他修改創新的機會。`Kubernetes`的這些特色與功能，和`Docker`一樣是以`Go`語言寫成，未來將因此很有機會被併入到`Docker`之內。
+
 > `Docker Enterprise Edition` (`Docker EE`)
 > 免費版的`Docker Engine`更名為`Docker Community Edition` (`CE`)。
 
@@ -39,3 +41,5 @@
 - [VM太肥   紅帽擁抱新型輕量級虛擬化](http://www.ithome.com.tw/news/86808)
 - [10個Q&A快速認識Docker](http://www.ithome.com.tw/news/91847)
 - [如何搭配 Azure 使用 docker-machine](https://azure.microsoft.com/zh-tw/documentation/articles/virtual-machines-docker-machine/)
+- [kubernetes](https://github.com/kubernetes/kubernetes)
+- [kubernetes](https://kubernetes.io/)
