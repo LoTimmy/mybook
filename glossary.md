@@ -246,6 +246,7 @@
 - `YES`
 
 - `myPublicIP`
+- `my_container`
 - `myLoadBalancer`
 - `my-net`
 
