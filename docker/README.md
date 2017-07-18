@@ -2,7 +2,7 @@
 
 > `Docker`是一項最近竄紅的`容器技術` (`Container`)，讓開發人員可以在本機撰寫並測試完應用後「打包」成大型可執行檔送到其他地方之後再執行。和傳統`Virtual Machine`技術相較，`Docker`更為輕巧、執行也更快速。
 
-> `Docker`是一個`Client-Server`架構的應用程式，在一個`Docker`執行環境中，包括了`Docker`用戶端程式、和在`背景執行` (`Daemon`)的Docker伺服器 (也稱為Docker Engine)，另外還有將Container封裝後的Docker映象檔，用來儲存映象檔的Registry服務。官方提供的映象檔Registry服務就稱為`Docker Hub`，這是類似`Github`程式碼`Repository`儲存服務的映象檔Repository儲存服務。
+> `Docker`是一個`Client-Server`架構的應用程式，在一個`Docker`執行環境中，包括了`Docker`用戶端程式、和在`背景執行` (`Daemon`)的Docker伺服器 (也稱為`Docker Engine`)，另外還有將`Container`封裝後的`Docker`映象檔，用來儲存映象檔的Registry服務。官方提供的映象檔Registry服務就稱為`Docker Hub`，這是類似`Github`程式碼`Repository`儲存服務的映象檔Repository儲存服務。
 
 > 安裝`Docker`之後，會提供了一個命令列的用戶端程式來和在背景執行的Docker伺服器溝通。開發者可以直接從`Docker Hub`下載`Docker映象檔`(docker pull 指令)，再執行(docker run 指令)就可以用這個映象檔來建立一個`Container`。
 
@@ -29,6 +29,9 @@
 
 > `Docker Enterprise Edition` (`Docker EE`)
 > 免費版的`Docker Engine`更名為`Docker Community Edition` (`CE`)。
+
+`多階段建置`(`Multi-stage builds`)功能
+在單一`Dockerfile`中，開發者可以在系統完成最終的建置過程前，自訂多階段的建置過程，像是進行編譯、設定系統組態
 
 ![](http://i.imgur.com/22S5qmn.png)
 ![](http://i.imgur.com/iUBa3dw.png)
