@@ -19,6 +19,38 @@ shell> cat xxx.JSON|jq -r '.'
 ```console
 # result is 5 6 7 8
 shell> jq -n '([1,2]|.[])+([4,6]|.[])'
+#结果是[3,2,1]
+jq -nr '[3,1,2]|sort'
+```
+
+---
+
+```console
+shell> jq -nr '[3,1,2]|sort'
+```
+
+```
+[
+  1,
+  2,
+  3
+]
+```
+
+---
+
+
+```console
+shell> jq -nr '[1,[2,3],4]|flatten'
+```
+
+```
+[
+  1,
+  2,
+  3,
+  4
+]
 ```
 
 

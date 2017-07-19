@@ -1,3 +1,9 @@
+<!--
+![](https://curl.haxx.se/logo/curl-logo.svg)
+-->
+
+<img src="https://curl.haxx.se/logo/curl-logo.svg" width="100">
+
 `curl - transfer a URL`
 
 
@@ -150,6 +156,14 @@ referer = "http://nowhereatall.example.com/"
 # --- End of example file ---
 ```
 
+---
+
+```console
+shell> curl -b cookies.txt -c cookies.txt www.example.com
+```
+
 
 #### :books: 參考網站：
 - [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)
+- https://curl.haxx.se/docs/http-cookies.html
+- https://curl.haxx.se/docs/manual.html

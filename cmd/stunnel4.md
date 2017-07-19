@@ -62,11 +62,7 @@ options = NO_SSLv2
     verify = 4
 ```
 
-
-
-
-
-### :books: 參考網站：
+#### :books: 參考網站：
 
 - [https://www.stunnel.org/docs.html](https://www.stunnel.org/docs.html)
 - [https://www.stunnel.org/static/stunnel.html](https://www.stunnel.org/static/stunnel.html)
