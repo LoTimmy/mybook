@@ -16,6 +16,7 @@ shell> sudo arp-scan -I en0 192.168.31.1-192.168.31.50
 
 `/usr/share/arp-scan/ieee-oui.txt`
 `/usr/share/arp-scan/ieee-iab.txt`
+`/usr/local/Cellar/arp-scan/1.9/share/arp-scan`
 
 ```console
 shell> get-iab

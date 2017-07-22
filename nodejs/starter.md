@@ -81,18 +81,43 @@ shell> node hello.js
 var a;
 var a = 1;
 var a = 0, b = 0;
+var bigNumber = 1e100;
+var mynumber = 99;
 
 var u = undefined;
+
+var myString = new String('Hello');
 var mytext = 'Hello World!';
-var mynumber = 99;
+
+var b = new Boolean(false);
+var x = new Boolean(false);
+var x = false;
+var myFalse = new Boolean(false);
 var myboolean = true, myFalse = false;
+var btrue = new Boolean(true);
+var bfalse = new Boolean(false);
+var F = new Boolean();
+var T = new Boolean(true);
+var F = new Boolean(0);
+var T = new Boolean(1);
+
+function doSomething() {}
+var f = function() {};
+f();
 var myFunc = function() {};
+
+
 var text = null;
+
+var o = {};
 var myObj = {}, myobject = { nickname: 'Jack', "registration_date": new Date(1995, 11, 25), "privileged_user": true };
+var object = {
+  someMethod: function() {}
+};
+
 var myarray = [], someArray = [ 1, 2, 3 ];
 
 var greeting = "Hello, World!";
-var bigNumber = 1e100;
 
 var index;  
 var name = "Thomas Jefferson";  
