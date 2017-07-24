@@ -1,6 +1,5 @@
 ![](http://i.imgur.com/D6krnAM.png)
 
-:star::star::star:
 ```sql
 USE master;
 GO
@@ -33,15 +32,11 @@ SELECT * FROM MyLinkServer.TestData.dbo.Products;
 -- 移除遠端伺服器 ACCOUNTS 和所有相關聯的遠端登入。
 EXEC sp_dropserver 'MyLinkServer', 'droplogins';
 
-
-
 EXEC sp_addlinkedserver 'rmtsrvname', '', 'SQLOLEDB', 'ip-addr'
 EXEC sp_addlinkedsrvlogin 'rmtsrvname', 'false', NULL, 'sa', 'd89q3w4u';
 EXEC sp_addlinkedsrvlogin 'rmtsrvname', 'false', NULL, 'SQLUser', 'Password'
-
 ```
 
-:star::star:
 ```sql
 SELECT name, physical_name AS CurrentLocation, state_desc
 FROM sys.master_files
@@ -68,16 +63,15 @@ WHERE database_id = DB_ID(N'TestDB');
 GO
 ```
 
-:star::star::star:
 ```sql
 -- 變更資料庫的名稱
 USE master;
 GO
 ALTER DATABASE TestDB Modify Name = TestData ;
 GO
-~~~
+```
 
-:star::star::star:
+
 ```sql
 DECLARE @fileName AS sysname;
 -- SET @filename = N'X:\SQLServerBackups\TestData' + '-' + CONVERT(nvarchar(30), GETDATE(), 112) + N'.bak';
@@ -90,7 +84,6 @@ BACKUP DATABASE TestData
 GO
 ```
 
-:star::star::star:
 ```sql
 USE master
 GO
@@ -398,14 +391,14 @@ shell> bcp "SELECT * FROM database_name.dbo.table_name WHERE " queryout data_fil
 LOAD DATA INFILE 'data_file.bcp' INTO TABLE tbl_name FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
 ```
 
-
+#### :books: 參考網站：
 - [bcp](https://msdn.microsoft.com/zh-tw/library/ms162802(v=sql.120).aspx)
 - [bcp](https://msdn.microsoft.com/en-us/library/ms191516.aspx)
 - [LOAD DATA INFILE Syntax](https://dev.mysql.com/doc/refman/5.1/en/load-data.html)
 
 ---
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [queryexpress](http://www.albahari.com/queryexpress.aspx)
 - [sp_addlinkedserver](http://msdn.microsoft.com/zh-tw/library/ms190479.aspx)
 - [Creating a Table](http://msdn.microsoft.com/zh-tw/library/ms188264.aspx)
@@ -416,13 +409,40 @@ LOAD DATA INFILE 'data_file.bcp' INTO TABLE tbl_name FIELDS TERMINATED BY ',' LI
 - [建立登入](http://msdn.microsoft.com/zh-tw/library/ms365326.aspx)
 - [刪除資料庫物件](http://msdn.microsoft.com/zh-tw/library/ms365336.aspx)
 - [CASE](http://msdn.microsoft.com/zh-tw/library/ms181765.aspx)
-
 - [CAST 和 CONVERT](http://msdn.microsoft.com/zh-tw/library/ms187928.aspx)
 - [重新命名資料庫](http://msdn.microsoft.com/zh-tw/library/ms345378.aspx)
-
 - [sys.sysservers](http://msdn.microsoft.com/zh-tw/library/ms188740.aspx)
 - [sp_addlinkedsrvlogin](http://msdn.microsoft.com/zh-tw/library/ms189811.aspx)
 - [http://msdn.microsoft.com/zh-tw/library/ms189828.aspx](http://msdn.microsoft.com/zh-tw/library/ms189828.aspx)
 - [CREATE USER](http://msdn.microsoft.com/zh-tw/library/ms173463.aspx)
 - [DBCC SHRINKFILE](http://msdn.microsoft.com/zh-tw/library/ms189493.aspx)
 
+
+---
+
+```console
+shell> curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+shell> curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server.list | sudo tee /etc/apt/sources.list.d/mssql-server.list
+shell> sudo apt-get update
+shell> sudo apt-get install -y mssql-server
+shell> sudo /opt/mssql/bin/mssql-conf setup
+shell> systemctl status mssql-server
+```
+
+`Install tools on Ubuntu`
+```console
+shell> curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+shell> curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+shell> sudo apt-get update 
+shell> sudo apt-get install mssql-tools unixodbc-dev
+
+shell> echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+shell> source ~/.bashrc
+```
+
+
+
+#### :books: 參考網站：
+- https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup-ubuntu
+- https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools
+- http://www.ithome.com.tw/news/104423

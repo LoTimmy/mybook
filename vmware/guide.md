@@ -448,3 +448,10 @@ shell> esxcli network firewall ruleset list
 #### :books: 參考網站：
 - https://www.netiq.com/documentation/cloudmanager22/ncm22_reference/data/bxzaz5n.html
 - https://docs.vmware.com/en/VMware-Fusion/8.0/rn/fusion-858-release-notes.html
+
+---
+
+`-locale en_US`
+```
+"C:\Program Files (x86)\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\VpxClient.exe" -locale en_US
+```

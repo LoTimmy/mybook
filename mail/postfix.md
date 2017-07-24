@@ -323,8 +323,8 @@ shell> opendkim-genkey -r -D -d mydomain.com
 shell> sa-update && /etc/init.d/spamassassin reload
 ```
 
-
 ```console
+
 shell> sa-update -D
 Jul  3 12:10:40.526 [22759] dbg: logger: adding facilities: all
 Jul  3 12:10:40.526 [22759] dbg: logger: logging level is DBG
@@ -378,6 +378,7 @@ Jul  3 12:10:40.844 [22759] dbg: diag: updates complete, exiting with code 1
 shell> /etc/init.d/spamassassin reload
 ```
 
+`/var/lib/spamassassin/3.003001/updates_spamassassin_org`
 
 
 
