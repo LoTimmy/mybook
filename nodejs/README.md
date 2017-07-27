@@ -34,6 +34,7 @@
 - https://www.npmjs.com/package/compression
 - https://www.npmjs.com/package/errorhandler
 - https://www.npmjs.com/package/serve-favicon
+- https://www.npmjs.com/package/node-sass-middleware
 - https://www.npmjs.com/package/express-flash
 - https://www.npmjs.com/package/fbgraph
 - https://www.npmjs.com/package/github-api
@@ -57,3 +58,8 @@
 - http://todc.github.io/todc-bootstrap/
 - http://fontawesome.io/icons/
 - http://framework7.io/
+- https://github.com/rstacruz/nprogress
+- http://github.hubspot.com/offline/docs/welcome/
+- http://fabien-d.github.io/alertify.js/
+- http://github.hubspot.com/drop/docs/welcome/
+- http://dimsemenov.com/plugins/magnific-popup/
