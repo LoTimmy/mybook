@@ -19,3 +19,41 @@
 - `NW.js`為一結合`Node.js`與`Chromium`專案的`JavaScript`應用程式開發框架，可用來打造支援`Windows`、`Mac OS X`與`Linux`的應用程式，有別於瀏覽器對`JavaScript`程式碼的沙箱執行限制，`NW.js`移除了相關的限制，並允許程式直接與作業系統互動。`NW.js`除了允許程式在不同的平台上運作之外，也讓開發人員更容易把網路程式轉成桌面程式。
 - `NW.js`的最大優勢在於它所需的`.Net`或`Java`運行環境都已經安裝在各個系統上了。
 
+- https://www.npmjs.com/package/nodemon
+- https://www.npmjs.com/package/async
+- https://www.npmjs.com/package/bcrypt-nodejs
+- https://www.npmjs.com/package/bitgo
+- https://www.npmjs.com/package/cheerio
+- https://www.npmjs.com/package/clockwork
+- https://www.npmjs.com/package/connect-mongo
+- https://www.npmjs.com/package/dotenv
+- https://www.npmjs.com/package/express
+- https://www.npmjs.com/package/body-parser
+- https://www.npmjs.com/package/express-session
+- https://www.npmjs.com/package/morgan
+- https://www.npmjs.com/package/compression
+- https://www.npmjs.com/package/errorhandler
+- https://www.npmjs.com/package/serve-favicon
+- https://www.npmjs.com/package/express-flash
+- https://www.npmjs.com/package/fbgraph
+- https://www.npmjs.com/package/github-api
+- https://www.npmjs.com/package/mongoose
+- https://www.npmjs.com/package/nodemailer
+- https://www.npmjs.com/package/passport
+- https://www.npmjs.com/package/passport-local
+- https://www.npmjs.com/package/passport-facebook
+- https://www.npmjs.com/package/passport-oauth
+- https://www.npmjs.com/package/request
+- https://www.npmjs.com/package/lodash
+- https://www.npmjs.com/package/validator
+- https://www.npmjs.com/package/geoip-lite
+- http://numeraljs.com/
+- https://filesizejs.com/
+- https://github.com/bluesmoon/node-geoip
+
+---
+
+- http://realfavicongenerator.net/
+- http://todc.github.io/todc-bootstrap/
+- http://fontawesome.io/icons/
+- http://framework7.io/
