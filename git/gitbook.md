@@ -190,6 +190,51 @@ This text is {% em color="#ff0000" %}highlighted with a custom color!{% endem %}
 
 `cover_small.jpg`
 
+---
+
+`new-flowchart`
+
+```flow
+st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub1=>subroutine: My Subroutine|invalid
+cond=>condition: Yes
+or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|request
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e
+```
+
+```flow
+st=>start: Start|past:>http://www.google.com[blank]
+e=>end: End:>http://www.google.com
+op1=>operation: My Operation|past
+op2=>operation: Stuff|current
+sub1=>subroutine: My Subroutine|invalid
+cond=>condition: Yes
+or No?|approved:>http://www.google.com
+c2=>condition: Good idea|rejected
+io=>inputoutput: catch something...|request
+
+st->op1(right)->cond
+cond(yes, right)->c2
+cond(no)->sub1(left)->op1
+c2(yes)->io->e
+c2(no)->op2->e
+```
+
+#### :books: 參考網站：
+- https://bramp.github.io/js-sequence-diagrams/
+
+---
+
 #### :books: 參考網站：
 - http://www.ithome.com.tw/voice/95002
 - [gitbook](https://www.gitbook.com/)
@@ -210,3 +255,5 @@ This text is {% em color="#ff0000" %}highlighted with a custom color!{% endem %}
 - https://plugins.gitbook.com/plugin/toggle-chapters
 - https://github.com/GitbookIO/plugin-fontsettings
 
+---
+- https://plugins.gitbook.com/plugin/tags
