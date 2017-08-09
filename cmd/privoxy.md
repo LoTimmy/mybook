@@ -27,8 +27,8 @@ forward         192.168.*.*/     .
 forward            10.*.*.*/     .
 forward           127.*.*.*/     .
 
-
 forward-socks5t .torproject.org 127.0.0.1:9050 .
+forward-socks5t .onion 127.0.0.1:9050 .
 ```
 
 ```
@@ -37,6 +37,42 @@ permit-access  localhost
 permit-access  192.168.45.64/26
 deny-access    192.168.45.73    www.dirty-stuff.example.com
 ```
+
+---
+
+`config`
+
+```
+enable-edit-actions 0
+```
+
+`user.action`
+```
+{+block}
+{+block +handle-as-image +set-image-blocker{}}
+{+block +handle-as-image +set-image-blocker{https://placeholdit.imgix.net/~text?txtsize=75&txt=}}
+https://s.yimg.com/cv/ae/tw/audience/070727/120x60246wpt7c2.jpg
+```
+
+- http://config.privoxy.org/
+- http://config.privoxy.org/show-status
+- http://config.privoxy.org/show-version
+- http://config.privoxy.org/show-request
+- http://config.privoxy.org/show-url-info
+- http://config.privoxy.org/toggle
+- http://config.privoxy.org/toggle?set=disable
+- http://config.privoxy.org/toggle?set=enable
+
+---
+
+{{alias}}
+
++forward-override{forward .}
++forward-override{forward-socks5 127.0.0.1:9050 .}
+{+forward-override{forward-socks5 127.0.0.1:12345 .}}
++forward-override{forward 127.0.0.1:8123}
+
+---
 
 
 ```

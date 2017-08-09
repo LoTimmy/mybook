@@ -40,6 +40,8 @@
 - `重置按鈕`
 - `名稱`
 - `說明`
+- `WiFi`
+- `Ethernet`
 
 ---
 
@@ -202,7 +204,9 @@
 
 - `ip-addr`
 - `ipaddr`
+- `IP Address`
 - `hostname`
+- `Hostname`
 - `subnetmask`
 - `gateway`
 - `metric`
