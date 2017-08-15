@@ -394,6 +394,9 @@ shell> hciconfig
 
 ---
 
+### rpi-raspbian {#rpi-raspbian}
+[](!https://resin-packages.s3.amazonaws.com/logo/large_resin_logo.png)
+
 ```console
 shell> wget -qO- https://get.docker.com/ | sh
 shell> docker pull resin/rpi-raspbian
@@ -408,9 +411,7 @@ MAINTAINER Timmy Lo
 
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
 unzip /path/to/ngrok.zip
-
 ```
-
 
 #### :books: 參考網站：
 - https://hub.docker.com/r/resin/rpi-raspbian/
@@ -425,12 +426,4 @@ unzip /path/to/ngrok.zip
 <img src="http://i.imgur.com/AtIVN6N.jpg" width="200">
 
 <img src="http://i.imgur.com/T9fD1Nj.png" width="200">
-
-
-
-
-
-
-
-
 

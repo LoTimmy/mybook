@@ -194,10 +194,26 @@ shell> docker build -f dockerfiles/Dockerfile -t xmr-stak-cpu .
 shell> docker run --rm -v "$(pwd)/conf:/conf:ro" -p 62787:62787 -d xmr-stak-cpu
 ```
 
-
 #### :books: 參考網站：
 - https://minergate.com/faq/how-minergate-console
 - https://minergate.com/faq/what-pool-address
+
+
+---
+
+```
+[2017-08-14 06:48:44] : Your CPU doesn't support hardware AES. Don't expect high hashrates.
+```
+```
+"aes_override" : true,
+```
+
+```
+[2017-08-14 06:48:44] : MEMORY ALLOC FAILED: mmap failed
+```
+```
+"use_slow_memory" : "never",
+```
 
 ---
 
