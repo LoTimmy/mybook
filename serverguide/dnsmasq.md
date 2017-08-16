@@ -6,7 +6,7 @@
 
 ---
 
-```console
+```
 shell> apt-get install dnsmasq 
 
 shell> brew install dnsmasq
@@ -65,7 +65,7 @@ address=/double-click.net/127.0.0.1
 local-ttl=
 ```
 
-```console
+```
 shell> dnsmasq --test
 dnsmasq: syntax check OK.
 
@@ -105,7 +105,7 @@ dig google.com | grep "Query time"
 
 `dnscrypt-proxy - Tool for securing communications between a client and a DNS resolver`
 
-```console
+```
 shell> brew install dnscrypt-proxy
 shell> sudo brew services start dnscrypt-proxy
 
@@ -139,7 +139,7 @@ LocalAddress 127.0.0.1:10053
 
 `dhcping - DHCP Daemon Ping Program`
 
-```console
+```
 shell> apt-get install dhcping
 shell> dhcping -s 255.255.255.255 -r -v  
 ```
@@ -151,7 +151,7 @@ shell> dhcping -s 255.255.255.255 -r -v
 
 `dhcpdump - DHCP packet dumper`
 
-```console
+```
 shell> sudo dhcpdump -i en0
 shell> dhcpdump -i eth0
 ```
@@ -173,7 +173,7 @@ shell> dhcpdump -i eth0
 
 sudo ipset create 列表名 hash:ip
 
-```console
+```
 shell> ipset create facebook hash:ip
 shell> ipset create facebook hash:ip timeout 300
 ```

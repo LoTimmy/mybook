@@ -7,7 +7,7 @@
 - [VMware products and their virtual hardware version](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003746)
 - [VMware 产品及其虚拟硬件版本](https://kb.vmware.com/selfservice/search.do?cmd=displayKC&docType=kc&docTypeID=DT_KB_1_1&externalId=2048332)
 
-```console
+```
 shell> vmware -vl
 VMware ESXi 5.0.0 build-469512
 VMware ESXi 5.0.0 GA
@@ -20,7 +20,7 @@ VMware ESXi 6.0.0 Update 2
 
 `open-vm-tools`
 
-```console
+```
 shell> vmware-toolbox-cmd help
 shell> vmware-toolbox-cmd -v
 
@@ -62,7 +62,7 @@ shell> vmware-checkvm
 
 `--noSSLVerify`
 
-```console
+```
 shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\xenial\xenial.vmx" "%HOMEPATH%\Documents/xenial.ova"
 shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\yakkety\yakkety.vmx" "%HOMEPATH%\Documents/yakkety.ova"
 
@@ -70,28 +70,28 @@ shell> ovftool "%HOMEPATH%\Documents/xenial.ova"
 shell> ovftool "%HOMEPATH%\Documents/yakkety.ova"
 ```
 
-```console
+```
 shell> ovftool ubuntu-1604.vmwarevm/ubuntu-1604.vmx ~/Documents/ubuntu
 shell> ovftool --acceptAllEulas ~/Documents/"Virtual Machines.localized/Windows 7 x64.vmwarevm/Windows 7 x64.vmx" ~/Documents/windows7.ova
 ```
 
-```console
+```
 shell> ovftool ~/Documents/ubuntu-1604.ova
 ```
 
 `Rename the OVF Package`
 
-```console
+```
 shell> ovftool “Windows 7.ovf” win7.ovf
 ```
 
 `Converting a VMX File to an ESXi host`
 
-```console
+```
 shell> ovftool /ovfs/my_vm.vmx vi://username:pass@my_esx_host
 ```
 
-```console
+```
 shell> ovftool package.ovf vi://my.esx-machine.example.com/
 shell> ovftool package.ovf vi://username:pass@my.esx-machine.example.com/
 
@@ -99,7 +99,7 @@ shell> ovftool -ds=datastore1 --net:nat="VM Network" ubuntu-1604.ova vi://root@1
 shell> ovftool -ds=datastore2 --net:nat="VM Network" ubuntu-1604.ova vi://root@192.168.168.196
 ```
 
-```console
+```
 shell> chmod +x VMware-ovftool-4.0.0-2301625-lin.x86_64.bundle
 shell> ovftool --help
 ```
@@ -112,12 +112,12 @@ shell> ovftool --help
 
 ---
 
-```console
+```
 shell> chmod +x VMware-VIX-1.13.2-1744117.x86_64.bundle
 shell> ./VMware-VIX-1.13.2-1744117.x86_64.bundle
 ```
 
-```console
+```
 shell> /usr/local/bin/vmrun
 shell> vmrun -T ws start "c:\my VMs\myVM.vmx"
 shell> vmrun start "C:\Documents and Settings\<user>\My Documents\My Virtual Machines\WinXP\WinXP.vmx"
@@ -159,7 +159,7 @@ shell> vmrun -gu <user> -gp <pass> CopyFileFromHostToGuest Ubuntu/Ubuntu.vmx
 
 ---
 
-```console
+```
 shell> /usr/bin/host_reboot.sh
 shell> /usr/bin/host_shutdown.sh
 ```
@@ -174,7 +174,7 @@ Use the ⌘+Control+F keyboard shortcut to switch to Full Screen view.
 
 `VirtualMachineName`
 
-```console
+```
 shell> smbiosDump
 shell> esxcfg-info | less -I
 ```
@@ -182,7 +182,7 @@ shell> esxcfg-info | less -I
 - https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1003587
 - https://kb.vmware.com/selfservice/search.do?cmd=displayKC&docType=kc&docTypeID=DT_KB_1_1&externalId=2086454
 
-```console
+```
 shell> esxcfg-nics --list
 shell> esxcfg-nics -l
 
@@ -196,7 +196,7 @@ VMware ESXi 5.0.0 GA
 ```
 
 
-```console
+```
 shell> esxcfg-nics --list
 shell> esxcfg-vswitch --list
 
@@ -208,7 +208,7 @@ shell> esxcfg-route -l
 shell> esxcfg-route -a default 192.168.1.151
 ```
 
-```console
+```
 shell> /sbin/powerOffVms
 shell> /sbin/poweroff
 
@@ -224,7 +224,7 @@ RemoteDisplay.vnc.port = "portnumber"
 
 ---
 
-```console
+```
 shell> sshpass -p 12345 ssh -l username remotehost "vim-cmd vmsvc/getallvms"
 shell> sshpass -p 12345 ssh -l username remotehost "esxcli vm process list"
 ```
@@ -269,14 +269,14 @@ UseDNS no
 Compression yes
 ```
 
-```console
+```
 shell> /etc/init.d/SSH restart
 ```
 
 ---
 
 
-```console
+```
 shell> vmkfstools -X 20GB srcDisk
 shell> vmkfstools -extendvirtualdisk srcDisk
 
@@ -339,7 +339,7 @@ vmware-cmd -s register /vmfs/volumes/VMname/vm.vmx
 `xenial` `16.04 LTS`
 `yakkety` `16.10`
 
-```console
+```
 shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\xenial\xenial.vmx" "%HOMEPATH%\Documents/xenial.ova"
 shell> ovftool "%HOMEPATH%\Documents\Virtual Machines\yakkety\yakkety.vmx" "%HOMEPATH%\Documents/yakkety.ova"
 
@@ -376,7 +376,7 @@ C:\Users\Public\Documents\Shared Virtual Machines
 
 `Android`
 
-```console
+```
 shell> ifconfig | grep -A2 vmnet
 ```
 ```
@@ -397,7 +397,7 @@ vmnet8 (NAT)
 ---
 
 
-```console
+```
 shell> swapoff /dev/sdXY
 shell> resize2fs /dev/sdXY
 
@@ -418,7 +418,7 @@ shell> swapon /dev/sdXY
 
 ---
 
-```console
+```
 shell> esxcli system settings advanced set -o /Net/GuestIPHack -i 1
 ```
 

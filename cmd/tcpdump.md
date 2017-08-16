@@ -1,5 +1,5 @@
 
-```console
+```
 shell> tcpdump -i eth0 -w tcpdump.out -s 1520 port 80
 shell> tcptrace tcpdump.out
 shell> tcptrace -l -o1 tcpdump.out

@@ -2,7 +2,7 @@
 
 ---
 
-```console
+```
 shell> apt-get install postfix 
 shell> apt-get install procmail
 shell> apt-get install dovecot-common dovecot-pop3d dovecot-imapd dovecot-postfix
@@ -14,7 +14,7 @@ shell> postalias hash:/etc/aliases
 disable_plaintext_auth = no
 ```
 
-```console
+```
 shell> dpkg-reconfigure postfix
 
 shell> postconf
@@ -26,7 +26,7 @@ shell> postconf myhostname
 shell> postconf mydestination
 ```
 
-```console
+```
 shell> postconf default_destination_concurrency_limit
 shell> postconf default_destination_recipient_limit
 shell> postconf default_process_limit
@@ -90,7 +90,7 @@ info@example.com       joe
 sales@example.com      jane
 ```
 
-```console
+```
 shell> postmap /etc/postfix/virtual
 shell> postfix reload
 ```
@@ -98,7 +98,7 @@ shell> postfix reload
 #### :books: 參考網站：
 - [Postfix Virtual Domain Hosting Howto](http://www.postfix.org/VIRTUAL_README.html)
 
-```console
+```
 shell> postfix reload
 
 shell> postfix check
@@ -119,7 +119,7 @@ message_size_limit (default: 10240000)
 mydestination (default: $myhostname, localhost.$mydomain, localhost)
 ```
 
-```console
+```
 shell> postconf -e 'myhostname = mail.example.com'
 shell> postconf -e 'mydomain = example.com'
 shell> postconf -e 'myorigin = $mydomain'
@@ -153,22 +153,22 @@ shell> postcat -q queue_id
 
 ---
 
-```console
+```
 shell> apt-get install fetchmail
 shell> vim ~/.fetchmailrc
 ```
 
-```console
+```
 shell> grep sasl_method=LOGIN /var/log/mail.log
 ```
 
-```console
+```
 shell> qshape -s hold | head
 shell> qshape -s active
 shell> qshape active
 ```
 
-```console
+```
 shell> vim /etc/rsyslog.d/50-default.conf
 ```
 ```
@@ -207,7 +207,7 @@ plugin {
 
 `sample-nonspam.txt.gz`
 
-```console
+```
 shell> echo "hi there" | spamc
 ```
 
@@ -234,7 +234,7 @@ shell> echo "hi there" | spamc
  X-Spam-Prev-Subject: (nonexistent)
 ```
 
-```console
+```
 shell> spamassassin --help
 
 shell> spamassassin --test-mode < /usr/share/doc/spamassassin/examples/sample-nonspam.txt
@@ -249,7 +249,7 @@ shell> sendmail root < /usr/share/doc/spamassassin/examples/sample-nonspam.txt
 shell> sendmail root < /usr/share/doc/spamassassin/examples/sample-spam.txt
 ```
 
-```console
+```
 shell> sa-learn --clear
 shell> sa-learn --showdots --spam /home/spam/Maildir/{cur,new}
 shell> sa-learn --dump magic
@@ -301,7 +301,7 @@ mydomain.com.   3600    IN  TXT "v=spf1 ip4:192.168.1.100 -all"
 
 **opendkim-genkey - DKIM filter key generation tool**
 
-```console
+```
 shell> apt-get install opendkim-tools
 shell> opendkim-genkey -r -D -d mydomain.com
 ```
@@ -319,11 +319,11 @@ shell> opendkim-genkey -r -D -d mydomain.com
 `/usr/bin/sa-update`
 `sa-update`
 
-```console
+```
 shell> sa-update && /etc/init.d/spamassassin reload
 ```
 
-```console
+```
 
 shell> sa-update -D
 Jul  3 12:10:40.526 [22759] dbg: logger: adding facilities: all
@@ -466,7 +466,7 @@ virtual_alias_maps = hash:/etc/postfix/virtual    (address rewriting)
 192.168.0.0/16          OK
 ```
 
-```console
+```
 shell> postmap -q info@example.com hash:/etc/postfix/virtual
 ```
 
@@ -514,7 +514,7 @@ mailbox_command = /usr/bin/maildrop -d ${USER}
 0 directories, 5 files
 ```
 
-```console
+```
 shell> postconf -e 'smtpd_use_tls = yes'
 shell> postconf -e 'smtpd_tls_auth_only = yes'
 shell> postconf -e 'smtpd_tls_cert_file = /etc/letsencrypt/live/mail.example.com/fullchain.pem'
@@ -526,7 +526,7 @@ shell> postconf -e 'smtp_tls_note_starttls_offer = yes'
 ```
 
 
-```console
+```
 shell> openssl req -new -newkey rsa:2048 -nodes -out server.csr -keyout server.key -subj "/C=TW/ST=Taiwan/L=Taipei/O=Microsoft Corp./CN=*.example.com"
 
 shell> cat www_yourdomain_com.crt COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt > ssl-bundle.crt
@@ -570,11 +570,11 @@ smtp_tls_ciphers = high
 - https://access.redhat.com/articles/1468593
 
 
-```console
+```
 shell> cat /etc/letsencrypt/live/mail.example.com/cert.pem /etc/letsencrypt/live/mail.example.com/chain.pem /etc/letsencrypt/live/mail.example.com/privkey.pem > combined.pem
 ```
 
-```console
+```
 shell> cat /etc/letsencrypt/live/mail.example.com/privkey.pem /etc/letsencrypt/live/mail.example.com/cert.pem > /etc/courier/imapd.pem
 shell> openssl dhparam 2048 >> /etc/courier/imapd.pem 
 ```
@@ -592,7 +592,7 @@ TLS_CERTFILE=/etc/courier/combined.pem
 `courier-imap-ssl`
 `993`
 
-```console
+```
 shell> service courier-imap-ssl restart
 ```
 ---
@@ -605,7 +605,7 @@ shell> service courier-imap-ssl restart
 
 `pflogsumm - Postfix log entry summarizer`
 
-```console
+```
 shell> apt-get install pflogsumm
 shell> pflogsumm -d yesterday /var/log/maillog
 shell> pflogsumm -d today /var/log/maillog

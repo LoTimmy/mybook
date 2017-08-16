@@ -1,5 +1,5 @@
 `tree - displays an indented directory tree, in color`
-```console
+```
 shell> apt-get install tree
 shell> yum install tree -y
 shell> brew install tree

@@ -3,12 +3,12 @@
 ![](http://i.imgur.com/K6LPzRw.png)
 
 `1MB`
-```console
+```
 shell> openssl rand -out hello.txt -base64 $(( 2**20 ))
 ```
 
 `1GB`
-```console
+```
 shell> openssl rand -out hello.txt -base64 $(( 2**30 ))
 ```
 
@@ -116,7 +116,7 @@ process.stdin.on('end', function () {
 });
 ```
 
-```console
+```
 shell> (echo beep; sleep 1; echo boop) | node app.js 
 ```
 

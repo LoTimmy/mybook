@@ -4,10 +4,10 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install jpegoptim
 ```
-```console
+```
 shell> jpegoptim --help
 shell> jpegoptim --strip-all --preserve --totals --max=90
 

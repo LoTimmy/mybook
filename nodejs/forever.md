@@ -1,10 +1,10 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install forever -g
 ```
 
-```console
+```
 shell> forever start app.js
 ```
 
@@ -28,9 +28,9 @@ shell> forever start app.js
 ```
 
 
-```console
+```
 shell> forever start ./forever/development.json
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [forever](https://www.npmjs.com/package/forever)

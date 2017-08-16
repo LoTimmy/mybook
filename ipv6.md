@@ -160,7 +160,7 @@ nameserver 2001:b000:168::2
 
 ---
 
-```console
+```
 shell> ifconfig eth0 | grep "inet6 addr"
           inet6 addr: fe80::20c:29ff:fe12:f198/64 Scope:Link
 
@@ -219,12 +219,12 @@ Windows IP 設定
    預設閘道 . . . . . . . . . . . . .: 192.168.88.1
 ```
 
-```console
+```
 shell> ping6 fe80::20c:29ff:fe62:1307
 connect: Invalid argument
 ```
 
-```console
+```
 shell> ping6 -I eth0 fe80::20c:29ff:fe62:1307
 shell> ping6 -I eth0 -c 5 fe80::20c:29ff:fe62:1307
 PING fe80::20c:29ff:fe62:1307(fe80::20c:29ff:fe62:1307) from fe80::20c:29ff:fe12:f198 eth0: 56 data bytes
@@ -241,7 +241,7 @@ rtt min/avg/max/mdev = 0.088/0.107/0.124/0.014 ms
 shell> ping6 -I eth0 fe80::29c6:4c36:4eca:9bbe
 ```
 
-```console
+```
 shell> ping fe80::20c:29ff:fe62:1307%11
 
 Ping fe80::20c:29ff:fe62:1307%11 (使用 32 位元組的資料):
@@ -256,7 +256,7 @@ fe80::20c:29ff:fe62:1307%11 的 Ping 統計資料:
     最小值 = 0ms，最大值 = 0ms，平均 = 0ms
 ```
 
-```console
+```
 shell> netsh interface ipv6 show neighbors
 ```
 
@@ -277,7 +277,7 @@ ff02::1:ff12:f198                             33-33-ff-12-f1-98  永久
 ff02::1:ff75:9db4                             33-33-ff-75-9d-b4  永久
 ```
 
-```console
+```
 shell> ip -6 neigh show
 ```
 
@@ -318,17 +318,17 @@ fe80::1408:9434:b01d:c7f9 dev eth0 lladdr a0:99:9b:08:cb:87 STALE
 fe80::6231:97ff:fe75:9db4 dev eth1  FAILED
 ```
 
-```console
+```
 shell> ping6 fe80::1408:9434:b01d:c7f9%en0
 ```
 
-```console
+```
 shell> ping6 -c4 ::1
 shell> ping6 -I eth0 -c4 ff02::1
 shell> netstat -A inet6 -rn
 ```
 
-```console
+```
 shell> ndp -an
 shell> netstat -f inet -rn
 shell> netstat -f inet6 -rn
@@ -340,22 +340,22 @@ shell> traceroute6
 
 ---
 
-```console
+```
 shell> ssh -6 ::1
 shell> ssh -6 fe80::20c:29ff:fe42:efb9%eth0
 shell> ssh -l userid1 -6 fe80::20c:29ff:fe42:efb9%eth0
 ```
 
-```console
+```
 shell> sftp userid1@[fe80::20c:29ff:fe42:efb9%eth0]
 shell> scp myfile.txt userid1@\[fe80::20c:29ff:fe42:efb9%eth0\]:
 ```
 
-```console
+```
 shell> telnet fe80::20c:29ff:fe42:efb9%eth0 22
 ```
 
-```console
+```
 shell> nmap -6 fe80::20c:29ff:fe42:efb9%eth0
 ```
 

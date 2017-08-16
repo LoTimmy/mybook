@@ -15,7 +15,7 @@ class Hello1
 /* */
 ```
 
-```console
+```
 編譯 Hello1.cs 產生 Hello1.exe
 dmcs Hello1.cs
 gmcs Hello1.cs
@@ -135,7 +135,7 @@ using System;
 
 
 
-```console
+```
 shell> mkdir mysql-connector-net
 shell> cd mysql-connector-net
 shell> wget https://dl.dropboxusercontent.com/u/4276183/mysql-connector-net-1.0.10-noinstall.zip
@@ -148,7 +148,7 @@ shell> mono TestExample.exe
 >>>>>>> 668cce56c488474ad44d7328411a5c3af28c7df3
 ```
 
-```console
+```
 shell> apt-get install apache2
 shell> service apache2 stop
 shell> apt-get install mono-apache-server2 libapache2-mod-mono libmono-i18n2.0-cil
@@ -220,31 +220,31 @@ Install for Ubuntu 14.04, 16.04 & Linux Mint 17
  RID:         ubuntu.14.04-x64
 ```
 
-```console
+```
 shell> sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list'
 shell> sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
 shell> sudo apt-get update
 ```
 
-```console
+```
 shell> sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
 shell> sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
 shell> sudo apt-get update
 ```
 
-```console
+```
 shell> sudo apt-get install dotnet-dev-1.0.0-preview2-003121
 shell> dotnet --version
 shell> dotnet --info
 ```
 
-```console
+```
 shell> mkdir hwapp
 shell> cd hwapp
 shell> dotnet new
 ```
 
-```console
+```
 shell> dotnet restore
 shell> dotnet run
 ```
@@ -267,7 +267,7 @@ namespace ConsoleApplication
 }
 ```
 
-```console
+```
 shell> git clone https://github.com/aspnet/cli-samples.git
 shell> cd cli-samples/HelloMvc
 shell> dotnet restore
@@ -279,7 +279,7 @@ shell> dotnet /srv/aspnet/HelloMvc.dll
 
 ---
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [core#ubuntu](https://www.microsoft.com/net/core#ubuntu)
 - [dotnet](https://github.com/dotnet/core/blob/master/release-notes/1.0/1.0.0.md)
 

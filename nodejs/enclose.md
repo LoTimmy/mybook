@@ -1,10 +1,10 @@
 ![](http://enclosejs.com/screenshot.png)
 
-```console
+```
 shell> npm install -g enclose
 ```
 
-```console
+```
 shell> enclose --help
 ```
 
@@ -23,7 +23,7 @@ Usage: enclose [options] input
   --no-color String      disable color in console
 ```
 
-```console
+```
 shell> enclose --loglevel info -x -o 
 ```
 

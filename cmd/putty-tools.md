@@ -3,7 +3,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install putty-tools
 shell> brew install putty
 

@@ -1,18 +1,18 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> pip install csvkit
 ```
-```console
+```
 shell> sudo apt-get install python-dev python-pip python-setuptools build-essential
 ```
 
-```console
+```
 shell> pip install --upgrade setuptools
 shell> pip install --upgrade csvkit
 ```
 
-```console
+```
 shell> wget https://github.com/wireservice/csvkit/raw/master/examples/dummy.xls
 shell> in2csv dummy.xls > data.csv
 shell> csvlook data.csv

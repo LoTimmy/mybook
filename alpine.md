@@ -1,5 +1,5 @@
 
-```console
+```
 shell> apk add --no-cache mysql-client
 ```
 

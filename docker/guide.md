@@ -5,7 +5,7 @@
 安裝作業系統及`Docker`相關套件。
 因本文主要介紹`Docker`如何安裝及設定，作業系統方面就不再詳述。
 
-```console
+```
 shell> lsb_release -a
 ```
 ```
@@ -21,7 +21,7 @@ Codename:	xenial
 - [mac](https://docs.docker.com/engine/installation/mac/)
 - [docker-for-mac](https://docs.docker.com/docker-for-mac/)
 
-```console
+```
 shell> sudo apt-get update
 shell> sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
 shell> curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -46,7 +46,7 @@ shell> sudo apt-get install \
          linux-image-extra-virtual
 ```
 
-```console
+```
 shell> curl -sSL https://get.docker.com/ | sh
 shell> wget -qO- https://get.docker.com/ | sh
 ```
@@ -57,7 +57,7 @@ shell> wget -qO- https://get.docker.com/ | sh
 - [compose](https://docs.docker.com/compose/gettingstarted/)
 - [step_one](https://docs.docker.com/v1.11/linux/step_one/)
 
-```console
+```
 shell> docker info # Check that you have a working install
 ```
 ```
@@ -126,7 +126,7 @@ Server:
  Experimental: false
 ```
 
-```console
+```
 shell> docker pull ubuntu # Download an ubuntu image
 shell> docker pull debian # Download an debian image
 shell> docker pull centos # Download an centos image
@@ -137,14 +137,14 @@ shell> docker pull ubuntu:12.04
 
 `Ctrl`-`p`+`Ctrl`-`q`
 
-```console
+```
 shell> docker run --help
 
 shell> docker run -it ubuntu /bin/bash
 shell> docker attach <container_id>
 ```
 
-```console
+```
 shell> docker run -i -t debian /bin/bash
 shell> docker run -d -i -t ubuntu /bin/bash
 
@@ -167,7 +167,7 @@ shell> docker images
 shell> docker search
 ```
 ---
-```console
+```
 shell> docker ps # Lists only running containers
 shell> docker ps -a # Lists all containers
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
@@ -184,18 +184,18 @@ shell> docker run --rm ubuntu /bin/ping 8.8.8.8
 - [basics](https://docs.docker.com/engine/userguide/basics/)
 
 
-```console
+```
 shell> docker run -idt ubuntu:12.04
 shell> docker ps
 shell> docker ps exec -ti agitated_mccarthy /bin/bash
 ```
 
-```console
+```
 shell> docker commit <container_id> <some_name> # Commit your container to a new named image
 shell> docker images # List your containers
 ```
 
-```console
+```
 shell> JOB=$(sudo docker run -d -p 4444 ubuntu:12.10 /bin/nc -l 4444) # Bind port 4444 of this container, and tell netcat to listen on it
 
 shell> PORT=$(sudo docker port $JOB 4444 | awk -F: '{ print $2 }') # Which public port is NATed to my container?
@@ -210,7 +210,7 @@ shell> echo "Daemon received: $(sudo docker logs $JOB)" # Verify that the networ
 
 ---
 
-```console
+```
 shell> mkdir -p /docker/mysql
 shell> sudo docker run --name some-mysql -v /docker/mariadb:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
 shell> sudo docker run --name some-mysql -P -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql
@@ -260,14 +260,14 @@ RUN ["/bin/bash", "-c", "dmidecode"]
 RUN ["/bin/bash", "-c", "echo hello"]
 ```
 
-```console
+```
 shell> sudo docker build -t some-custom-nginx .
 ```
 
 ---
 
 安裝 Compose
-```console
+```
 shell> curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 
 shell> chmod +x /usr/local/bin/docker-compose
@@ -275,7 +275,7 @@ shell> docker-compose --version
 docker-compose version 1.6.2, build 4d72027
 ```
 
-```console
+```
 shell> mkdir composetest
 shell> cd composetest
 ```
@@ -320,7 +320,7 @@ services:
      - MYSQL_ROOT_PASSWORD=my-secret-pw
 ```
 
-```console
+```
 shell> docker-compose up
 shell> docker-compose up -d
 
@@ -329,11 +329,11 @@ shell> docker-compose stop
 shell> docker-compose rm -f web
 ```
 
-```console
+```
 shell> docker-compose ps
 ```
 
-```console
+```
 shell> docker-compose run web env
 ```
 
@@ -344,7 +344,7 @@ shell> docker-compose run web env
 
 ---
 
-```console
+```
 shell> docker-machine ls
 shell> docker-machine create --driver virtualbox default
 shell> docker-machine env default
@@ -353,7 +353,7 @@ shell> eval "$(docker-machine env default)"
 shell> FOR /f "tokens=*" %i IN ('docker-machine env default') DO %i
 ```
 
-```console
+```
 shell> brew cask install virtualbox
 shell> brew install docker
 shell> brew install boot2docker
@@ -373,7 +373,7 @@ shell> docker run -d -P --name web nginx
 shell> docker ps # Display your running container with docker ps command
 ```
 
-```console
+```
 shell> docker run -d -p 80:80 --name webserver nginx
 ```
 
@@ -447,13 +447,13 @@ services:
      - "80:80"
 ```
 
-```console
+```
 shell> docker-compose build
 shell> docker-compose up
 shell> docker-compose up -d
 ```
 
-```console
+```
 shell> docker inspect web
 ```
 
@@ -463,7 +463,7 @@ shell> docker inspect web
 - [The-TERM-variable](https://www.gnu.org/software/gettext/manual/html_node/The-TERM-variable.html)
 - [Setting Environment Variables](https://docs.oracle.com/cd/E19683-01/806-7612/customize-8/index.html)
 
-```console
+```
 shell> docker volume ls -qf dangling=true
 shell> docker volume rm $(docker volume ls -qf dangling=true)
 ```
@@ -550,7 +550,7 @@ EXPOSE 80 443
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-```console
+```
 shell> docker build -f /path/to/a/Dockerfile .
 shell> docker build -t foo/myapp .
 shell> docker build -t foo/myapp:1.0.2 -t foo/myapp:latest .
@@ -651,7 +651,7 @@ command=/usr/sbin/sshd -D
 command=/bin/bash -c "source /etc/apache2/envvars && exec /usr/sbin/apache2 -DFOREGROUND"
 ```
 
-```console
+```
 shell> docker build -t mysupervisord .
 shell> docker run -p 22 -p 80 -t -i mysupervisord
 ```
@@ -664,30 +664,30 @@ shell> docker run -p 22 -p 80 -t -i mysupervisord
 ### docker build {#build}
 
 `Build with PATH`
-```console
+```
 shell> docker build .
 ```
 
 `Build with URL`
-```console
+```
 shell> docker build github.com/creack/docker-firefox
 ```
 
 `Build with -`
-```console
+```
 shell> docker build - < Dockerfile
 shell> docker build - < context.tar.gz
 ```
 
 `Tag an image (-t)`
 
-```console
+```
 shell> docker build -t vieux/apache:2.0 .
 ```
 
 `Specify a Dockerfile (-f)`
 
-```console
+```
 shell> docker build -f Dockerfile.debug .
 shell> docker build -f dockerfiles/Dockerfile.debug -t myapp_debug .
 shell> docker build -f dockerfiles/Dockerfile.prod  -t myapp_prod .

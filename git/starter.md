@@ -1,13 +1,13 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install git
 shell> brew cask install sourcetree
 ```
 
 ### Set Up Git {#set-up-git}
 
-```console
+```
 shell> git config --global user.name "Your Name"
 shell> git config --global user.email "your_email@example.com"
 
@@ -40,7 +40,7 @@ shell> git commit
 	email = your_email@example.com
 ```
 
-```console
+```
 shell> git config --global alias.co checkout
 shell> git config --global alias.br branch
 shell> git config --global alias.ci commit
@@ -50,17 +50,17 @@ shell> git config --global alias.remotev remote -v
 shell> git config --global alias.last 'log -1 HEAD'
 ```
 
-```console
+```
 shell> git config --global diff.tool vimdiff
 shell> git config --global difftool.prompt false 
 ```
 
 
-```console
+```
 shell> git config -l
 ```
 
-```console
+```
 shell> git config --global --unset user.name
 shell> git config --global --unset user.email
 ```
@@ -74,7 +74,7 @@ shell> git config --global --unset user.email
 
 ### Hello world 範例 {#hello-world}
 
-```console
+```
 shell> mkdir helloworld
 shell> cd project
 shell> git init
@@ -88,7 +88,7 @@ shell> git log
 
 ### Git Hooks {#githooks}
 
-```console
+```
 shell> mkdir web.git
 shell> cd web.git
 shell> git init --bare
@@ -107,10 +107,10 @@ optipng -o7 *.png
 
 chown -R www:www /var/www/html
 ```
-```console
+```
 shell> chmod -x hooks/post-receive
 ```
-```console
+```
 shell> git remote add prd 192.168.8.88:/opt/web.git
 shell> git remote add tst 192.168.8.88:/opt/web-tst.git
 shell> git add *
@@ -132,7 +132,7 @@ git push origin master
 
 `hooks/pre-commit`
 
-```console
+```
 shell> git add .
 ```
 
@@ -160,7 +160,7 @@ echo "$(date +%Y%m%d)" >> $1
 echo "$(date +%Y%m%d)" >> $1
 ```
 
-```console
+```
 shell> git commit --amend --no-edit
 ```
 
@@ -175,7 +175,7 @@ shell> git commit --amend --no-edit
 
 ### Git Branching {#git-branch}
 
-```console
+```
 shell> mkdir git-tutorial
 shell> cd git-tutorial 
 shell> git init
@@ -191,7 +191,7 @@ shell> git commit -m 'The initial commit of my project'
 
 `Creating a New Branch`
 
-```console
+```
 shell> mkdir git-tutorial
 shell> cd git-tutorial 
 shell> git init
@@ -206,7 +206,7 @@ shell> git commit -m 'The initial commit of my project'
 <img src="https://git-scm.com/book/en/v2/images/two-branches.png" width="50%" >
 
 `Creating a New Branch`
-```console
+```
 shell> git branch testing
 shell> git branch
 * master
@@ -222,7 +222,7 @@ f30ab (HEAD -> master, testing) add feature #32 - ability to add new formats to 
 
 `Switching Branches`
 
-```console
+```
 shell> git checkout testing
 Switched to branch 'testing'
 
@@ -232,24 +232,24 @@ shell> git branch
 ```
 <img src="https://git-scm.com/book/en/v2/images/head-to-testing.png" width="50%" >
 
-```console
+```
 shell> vim test.rb
 shell> git commit -a -m 'made a change'
 ```
 <img src="https://git-scm.com/book/en/v2/images/advance-testing.png" width="50%" >
 
-```console
+```
 shell> git checkout master
 ```
 <img src="https://git-scm.com/book/en/v2/images/checkout-master.png" width="50%" >
 
-```console
+```
 shell> vim test.rb
 shell> git commit -a -m 'made other changes'
 ```
 <img src="https://git-scm.com/book/en/v2/images/advance-master.png" width="50%" >
 
-```console
+```
 shell> git log --oneline --decorate --graph --all
 * c2b9e (HEAD, master) made other changes
 | * 87ab2 (testing) made a change
@@ -262,28 +262,28 @@ shell> git log --oneline --decorate --graph --all
 
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-1.png" width="50%" >
 
-```console
+```
 shell> git checkout -b iss53
 Switched to a new branch "iss53"
 ```
-```console
+```
 shell> git branch iss53
 shell> git checkout iss53
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-2.png" width="50%" >
 
-```console
+```
 shell> vim index.html
 shell> git commit -a -m 'added a new footer [issue 53]'
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-3.png" width="50%" >
 
-```console
+```
 shell> git checkout master
 Switched to branch 'master'
 ```
 
-```console
+```
 shell> git checkout -b hotfix
 Switched to a new branch 'hotfix'
 shell> vim index.html
@@ -293,7 +293,7 @@ shell> git commit -a -m 'fixed the broken email address'
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-4.png" width="50%" >
 
-```console
+```
 shell> git checkout master
 shell> git merge hotfix
 Updating f42c576..3a0874c
@@ -304,13 +304,13 @@ Fast-forward
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-5.png" width="50%" >
 
-```console
+```
 shell> git branch -d hotfix
 Deleted branch hotfix (3a0874c).
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-5.png" width="50%" >
 
-```console
+```
 shell> git checkout iss53
 Switched to branch "iss53"
 shell> vim index.html
@@ -323,7 +323,7 @@ Deleted branch hotfix (3a0874c).
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-6.png" width="60%" >
 
-```console
+```
 shell> git checkout iss53
 Switched to branch "iss53"
 shell> vim index.html
@@ -333,7 +333,7 @@ shell> git commit -a -m 'finished the new footer [issue 53]'
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-branching-6.png" width="60%" >
 
-```console
+```
 >>>>>>> e1f0afe8af02de269b75f25ff8285fce65bcb2e9
 shell> git checkout master
 Switched to branch 'master'
@@ -344,7 +344,7 @@ index.html |    1 +
 ```
 <img src="https://git-scm.com/book/en/v2/images/basic-merging-2.png" width="60%" >
 
-```console
+```
 shell> git branch -d iss53
 ```
 
@@ -354,14 +354,14 @@ shell> git branch -d iss53
 
 `Conflicts` `衝突` `[ˋkɑnflɪkt]`
 
-```console
+```
 shell> git merge iss53
 Auto-merging index.html
 CONFLICT (content): Merge conflict in index.html
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-```console
+```
 shell> git status
 On branch master
 You have unmerged paths.
@@ -380,7 +380,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
  please contact us at support@github.com
 </div>
 ```
-```console
+```
 shell> git mergetool
 
 This message is displayed because 'merge.tool' is not configured.
@@ -395,7 +395,7 @@ Normal merge conflict for 'index.html':
   {remote}: modified file
 Hit return to start merge resolution tool (opendiff):
 ```
-```console
+```
 shell> git status
 On branch master
 All conflicts fixed but you are still merging.
@@ -430,7 +430,7 @@ Conflicts:
 
 ---
 
-```console
+```
 shell> git branch	     # list all local branches in this repo
 shell> git checkout test  # switch working directory to branch "test"
 shell> git branch new     # create branch "new" starting at current HEAD
@@ -455,7 +455,7 @@ shell> git branch -d new  # delete branch "new"
 
 ---
 
-```console
+```
 shell> git log --graph
 ```
 
@@ -477,7 +477,7 @@ shell> git log --graph
 
 ---
 
-```console
+```
 shell> git ls-files
 shell> git ls-files --ignored --exclude-standard
 ```
@@ -486,7 +486,7 @@ shell> git ls-files --ignored --exclude-standard
 - [git-ls-files](https://git-scm.com/docs/git-ls-files)
 ---
 
-```console
+```
 shell> git difftool
 ```
 
@@ -494,7 +494,7 @@ shell> git difftool
 - [git-difftool](https://git-scm.com/docs/git-difftool)
 ---
 
-```console
+```
 shell> git difftool --extcmd icdiff
 shell> git icdiff
 ```

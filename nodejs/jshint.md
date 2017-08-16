@@ -2,7 +2,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install -g jshint
 shell> jshint
 ```
@@ -49,7 +49,7 @@ main();
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install -g eslint
 shell> eslint --init
 ```

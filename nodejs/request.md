@@ -1,7 +1,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install request
 shell> npm install progress
 ```

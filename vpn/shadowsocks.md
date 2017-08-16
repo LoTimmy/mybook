@@ -12,7 +12,7 @@ client <---> ss-local <--[encrypted]--> ss-remote <---> target
 
 `shadowsocks - Fast tunnel proxy that helps you bypass firewalls`
 
-```console
+```
 shell> lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
@@ -21,7 +21,7 @@ Release:	16.04
 Codename:	xenial
 ```
 
-```console
+```
 shell> sudo apt-get install python-pip
 shell> pip install --upgrade pip
 shell> pip install shadowsocks
@@ -29,7 +29,7 @@ shell> pip install shadowsocks
 
 `/usr/local/bin/ssserver`
 
-```console
+```
 shell> ssserver -c /etc/shadowsocks.conf
 shell> ssserver -k barfoo! -m aes-256-cfb
 shell> ssserver -c /etc/shadowsocks.conf -d start
@@ -72,7 +72,7 @@ Proxy options:
 * hard nofile 51200
 ```
 
-```console
+```
 shell> ulimit -n 51200
 ```
 

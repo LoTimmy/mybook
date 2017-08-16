@@ -1,6 +1,6 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install privoxy
 shell> apt-get install privoxy
 ```

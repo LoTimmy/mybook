@@ -24,7 +24,7 @@
 
 ---
 
-```console
+```
 shell> yum install net-snmp net-snmp-devel net-snmp-utils
 /etc/snmp/snmpd.conf
 ```
@@ -37,7 +37,7 @@ syscontact Root <root@localhost> (configure /etc/snmp/snmp.local.conf)
 
 ---
 
-```console
+```
 shell> iptables -A INPUT -i eth0 -p udp -s 123.123.123.123 --dport 161 -j ACCEPT
 ```
 
@@ -91,7 +91,7 @@ UCD-SNMP-MIB::prErrFixCmd.1 = STRING: service apache2 restart
 UCD-SNMP-MIB::prErrFixCmd.2 = STRING: 
 ```
 
-```console
+```
 shell> snmpget -v 2c -c public -OvQe localhost UCD-SNMP-MIB::prErrorFlag.1
 shell> snmpset -v 2c -c public localhost UCD-SNMP-MIB::prErrFix.1 = 1
 ```
@@ -102,30 +102,30 @@ Reason: noAccess
 Failed object: UCD-SNMP-MIB::prErrFix.1
 ```
 
-```console
+```
 shell> snmpget -v 1 -c public localhost system.sysUpTime.0
 shell> snmpwalk -v 2c -c public localhost system
 ```
 
-```console
+```
 shell> snmpwalk -v 1 localhost -c public system
 shell> snmpwalk -v 2c -c public localhost .1.3.6.1.4.1.2021.9
 shell> snmpwalk -v 2c -c public localhost .1.3.6.1.4.1.2021.2
 ```
 
-```console
+```
 shell> snmpget -v 1 -c public localhost ucdDemoPublicString.0 
 shell> snmpset -v 1 -c public localhost ucdDemoPublicString.0 s "Hello, world!"
 ```
 
-```console
+```
 shell> snmpnetstat -v 2c -c public localhost
 shell> snmpnetstat -v 2c -c public localhost -Cn
 ``` 
 
 
 
-```console
+```
 shell> lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
@@ -138,7 +138,7 @@ Codename:	trusty
 - `snmpd - SNMP (Simple Network Management Protocol) agents`
 - `snmp-mibs-downloader - Install and manage Management Information Base (MIB) files`
  
-```console
+```
 shell> sudo apt-get update && sudo apt-get install snmp
 shell> sudo apt-get install snmp-mibs-downloader
 ```
@@ -176,7 +176,7 @@ echo hi there
 exit 35
 ```
 
-```console
+```
 shell> snmpwalk -v 2c -c public localhost .1.3.6.1.4.1.2021.8
 ```
 
@@ -185,7 +185,7 @@ exec .1.3.6.1.4.1.2021.50 shelltest /bin/sh /tmp/shtest
 exec .1.3.6.1.4.1.2021.51 ps /bin/ps
 ```
 
-```console
+```
 shell> snmpd -v
 NET-SNMP version:  5.5
 Web:               http://www.net-snmp.org/
@@ -193,7 +193,7 @@ Email:             net-snmp-coders@lists.sourceforge.net
 ```
 
 
-```console
+```
 shell> snmpd -v
 NET-SNMP version:  5.7.3
 Web:               http://www.net-snmp.org/
@@ -205,7 +205,7 @@ extend .1.3.6.1.4.1.2021.50 shelltest /bin/sh /tmp/shtest
 extend .1.3.6.1.4.1.2021.51 ps /bin/ps
 ```
 
-```console
+```
 shell> snmpwalk -v 2c -c public localhost .1.3.6.1.4.1.2021.50
 ```
 
@@ -222,7 +222,7 @@ disk /usr  3%
 disk /mnt/crash  100000
 ```
 
-```console
+```
 shell> snmpdf -v 1 -c public -Cu localhost
 Description              Size (kB)            Used       Available Used%
 /                        162943468        27167548       135775920   16%
@@ -238,7 +238,7 @@ Description              Size (kB)            Used       Available Used%
 
 `snmpstatus` 
 
-```console
+```
 shell> snmpstatus -v 1 -c public localhost
 ```
 
@@ -249,7 +249,7 @@ shell> snmpstatus -v 1 -c public localhost
 `snmptranslate` 命令將 `MIB` `OIDs` 的兩種表現形式 (數字及文字) 相互轉換。並顯示 `MIB` 的內容與結構，如下所示：
 
 
-```console
+```
 shell> snmptranslate -On -IR ssCpuRawSystem
 .1.3.6.1.4.1.2021.11.52
 
@@ -286,7 +286,7 @@ snmptrap -d -v 2c -c public localhost "" UCD-SNMP-MIB::ucdStart message s "/ dis
 
 ---
 
-```console
+```
 shell> download-mibs
 
 shell> snmpwalk -m SNMPv2-MIB -Os -c public -v 1 localhost system
@@ -300,13 +300,13 @@ shell> snmpwalk -m HOST-RESOURCES-MIB -Os -c public -v 2c localhost hrSystemDate
 
 `snmpd - SNMP (Simple Network Management Protocol) agents`
 
-```console
+```
 shell> sudo apt-get update && sudo apt-get install snmpd
 shell> vim /etc/default/snmpd
 
 export MIBS=+SNMPv2-MIB
 ```
-```console
+```
 shell> sed -i "s|-Lsd|-LS6d|" /etc/default/snmpd
 ```
 
@@ -324,7 +324,7 @@ disk /
 - [SNMPD.CONF](http://net-snmp.sourceforge.net/docs/man/snmpd.conf.html)
 
 
-```console
+```
 shell> snmpnetstat -v 2c -c public -Ca testhost
 shell> snmpnetstat -v 2c -c public -Ci testhost
 shell> snmpnetstat -v 2c -c public -CP tcp testhost

@@ -5,24 +5,24 @@
 ![](https://camo.githubusercontent.com/65e8947a811a64612b253fe9411a3b7c96aa0615/687474703a2f2f706f6d656c6f2e6e6574656173652e636f6d2f7265736f757263652f646f63756d656e74496d6167652f6c6f72646f66706f6d656c6f2f736572766572732e706e67)
 ![](http://i.imgur.com/QD7ajEX.png)
 
-```console
+```
 shell> apt-get install build-essential
 shell> npm config set unsafe-perm true 
 shell> npm install pomelo -g
 ```
 
-```console
+```
 shell> pomelo --help
 shell> pomelo --version
 ```
 
-```console
+```
 shell> pomelo init ./HelloWorld
 shell> cd HelloWorld
 shell> sh npm-install.sh
 ```
 
-```console
+```
 shell> cd game-server
 shell> pomelo start
 
@@ -30,7 +30,7 @@ shell> cd web-server
 shell> node app
 ```
 
-```console
+```
 shell> cd game-server
 shell> pomelo list
 ```
@@ -42,7 +42,7 @@ connector-server-1 connector  2646 38.00  19.87        17.92       15.90
 master-server-1    master     2637 27.62  14.95        13.32       15.90     
 ```
 
-```console
+```
 shell> pomelo stop
 shell> pomelo kill
 ```
@@ -110,7 +110,7 @@ HelloWorld/
 ```
 
 
-```console
+```
 shell> cd HelloWorld
 shell> sh npm-install.sh
 ```

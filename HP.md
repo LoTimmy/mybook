@@ -8,7 +8,7 @@
 `HP 1920G Switch` → `Authentication` → `Users`
 
 
-```console
+```
 Connecting to 192.168.8.214:23...
 Connection established.
 To escape to local shell, press 'Ctrl+Alt+]'.
@@ -30,7 +30,7 @@ Password:
 
 `Jinhua1920unauthorized`
 
-```console
+```
 <HP 1920G Switch>_cmdline-mode on
 All commands can be displayed and executed. Continue? [Y/N]y
 Please input password:**********************
@@ -94,7 +94,7 @@ User view commands:
   xmodem         Establish an xmodem connection
 ```
 
-```console
+```
 <HP 1920G Switch> display current-configuration
 ```
 

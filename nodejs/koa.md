@@ -1,5 +1,5 @@
 
-```console
+```
 shell> npm install koa --save
 shell> npm install koa@2 --save
 ```

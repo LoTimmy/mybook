@@ -1,6 +1,6 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install -g json-server
 ```
 
@@ -24,7 +24,7 @@ shell> npm install -g json-server
 ```
 
 `Start JSON Server`
-```console
+```
 shell> json-server --watch db.json
 shell> json-server --watch db.json --port 3004
 

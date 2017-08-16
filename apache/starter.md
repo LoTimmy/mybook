@@ -5,11 +5,11 @@
 安裝作業系統及`Apache`相關套件。
 因本文主要介紹`Apache`如何安裝及設定，作業系統方面就不再詳述。
 
-```console
+```
 shell> apt-get install libapache2-mod-php5 php5 php5-gd php5-gd php5-mysql php5-curl php-apc php-mdb2 php-mail php-date php-pear apache2
 ```
 
-```console
+```
 shell> sudo yum update -y
 shell> sudo yum install -y httpd24 php70 mysql56-server php70-mysqlnd
 shell> sudo service httpd start
@@ -21,7 +21,7 @@ shell> sudo yum install -y phpMyAdmin
 ```
 
 
-```console
+```
 shell> cp /etc/apache2/sites-available/default /etc/apache2/sites-available/mynewsite
 shell> a2ensite mynewsite
 shell> service apache2 restart
@@ -29,7 +29,7 @@ shell> a2dissite mynewsite
 shell> service apache2 restart
 ```
 
-```console
+```
 shell> vim /etc/apache2/conf.d/security
 ```
 
@@ -38,19 +38,19 @@ ServerSignature Off
 ServerTokens Prod
 ```
 
-```console
+```
 shell> a2enmod ssl
 shell> a2ensite default-ssl
 shell> service apache2 restart
 ```
 
-```console
+```
 shell> chgrp -R webmasters /var/www
 shell> find /var/www -type d -exec chmod g=rwxs "{}" \;
 shell> find /var/www -type f -exec chmod g=rws  "{}" \;
 ```
 
-```console
+```
 shell> httpd -M
 shell> apachectl -M
 
@@ -75,7 +75,7 @@ Loaded Modules:
 ```
 
 ### Disabling SSLv3 on Apache
-```console
+```
 shell> vim /etc/apache2/mods-available/ssl.conf
 ```
 ```apacheconf
@@ -112,7 +112,7 @@ LoadModule headers_module libexec/apache2/mod_headers.so
 `SPDY` (讀音為`SPeeDY`) 為一網路內容傳輸的應用程式層協定，該協定著重於開發更多可降低延遲的功能，諸如多工串流、判斷要求的優先等級，以及HTTP標頭的壓縮等。
 `SPDY`是`Google`針對HTTP傳輸協定缺點所提出的改良版，具有加密、傳輸較快等優點。
 
-```console
+```
 shell> uname -m
 
 shell> wget https://dl-ssl.google.com/dl/linux/direct/mod-spdy-beta_current_i386.deb
@@ -136,7 +136,7 @@ SpdyEnabled on
 
 `mod_pagespeed`可以自動為`Apache`網站上的網頁及資源使用做最佳化，以加快網站的速度。
 
-```console
+```
 shell> uname -m
 
 shell> wget https://dl-ssl.google.com/dl/linux/direct/mod-pagespeed-stable_current_i386.deb

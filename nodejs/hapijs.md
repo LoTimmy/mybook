@@ -3,7 +3,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install hapi
 shell> npm install hapi --save
 ```
@@ -35,7 +35,7 @@ server.start((err) => {
 
 使用下列指令來執行應用程式：
 
-```console
+```
 shell> node server.js
 ```
 
@@ -120,7 +120,7 @@ server.register(require('inert'), (err) => {
 
 ### Using plugins
 
-```console
+```
 shell> npm install --save good
 shell> npm install --save good-console
 shell> npm install --save good-squeeze
@@ -232,7 +232,7 @@ server.register(plugin, (err) => {
 
 ---
 
-```console
+```
 shell> npm install hapi-swagger --save
 shell> npm install inert --save
 shell> npm install vision --save 
@@ -383,14 +383,14 @@ email: Joi.string().email()
 
 ### hapi-auth-jwt2 {#hapi-auth-jwt2}
 
-```console
+```
 shell> npm install hapi
 shell> npm install hapi-auth-jwt2 --save
 ```
 
 `Generating Your Secret Key`
 
-```console
+```
 shell> node -e "console.log(require('crypto').randomBytes(256).toString('base64'));"
 ```
 
@@ -521,11 +521,11 @@ server.register([
 });
 ```
 
-```console
+```
 shell> curl -H "Authorization: <TOKEN>" http://localhost:8000/restricted
 ```
 
-```console
+```
 shell> curl -X POST --header 'Content-Type: application/json' --header 'Accept: text/html' --header 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNDkxODE5OTgzfQ.9NOyEW5zbZslW9Whs75p38OhtREh0G6bg1ZyJcHc6jw' -d '{
   "a": 0,
   "b": 0
@@ -547,7 +547,7 @@ shell> curl -X POST --header 'Content-Type: application/json' --header 'Accept: 
 
 ### hapi-mongodb {#hapi-mongodb}
 
-```console
+```
 shell> npm install hapi-mongodb
 shell> npm install hapi-mongodb --save
 ```

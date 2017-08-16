@@ -1,5 +1,5 @@
 
-```console
+```
 shell> apt-get install php5-common libapache2-mod-php5 php5-cli
 shell> apt-get install php7.0-common libapache2-mod-php7.0 php7.0-cli
 shell> apt-get install php-common libapache2-mod-php php-cli
@@ -100,7 +100,7 @@ RewriteRule ^(.*)$ index.php/$1 [L]
 
 ---
 
-```console
+```
 shell> apt-get install php-cli git zip
 shell> curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin && \
        mv /usr/local/bin/composer.phar /usr/local/bin/composer
@@ -108,7 +108,7 @@ shell> curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/lo
 shell> composer update
 ```
 
-```console
+```
 shell> composer require codeigniter/framework
 shell> composer create-project codeigniter/framework your-project-name
 
@@ -117,7 +117,7 @@ shell> composer create-project laravel/laravel your-project-name 4.2.*
 shell> composer remove codeigniter/framework 
 ```
 
-```console
+```
 shell> composer require monolog/monolog
 shell> composer require phpmailer/phpmailer
 ```
@@ -187,7 +187,7 @@ $logger->addEmergency('My logger is now ready');
 $logger->addInfo('Adding a new user', array('username' => 'Seldaek'));
 ```
 
-```console
+```
 shell> composer require geoip/geoip
 shell> wget -N http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
 shell> gunzip GeoIP.dat.gz

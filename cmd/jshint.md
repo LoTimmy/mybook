@@ -1,7 +1,7 @@
 
 <img src="http://jshint.com/res/jshint-dark.png" width="200">
 
-```console 
+``` 
 shell> npm install -g jshint
 shell> jshint --verbose myfile.js
 ```

@@ -16,7 +16,7 @@ server.listen(8124, function() { //'listening' listener
 
 ```
 
-```console
+```
 shell> telnet localhost 8124
 ```
 

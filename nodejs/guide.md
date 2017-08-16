@@ -1,14 +1,13 @@
-
 <img src="https://i-msdn.sec.s-msft.com/dynimg/IC736472.png" width="300">
 
 ---
 
-```console
+```
 shell> node --version
 v4.1.1
 ```
 
-```console
+```
 shell> node -p process.versions
 { http_parser: '2.7.0',
   node: '6.9.1',
@@ -21,7 +20,7 @@ shell> node -p process.versions
   openssl: '1.0.2j' }
 ```
 
-```console
+```
 shell> node --v8-options 
 ```
 
@@ -30,7 +29,7 @@ shell> node --v8-options
 ---
 
 **Specifying a Node.js Version**
-``` .json
+```json
 {
   "name": "myapp",
   "description": "a really cool app",
@@ -42,14 +41,14 @@ shell> node --v8-options
 }
 ```
 
-``` .json
+```json
 "engines": {
   "node": ">= 0.12.0"
 }
 ```
 
 **Specifying an Npm Version**
-``` .json
+```json
 {
   "name": "myapp",
   "description": "a really cool app",
@@ -62,13 +61,13 @@ shell> node --v8-options
 ```
 
 ---
-``` .js
+```js
 'use strict';
 ```
 ---
 
 **布林值 (Boolean)**
-``` .js
+```js
 x = new Boolean(false);
 if (x) {
   // this code is executed
@@ -85,7 +84,7 @@ x = false;
 ---
 
 **函數 (Function)**
-``` .js
+```js
 function myFunc() {
   console.log("foo");
 }
@@ -102,14 +101,14 @@ console.log(mynumber);
 ---
 
 **物件 (Object)**
-``` .js
+```js
 var myObj = new Object();
 myObj.nickname = 'Jack';
 myObj.registration_date = new Date(1995, 11, 25);
 myObj.privileged_user = true; 
 ```
 
-``` .js
+```js
 var myObj = new Object();
 myObj.name = "Fred";
 myObj.count = 42;
@@ -120,7 +119,7 @@ delete myObj["count"];
 console.log(myObj);  // → {}
 ```
 
-``` .js
+```js
 var myObj = new Object();
 console.log(myObj);  // → {}
 
@@ -135,7 +134,7 @@ console.log(myObj.toString());  // → "Fred"
 ---
 
 陣列 (Array)
-``` .js
+```js
 // Create an array.
 var myArray = new Array();
 
@@ -153,7 +152,7 @@ for (var i in myArray) {
 });
 ```
 
-``` .js
+```js
 // Create an array.
 var fruits = ["Apple", "Banana"];
 console.log(fruits.length); // → 2
@@ -192,10 +191,9 @@ console.log(fruits); // → [ 'Pear', 'Peach' ]
 
 var cloned = fruits.slice();
 console.log(removed); // → [ 'Pear', 'Peach' ]
-
 ```
 
-``` .js
+```js
 var alpha = ['a', 'b', 'c'],
     numeric = [1, 2, 3];
 
@@ -217,11 +215,10 @@ var alphaNumeric = alpha.concat(1, [2, 3]);
 
 console.log(alphaNumeric); 
 // Result: ['a', 'b', 'c', 1, 2, 3]
-
 ```
 
 
-``` .js
+```js
 // Create an array.
 var ar = new Array (10, 11, 12, 13, 14);
 
@@ -230,7 +227,7 @@ delete ar[1];
 console.log(ar); // → [ 10, , 12, 13, 14 ]
 ```
 
-``` .js
+```js
 // all following calls return true
 Array.isArray([]);
 Array.isArray([1]);
@@ -248,16 +245,16 @@ Array.isArray(new Array());
 - [isArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray)
 
 ---
+
 typeof
 parseInt
-``` .js
 
+```js
 var mytext = '123';
 console.log(typeof parseInt(mytext, 10)); // → "number"
 
 parseInt("abc");     // → "NaN"
 parseInt("12abc");   // → "12"
-
 ```
 
 #### :books: 參考網站：
@@ -268,8 +265,8 @@ parseInt("12abc");   // → "12"
 ---
 null
 undefined
-``` .js
 
+```js
 var text = null;
 console.log(text); // → null
 
@@ -290,18 +287,18 @@ test 任何布林運算式。
 expression1 如果 test 為 true，則傳回運算式。可以是逗號運算子。
 expression2 如果 test 為 false，則傳回運算式。多個運算式可藉由逗號運算式連結。
 
-``` .js
+```js
 var status = (age >= 18) ? "adult" : "minor";
 ```
 
-``` .js
+```js
 var now = new Date();
 var greeting = "Good" + ((now.getHours() > 17) ? " evening." : " day.");
 ```
 
 上述範例會在下午 6 點後建立包含 "Good evening." 的字串。 使用 if...else 陳述式的同等程式碼看起來會像這樣：
 
-``` .js
+```js
 var now = new Date();
 var greeting = "Good";
 if (now.getHours() > 17)
@@ -310,7 +307,7 @@ else
    greeting += " day.";
 ```
 
-``` .js
+```js
 if (err) console.log("Error: ", err);
 ```
 
@@ -321,7 +318,7 @@ if (err) console.log("Error: ", err);
 ---
 
 JSON
-``` .js
+```js
 var myArray = [5, 2, 16, 4, 3, 18, 20];
 var myObj = { nickname: 'Jack', "registration_date": new Date(1995, 11, 25), "privileged_user": true };
 
@@ -336,14 +333,14 @@ var myObj = JSON.parse('{name: "George", lastname: "Batalinski"}');
 ```
 
 ---
-``` .js
+```js
 var mynumber = "99";
 console.log(++mynumber); // → "100"
 console.log(mynumber -1); // → "99"
 console.log(1 -mynumber); // → "-99"
 ```
 
-``` .js
+```js
 var mynumber = "str99";
 console.log(++mynumber); // → NaN
 console.log(mynumber -1); // → NaN
@@ -352,12 +349,12 @@ console.log(1 -mynumber); // → NaN
 
 ---
 
-``` .js
+```js
 for(var i = 0; i < 10; i++) console.log(i);
 for(var i = 0, j=10; i < 10; i++,j console.log(i*j);
 ```
 
-``` .js
+```js
 j=25;
 for (i = 0; i < 10; i++, j++)
 {
@@ -365,7 +362,7 @@ for (i = 0; i < 10; i++, j++)
 }
 ```
 ---
-``` .js
+```js
 if (x = y) {
 }
 
@@ -380,7 +377,7 @@ if (x > 5) {
 ```
 
 **閉包 (Closure)**
-``` .js
+```js
 var mynumber = 99;
 
 function myFunc() {
@@ -409,7 +406,7 @@ console.log(add10(2)); // → 12
 <a name="elapsed"></a>
 **Calculating elapsed time**
 
-``` .js
+```js
 // using Date objects
 var start = Date.now();
 
@@ -420,7 +417,7 @@ var elapsed = end - start; // elapsed time in milliseconds
 ```
 
 
-``` .js
+```js
 console.time('100-elements');
 for (var i = 0; i < 100; i++) {
   ;
@@ -441,25 +438,25 @@ console.timeEnd('100-elements');
 > 函數f(x) = x * 2可匿名地表達為x -> x * 2
 > (x -> x * 2)(2)以`JavaScript`來表達則為function(x) {return x * 2;}(2)
 
-``` .js
+```js
 (function() {
 })();
 ```
 
-``` .js
+```js
 function(num) { return num * num; };
 ```
 
-``` .js
+```js
 console.log((function(num) { return num * num; })(2));
 ```
 
-``` .js
+```js
 var fn = function(num) { return num * num; };
 console.log(fn(function(num) { return num + num; } (2))); // → 16
 ```
 
-``` .js
+```js
 console.log([1, 4, 9].map(function(num) { return num * num; })); // → [ 1, 16, 81 ]
 ```
 
@@ -490,13 +487,13 @@ str
 newstr 
 ```
 ---
-``` .js
+```js
 var log = console.log.bind(console);
 log('Hello World!');
 ```
 ---
 
-``` .js
+```js
 var createPet = function(name) {
   var sex;
   
@@ -531,7 +528,7 @@ pet.getName();                  // → Oliver
 ```
 
 ---
-``` .js
+```js
 var myObj = {
   a: 37,
   f1: function(){
@@ -551,7 +548,7 @@ myObj.obj = {
 myObj.obj.f1(); // → 111
 ```
 
-``` .js
+```js
 var a = 37;
 var myObj = {
   a: 111,
@@ -566,7 +563,7 @@ var myObj = {
 myObj.f1();
 ```
 
-``` .js
+```js
 var obj1 = {
   a: 37,
   f1: function(){
@@ -582,14 +579,14 @@ obj1.f1.call(obj2); // → 111
 ```
 
 
-``` .js
+```js
 var eric = new Object();
 eric.age = 33;
 eric.sex = 'male';
 console.log(eric); // → { age: 33, sex: 'male' }
 ```
 
-``` .js
+```js
 var eric = new Object();
 eric.age = 33;
 eric.sex = 'male';
@@ -597,7 +594,7 @@ eric.getSex = function() { return eric.sex; };
 console.log(eric.getSex()); // → male
 ```
 
-``` .js
+```js
 var Person = function(name, age, sex) {
   this.name = name;
   this.age = age;
@@ -616,7 +613,7 @@ console.log(wendy); // → { name: 'wendy', age: 18, sex: 'female', getSex: [Fun
 
 ```
 
-``` .js
+```js
 var Person = function(name, age, sex) {
   this.name = name;
   this.age = age;
@@ -637,7 +634,7 @@ var eric = new Person('eric', 33, 'male');
 eric.doAction();
 ```
 
-``` .js
+```js
 'use strict';
 var util = require('util');
 
@@ -703,7 +700,7 @@ rg.greet();
 - [Introduction to Object-Oriented JavaScript](https://developer.mozilla.org/en-US/docs/Talk:JavaScript/Introduction_to_Object-Oriented_JavaScript)
 
 ---
-``` .js
+```js
 try {
   throw "myException";
 }
@@ -713,8 +710,7 @@ catch(e) {
 ```
 ---
 
-
-``` .js
+```js
 const http = require('http');
 
 const hostname = '127.0.0.1';
@@ -731,7 +727,7 @@ server.listen(port, hostname, () => {
 });
 ```
 
-``` .js
+```js
 var http = require("http");
 
 http.createServer(function(request, response) {
@@ -742,7 +738,7 @@ http.createServer(function(request, response) {
 ```
 
 ---
-``` .js
+```js
 var x = 'Mozilla';
 var empty = '';
 console.log('Mozilla is ' + x.length + ' code units long');
@@ -760,8 +756,7 @@ console.log('The empty string has a length of ' + empty.length);
 ---
 <a name="closure-compiler"></a>
 
-hello.js
-``` .js
+```js:hello.js
 // A simple function.
 function hello(longName) {
   alert('Hello, ' + longName);
@@ -769,14 +764,13 @@ function hello(longName) {
 hello('New User');
 ```
 
-```console
+```
 shell> wget -q https://dl.google.com/closure-compiler/compiler-latest.zip
 shell> unzip compiler-latest.zip
 shell> java -jar compiler.jar --js hello.js --js_output_file hello-compiled.js
 ```
 
-hello-compiled.js
-``` .js
+```js:hello-compiled.js
 function hello(a){alert("Hello, "+a)}hello("New User");
 ```
 
@@ -785,7 +779,7 @@ function hello(a){alert("Hello, "+a)}hello("New User");
 
 ---
 
-``` .js
+```js
 var crypto = require('crypto');
 var hashes = crypto.getHashes();
 console.log(hashes);
@@ -793,7 +787,7 @@ var ciphers = crypto.getCiphers();
 console.log(ciphers);
 ```
 
-``` .js
+```js
 var crypto = require('crypto');
 
 // Encrypt using AES
@@ -824,13 +818,13 @@ console.log(str);
 
 ---
 
-``` .js
+```js
   if (err) throw err;
 ```
 
 ---
 
-``` .js
+```js
 function main() {
   return 'Hello, World!';
 }
@@ -842,7 +836,7 @@ main();
 
 #### `Iterator` `迭代器`
 
-``` .js
+```js
 function makeIterator(array){
     var nextIndex = 0;
     
@@ -866,7 +860,7 @@ console.log(it.next().done);  // true
 
 ---
 
-```.js
+```
 setInterval(function() {
   doSomething();
 }, 1800000 * Math.random() + 1200000); // between 20 and 50 min
@@ -874,7 +868,7 @@ setInterval(function() {
 
 ---
 
-```.js
+```js
 function doSomething() {
   console.log("Hello World!");
 }
@@ -882,7 +876,7 @@ function doSomething() {
 doSomething();
 ```
 
-```.js
+```js
 var doSomething = () => {
   console.log("Hello World!");
 };
@@ -890,13 +884,13 @@ var doSomething = () => {
 doSomething();
 ```
 
-```.js
+```js
 var doSomething = () => console.log("Hello World!");
 
 doSomething();
 ```
 
-```.js
+```js
 var doSomething = function() {
   return "Hello World!";
 }
@@ -905,7 +899,7 @@ var doSomething = () => "Hello World!";
 console.log(doSomething());
 ```
 
-```.js
+```js
 var func = function(x, y) {
   return x + y;
 }

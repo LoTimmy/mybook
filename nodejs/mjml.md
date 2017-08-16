@@ -1,19 +1,19 @@
 ![](https://mjml.io/assets/img/logo-small.png)
 
 
-```console
+```
 shell> npm install mjml
 shell> npm i -g mjml
 shell> ./node_modules/.bin/mjml index.mjml
 shell> mjml input.mjml -o my-email.html
 ```
-```console
+```
 shell> mjml -r index.mjml
 shell> mjml -r index.mjml -o index.html
 shell> mjml --watch index.mjml index.html
 ```
 
-```mjml
+```
 <mjml>
   <mj-body>
     <mj-container>
@@ -34,7 +34,7 @@ shell> mjml --watch index.mjml index.html
 ```
 
 
-```mjml
+```
 <mjml>
   <mj-body>
     <mj-container>
@@ -48,7 +48,7 @@ shell> mjml --watch index.mjml index.html
 </mjml>
 ```
 
-```mjml
+```
 <mjml>
   <mj-body>
     <mj-container>
@@ -277,7 +277,6 @@ const htmlOutput = mjml2html(`
 `)
 console.log(htmlOutput)
 ```
-
 
 #### :books: 參考網站：
 - [Documentation](https://mjml.io/documentation)

@@ -1,5 +1,5 @@
 
-```console
+```
 shell> sudo apt-get update
 shell> sudo apt-get install speedtest-cli
 shell> brew install speedtest_cli

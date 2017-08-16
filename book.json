@@ -1,6 +1,6 @@
 {
   "plugins": [
-    "-lunr", "-search", "new-flowchart", "search-pro", "advanced-emoji", "jsfiddle", "youtube", "emphasize", "splitter", "tbfed-pagefooter", "toggle-chapters"
+    "prism", "anchor-navigation-ex", "codeblock-filename", "search-plus", "-sharing", "-highlight", "-lunr", "-search", "-new-flowchart", "advanced-emoji", "jsfiddle", "youtube", "emphasize", "splitter", "tbfed-pagefooter", "toggle-chapters"
   ],
   "pluginsConfig": {
     "fontsettings": {
@@ -22,3 +22,4 @@
     }
   }
 }
+

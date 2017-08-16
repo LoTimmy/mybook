@@ -1,28 +1,28 @@
 
-```console
+```
 shell> choco install pstools -y
 ```
 
-```console
+```
 shell> cmdkey /add:targetname /user:username /pass:password
 shell> psexec \\targetname cmd
 shell> psexec -s -d -i 1 \\targetname "c:\program files\internet explorer\iexplore.exe"
 shell> cmdkey /delete:targetname
 ```
 
-```console
+```
 shell> cmdkey /add:10.27.55.201 /user:Administrator /pass:password
 shell> psexec \\10.27.55.201 cmd
 shell> cmdkey /delete:10.27.55.201
 ```
 
-```console
+```
 shell> cmdkey /list
 shell> cmdkey /add:server01 /user:mikedan /pass:Kleo
 shell> cmdkey cmdkey /delete:Server01
 ```
 
-```console
+```
 shell> psping -n 10 -w 3 targetname
 
 pskill iexplore.exe

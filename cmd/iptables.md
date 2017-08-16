@@ -12,12 +12,12 @@
 
 ---
 
-```console
+```
 shell> iptables
 ```
 
 `Circumvent MTU issues`
-```console
+```
 shell> iptables -t mangle -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 ```
 
@@ -45,11 +45,11 @@ iptables -A INPUT -i 10.10.10.200 -m state --state NEW -m multiport -p tcp -s 10
 - https://www.centos.org/docs/5/html/5.1/Cluster_Administration/s2-iptables-examples-CA.html
 
 `Masquerade everything out ppp0.`
-```console
+```
 shell> iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE
 ```
 
-```console
+```
 shell> iptables -L
 shell> iptables -L -v
 shell> iptables -nvL --line-numbers
@@ -57,26 +57,26 @@ shell> iptables -nvL --line-numbers
 shell> iptables -nvL INPUT --line-numbers  
 ```
 
-```console
+```
 shell> iptables -F
 ```
 
-```console
+```
 shell> iptables -Z
 ```
 
-```console
+```
 shell> iptables-save
 shell> iptables-restore
 ```
 
-```console
+```
 shell> iptables -P INPUT DROP
 shell> iptables -P FORWARD DROP
 shell> iptables -P OUTPUT ACCEPT
 ```
 
-```console
+```
 shell> iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 shell> iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT    
 ```
@@ -90,7 +90,7 @@ shell> iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 
 `iprange`
 
-```console
+```
 shell> iptables -A INPUT -m iprange --src-range 10.50.10.20-10.50.10.80 -j ACCEPT
 ```
 
@@ -99,7 +99,7 @@ shell> iptables -A INPUT -m iprange --src-range 10.50.10.20-10.50.10.80 -j ACCEP
 
 ---
 
-```console
+```
 shell> iptables -A INPUT -p tcp --dport ssh -j ACCEPT
 shell> iptables -A INPUT -p tcp --dport 80 -j DROP
 ```
@@ -291,7 +291,7 @@ iptables -A INPUT -j REJECT --reject-with icmp-host-prohibited
 iptables -A FORWARD -j REJECT --reject-with icmp-host-prohibited
 ```
 
-```console
+```
 shell> modprobe nf_conntrack_ftp
 shell> modprobe nf_conntrack_pptp
 shell> modprobe nf_nat_pptp
@@ -304,7 +304,7 @@ nf_conntrack_pptp
 nf_nat_pptp
 ```
 
-```console
+```
 shell> ip6tables -L
 shell> ip6tables -L -v
 shell> ip6tables -nvL --line-numbers
@@ -325,17 +325,17 @@ shell> ip6tables -A INPUT -i eth0 -p tcp -s 3ffe:ffff:100::1/128 --dport 22 -j A
 - https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Security_Guide/s1-firewall-ipt-fwd.html
 
 ---
-```console
+```
 shell> sudo apt-get install netfilter-persistent
 ```
 
-```console
+```
 shell> service netfilter-persistent save
 ```
 
 ---
 
-```console
+```
 shell> sudo apt-get install ipset
 shell> ipset help
 shell> ipset list
@@ -352,7 +352,7 @@ Members:
 192.168.0.0/24
 ```
 
-```console
+```
 shell> ipset create test hash:net family inet hashsize 131072 maxelem 236294
 shell> ipset create test hash:net
 shell> ipset add test 192.168.0.0/24
@@ -365,19 +365,19 @@ shell> iptables -A INPUT -m set --match-set foo src -j DROP
 shell> iptables -A INPUT -m set --match-set foo src -p tcp --dport 80 -j DROP
 ```
 
-```console
+```
 shell> ipset create test hash:ip timeout 300
 shell> ipset add test 192.168.0.1 timeout 60
 shell> ipset -exist add test 192.168.0.1 timeout 600
 ```
 
-```console
+```
 shell> ipset create foo hash:mac
 shell> ipset add foo 01:02:03:04:05:06
 shell> ipset test foo 01:02:03:04:05:06
 ```
 
-```console
+```
 shell> ipset create foo hash:ip,port
 shell> ipset add foo 192.168.1.0/24,80-82
 shell> ipset add foo 192.168.1.1,udp:53
@@ -385,19 +385,19 @@ shell> ipset add foo 192.168.1.1,vrrp:0
 shell> ipset test foo 192.168.1.1,80
 ```
 
-```console
+```
 shell> sudo ipset save foo -f /etc/ipset.conf 
 shell> sudo ipset save -f /etc/ipset.conf
 
 shell> sudo ipset restore -f /etc/ipset.conf
 ```
 
-```console
+```
 shell> ipset flush foo 
 shell> ipset flush
 ```
 
-```console
+```
 shell> ipset destroy foo 
 shell> ipset destroy
 ```
@@ -408,7 +408,7 @@ ipset v6.29: Set cannot be created: set with the same name already exists
 ipset v6.20.1: Set cannot be destroyed: it is in use by a kernel component
 ```
 
-```console
+```
 shell> apt install python-pip
 shell> pip install --upgrade pip
 shell> pip install iblocklist2ipset
@@ -435,7 +435,7 @@ http://list.iblocklist.com/?list=ydxerpxkpcfqjaybcssw&fileformat=p2p&archiveform
 ---
 
 **mturoute**
-```console
+```
 shell> mturoute host
 ```
 
@@ -444,12 +444,12 @@ shell> mturoute host
 - [mturoute.exe](http://www.elifulkerson.com/projects/downloads/mturoute_2_5/mturoute.exe)
 
 ---
-```console
+```
 shell> apt install iputils-tracepath
 shell> tracepath host
 ```
 
-```console
+```
 shell> iptables-save > /opt/bitnami/iptables-rules
 shell> crontab -e
 ```
@@ -487,7 +487,7 @@ shell> crontab -e
 
 `conntrack`
 
-```consolev
+```
 shell> apt install conntrack
 shell> conntrack -L
 shell> conntrack -L -o extended

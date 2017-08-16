@@ -416,7 +416,7 @@ $.post("ajax/test.html", function(data) {
 ```
 
 **Install with Bower**
-```console
+```
 shell> bower install jquery.lazyload
 ```
 

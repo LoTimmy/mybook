@@ -10,7 +10,7 @@
 
 ![](https://www.ibm.com/developerworks/cn/cloud/library/1404_luojun_sdnmininet/image003.jpg)
 
-```console
+```
 shell> sudo apt-get install mininet
 shell> sudo mn --test pingall
 shell> mn
@@ -52,7 +52,7 @@ s1-eth2   Link encap:Ethernet  HWaddr a6:53:8c:42:db:bc
           RX bytes:578 (578.0 B)  TX bytes:1066 (1.0 KB)
 ```
 
-```console
+```
 mininet> help
 Documented commands (type help <topic>):
 ========================================
@@ -79,7 +79,7 @@ However, starting up an xterm/gterm is generally better:
   mininet> xterm h2
 ```
 
-```console
+```
 mininet> h1 ifconfig
 h1-eth0   Link encap:Ethernet  HWaddr a6:fe:7e:9a:56:3b
           inet addr:10.0.0.1  Bcast:10.255.255.255  Mask:255.0.0.0
@@ -100,7 +100,7 @@ lo        Link encap:Local Loopback
           RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 ```
 
-```console
+```
 mininet> h1 ping h2
 PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
 64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.335 ms
@@ -109,33 +109,33 @@ PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
 64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=0.054 ms
 ```
 
-```console
+```
 mininet> nodes
 available nodes are:
 h1 h2 s1
 ```
 
-```console
+```
 mininet> net
 h1 h1-eth0:s1-eth1
 h2 h2-eth0:s1-eth2
 s1 lo:  s1-eth1:h1-eth0 s1-eth2:h2-eth0
 ```
 
-```console
+```
 mininet> dump
 <Host h1: h1-eth0:10.0.0.1 pid=2993>
 <Host h2: h2-eth0:10.0.0.2 pid=2996>
 <OVSBridge s1: lo:127.0.0.1,s1-eth1:None,s1-eth2:None pid=3002>
 ```
 
-```console
+```
 mininet> iperf
 *** Iperf: testing TCP bandwidth between h1 and h2
 *** Results: ['65.6 Gbits/sec', '65.6 Gbits/sec']
 ```
 
-```console
+```
 shell> sudo apt-get install python-pip
 shell> pip install --upgrade pip
 shell> pip install ryu

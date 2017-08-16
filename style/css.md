@@ -881,7 +881,7 @@ div {
 - https://cdnjs.com/libraries/normalize
 - https://necolas.github.io/normalize.css/latest/normalize.css
 
-```console
+```
 shell> npm install --save normalize.css
 shell> bower install --save normalize-css
 ```

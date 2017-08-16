@@ -7,7 +7,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install tor
 shell> apt-get install tor    
 ```
@@ -17,7 +17,7 @@ deb http://deb.torproject.org/torproject.org jessie main
 deb-src http://deb.torproject.org/torproject.org jessie main
 ```
 
-```console
+```
 shell> gpg --keyserver keys.gnupg.net --recv A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89
 shell> gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
 

@@ -379,11 +379,11 @@ bcp [database_name.] schema.{table_name | view_name | "query" {in data_file | ou
    /?
 ```
 
-```console
+```
 shell> bcp database_name.dbo.table_name out data_file.bcp -q -c -T -r \n -t \,
 ```
 
-```console
+```
 shell> bcp "SELECT * FROM database_name.dbo.table_name WHERE " queryout data_file.bcp -q -c -T -r \n -t \,
 ```
 
@@ -420,7 +420,7 @@ LOAD DATA INFILE 'data_file.bcp' INTO TABLE tbl_name FIELDS TERMINATED BY ',' LI
 
 ---
 
-```console
+```
 shell> curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 shell> curl https://packages.microsoft.com/config/ubuntu/16.04/mssql-server.list | sudo tee /etc/apt/sources.list.d/mssql-server.list
 shell> sudo apt-get update
@@ -430,7 +430,7 @@ shell> systemctl status mssql-server
 ```
 
 `Install tools on Ubuntu`
-```console
+```
 shell> curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 shell> curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
 shell> sudo apt-get update 

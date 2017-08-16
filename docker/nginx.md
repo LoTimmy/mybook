@@ -1,6 +1,6 @@
 ![](https://hub.docker.com/public/images/official/nginx.png)
 
-```console
+```
 shell> mkdir -p /docker/nginx/content
 shell> mkdir -p /docker/nginx/custom
 shell> docker pull nginx
@@ -41,7 +41,7 @@ VOLUME ["/usr/share/nginx/html"]
 
 `/var/lib/docker/volumes`
 
-```console
+```
 shell> docker build -t docker-nginx .
 shell> docker run --name web -P -d docker-nginx
 ```

@@ -2,7 +2,7 @@
 
 ![](http://manpages.ubuntu.com/assets/light/images/footer_logo.png)
 
-```console
+```
 shell> lsb_release -a
 ```
 ```
@@ -40,7 +40,7 @@ Description:	Ubuntu 16.04.1 LTS
 Release:	16.04
 Codename:	xenial
 ```
-```console
+```
 shell> lsb_release -si
 ```
 ```
@@ -68,17 +68,17 @@ Prompt=never
 - https://help.ubuntu.com/lts/serverguide/installing-upgrading.html
 
 
-```console
+```
 shell> sudo sed -i 's/Prompt=.*/Prompt=never/' /etc/update-manager/release-upgrades
 shell> sudo perl -pi -e 's/Prompt=.*/Prompt=never/' /etc/update-manager/release-upgrades
 shell> sudo rm /var/lib/update-notifier/release-upgrade-available
 ```
 
-```console
+```
 shell> sudo sed -i '/^/s/^/#/" /etc/apt/sources.list
 ```
 
-```console
+```
 shell> apt-get --version
 shell> apt-get -o Acquire::ForceIPv4=true update  
 ```
@@ -109,7 +109,7 @@ Acquire::ftp::Timeout "10";
 ```
 ---
 
-```console
+```
 shell> /etc/network/interfaces
 ```
 ```
@@ -133,7 +133,7 @@ iface eth0 inet static
 
 `/etc/ethers`
 
-```console
+```
 shell> vim /etc/ethers
 ```
 ```
@@ -150,7 +150,7 @@ f0:b4:29:73:2d:05 192.168.42.56
 
 `vlan`
 
-```console
+```
 shell> modprobe 8021q
 shell> apt-get install vlan
 shell> vconfig add eth0 222 # 222 vlan-id
@@ -160,7 +160,7 @@ shell> ifconfig eth0.222 192.168.2.3 netmask 255.255.255.0
 shell> ip addr add 192.168.2.3/24 dev eth0.222
 ```
 
-```console
+```
 shell> /etc/modules
 ```
 ```
@@ -175,13 +175,13 @@ iface eth0.222 inet static
             netmask 255.255.255.0
 ```
 
-```console
+```
 shell> vconfig rem eth0.222
 ```
 
 ---
 
-```console
+```
 shell> vim /etc/sysctl.conf
 ```
 
@@ -190,15 +190,15 @@ shell> vim /etc/sysctl.conf
 net.ipv6.conf.all.disable_ipv6 = 1
 ```
 
-```console
+```
 shell> sysctl --system
 ```
 
-```console
+```
 shell> reboot
 ```
 
-```console 
+``` 
 shell> vim /etc/default/grub
 ```
 
@@ -210,18 +210,18 @@ GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
 [...]
 ```
 
-```console
+```
 shell> update-grub
 shell> reboot
 ```
 
-```console
+```
 shell> grub-mkconfig -o /boot/grub/grub.cfg 
 ```
 
 ---
 
-```console
+```
 shell> cat /proc/sys/fs/file-nr
 shell> cat /proc/sys/fs/file-max
 
@@ -232,7 +232,7 @@ shell> cat /proc/sys/fs/inode-nr
 
 `unattended-upgrades`
 
-```console
+```
 shell> apt-get install unattended-upgrades
 shell> dpkg-reconfigure unattended-upgrades
 shell> dpkg-reconfigure -plow unattended-upgrades  
@@ -254,7 +254,7 @@ APT::Periodic::Unattended-Upgrade "1";
 
 ---
 
-```console
+```
 shell> apt-get install lvm2
 shell> pvscan
 ```
@@ -364,16 +364,16 @@ linux ks=floppy
 
 ---
 
-```console
+```
 shell> apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
 ```
 
-```console
+```
 shell> uname -m
 x86_64
 ```
 
-```console
+```
 shell> debconf-set-selections
 shell> debconf-get-selections
 ```
@@ -382,7 +382,7 @@ shell> debconf-get-selections
 
 `free - Display amount of free and used memory in the system`
 
-```console
+```
 shell> free -b
 shell> free -m
 shell> free -g
@@ -420,7 +420,7 @@ free    + buffers + cached
 ```
 
 
-```console
+```
 shell> cat /proc/meminfo
 
 MemTotal:         500308 kB
@@ -473,20 +473,20 @@ DirectMap1G:           0 kB
 
 ---
 
-```console
+```
 shell> tracepath amazon.com
 ```
 
 ---
 
-```console
+```
 shell> sudo sed -i -e 's/us.archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 shell> sudo sed -i -e 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 
 shell> sudo sed -i -e 's/us.archive.ubuntu.com\|security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
 ```
 
-```console
+```
 shell> do-release-upgrade
 ```
 
@@ -497,7 +497,7 @@ shell> do-release-upgrade
 
 ---
 
-```console
+```
 shell> dhclient -r eth0
 shell> dhclient eth0
 ```
@@ -506,7 +506,7 @@ shell> dhclient eth0
 
 `hostnamectl - Control the system hostname`
 
-```console
+```
 shell> hostnamectl status
 shell> hostnamectl set-hostname name
 ```
@@ -522,7 +522,7 @@ Description:	Ubuntu 14.04.5 LTS
 
 ---
 
-```console
+```
 shell> ls --quoting-style=shell
 ```
 

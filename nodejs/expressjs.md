@@ -2,7 +2,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> mkdir myapp
 shell> cd myapp
 
@@ -13,7 +13,7 @@ shell> npm install express --save
 shell> npm install express
 ```
 
-```console
+```
 shell> npm install body-parser --save
 shell> npm install ​compression --save
 shell> npm install morgan --save
@@ -58,7 +58,7 @@ console.log('Running on http://localhost:' + PORT);
 
 使用下列指令來執行應用程式：
 
-```console
+```
 shell> node server.js
 ```
 
@@ -69,7 +69,7 @@ shell> node server.js
 
 ### Express application generator {#express-application-generator}
 
-```console 
+``` 
 shell> npm install -g express-generator
 
 shell> express
@@ -82,7 +82,7 @@ shell> npm install
 
 使用下列指令來執行應用程式：
 
-```console 
+``` 
 shell> npm start
 ```
 應用程式會啟動伺服器，並在埠 3000 接聽連線。
@@ -454,13 +454,13 @@ module.exports = function (req, res) {
 
 ---
 
-```console
+```
 shell> forever start app.js
 ```
 
 ---
 
-```console
+```
 shell> curl -w '\n' -d '{"myKey":"myValue"}' -H "Content-Type: application/json" http://127.0.0.1:3000/
 shell> curl -w '\n' -H "Origin: http://example.com" --verbose http://127.0.0.1:3000/
 ```
@@ -474,7 +474,7 @@ const cors = require('cors');
 app.use(cors());
 ```
 
-```console
+```
 shell> curl -I http://127.0.0.1/
 ```
 
@@ -595,7 +595,7 @@ var server = app.listen(1337, function () {
 
 ---
 
-```console
+```
 shell> npm install apidoc -g
 shell> apidoc -i myapp/ -o apidoc/
 ```
@@ -620,7 +620,7 @@ shell> apidoc -i myapp/ -o apidoc/
 
 ---
 
-```console
+```
 shell> npm install express-generator -g
 shell> express todo
 shell> npm install async --save
@@ -663,7 +663,7 @@ shell> npm install async --save
 
 **reverse-proxy**
 
-```console
+```
 shell> npm install http-proxy --save
 ```
 
@@ -693,7 +693,7 @@ var server = app.listen(app.get('port'), function () {
 <a name="ssl-certificate-self"></a>
 **Creating a Self-Signed SSL Certificate**
 
-```console
+```
 shell> which openssl
 /usr/bin/openssl
 
@@ -704,7 +704,7 @@ shell> openssl x509 -req -in server.csr -signkey server.key -out server.crt
 shell> curl -kvI https://www.example.com
 ```
 
-```console
+```
 shell> openssl genrsa -out server.key 2048
 shell> openssl req -new -x509 -key server.key -out server.crt -days 7305 -subj /CN=www.example.com
 shell> openssl x509 -in server.crt -text -noout
@@ -883,12 +883,12 @@ encrypted.google.com
 
 ---
 
-```console
+```
 shell> openssl genrsa -out server.key 2048
 shell> openssl req -new -x509 -key server.key -out server.crt -days 7305 -subj "/CN=172.16.7.103"
 ```
 
-```console
+```
 shell> openssl req -new -x509 -nodes -keyout server.key -out server.crt -days 7305 -subj "/CN=www.example.com"
 shell> openssl s_server -www -cipher AES256-SHA -key server.key -cert server.crt    
 ```
@@ -919,7 +919,7 @@ https.createServer(options, app).listen(443, function(){
 ```
 
 
-```console
+```
 shell> curl 'https://172.16.7.103/' --verbose
 ```
 
@@ -951,12 +951,12 @@ If you'd like to turn off curl's verification of the certificate, use
  the -k (or --insecure) option.
 ```
 
-```console
+```
 shell> openssl s_client -showcerts -connect 172.16.7.103:443 < /dev/null > server.crt
 shell> curl --cacert server.crt https://172.16.7.103/ --verbose
 ```
 
-```console
+```
 shell> curl 'https://172.16.7.103/' --insecure
 shell> curl 'https://172.16.7.103/' -k
 shell> wget 'https://172.16.7.103' --no-check-certificate

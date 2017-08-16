@@ -3,7 +3,7 @@
 `ntpdate-debian - set the date and time via NTP`
 
 
-```console
+```
 shell> apt-get install ntpdate
 shell> ntpdate -u time.apple.com
 shell> ntpdate -u time.asia.apple.com
@@ -28,13 +28,13 @@ NTPSERVERS="time.asia.apple.com ntp.ubuntu.com"
 NTPOPTIONS=""
 ```
 
-```console
+```
 shell> ntpdate-debian
 ```
 
 ---
 
-```console
+```
 shell> sudo apt install ntp
 shell> sudo systemctl reload ntp.service
 ```
@@ -91,7 +91,7 @@ server 2.amazon.pool.ntp.org iburst
 server 3.amazon.pool.ntp.org iburst
 ```
 
-```console
+```
 shell> sudo service ntp reload
 shell> ntpq -pn
 shell> ntpstat

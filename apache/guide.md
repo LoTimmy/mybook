@@ -1,6 +1,6 @@
 ### 在 `CentOS-5` 上建置 `Apache`
 
-```console
+```
 shell> yum install httpd
 
 shell> chkconfig --list
@@ -9,7 +9,7 @@ shell> chkconfig httpd on
 shell> service httpd start
 ```
 
-```console
+```
 shell> sestatus
 ```
 ```
@@ -20,7 +20,7 @@ Mode from config file:          enforcing
 Policy version:                 24
 Policy from config file:        targeted
 ```
-```console
+```
 shell> vim /etc/selinux/config
 ```
 ```
@@ -36,7 +36,7 @@ SELINUX=disabled
 SELINUXTYPE=targeted
 ```
 
-```console
+```
 shell> getenforce
 Disabled
 ```
@@ -54,7 +54,7 @@ libapache2-modsecurity - Dummy transitional package
 modsecurity-crs - modsecurity's Core Rule Set
 ```
 
-```console
+```
 shell> apt-get install libapache2-mod-security2
 shell> dpkg -L libapache2-mod-security2
 shell> /etc/modsecurity/modsecurity.conf
@@ -66,7 +66,7 @@ shell> /etc/modsecurity/modsecurity.conf
 SecRequestBodyAccess On
 ```
 
-```console
+```
 shell> a2dismod security2
 shell> service apache2 restart
 ```
@@ -82,7 +82,7 @@ spring.http.multipart.max-request-size=128KB
 
 ---
 
-```console
+```
 shell> apt-get install libapache2-mod-rpaf
 shell> vim /etc/apache2/mods-available/rpaf.conf
 ```
@@ -95,7 +95,7 @@ RPAFproxy_ips 192.168.42.102
 `Apache`在全球網站伺服器的領導地位早已著毋庸議，而其內建的`Apache Bench`也是相當值得參考的效能指標。
 進行網站伺服器的效能測試，同步連線數設為10，對伺服器發出10000次request
 
-```console
+```
 http://192.168.42.104
 shell> ab -n 10000 -c 10 http://192.168.42.104/
 shell> ab -c 500 -n 20000 http://192.168.42.104/
@@ -103,7 +103,7 @@ shell> ab -c 500 -n 20000 -H "Accept-Encoding: gzip" http://192.168.42.104/
 ```
 ---
 
-```console
+```
 shell> apache2ctl -M
 
 Loaded Modules:
@@ -143,7 +143,7 @@ Syntax OK
 
 ---
 
-```console
+```
 shell> apt-get install liblwp-online-perl
 shell> HEAD http://127.0.0.1/
 shell> GET -Used http://127.0.0.1/
@@ -153,7 +153,7 @@ shell> GET -Used http://127.0.0.1/
 
 `htpasswd - Manage user files for basic authentication`
 
-```console
+```
 shell> htpasswd -c /home/doe/public_html/.htpasswd jane
 shell> htpasswd /usr/local/etc/apache/.htpasswd-users jsmith
 shell> htpasswd -db /usr/web/.htpasswd-all jones Pwd4Steve
@@ -168,7 +168,7 @@ shell> htpasswd -db /usr/web/.htpasswd-all jones Pwd4Steve
 apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.42.102 for ServerName
 ```
 
-```console
+```
 shell> vim /etc/hosts
 ```
 ```

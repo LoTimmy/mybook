@@ -1,6 +1,6 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install clamav 
 shell> apt-get install spamassassin
 shell> apt-get install mailscanner
@@ -77,11 +77,11 @@ ENABLED=1
 /^Received:/ HOLD
 ```
 
-```console
+```
 shell> postconf -e 'header_checks = regexp:/etc/postfix/header_checks'	
 ```
 
-```console
+```
 shell> vim /etc/init.d/mailscanner
 ```
 ```
@@ -89,7 +89,7 @@ start-stop-daemon --start --quiet --nicelevel $run_nice --exec $DAEMON --name $N
 start-stop-daemon --start --quiet --nicelevel $run_nice -c ${user} --exec $DAEMON --name $NAME -- $DAEMON_ARGS
 ```
 
-```console
+```
 shell> service spamassassin restart
 shell> service mailscanner restart
 ```

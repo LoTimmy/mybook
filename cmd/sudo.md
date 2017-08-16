@@ -1,6 +1,6 @@
 `sudo, sudoedit — execute a command as another user`
 
-```console
+```
 shell> visudo
 shell> vi /etc/sudoers
 ```
@@ -11,7 +11,7 @@ shell> vi /etc/sudoers
 # Uncomment to allow members of group sudo to not need a password
 %sudo ALL=NOPASSWD: ALL
 ```
-```console
+```
 shell> groupadd sudo
 shell> usermod -G sudo <username>
 shell> sudo su -

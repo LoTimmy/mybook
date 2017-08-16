@@ -1,6 +1,6 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install --save fs-extra
 ```
 

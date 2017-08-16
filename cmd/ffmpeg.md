@@ -3,24 +3,24 @@
 `ffmpeg - Tools for transcoding, streaming and playing of multimedia files`
 
 ### 安裝 {#installing}
-```console
+```
 shell> sudo apt-get install ffmpeg
 ```
 
 
-```console
+```
 shell> ffmpeg -i input.mpg output.mp4
 ```
 
 ---
 
 
-```console
+```
 shell> ffmpeg -i input.mp4 -target ntsc-dvd output.mp4
 ```
 ---
 
-```console
+```
 shell> ffmpeg -i input.mp4 -ss 0 -t 10 output.mp4
 shell> ffmpeg -i input.mp4 -ss 00:05:00 -t 00:55:00 output.mp4
 ```
@@ -29,12 +29,12 @@ shell> ffmpeg -i input.mp4 -ss 00:05:00 -t 00:55:00 output.mp4
 `ffmpeg2theora`
 `ffmpeg`
 
-```console
+```
 shell> ffplay file.mov
 shell> ffplay rtmp://148.72.245.43:1935/mytv/live
 ```
 
-```console
+```
 shell> ffprobe -show_format -show_streams -print_format json foo.mov
 ```
 
@@ -157,7 +157,7 @@ Subtitle options:
 
 ---
 
-```console
+```
 shell> ffmpeg -i input.flac -acodec libmp3lame out.mp3
 shell> find . -name "*.flac" -exec bash -c 'ffmpeg -i "{}" -y "${0/.flac}.wav"' {} \;
 
@@ -165,14 +165,14 @@ shell> ffmpeg -i video1.webm -vf "scale=400:-1,fps=10" out.gif
 shell> ffmpeg -i input.gif -c:v libvpx -auto-alt-ref 0 out.webm     
 ```
 
-```console
+```
 shell> ffmpeg -i input.mp4 -ss 00:00:00 -vframes 1 img.png
 shell> ffmpeg -i input.mp4 -vf fps=1/60 img-%03d.png
 ```
 
 ---
 
-```console
+```
 shell> ffmpeg -codecs
 shell> ffmpeg -protocols 
 shell> ffmpeg -i input.mp4 output.avi
@@ -199,13 +199,13 @@ shell> ffmpeg -f avfoundation -framerate 30 -i "1:0" \
 > -f flv rtmp://148.72.245.43:1935/mytv/live   
 ```
 
-```console
+```
 shell> ffmpeg -i input.mp4 -filter_complex subtitles=sub.srt output.mp4
 shell> ffmpeg -i input.mp4 -filter_complex subtitles=filename=sub.srt output.mp4
 shell> ffmpeg -i input.mp4 -filter_complex subtitles=sub.srt:force_style='FontName=DejaVu Serif,PrimaryColour=&HAA00FF00' output.mp4
 ```
 
-```console
+```
 shell> ffmpeg -i input.mp4 -vf scale=640:360 output.mp4
 
 shell> ffmpeg -i input.mp4 -i img.png -filter_complex overlay output.mp4  

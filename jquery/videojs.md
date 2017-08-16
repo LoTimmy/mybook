@@ -40,7 +40,7 @@
 </body>
 ```
 
-```console
+```
 shell> npm install --save video.js
 shell> npm install --save-dev video.js
 shell> bower install video.js

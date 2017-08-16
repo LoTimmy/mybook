@@ -1,6 +1,6 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install golang
 ```
 
@@ -14,7 +14,7 @@ func main() {
   fmt.Printf("hello, world\n")
 }
 ```
-```console
+```
 shell> go run hello.go
 ```
 

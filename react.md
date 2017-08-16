@@ -82,7 +82,7 @@ React.render(<div>
 
 ---
 
-```console
+```
 shell> bower install react --allow-root
 ```
 
@@ -142,7 +142,7 @@ shell> bower install react --allow-root
 </html>
 ```
 
-```console
+```
 shell> npm install --global babel
 shell> babel script.js --out-file script-compiled.js
 shell> babel script.js --watch --out-file script-compiled.js
@@ -206,7 +206,7 @@ ReactDOM.render(
 );
 ```
 
-```console
+```
 shell> npm install --save react react-dom
 shell> npm install -g browserify
 shell> npm install babelify
@@ -240,7 +240,7 @@ var HelloWorld = require('./helloworld.js');
 ReactDOM.render( <HelloWorld />, document.getElementById('example'));
 ```
 
-```console
+```
 shell> browserify -t reactify main.js -o build/helloworld.js
 ```
 
@@ -279,7 +279,7 @@ var HelloMessage = React.createClass({
 ReactDOM.render(<HelloMessage name="John" />, mountNode);
 ```
 
-```console
+```
 shell> babel test.jsx
 ```
 

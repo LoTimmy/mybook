@@ -6,7 +6,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install subversion
 ```
 
@@ -16,13 +16,13 @@ apache2 - Apache HTTP Server
 libapache2-svn - Apache Subversion server modules for Apache httpd (dummy package)
 apache2-utils - Apache HTTP Server (utility programs for web servers)
 ```
-```console
+```
 shell> sudo apt-get install subversion apache2 libapache2-svn apache2-utils
 shell> a2enmod dav
 shell> a2enmod dav_svn 
 ```
 
-```console
+```
 shell> sudo mkdir -p /svn/repos/
 shell> sudo svnadmin create /svn/repos/hello
 shell> sudo chown -R www-data:www-data /svn/repos/hello
@@ -46,7 +46,7 @@ Alias /svn/ "/svn/repos/"
 </Location>
 ```
 
-```console
+```
 shell> a2ensite svn
 shell> service apache2 reload
 shell> sudo htpasswd -cm /etc/apache2/dav_svn.passwd svnuser
@@ -116,12 +116,12 @@ Subversion is a tool for version control.
 For additional information, see http://subversion.apache.org/
 ```
 
-```console 
+``` 
 shell> svn checkout svn+ssh://svnuser@100.101.102.103/repos
 shell> svn co svn+ssh://svnuser@100.101.102.103/repos
 ```
 
-```console 
+``` 
 shell> svn checkout http://100.101.102.103/svn
 shell> svn co http://100.101.102.103/svn
 shell> svn co http://100.101.102.103/svn --username svnuser
@@ -133,7 +133,7 @@ shell> svn list http://100.101.102.103/svn
 shell> svn ls http://100.101.102.103/svn
 ```
 
-```console
+```
 shell> svn info
 shell> svn info http://100.101.102.103/svn
 shell> svn info --show-item revision http://100.101.102.103/svn --username svnuser
@@ -175,21 +175,21 @@ Available subcommands:
    verify
 ```
 
-```console
+```
 shell> svnadmin dump /var/svn/repos > full.dump
 * Dumped revision 0.
 * Dumped revision 1.
 * Dumped revision 2.
 …
 ```
-```console
+```
 shell> svnadmin load /var/svn/repos < full.dump
 ```
 ---
 
 `Incremental Backups`
 
-```console
+```
 shell> svnadmin dump /var/svn/repos -r 0:50 > base.dump
 * Dumped revision 0.
 * Dumped revision 1.
@@ -205,7 +205,7 @@ shell> svnadmin dump /var/svn/repos -r 0:50 > base.dump
 …
 ```
 
-```console
+```
 shell> svnadmin dump /var/svn/repos -r 51:100 --incremental > inc1.dump
 * Dumped revision 51.
 * Dumped revision 52.
@@ -220,7 +220,7 @@ shell> svnadmin dump /var/svn/repos -r 51:100 --incremental > inc1.dump
 … 
 ```
 
-```console
+```
 shell> svnadmin dump /var/svn/repos -r 101:150 --incremental > inc2.dump
 * Dumped revision 101.
 * Dumped revision 102.
@@ -235,7 +235,7 @@ shell> svnadmin dump /var/svn/repos -r 101:150 --incremental > inc2.dump
 … 
 ```
 
-```console
+```
 shell> svnadmin load /var/svn/repos < base.dump
 shell> svnadmin load /var/svn/repos < inc1.dump
 shell> svnadmin load /var/svn/repos < inc2.dump
@@ -247,7 +247,7 @@ shell> svnadmin load /var/svn/repos < inc2.dump
 `--incremental`
 
 
-```console
+```
 shell> svnadmin hotcopy REPOS_PATH NEW_REPOS_PATH 
 * Copied revision 0.
 * Copied revision 1.

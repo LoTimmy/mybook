@@ -3,7 +3,7 @@
 `strongswan - IPsec VPN solution metapackage`
 `xl2tpd - layer 2 tunneling protocol implementation`
 
-```console
+```
 shell> lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
@@ -12,11 +12,11 @@ Release:	16.04
 Codename:	xenial
 ```
 
-```console
+```
 shell> sudo apt-get install strongswan xl2tpd
 ```
 
-```console
+```
 shell> ipsec version
 Linux strongSwan U5.3.5/K4.4.0-64-generic
 Institute for Internet Technologies and Applications
@@ -30,7 +30,7 @@ See 'ipsec --copyright' for copyright information.
 net.ipv4.ip_forward=1
 ```
 
-```console
+```
 shell> sysctl -w net.ipv4.ip_forward=1
 ```
 
@@ -113,7 +113,7 @@ defaultroute
 zeus		*	blah *
 ```
 
-```console
+```
 shell> service strongswan start
 shell> service xl2tpd start
 shell> update-rc.d strongswan enable
@@ -126,11 +126,11 @@ shell> ipsec statusall
 shell> systemctl status xl2tpd.service
 ```
 
-```console
+```
 shell> iptables -t nat -A POSTROUTING -s 10.2.0.0/24 -o ens32 -j MASQUERADE
 ```
 
-```console
+```
 shell> iptables -A INPUT -p udp -m policy --dir in --pol ipsec -m udp --dport 1701 -j ACCEPT
 ```
 
@@ -183,7 +183,7 @@ dpdaction=clear
 
 ---
 
-```console
+```
 shell> ipsec pki --gen --outform pem > caKey.pem
 shell> ipsec pki --self --in caKey.pem --dn "C=US, O=TNC Demo, CN=AIK 7" --ca --outform pem > caCert.pem
 ```
@@ -211,10 +211,4 @@ shell> ipsec pki --gen --help
 - https://download2.strongswan.org/private/README.txt
 - http://manpages.ubuntu.com/manpages/trusty/man1/pki.1.html
 - https://help.ubuntu.com/lts/serverguide/certificates-and-security.html
-
-```tmp
-ipsec pki --self --in ca.pem --dn "C=CN, O=strongSwan, CN=strongSwan CA" --ca --outform pem > ca.cert.pem
-```
-
-
 

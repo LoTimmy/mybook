@@ -2,7 +2,7 @@
 
 `npm - javascript package manager`
 
-```console
+```
 shell> npm install <package_name>
 shell> npm install lodash
 shell> npm install <package_name> --save
@@ -43,7 +43,7 @@ shell> npm help package.json
 ```
 
 `Updating global packages`
-```console
+```
 shell> npm outdated -g --depth=0
 shell> npm update -g
 ```

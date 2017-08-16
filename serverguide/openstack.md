@@ -50,7 +50,7 @@ LANG=en_US.utf-8
 LC_ALL=en_US.utf-8
 ```
 
-```console
+```
 shell> sudo yum install -y https://www.rdoproject.org/repos/rdo-release.rpm
 shell> sudo yum update -y
 shell> sudo yum install -y openstack-packstack

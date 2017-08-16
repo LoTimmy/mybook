@@ -1,6 +1,6 @@
 telnet://192.168.42.253
 
-```console
+```
 User Access Verification
 Password: 
 Switch> enable
@@ -52,7 +52,7 @@ System serial number: FHK0743Z1BJ
 Configuration register is 0xF
 ```
 
-```console
+```
 Switch> enable
 Switch# config t
 Enter configuration commands, one per line.  End with CNTL/Z.
@@ -63,15 +63,15 @@ Switch(config)# ntp server time4.google.com
 Switch(config)# end
 ```
 
-```console
+```
 Switch# show interfaces gigabitethernet0/2
 ```
 
-```console
+```
 Switch(config-if)# authentication order mab webauth
 ```
 
-```console
+```
 Switch# ?
 Exec commands:
   <1-99>           Session number to resume

@@ -1,4 +1,4 @@
-```console
+```
 shell> mount -v
 ```
 
@@ -6,7 +6,7 @@ shell> mount -v
 
 `tmpfs`
 
-```console
+```
 shell> mount -t tmpfs -o size=100m none /mytmpfs
 ```
 
@@ -17,11 +17,11 @@ shell> mount -t tmpfs -o size=100m none /mytmpfs
 none	/mytmpfs	tmpfs	size=10G,mode=1777	0 0
 ```
 
-```console
+```
 shell> umount /mytmpfs
 ```
 
-```console
+```
 shell> time dd if=/dev/zero of=bigfile bs=1k count=1024
 shell> time dd of=bigfile bs=1 count=0 seek=90M
 shell> time truncate -s 90m bigfile
@@ -35,7 +35,7 @@ shell> time fallocate -l 90m bigfile
 
 ---
 
-```console
+```
 shell> sudo apt install ecryptfs-utils
 shell> sudo mount -t ecryptfs /srv /srv
 ```
@@ -45,7 +45,7 @@ shell> sudo mount -t ecryptfs /srv /srv
 
 ---
 
-```console
+```
 shell> sudo mount -t cifs -o username=john,password=johnpass,domain=example.com //winserver/share /mnt/winshare
 ```
 
@@ -60,7 +60,7 @@ shell> sudo mount -t cifs -o username=john,password=johnpass,domain=example.com 
 
 ---
 
-```console
+```
 shell> curlftpfs -v -o allow_other -o user="user:pass" ftp.myserver.com:21 /mnt/ftp
 shell> curlftpfs -o codepage=utf8,iocharset=big5,ipv4,user={username}:{password} ftp://{servicename} /root/file-sharing
 ```

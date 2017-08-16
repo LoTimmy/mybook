@@ -1,6 +1,6 @@
 `figlet - Make large character ASCII banners out of ordinary text`
 
-```console
+```
 shell> apt-get install figlet
 shell> brew install figlet
 shell> figlet helloworld

@@ -4,7 +4,7 @@
 
 ### Create CA certificate {#newca}
 
-```console
+```
 shell> mkdir ca
 shell> cd ca
 shell> vim openssl.cnf    
@@ -57,7 +57,7 @@ authorityKeyIdentifier=keyid:always
 keyUsage = digitalSignature, keyEncipherment
 extendedKeyUsage=clientAuth
 ```
-```console
+```
 shell> touch index.txt
 shell> echo 01 > serial
 shell> echo 01 > crlnumber
@@ -67,7 +67,7 @@ shell> echo 01 > crlnumber
 
 ### Generate a CRL {#gencrl} 
 
-```console
+```
 shell> openssl ca -gencrl -out crl.pem -config openssl.cnf
 ```
 
@@ -82,19 +82,19 @@ shell> openssl ca -gencrl -out crl.pem -config openssl.cnf
 
 `To generate a RSA key`
 
-```console 
+``` 
 shell> openssl genrsa -out ca-key.pem 2048
 ```
 
 ###### To generate a password-protected RSA key
 
 To generate a password-protected RSA key using [`triple DES`](http://zh.wikipedia.org/wiki/3DES) ★★
-```console
+```
 shell> openssl genrsa -des3 -out ca-key.pem 2048
 ```
 To generate a password-protected RSA key using [`AES` (`Advanced Encryption Standard`)](http://zh.wikipedia.org/wiki/高级加密标准) ★★★
 
-```console
+```
 shell> openssl genrsa -aes256 -out ca-key.pem 2048
 Generating RSA private key, 2048 bit long modulus
 ...+++
@@ -110,33 +110,33 @@ Generating RSA private key, 2048 bit long modulus
 e is 65537 (0x10001)
 ```
 ###### check_key
-```console
+```
 shell> openssl rsa -in ca-key.pem -noout -check -passin pass:mypass
 shell> openssl rsa -in ca-key.pem -noout -check
 RSA key ok
 ```
 
 ###### Create some DSA parameters
-```console
+```
 shell> openssl dsaparam -out dsaparam.pem 2048
 ```
 ###### To generate a DSA key using triple DES
-```console
+```
 shell> openssl gendsa -des3 -out ca-key.pem dsaparam.pem
 ```
 
 ###### To remove the pass phrase on an RSA private key
-```console
+```
 shell> openssl rsa -in ca-key.pem -out ca-key.pem
 ```
 
 ###### To encrypt a private key using triple DES
-```console
+```
 shell> openssl rsa -in ca-key.pem -des3 -out ca-key.pem
 ```
 
 ###### To convert a private key from PEM to DER format
-```console
+```
 shell> openssl rsa -in ca-key.pem -outform DER -out ca-key.der
 ```
 
@@ -144,7 +144,7 @@ shell> openssl rsa -in ca-key.pem -outform DER -out ca-key.der
 
 ###### 建立憑證要求 (Generates a CSR) 
 
-```console
+```
 shell> openssl req -new -key ca-key.pem -out ca-req.pem -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=MYCA"
 ```
 其中
@@ -156,47 +156,47 @@ shell> openssl req -new -key ca-key.pem -out ca-req.pem -subj "/C=TW/ST=Taiwan/L
 - CN = 一般名稱
 
 ###### Convert a certificate to a CSR
-```console
+```
 shell> openssl x509 -x509toreq -in ca-cert.pem -out ca-req.pem -signkey ca-key.pem
 ```
 
 :bulb: 撇步
 ###### 產生一個2048-bit長度的「`私鑰`」 (`Private Key`)和「`憑證簽章要求`」 (`CSR`)
-```console
+```
 shell> openssl req -new -newkey rsa:2048 -nodes -out ca-req.pem -keyout ca-key.pem -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=MYCA"
 ```
 
-```console
+```
 shell> openssl req -new -newkey rsa:2048 -sha256 -nodes -out ca-req.pem -keyout ca-key.pem -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=MYCA"
 ```
 
 ---
 ###### Creating a Self-Signed Certificate
 
-```console
+```
 shell> openssl genrsa -out server.key 2048
 shell> openssl req -new -x509 -key server.key -out server.crt -days 7305 -subj "/CN=172.16.5.115"
 shell> openssl pkcs12 -export -in server.crt -inkey server.key -out server.p12
-```~~~~
+```
 
 
-```console
+```
 shell> openssl x509 -req -days 7305 -in ca-req.pem -signkey ca-key.pem -out ca-cert.pem
-```~~~~
-```console
+```
+```
 shell> openssl x509 -req -days 7305 -sha1 -extfile openssl.cnf -extensions v3_ca -signkey ca-key.pem -in ca-req.pem -out ca-cert.pem
 ```
-```console
+```
 shell> openssl req -new -x509 -days 7305 -key ca-key.pem -out ca-cert.pem -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=MYCA"
 ```
 ---
 
 :bulb: 撇步
 ###### 產生一個2048-bit長度的`私鑰` (`Private Key`)和憑證
-```console
+```
 shell> openssl req -x509 -new -nodes -out ca-cert.pem -newkey rsa:2048 -keyout ca-key.pem -days 7305 -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=MYCA"
 ```
-```console
+```
 shell> openssl x509 -in ca-cert.pem -text -noout
 shell> openssl x509 -in ca-cert.pem -subject -noout
 shell> openssl x509 -in ca-cert.pem -issuer -noout
@@ -205,7 +205,7 @@ shell> openssl x509 -in ca-cert.pem -dates -noout
 
 ---
 
-```console
+```
 shell> openssl x509 -noout -modulus -in ca-cert.pem | openssl md5
 shell> openssl rsa -noout -modulus -in ca-key.pem | openssl md5
 shell> openssl req -noout -modulus -in ca-req.pem | openssl md5
@@ -214,24 +214,24 @@ shell> openssl req -noout -modulus -in ca-req.pem | openssl md5
 ### Create server certificate
 ###### Generates a CSR
 
-```console
+```
 shell> openssl req -new -newkey rsa:key_strength -nodes -out path_to_csr -keyout path_to_keyfile
 ```
 其中
 - key_strength 是以位元數測量的金鑰強度
 - path_to_csr 是「`憑證簽章要求` (`CSR`)」的路徑
 
-```console
+```
 shell> openssl req -newkey rsa:2048 -days 365 -nodes -keyout server-key.pem -out server-req.pem -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=server"
 ```
 
-```console
+```
 shell> openssl rsa -in server-key.pem -text -noout
 shell> openssl req -in server-req.pem -noout -text
 shell> openssl req -in server-req.pem -noout -text -verify
 ```
 ---   
-```console
+```
 shell> openssl x509 -req -in full_path_to_CSR -days number_of_days -CA path_to_ca_cert -CAkey path_to_ca_key -set_serial serial_no -out server-cert.pem
 ```
 
@@ -241,31 +241,31 @@ shell> openssl x509 -req -in full_path_to_CSR -days number_of_days -CA path_to_c
 - path_to_ca_cert 是 CA 憑證檔的路徑
 - serial_no 是要使用的憑證序號
 
-```console
+```
 shell> openssl x509 -req -in server-req.pem -days 3650 -CA ca-cert.pem -CAkey ca-key.pem -set_serial 01 -out server-cert.pem
 ```
-```console
+```
 shell> openssl ca -batch -config openssl.cnf -notext -in server-req.pem -out server-cert.pem 
 shell> openssl x509 -in server-cert.pem -text -noout
 ```
 ---
-```console
+```
 shell> openssl ca -revoke 01.pem -config openssl.cnf 
 shell> openssl crl -in crl.pem  -text -noout
 ```
 --- 
 
 ##### 將 PEM 憑證轉換為 PKCS#12 格式
-```console
+```
 shell> openssl pkcs12 -export -in server-cert.pem -inkey server-key.pem -out server.p12
 shell> openssl pkcs12 -export -in server-cert.pem -inkey server-key.pem -out server.pfx -name name
 ```
-```console
+```
 shell> openssl pkcs12 -in server.p12
 ```
 
 ##### 將 PKCS#12 憑證轉換為 PEM 格式
-```console
+```
 shell> openssl pkcs12 -in server.pfx -nocerts -out server-key.pem -nodes  
 shell> openssl pkcs12 -in server.pfx -nokeys -out server-cert.pem 
 
@@ -283,25 +283,25 @@ shell> openssl rsa -in server-key.pem -out server.key
 - [pkcs12](https://www.openssl.org/docs/manmaster/apps/pkcs12.html)
 
 ----------
-```console
+```
 shell> openssl req -newkey rsa:2048 -days 365 -nodes -keyout user.key -out user.csr -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=user"
 ```
-```console
+```
 shell> openssl rsa -in user.key -text -noout
 shell> openssl req -in user.csr -noout -text
 ```
-```console
+```
 shell> openssl ca -batch -config openssl.cnf -notext -in user.csr -out user.crt
 ```
-```console 
+``` 
 shell> openssl x509 -in user.crt -text -noout
-```~~~~
+```
 
 ##### 將 PEM 憑證轉換為 PKCS#12 格式
-```console
+```
 shell> openssl pkcs12 -export -in user.crt -inkey user.key -out user.p12 -name user -chain -CAfile ca.crt
 ```
-```console 
+``` 
 shell> openssl pkcs12 -in user.p12
 ```
 ----------
@@ -311,25 +311,25 @@ shell> openssl pkcs12 -in user.p12
 
 
 ###### openssl_private_encrypt — Encrypts data with private key
-```console
+```
 shell> echo HelloWorld | openssl rsautl -inkey private_key.pem -sign | openssl enc -base64 -out crypted
 ```
 ###### openssl_public_decrypt — Decrypts data with public key
-```console
+```
 shell> openssl enc -base64 -d -in crypted | openssl rsautl -verify -inkey public_key.pem -pubin 
 ```
 
 ###### openssl_public_encrypt — Encrypts data with public key
-```console
+```
 shell> echo HelloWorld | openssl rsautl -encrypt -inkey public_key.pem -pubin | openssl enc -base64 > crypted
 ``` 
 ###### openssl_private_decrypt — Decrypts data with private key
-```console
+```
 shell> openssl enc -base64 -d -in crypted | openssl rsautl -inkey private_key.pem -decrypt
 ```
 ----------
 
-```console
+```
 shell> openssl enc -des3 -e -a -in testfile.txt -out testfile.txt.enc
 shell> openssl enc -des3 -d -a -in testfile.txt.enc -out testfile.txt
 
@@ -359,18 +359,18 @@ seed              seed-cbc          seed-cfb          seed-ecb
 seed-ofb
 ```
 
-```console
+```
 shell> openssl aes-256-cbc -a -salt -in testfile.txt -out testfile.txt.enc
 shell> openssl aes-256-cbc -d -a -in testfile.txt.enc -out testfile.txt
 ```
 
 
-```console
+```
 shell> openssl aes-256-cbc -e -k "xyz123" -P
 shell> openssl aes-256-cbc -e -K '' -iv '' -P
 ```
 
-```console
+```
 shell> openssl speed aes-256-cbc
 ```
 
@@ -381,27 +381,27 @@ shell> openssl speed aes-256-cbc
 「`加密`」(`Encryption`)、「`解密`」(`Decryption`)
 
 ###### 產生一組`RSA-2048`金鑰。
-```console
+```
 shell> openssl genrsa -out private_key.pem 2048
 shell> openssl rsa -in private_key.pem -pubout -out public_key.pem
 ```
 
 ###### 以一個隨機產生的`256`位元金鑰，針對檔案文件以`AES-256 CBC`對稱加密進行加密。
-```console
+```
 shell> openssl rand -base64 32 > passwd.txt
 shell> openssl aes-256-cbc -salt -in testfile.txt -out testfile.txt.enc -pass file:passwd.txt 
 ```
-```console
+```
 shell> openssl rsautl -encrypt -inkey public_key.pem -pubin -in passwd.txt -out passwd.txt.enc
 ```
 
 `解密方式`
-```console
+```
 shell> openssl rsautl -decrypt -inkey private_key.pem -in passwd.txt.enc -out passwd.txt
 shell> openssl aes-256-cbc -d -in testfile.txt.enc -out testfile.txt -pass file:passwd.txt
 ```
 
-```console
+```
 shell> openssl dgst -sha1 -sign private_key.pem -out sign.txt testfile.txt    
 shell> openssl dgst -sha1 -verify public_key.pem -signature sign.txt testfile.txt
 Verified OK    
@@ -412,7 +412,7 @@ Verified OK
 
 ---
 
-```console
+```
 shell> openssl list-message-digest-commands
 shell> openssl list-cipher-commands
 shell> openssl list-standard-commands
@@ -420,12 +420,12 @@ shell> openssl list-standard-commands
 
 ---
 
-```console
+```
 shell> openssl rand -out testfile.txt -base64 $(( 1024 ** 3 )) 
 ```
 ---
 
-```console
+```
 shell> openssl s_client -connect servername:443
 ```
 
@@ -433,7 +433,7 @@ shell> openssl s_client -connect servername:443
 
 ---
 
-```console
+```
 shell> openssl rand -hex 10
 ```
 
@@ -453,11 +453,11 @@ shell> openssl rand -hex 10
 - 「這是一個撰寫C語言時，不應該出現的基本程式設計錯誤。」這種確認欄位資料的檢查，其實是所有程式撰寫時的基本功夫，不論是有心或是無意導致這樣的漏洞，會導致Heartbeat預設回傳64KB資料時，造成網站機敏資料外洩。
 - 更讓人擔心的是，因為外洩資料的過程都無從察覺也沒有記錄，對於多數使用有`Heartbleed`漏洞的`OpenSSL`來做網站或產品加密的企業和廠商，甚至無法評估過去有多少外洩資料被駭客攔截並再利用。
 
-```console
+```
 shell> wget https://gist.githubusercontent.com/sh1n0b1/10100394/raw/4f24ff250124a03ad2d3d6010b6402c3a483d2f3/ssltest.py
 shell> python ssltest.py login.yahoo.com
 ```
-```console
+```
 shell> wget https://raw.githubusercontent.com/noxxi/p5-scripts/master/check-ssl-heartbleed.pl
 shell> perl check-ssl-heartbleed.pl login.yahoo.com:443
 ```
@@ -524,7 +524,7 @@ PKCS 12 Utility
 
 ---
 
-```console
+```
 shell> openssl req -x509 -nodes -newkey rsa:2048 -sha1 -keyout ca-key.pem -out ca-cert.pem -days 7305 -subj "/CN=172.16.7.103" -config openssl.cnf
 
 shell> openssl req -newkey rsa:2048 -days 365 -nodes -keyout server-key.pem -out server-req.pem -subj "/CN=172.16.7.103"

@@ -4,11 +4,11 @@
 - `Bash`是一個指令列`shell` （殼層）程式，廣泛存在於 `Linux`、`BSD` 和 `Mac OS X` 等`UNIX-based`的作業系統，使用者只要將指令輸入到一個簡單的文字式視窗，作業系統便會依指令運作。
 
 ---
-```console
+```
 shell> foo='() { echo not patched; }' bash -c foo
 ```
 
-```console
+```
 shell> env x='() { :;}; echo vulnerable' bash -c "echo this is a test"
 ```
 
@@ -162,7 +162,7 @@ fi
 `daemon - turns other processes into daemons`
 
 ### 安裝 {#installing}
-```console
+```
 shell> sudo apt-get install daemon
 shell> daemon -r ./test.sh
 ```
@@ -179,7 +179,7 @@ while true; do
 done
 ```
 
-```console
+```
 shell> start-stop-daemon --start --background --exec /root/test.sh
 shell> start-stop-daemon --stop --name test.sh
 ```
@@ -216,7 +216,7 @@ echo -ne '\n'
 export HISTCONTROL='ignoredups'
 ```
 
-```console
+```
 shell> dpkg --print-architecture
 ```
 

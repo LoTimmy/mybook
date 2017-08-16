@@ -81,7 +81,7 @@ RUN wget -q --content-disposition https://minergate.com/download/deb-cli \
 ENTRYPOINT ["minergate-cli"]
 ```
 
-```console
+```
 shell> sudo docker build -t minergate-cli .
 
 shell> docker run --rm minergate-cli -help
@@ -189,7 +189,7 @@ docker run --rm -v "$(pwd)/conf:/conf:ro" -d minerd -c /conf/minerd.json
 "prefer_ipv4" : true,
 ```
 
-```console
+```
 shell> docker build -f dockerfiles/Dockerfile -t xmr-stak-cpu .
 shell> docker run --rm -v "$(pwd)/conf:/conf:ro" -p 62787:62787 -d xmr-stak-cpu
 ```

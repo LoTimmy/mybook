@@ -7,14 +7,14 @@
 `curl - transfer a URL`
 
 
-```console
+```
 shell> curl --version
 curl 7.47.0 (x86_64-pc-linux-gnu) libcurl/7.47.0 GnuTLS/3.4.10 zlib/1.2.8 libidn/1.32 librtmp/2.3
 Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp smb smbs smtp smtps telnet tftp 
 Features: AsynchDNS IDN IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz TLS-SRP UnixSockets 
 ```
 
-```console
+```
 shell> curl-config --protocols
 DICT
 FILE
@@ -38,7 +38,7 @@ TELNET
 TFTP
 ```
 
-```console
+```
 shell> curl -s --head http://127.0.0.1/
 
 shell> if curl -s --head http://100.101.102.103/ | grep "200 OK" > /dev/null; then ; fi
@@ -61,7 +61,7 @@ shell> curl -w "\n" -d '{"username":"admin", "password":"secret"}' -H "Content-T
 -f, --fail
 ```
 
-```console
+```
 shell> curl -sSL https://get.docker.com/ | sh
 shell> curl -fsSL https://experimental.docker.com/ | sh
 shell> curl -L https://npmjs.com/install.sh | sh
@@ -87,7 +87,7 @@ referer = "http://nowhereatall.com/"
 -H "Accept-Language: zh-TW"
 ```
 
-```console
+```
 shell> curl -I https://httpd.apache.org/
 ```
 ```
@@ -102,7 +102,7 @@ Vary: Accept-Encoding
 Content-Type: text/html
 ```
 
-```console
+```
 shell> curl -I http://expressjs.com/
 ```
 ```
@@ -120,7 +120,7 @@ Server: cloudflare-nginx
 CF-RAY: 331f3719242653cc-LAX
 ```
 
-```console
+```
 shell> curl -I -H "Accept-Encoding: deflate, gzip" https://httpd.apache.org/
 ```
 
@@ -158,7 +158,7 @@ referer = "http://nowhereatall.example.com/"
 
 ---
 
-```console
+```
 shell> curl -b cookies.txt -c cookies.txt www.example.com
 ```
 

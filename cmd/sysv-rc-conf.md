@@ -4,12 +4,12 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install sysv-rc-conf
 shell> apt-get install rcconf dialog
 ```
 
-```console
+```
 shell> sysv-rc-conf
 shell> sysv-rc-conf --list
 shell> sysv-rc-conf --list dnsmasq

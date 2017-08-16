@@ -4,7 +4,7 @@
 
 `Installing Supervisor`
 
-```console
+```
 shell> apt-get update && apt-get install -y supervisor
 shell> mkdir -p /var/log/supervisor
 ```
@@ -13,7 +13,7 @@ shell> mkdir -p /var/log/supervisor
 `echo_supervisord_conf - Supervisor Configuration Documentation`
 
 
-```console
+```
 shell> echo_supervisord_conf > /etc/supervisor/supervisord.conf
 ```
 
@@ -59,11 +59,11 @@ password=123               ; (default is no password (open server))
 ;user=chrism
 ```
 
-```console
+```
 shell> /usr/bin/supervisord
 ```
 
-```console
+```
 shell> supervisorctl
 
 supervisor> help
@@ -77,7 +77,7 @@ avail  fg        pid   remove  shutdown  status  update
 clear  maintail  quit  reread  signal    stop    version
 ```
 
-```console
+```
 shell> supervisorctl status
 shell> supervisorctl reload
 

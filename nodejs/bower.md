@@ -1,15 +1,15 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install -g bower
 ```
 
 `Install with Bower`
-```console
+```
 shell> bower install <package>
 ```
 
-```console
+```
 shell> bower search jquery
 shell> bower info  extjs
 
@@ -32,7 +32,7 @@ shell> bower update jquery
 shell> bower uninstall jquery 
 ```
 
-```console
+```
 shell> bower init
 shell> bower list
 ```
@@ -78,7 +78,7 @@ https://gist.github.com/isaacs/579814
 You can however run a command with sudo using --allow-root option
 ```
 
-```console
+```
 shell> bower install loadcss --allow-root
 ```
 
@@ -98,7 +98,7 @@ shell> bower install loadcss --allow-root
 
 ---
 
-```console
+```
 shell> bower install html5shiv --allow-root
 shell> bower install respond --allow-root
 ```

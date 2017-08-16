@@ -2,22 +2,22 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install node
 shell> apt-get install nodejs
 ```
 
-```console
+```
 shell> brew install nvm
 ```
 
-```console
+```
 shell> curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 shell> wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 shell> echo "source ~/.nvm/nvm.sh" >> .bashrc
 ```
 
-```console
+```
 shell> nvm ls-remote
 shell> nvm ls-remote --lts
 
@@ -42,7 +42,7 @@ shell> nvm alias default lts/argon
 shell> nvm alias default lts/boron
 ```
 
-```console
+```
 shell> nvm install v6.10.1 --reinstall-packages-from=v6.10.0
 shell> nvm uninstall v6.10.0
 
@@ -173,7 +173,7 @@ var area = pi * (radius * radius); // Area 面積
 > 「`區域變數`」(`Local Variable`)
 > 使用 `let` 來宣告變數，其範圍限於宣告所在的區塊。
 
-``` .js
+```js
 'use strict';
 
 function varTest() {

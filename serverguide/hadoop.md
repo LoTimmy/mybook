@@ -1,7 +1,7 @@
 
 ### 在 `Ubuntu` 14.04 LTS 上建置 `hadoop`
 
-```console 
+``` 
 shell> lsb_release -a
 ```
 ```
@@ -12,7 +12,7 @@ Release:	14.04
 Codename:	trusty
 ```
 ### 安裝 hadoop 
-```console 
+``` 
 shell> hadoop-daemon.sh start jobtracker
 shell> hadoop-daemon.sh start tasktracker
 shell> hadoop-daemon.sh start namenode

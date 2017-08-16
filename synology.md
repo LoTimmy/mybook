@@ -45,7 +45,7 @@ dst.ports="500,4500/udp"
 ```
 
 
-```console
+```
 shell> /usr/syno/bin/synovpnc
 ```
 
@@ -78,7 +78,7 @@ Usage:
 		clear
 ```
 
-```console
+```
 shell> /usr/syno/bin/synovpnc get_conn 
 ```
 
@@ -126,7 +126,7 @@ Usage: synoservice
 								Sleep $buffer seconds before exec the command (default is 0)
 
 ```
-```console
+```
 shell> synoservice --list
 shell> synoservice --restart crond
 shell> synoservice --restart pkgctl-VPNCenter
@@ -134,7 +134,7 @@ shell> synoservice --restart pkgctl-VPNCenter
 
 ---
 
-```console
+```
 shell> sudo -i
 shell> vim /etc/crontab
 shell> synoservice --restart crond
@@ -162,7 +162,7 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:
 0	0	*	*	*	root	/tmp/synoschedtask --run id=4
 ```
 
-```console
+```
 shell> synoschedtask --get id=4
 ```
 

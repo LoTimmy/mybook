@@ -12,7 +12,7 @@
 <img src="http://i.imgur.com/eBmGfJb.png" width="300">
 
 
-```console
+```
 shell> mkdir helloworld 
 shell> git init
 shell> edit hello.c
@@ -24,7 +24,7 @@ shell> git commit --amend -m "Initial commit" --author "A U Thor <author@example
 shell> git log
 ```
 
-```console
+```
 shell> git add .
 shell> git commit -m "initial revision"
 ```
@@ -42,7 +42,7 @@ shell> git commit -m "initial revision"
 
 ---
 
-```console
+```
 shell> git config -l
 shell> git config --system -l
 shell> git config --global -l
@@ -66,7 +66,7 @@ shell> git config --global --edit
 shell> git commit --amend --reset-author
 ```
 
-```console
+```
 shell> git config --global user.name "Your Name"
 shell> git config --global user.email you@example.com
 shell> git config --global color.ui true
@@ -77,7 +77,7 @@ shell> git config --global color.ui true
 
 ---
 
-```console
+```
 shell> mkdir helloworld 
 shell> git init
 shell> edit hello.c
@@ -99,7 +99,7 @@ shell> git show --pretty="" --name-only de05672
 shell> git ls-tree --name-only HEAD
 ```
 
-```console
+```
 shell> mkdir helloworld 
 shell> git init
 shell> edit hello.c
@@ -124,7 +124,7 @@ shell> git ls-tree --name-only HEAD
 
 ---
 
-```console
+```
 shell> git filter-branch --tree-filter 'rm filename' HEAD
 ```
 
@@ -133,7 +133,7 @@ shell> git filter-branch --tree-filter 'rm filename' HEAD
 
 ---
 
-```console
+```
 shell> edit hello.c hello.h
 shell> git add hello.c
 shell> git status
@@ -164,21 +164,21 @@ bin/*
 
 ---
 
-```console
+```
 shell> rm -f hello.c
 shell> git checkout hello.c
 ```
 
-```console
+```
 shell> git checkout -- '*.c'
 ```
 
-```console
+```
 shell> git checkout -- *
 shell> git checkout -- hello.c
 ```
 
-```console
+```
 shell> edit hello.c
 shell> git add hello.c
 shell> git commit -m "initial revision"
@@ -201,7 +201,7 @@ shell> git checkout 0a71 hello.c
 
 ---
 
-```console
+```
 shell> git add .
 ```
 
@@ -210,7 +210,7 @@ warning: CRLF will be replaced by LF in myfile.txt.
 The file will have its original line endings in your working directory.
 ```
 
-```console
+```
 shell> git config --global core.autocrlf
 shell> git config --global core.autocrlf input
 shell> git config --global core.autocrlf true
@@ -221,7 +221,7 @@ shell> git config --global core.autocrlf false
 shell> git config --global core.eol
 ```
 
-```console
+```
 shell> echo "* text=auto" >.gitattributes
 ```
 
@@ -249,7 +249,7 @@ weirdchars.txt	text
 
 ---
 
-```console
+```
 shell> edit hello.c
 shell> git add hello.c
 shell> git rm hello.c
@@ -268,20 +268,20 @@ shell> git reset HEAD^ --hard
 
 ---
 
-```console
+```
 shell> bfg --no-blob-protection --delete-files YOUR-FILE-WITH-SENSITIVE-DATA
 ```
 
-```console
+```
 shell> bfg --no-blob-protection --delete-files id_{dsa,rsa}  my-repo.git
 ```
 
-```console
+```
 shell> git reflog expire --expire=now --all && git gc --prune=now --aggressive
 ```
 
 
-```console
+```
 shell> git clone --bare https://github.com/you/HelloWorld.git HelloWorld.git
 shell> bfg --no-blob-protection --delete-files id_{dsa,rsa} HelloWorld.git
 ```
@@ -294,7 +294,7 @@ shell> bfg --no-blob-protection --delete-files id_{dsa,rsa} HelloWorld.git
 ---
 
 
-```console
+```
 shell> git log --pretty=oneline
 shell> git log --pretty=oneline --abbrev-commit
 shell> git remote add origin YOUR_GIT_CLONE_URL_HERE
@@ -306,7 +306,7 @@ shell> git remote add origin https://github.com/you/HelloWorld.git
 
 ---
 
-```console
+```
 shell> git add -A
 shell> git add .
 shell> git add -u
@@ -314,7 +314,7 @@ shell> git add -u
 
 ---
 
-```console
+```
 shell> mkdir helloworld 
 shell> git init
 shell> git add .
@@ -324,7 +324,7 @@ shell> git push azure master
 ```
 ---
 
-```console
+```
 shell> mkdir HelloWorld
 shell> cd HelloWorld
 shell> git init
@@ -371,7 +371,7 @@ Aborting commit due to empty commit message.
 - **`Empty`** `[ˋɛmptɪ]` `空的` `空` `空白` `emp・ty`
 
 
-```console
+```
 shell> git clone --bare HelloWorld HelloWorld.git
 shell> scp -r HelloWorld.git user@git.example.com:/opt/git
 shell> git clone user@git.example.com:/opt/git/HelloWorld.git
@@ -382,19 +382,19 @@ shell> git remote set-url origin user@git.example.com:/opt/git/HelloWorld.git
 shell> git remote show origin
 ```
 
-```console
+```
 shell> git remote add azure https://username@your-azure-website.scm.azurewebsites.net:443/your-azure-website.git
 shell> git push azure master
 ```
 
 ---
-```console
+```
 shell> mkdir HelloWorld.git
 shell> cd HelloWorld.git
 shell> git init --bare
 ```
 
-```console
+```
 shell> mkdir HelloWorld
 shell> cd HelloWorld
 shell> git init
@@ -406,11 +406,11 @@ shell> git remote add origin /opt/git/HelloWorld.git
 shell> git push origin master
 ```
 
-```console
+```
 shell> git clone /opt/git/HelloWorld.git
 ```
 
-```console
+```
 shell> git clone user@git.example.com:/opt/git/HelloWorld.git
 
 shell> git remote set-url origin user@git.example.com:/opt/git/HelloWorld.git
@@ -419,20 +419,20 @@ shell> git commit -a -m "My changes"
 shell> git push origin master
 ```
 
-```console
+```
 shell> git pull origin master
 shell> git pull --progress
 ```
 
 ---
 
-```console
+```
 shell> git branch
 shell> git branch -vv
 shell> git branch --remotes
 ```
 
-```console
+```
 shell> git push origin --delete Branch_df65c30a8bb632955646b90f778c0cb5a7c5b28f
 ```
 ---
@@ -441,7 +441,7 @@ shell> git push origin --delete Branch_df65c30a8bb632955646b90f778c0cb5a7c5b28f
 - [gist](https://gist.github.com/)
 ---
 
-```console
+```
 shell> git mv JavaScript javascript
 ```
 

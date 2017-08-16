@@ -1,6 +1,6 @@
 **proxychains - proxy chains - redirect connections through proxy servers**
 
-```console
+```
 shell> apt-get install proxychains
 shell> proxychains
 ```
@@ -23,7 +23,7 @@ $(HOME)/.proxychains/proxychains.conf
 ```
 ---
 
-```console
+```
 shell> ssh -N -D 0.0.0.0:1080 matt@remotehost
 shell> ssh -f -N -D 0.0.0.0:1080 matt@remotehost
 ```
@@ -32,7 +32,7 @@ shell> ssh -f -N -D 0.0.0.0:1080 matt@remotehost
 socks4	192.168.1.49	1080
 ```
 
-```console
+```
 shell> proxychains telnet targethost.com
 ```
 

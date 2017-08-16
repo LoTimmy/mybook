@@ -4,11 +4,11 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install dnsutils
 ```
 
-```console
+```
 shell> dig www.apple.com
 shell> dig @8.8.8.8 www.apple.com
 shell> dig +trace www.apple.com

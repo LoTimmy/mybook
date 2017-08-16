@@ -52,7 +52,7 @@ pvs -o+pv_used
 `Linux LVM`
 `8e`
 
-```console
+```
 shell> fdisk -c /dev/sdb
 
 shell> pvcreate /dev/sdb1
@@ -75,12 +75,12 @@ shell> lsblk
 `100%PVS`
 
 
-```console
+```
 shell> pvmove /dev/sdb1
 shell> vgreduce myvg /dev/sdb1
 ```
 
-```console
+```
 shell> pvdisplay /dev/hda1
 shell> vgreduce my_volume_group /dev/hda1
 shell> pvmove /dev/sdb1 /dev/sdc1

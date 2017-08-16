@@ -7,7 +7,7 @@
 安裝作業系統及`nginx`相關套件。
 因本文主要介紹`nginx`如何安裝及設定，作業系統方面就不再詳述。
 
-```console 
+``` 
 shell> lsb_release -a
 No LSB modules are available.
 Distributor ID:	Raspbian
@@ -25,7 +25,7 @@ nginx-full - nginx web/proxy server (standard version)
 nginx-light - nginx web/proxy server (basic version)
 ```
 
-```console
+```
 shell> curl -sSL http://nginx.org/keys/nginx_signing.key | sudo apt-key add - 
 shell> echo deb http://nginx.org/packages/ubuntu/ "$(lsb_release -sc)" nginx | sudo tee /etc/apt/sources.list.d/nginx.list
 shell> echo deb-src http://nginx.org/packages/ubuntu/ "$(lsb_release -sc)" nginx | sudo tee -a /etc/apt/sources.list.d/nginx.list
@@ -33,20 +33,20 @@ shell> sudo apt-get update
 shell> sudo apt-get install nginx
 ```
 
-```console
+```
 shell> nginx -v
 nginx version: nginx/1.6.2
 nginx version: nginx/1.10.2
 nginx version: nginx/1.12.0
 ```
 
-```console
+```
 shell> nginx -t
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 
-```console
+```
 shell> nginx -V
 nginx version: nginx/1.6.2
 TLS SNI support enabled
@@ -59,14 +59,14 @@ TLS SNI support enabled
 configure arguments: --prefix=/etc/nginx --sbin-path=/usr/sbin/nginx --modules-path=/usr/lib/nginx/modules --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --pid-path=/var/run/nginx.pid --lock-path=/var/run/nginx.lock --http-client-body-temp-path=/var/cache/nginx/client_temp --http-proxy-temp-path=/var/cache/nginx/proxy_temp --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp --http-scgi-temp-path=/var/cache/nginx/scgi_temp --user=nginx --group=nginx --with-compat --with-file-aio --with-threads --with-http_addition_module --with-http_auth_request_module --with-http_dav_module --with-http_flv_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_mp4_module --with-http_random_index_module --with-http_realip_module --with-http_secure_link_module --with-http_slice_module --with-http_ssl_module --with-http_stub_status_module --with-http_sub_module --with-http_v2_module --with-mail --with-mail_ssl_module --with-stream --with-stream_realip_module --with-stream_ssl_module --with-stream_ssl_preread_module --with-cc-opt='-g -O2 -fstack-protector-strong -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC' --with-ld-opt='-Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -pie'
 ```
 
-```console
+```
 shell> hostname -I
 ```
 
-```console
+```
 shell> service nginx restart
 ```
-```console
+```
 shell> systemctl status nginx.service
 ```
 ---
@@ -75,7 +75,7 @@ shell> systemctl status nginx.service
 ![](http://i.imgur.com/9QNvICY.gif)
 ![](https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg)
 
-```console
+```
 shell> cd /etc/nginx
 shell> sudo vim sites-enabled/default
 shell> sudo vim conf.d/default.conf 
@@ -112,14 +112,14 @@ server {
 
 ###### 建立憑證要求 (Generates a CSR)
 
-```console
+```
 shell> openssl req -newkey rsa:2048 -sha256 -nodes -keyout www_yourdomain_com.key -out server-req.pem -subj "/C=TW/ST=Taiwan/L=TPE/O=MyCompany Ltd/OU=IT/CN=server"
 
 shell> openssl pkcs12 -export -in server.crt -inkey server.key -out server.pfx
 shell> openssl pkcs12 -export -in server.crt -inkey server.key -out server.pfx -certfile CACert.crt
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [easy-csr](https://www.digicert.com/easy-csr/openssl.htm)
 - [Converting a PFX file to PEM, SPC, and PVK files](https://support.comodo.com/index.php?/Default/Knowledgebase/Article/View/548/7/converting-a-pfx-file-to-pem-spc-and-pvk-files)
 - [How do I export, as a pfx file, my Certificate and Private Key from Apache?](https://support.comodo.com/index.php?/Default/Knowledgebase/Article/View/297/17/how-do-i-export-as-a-pfx-file-my-certificate-and-private-key-from-apache)
@@ -133,7 +133,7 @@ shell> openssl pkcs12 -export -in server.crt -inkey server.key -out server.pfx -
 
 ###### 安裝憑證，並設定 SSL 的網站
 
-```console
+```
 shell> cat www_yourdomain_com.crt COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt > ssl-bundle.crt
 
 shell> cat COMODORSADomainValidationSecureServerCA.crt COMODORSAAddTrustCA.crt AddTrustExternalCARoot.crt > full_chain.pem  
@@ -143,13 +143,13 @@ shell> cp www_yourdomain_com.key /etc/ssl/private/mysite.key
 shell> cp full_chain.pem /etc/nginx/ssl
 ```
 
-```console
+```
 shell> openssl dhparam -out dhparam.pem 2048
 ```
 
 <img src="http://i.imgur.com/50BIcHD.png" width="300">
 
-```console
+```
 shell> cd /etc/nginx
 shell> sudo vim sites-enabled/default 
 ```
@@ -196,7 +196,7 @@ server {
 }
 ```
 
-```console
+```
 shell> openssl s_client -connect www.godaddy.com:443
 ```
 
@@ -276,7 +276,7 @@ location /favicon.ico {
 - [log_not_found](http://nginx.org/en/docs/http/ngx_http_core_module.html#log_not_found)
 
 ---
-```console
+```
 shell> nginx -V
 ```
 
@@ -294,11 +294,11 @@ listen 443 ssl default_server spdy;
 ---
 ### 安裝 PHP
 
-```console
+```
 shell> sudo apt-get install php5-fpm
 ```
 
-```console
+```
 shell> cd /etc/nginx
 shell> sudo vim sites-enabled/default 
 ```
@@ -387,7 +387,7 @@ net.ipv4.tcp_fin_timeout = 15
 
 ---
 
-```console
+```
 shell> sudo apt-get install nginx-extras
 ```
 
@@ -441,7 +441,7 @@ server {
 
 How to test Logjam via command line?
 
-```console
+```
 shell> openssl s_client -connect www.example.com:443 -cipher 'EXP'
 shell> nmap --script ssl-enum-ciphers -p 443 www.example.com
 ```
@@ -535,11 +535,11 @@ nginx-module-xslt-dbg - debug symbols for the nginx-module-xslt
 > `HLS`能將`H.264`影片轉換為多個時間長度約10秒的`MPEG2`片段，透過`HTTP`通信協定傳輸。
 > `HTTP`傳輸速度雖然遜於`Adobe`先前制定的`即時訊息協定` (`Real Time Message Protocol`, `RTMP`)，但大部分的`內容傳輸網路`(`CDN`，如`Akamai`)均支援`HTTP`協定，因此網站內容可以藉由`CDN`代為傳送。另外`HTTP`對於網路設備的通透性也比其他通訊協定好，除非管理人員刻意阻擋，`HTTP`可以通過大部分的分享器或防火牆。
 
-```console
+```
 shell> brew install nginx-full --with-rtmp-module
 ```
 
-```console
+```
 shell> sudo apt-get update
 shell> sudo apt-get install curl build-essential libpcre3-dev libpcre++-dev zlib1g-dev libcurl4-openssl-dev libssl-dev  git supervisor
 
@@ -679,12 +679,12 @@ http {
 }
 ```
 
-```console
+```
 shell> ffmpeg -re -i input.mp4 -c copy -f flv rtmp://192.168.1.55:1935/live
 shell> ffmpeg -re -i input.mp4 -c copy -vcodec libx264 -f flv rtmp://192.168.1.55:1935/live  
 ```
 
-```console
+```
 shell> ffplay 'rtmp://192.168.1.55:1935/live'
 ```
 

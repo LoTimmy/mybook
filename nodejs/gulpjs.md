@@ -6,7 +6,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install gulp -g
 shell> gulp -v
 [11:41:53] CLI version 3.9.1
@@ -14,7 +14,7 @@ shell> gulp -v
 
 ### Hello world 範例 {#hello-world}
 
-```console
+```
 shell> mkdir gulp
 shell> npm install gulp
 shell> gulp -v
@@ -24,19 +24,19 @@ shell> gulp -v
 shell> touch gulpfile.js
 ```
 
-```.js
+```
 var gulp = require('gulp');
 gulp.task('default', function() {
   console.log("Hello World!");
 });
 ```
 
-```console
+```
 shell> gulp default
 ```
 ---
 
-```.js
+```
 gulp.task('one', function(done) {
   // do stuff
   done();
@@ -55,19 +55,19 @@ function three(done) {
 three.description = "This is the description of task three";
 ```
 
-```console
+```
 shell> gulp --tasks
 shell> gulp --tasks-simple
 ```
 ---
 
-```console
+```
 shell> mkdir gulp
 shell> npm init -y
 shell> npm install --save-dev gulp gulp-concat gulp-uglify gulp-uglifycss gulp-imagemin gulp-size gulp-cache jshint gulp-jshint del
 ```
 
-```.js
+```
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -137,11 +137,11 @@ gulp.task('default', ['lint', 'scripts', 'css', 'images'], function() {
 
 ### gulp-jshint {#gulp-jshint}
 
-```console
+```
 shell> npm install jshint gulp-jshint
 ```
 
-```.js
+```
 const jshint = require('gulp-jshint');
 const gulp   = require('gulp');
 
@@ -152,7 +152,7 @@ gulp.task('lint', function() {
 });
 ```
 
-```.js
+```
 const jshint = require('gulp-jshint');
 const gulp   = require('gulp');
 var cache = require('gulp-cache');
@@ -188,11 +188,11 @@ function makeHashKey(file) {
 
 ### del {#del}
 
-```console
+```
 shell> npm install del
 ```
 
-```.js
+```
 var gulp = require('gulp');
 const del = require('del');
 
@@ -206,11 +206,11 @@ del(['tmp/*.js', '!tmp/unicorn.js']).then(paths => {
 
 ### gulp-cache {#gulp-cache}
 
-```console
+```
 shell> npm install gulp-cache
 ```
 
-```.js
+```
 var gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
@@ -223,7 +223,7 @@ gulp.task('images', () =>
 );
 ```
 
-```.js
+```
 var gulp = require('gulp');
 var cache = require('gulp-cache');
  
@@ -237,7 +237,7 @@ gulp.task('clear', function (done) {
 
 ### gulp.watch {#gulp.watch}
 
-```.js
+```
 gulp.watch('js/**/*.js', gulp.parallel('uglify', 'reload'));
 ```
 
@@ -246,7 +246,7 @@ gulp.watch('js/**/*.js', gulp.parallel('uglify', 'reload'));
 
 ### gulp-sourcemaps {#gulp-sourcemaps}
 
-```.js
+```
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
@@ -265,7 +265,7 @@ gulp.task('javascript', function() {
 ---
 
 ### gulp-html-beautify {#gulp-html-beautify}
-```.js
+```
 var gulp = require('gulp');
 var htmlbeautify = require('gulp-html-beautify');
 

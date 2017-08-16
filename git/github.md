@@ -19,7 +19,7 @@
 
 ### Using SSH over the HTTPS port {#using-ssh-over-the-https-port}
 
-```console
+```
 shell> ssh -T -p 443 git@ssh.github.com
 Hi username! You've successfully authenticated, but GitHub does not
 provide shell access.
@@ -31,7 +31,7 @@ Host github.com
   Hostname ssh.github.com
   Port 443
 ```
-```console
+```
 shell> ssh -T git@github.com
 Hi username! You've successfully authenticated, but GitHub does not
 provide shell access.
@@ -40,16 +40,16 @@ provide shell access.
 
 ### Switching remote URLs from HTTPS to SSH {#switching-remote-urls-from-https-to-ssh}
 
-```console
+```
 shell> git remote -v
 origin  https://github.com/USERNAME/REPOSITORY.git (fetch)
 origin  https://github.com/USERNAME/REPOSITORY.git (push)
 ```
 
-```console
+```
 shell> git remote set-url origin git@github.com:USERNAME/OTHERREPOSITORY.git
 ```
-```console
+```
 shell> git remote -v
 # Verify new remote URL
 origin  git@github.com:USERNAME/OTHERREPOSITORY.git (fetch)

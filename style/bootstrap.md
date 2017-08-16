@@ -30,7 +30,7 @@
 
 ```
 
-```console
+```
 shell> bower install bootstrap
 shell> npm install bootstrap
 shell> composer require twbs/bootstrap
@@ -154,7 +154,7 @@ Desktops (≥1200px) `lg`
 
 ```
 
-```emmet
+```
 div.panel.panel-default>div.panel-body{Basic panel example}
 div.panel.panel-default>div.panel-heading{Panel heading without title}+div.panel-body{Panel content}
 div.panel.panel-default>div.panel-body{Panel content}+div.panel-footer{Panel footer}
@@ -194,7 +194,7 @@ div.panel.panel-default>div.panel-body{Panel content}+div.panel-footer{Panel foo
 - https://msdn.microsoft.com/en-us/magazine/hh653584.aspx
 - https://msdn.microsoft.com/zh-tw/magazine/dn857356.aspx
 
-```emmet
+```
 div.well.well-lg
 div.well.well-sm>lorem10
 ```
@@ -202,5 +202,4 @@ div.well.well-sm>lorem10
 ```
 <div class="well well-lg">...</div>
 <div class="well well-sm">...</div>
-
 ```

@@ -71,21 +71,21 @@
 
 ---
 
-```console
+```
 shell> export AWS_ACCESS_KEY=your-aws-access-key-id
 shell> export AWS_SECRET_KEY=your-aws-secret-key
 ```
 
-```console
+```
 shell> file /etc/alternatives/java
 shell> export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64/jre
 shell> $JAVA_HOME/bin/java -version
 ```
-```console
+```
 shell> export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.0.0
 shell> export PATH=$PATH:$EC2_HOME/bin
 ```
-```console
+```
 shell> ec2-describe-regions
 
 REGION	eu-west-1	ec2.eu-west-1.amazonaws.com
@@ -115,12 +115,12 @@ ap-south-1			亚太区域 (孟买)
 sa-east-1			南美洲 (圣保罗)
 ```
 
-```console
+```
 shell> export EC2_URL=https://<service_endpoint>  
 shell> export EC2_URL=https://ec2.us-west-1.amazonaws.com
 ```
 
-```console
+```
 shell> ec2-create-keypair my-key-pair
 
 KEYPAIR	my-key-pair	1f:51:ae:28:bf:89:e9:d8:1f:25:5d:37:2d:7d:b8:ca:9f:f5:f1:6f
@@ -146,37 +146,37 @@ NYiytVbZPQUQ5Yaxu2jXnimvw3rrszlaEXAMPLE
 `---- BEGIN RSA PRIVATE KEY ----`
 `-----END RSA PRIVATE KEY-----`
 
-```console
+```
 shell> chmod 400 my-key-pair.pem
 ```
-```console
+```
 shell> ec2-create-group my-security-group -d "My security group"
 shell> ec2-authorize my-security-group -p 3389 -s 203.0.113.25/32
 shell> ec2-authorize my-security-group -p 22 -s 203.0.113.25/32
 ```
-```console
+```
 shell> ec2-create-group websrv -d "Web Servers"
 shell> ec2-authorize websrv -P tcp -p 80 -s 192.0.2.0/24
 shell> ec2-authorize websrv -P tcp -p 80 -s 0.0.0.0/0
 ```
 
 `启动实例`
-```console
+```
 shell> ec2-run-instances ami-xxxxxxxx -t t1.micro -k my-key-pair -g my-security-group
 ```
 
 `Ubuntu Server 14.04 LTS (HVM), SSD Volume Type`
-```console
+```
 shell> ec2-run-instances ami-a7fdfee2 -t t2.micro -k my-key-pair -g my-security-group
 ```
-```console
+```
 shell> ec2-describe-instances
 ```
-```console
+```
 shell> ssh -i my-key-pair.pem ec2-user@ec2-198-51-100-1.compute-1.amazonaws.com
 shell> ssh -i my-key-pair.pem ubuntu@ec2-54-183-170-94.us-west-1.compute.amazonaws.com
 ```
-```console
+```
 shell> ec2-stop-instances i-afb4bcf1
 shell> ec2-start-instances i-afb4bcf1
 shell> ec2-terminate-instances i-afb4bcf1
@@ -186,11 +186,11 @@ shell> ec2-terminate-instances i-afb4bcf1
 
 `/usr/local/share/awscli/examples`
 
-```console
+```
 shell> aws help
 ```
 
-```console
+```
 shell> aws configure
 AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
 AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
@@ -220,7 +220,7 @@ region=us-east-1
 output=text
 ```
 
-```console
+```
 shell> aws ec2 describe-instances
 shell> aws ec2 describe-instances --profile user2
 shell> aws ec2 describe-instances --instance-ids 
@@ -230,7 +230,7 @@ shell> aws ec2 run-instances --image-id ami-29ebb519 --security-group-ids sg-0cd
 shell> aws ec2 terminate-instances --instance-ids i-1234567890abcdef0
 ```
 
-```console
+```
 shell> aws ec2 create-security-group --group-name my-sg --description "My security group"
 {
     "GroupId": "sg-903004f8"
@@ -242,7 +242,7 @@ shell> aws ec2 delete-security-group --group-id sg-903004f8
 ```
 `Amazon S3 的檔案命令`
 
-```console
+```
 shell> aws s3 ls
 shell> aws s3 cp myfolder s3://mybucket/myfolder --recursive
 shell> aws s3 sync myfolder s3://mybucket/myfolder --exclude *.tmp

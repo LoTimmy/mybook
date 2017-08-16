@@ -1,4 +1,4 @@
-```.console
+```
 shell> crontab
 shell> /etc/crontab
 ```

@@ -1,5 +1,5 @@
 
-```console
+```
 shell> bower install jquery-tinyMap
 ```
 

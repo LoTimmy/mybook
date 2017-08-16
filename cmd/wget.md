@@ -2,24 +2,24 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install wget
 ```
 
-```console
+```
 shell> wget --spider https://www.google.com/textinputassistant/tia.png
 shell> wget -nv --spider https://www.google.com/textinputassistant/tia.png
 ```
-```console
+```
 shell> wget --mirror --convert-links --adjust-extension --page-requisites --no-parent http://getbootstrap.com/
 shell> wget -mkEpnp http://getbootstrap.com/      
 ```
 
-```console
+```
 shell> wget -r --no-parent http://getbootstrap.com/
 ```
 
-```console
+```
 shell> wget --content-disposition http://jpgraph.net/download/download.php?p=11
 ```
 

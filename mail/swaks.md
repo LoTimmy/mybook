@@ -1,12 +1,12 @@
 `swaks - SMTP command-line test tool`
 `tokyocabinet-bin - Tokyo Cabinet Database Utilities`
 
-```console
+```
 shell> apt-get install swaks
 shell> apt install tokyocabinet-bin
 ```
 
-```console
+```
 shell> swaks --to user@example.com --server test-server.example.net
 shell> swaks --to user@example.com --from me@example.com --auth CRAM-MD5 --auth-user me@example.com --header-X-Test "test email"
 shell> swaks --to user@example.com --from me@gmail.com --auth --auth-user=me --auth-password= -tls --server smtp.gmail.com:587 --header ""
@@ -22,7 +22,7 @@ shell> swaks --h-Subject "Hello World"
 
 `$HOME/.swaksrc`
 
-```console
+```
 shell> swaks --attach-type text/html --attach report.html
 shell> swaks --body report.html \
 --add-header "MIME-Version: 1.0" \
@@ -33,7 +33,7 @@ shell> swaks --body report.html \
 
 `中文`
 
-```console
+```
 shell> tcucodec quote report.html > my-email.html
 shell> swaks --body my-email.html \
 --header "Subject: Hello World" -S \
@@ -49,7 +49,7 @@ shell> swaks --body my-email.html \
 shell> curl www.example.com/mypage | swaks -f me@example.com -t user@example.com --attach-type text/html --attach -   
 ```
 
-```console
+```
 shell> file --mime-type example_image.png | sed 's/.*: //'
 
 shell> swaks -s test-server.example.net -p 25 \ 
@@ -67,7 +67,7 @@ shell> swaks -s test-server.example.net -p 25 \
 `-d, --data [data-portion]`
 
 
-```console
+```
 shell> swaks --from me@example.com --h-From: '"Me" <me@example.com>'
 ```
 

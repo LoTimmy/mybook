@@ -1,10 +1,10 @@
 `nftables - Program to control packet filtering rules by Netfilter project`
 
-```console
+```
 shell> sudo apt-get install nftables
 ```
 
-```console
+```
 shell> nft list table ip filter
 ```
 

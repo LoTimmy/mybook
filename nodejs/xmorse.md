@@ -1,4 +1,4 @@
-```console
+```
 shell> npm install xmorse
 ```
 
