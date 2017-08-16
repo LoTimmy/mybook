@@ -1,12 +1,32 @@
 {
   "plugins": [
-    "prism", "anchor-navigation-ex", "codeblock-filename", "search-plus", "-sharing", "-highlight", "-lunr", "-search", "-new-flowchart", "advanced-emoji", "jsfiddle", "youtube", "emphasize", "splitter", "tbfed-pagefooter", "toggle-chapters"
+    "autocover", "prism", "anchor-navigation-ex", "codeblock-filename", "search-plus", "-sharing", "-highlight", "-lunr", "-search", "-new-flowchart", "advanced-emoji", "jsfiddle", "youtube", "emphasize", "splitter", "tbfed-pagefooter", "toggle-chapters"
   ],
   "pluginsConfig": {
     "fontsettings": {
       "theme": "white",
       "family": "sans",
       "size": 1
+    },
+    "autocover": {
+      "title": "My Book",
+      "author": "Timmy",
+      "pluginsConfig": {
+        "autocover": {
+          "font": {
+            "size": null,
+            "family": "Impact",
+            "color": "#FFF"
+          },
+          "size": {
+            "w": 1800,
+            "h": 2360
+          },
+          "background": {
+            "color": "#09F"
+          }
+        }
+      }
     },
     "jsfiddle": {
       "type": "script",
