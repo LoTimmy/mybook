@@ -5,6 +5,31 @@
 
 ---
 
+- `arr1`
+- `arr2`
+- `arr3`
+- `new_array`
+- `alpha`
+- `numeric`
+
+---
+
+```
+var alpha = ['a', 'b', 'c'];
+var numeric = [1, 2, 3];
+var alphaNumeric = alpha.concat(1, [2, 3]);
+
+var arr1 = ['a', 'b', 'c'];
+var arr2 = ['d', 'e', 'f'];
+var num1 = [1, 2, 3],
+    num2 = [4, 5, 6],
+    num3 = [7, 8, 9];
+
+var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+```
+
+---
+
 - `beginDate`
 - `endDate`
 - `completedDate`
