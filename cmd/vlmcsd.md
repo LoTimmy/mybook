@@ -5,7 +5,7 @@
 `vlmcs - a client for testing and/or charging KMS servers`
 
 
-```console
+```
 shell> apt-get install p7zip-full
 
 shell> wget http://rghost.net/download/62BgHwKq9/3aca2cf0274480ba9a34928220b549511fb4c515/3aca2cf0274480ba9a34928220b549511fb4c515/vlmcsd-svn818-2016-03-07-Hotbird64.7z
@@ -13,7 +13,7 @@ shell> wget http://rghost.net/download/62BgHwKq9/3aca2cf0274480ba9a34928220b5495
 shell> 7za x vlmcsd-svn818-2016-03-07-Hotbird64.7z -o./kms-server -p2016 
 ```
 
-```console
+```
 shell> man man/vlmcsd.8
 shell> man man/vlmcs.1
 shell> man man/vlmcsd.7
@@ -33,18 +33,18 @@ binaries/Linux/intel/static/
 0 directories, 7 files
 ```
 
-```console
+```
 shell> vlmcsd -De
 shell> vlmcsd -l /var/log/vlmcsd.log
 shell> vlmcsd -L 192.168.1.17
 ```
 
-```console
+```
 shell> net start vlmcsd
 shell> vlmcsd -s -U /n -l C:\logs\vlmcsd.log
 ```
 
-```console
+```
 shell> ./vlmcsdmulti-x64-musl-static
 vlmcsdmulti svn818, built 2016-03-07 23:06:06 UTC
 
@@ -64,7 +64,7 @@ tcp6       0      0 :::1688                 :::*                    LISTEN      
 
 ---
 
-```console
+```
 shell> curl -sSL https://github.com/Wind4/vlmcsd/releases/download/svn1108/binaries.tar.gz -o binaries.tar.gz \
  && tar zxf binaries.tar.gz \
  && cp binaries/Linux/intel/static/vlmcsd-x86-musl-static /usr/bin/vlmcsd \
@@ -77,26 +77,26 @@ shell> vlmcsd -De
 
 ---
 
-```console
+```
 shell> slmgr /ipk GCRJD-8NW9H-F2CDX-CCM8D-9D6T9
 shell> slmgr /skms 192.168.1.17:1688
 shell> slmgr /ato
 ```
 
-```console
+```
 shell> cscript ospp.vbs /inpkey:YC7DK-G2NP3-2QQC3-J6H88-GVGXT
 shell> cscript ospp.vbs /sethst:192.168.1.17
 shell> cscript ospp.vbs /setprt:1688 
 shell> cscript ospp.vbs /act
 ```
 
-```console
+```
 shell> vlmcs kms.example.com
 shell> vlmcs 192.168.1.17
 ```
 
 **Windows Server 2012 R2 Server Standard**
-```console
+```
 shell> slmgr.vbs /upk
 shell> slmgr.vbs /ipk D2N9P-3P6X9-2R39C-7RTCD-MDVJX
 shell> slmgr /skms 192.168.1.17:1688
@@ -117,7 +117,7 @@ kms1.my-home-net.local. 10800 IN A 192.168.1.17
 srv-host=_vlmcs._tcp,192.168.1.55,1688,0,100
 ```
 
-```console
+```
 shell> dig -t SRV -q _vlmcs._tcp
 shell> nslookup -type=SRV _vlmcs._tcp 
 ```
@@ -150,7 +150,7 @@ BN3D2-R7TKB-3YPBD-8DRP2-27GG4 - Windows 8 Core
 
 ---
 
-```console
+```
 shell> echo -n I | od -o | awk 'FNR==1{ print substr($2,6,1)}'
 ```
 

@@ -1,11 +1,11 @@
 
-```console
+```
 shell> esxcli network nic list
 ```
 
 ---
 
-```console
+```
 shell> esxcli network ip interface ipv4 get
 Name  IPv4 Address    IPv4 Netmask   IPv4 Broadcast  Address Type  DHCP DNS
 ----  --------------  -------------  --------------  ------------  --------
@@ -15,17 +15,17 @@ shell> esxcli network ip interface ipv4 set -i vmk0 I 10.27.51.143 -N 255.255.25
 ```
 
 `List active TCP/IP connections.`
-```console
+```
 shell> esxcli network ip connection list
 shell> esxcli network ip connection list | grep LISTEN | grep 0.0.0.0:59
 ```
 
 `List ARP table entries.`
-```console
+```
 shell> esxcli network ip neighbor list
 ```
 
-```console
+```
 shell> esxcli network ip interface list
 shell> esxcli network ip interface ipv4 get -i vmk<X>
 shell> esxcli network ip interface ipv6 get -n vmk<X>
@@ -40,7 +40,7 @@ shell> esxcli network vswitch standard list
 
 ---
 
-```console
+```
 shell> esxcli network firewall get
 shell> esxcli network firewall set --enabled true
 shell> esxcli network firewall set --enabled false
@@ -56,13 +56,13 @@ shell> esxcli network firewall unload
 
 ---
 
-```console
+```
 
 shell> esxcli system settings advanced list
 shell> esxcli system settings advanced set -o /Net/GuestIPHack -i 1
 ```
 
-```console
+```
 shell> esxcli system hostname get
 shell> esxcli system hostname set --host=hostname
 shell> esxcli system hostname set --fqdn=fqdn

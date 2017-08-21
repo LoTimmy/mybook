@@ -2,7 +2,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install mysqltuner
 shell> mysqltuner
 ```

@@ -23,7 +23,7 @@ f1();
 })();
 ```
 
-```console
+```
 shell> node-v7.6.0-linux-x64/bin/node main.js
 ```
 

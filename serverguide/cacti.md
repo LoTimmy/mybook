@@ -74,14 +74,14 @@ MAILTO=root
 
 `Utilities` → `System Utilities` → `Rebuild Poller Cache`
 
-```console
+```
 shell> cd /usr/share/cacti/cli
 shell> php -q rebuild_poller_cache.php -d
 ```
 
 ---
 
-```console
+```
 shell> dpkg --purge javascript-common
 shell> apt-get install javascript-common
 ```
@@ -95,14 +95,14 @@ shell> apt-get install javascript-common
 
 ---
 
-```console
+```
 shell> esxcli system snmp set -c public
 shell> esxcli system snmp set -e yes
 ```
 
 `Cacti` → `Console` → `Import Templates`
 
-```console
+```
 shell> wget http://docs.cacti.net/_media/usertemplate:host:cacti_esxi_template.02.tar.gz -O cacti_esxi_template.02.tar.gz
 shell> tar zxvf cacti_esxi_template.02.tar.gz
 shell> mkdir /var/lib/cacti/scripts

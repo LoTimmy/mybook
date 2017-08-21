@@ -11,7 +11,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> sudo apt-get install gvpe
 ```
 
@@ -43,7 +43,7 @@ hostname = 145.253.105.130
 > 需要為每台主機創建公共/私有密匙，它們將用於加密和主機識別。
 > `hostkeys` 目錄包含每台主機的主機密匙（私有）信息。 `pubkeys` 目錄包含每台主機的公共密匙。
 
-```console
+```
 shell> gvpectrl -c /etc/gvpe -g
 ```
 
@@ -51,7 +51,7 @@ shell> gvpectrl -c /etc/gvpe -g
 /etc/gvpe/hostkey
 ```
 
-```console
+```
 shell> gvpectrl -s
 ```
 
@@ -104,18 +104,18 @@ ip route add 10.0.0.0/16 dev $IFNAME
 
 > 但是，您可能想從輸出獲取一些日誌信息。可以使用 `-l` 參數指定不同的日誌級別。對於測試，您還可以使用 `-D` 參數來阻止 `gvpe` 進入守護進程模式。您還需要指定節點名
 
-```console
+```
 $ gvpe -D -l info private1
 gvpe daemon 2.22 (Jun 13 2010 11:05:50) starting up.
 ```
-```console
+```
 $ gvpe -l info -D private2
 gvpe daemon 2.22 (Jun 13 2010 08:30:01) starting up.
 private1(udp/192.168.1.20:407): connection established (direct), protocol version 0.1.
 ```
 
 `監控虛擬網絡的狀態`
-```console
+```
 $ gvpectrl -s
 
 Configuration
@@ -183,7 +183,7 @@ udp-port = 20000
 > 公共密匙必須被複製到虛擬網絡中的每台主機，因為每台主機都需要它們來進行通信。主機密匙只在每台具體主機上需要，即，`private1` 主機密匙（將位於 `hostkeys/private1` 中）只需被複製到虛擬網絡中充當 `private1` 的主機。
 
 
-```console
+```
 shell> http://ftp.gnu.org/gnu/gvpe/gvpe-2.25.tar.gz
 
 shell> gvpectrl -s
@@ -201,7 +201,7 @@ shell> ./configure --enable-hmac-length=16 --enable-rand-length=8 --enable-diges
 shell> apt-get install libssl-dev
 ```
 
-```console
+```
 shell> apt-get install gvpe
 shell> vim /etc/default/gvpe
 ```

@@ -4,14 +4,14 @@
 
 ---
 
-```console
+```
 shell> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 shell> brew doctor
 ```
 
 ---
 
-```console
+```
 shell> brew update
 shell> brew upgrade --all
 
@@ -30,7 +30,7 @@ shell> brew info
 
 ---
 
-```console
+```
 shell> brew install git
 
 shell> brew install ssh-copy-id
@@ -76,7 +76,7 @@ shell> brew install jmeter --with-plugins
 shell> brew install the_silver_searcher
 ```
 
-```console
+```
 shell> brew install caskroom/cask/brew-cask
 
 shell> brew cask list
@@ -148,7 +148,7 @@ ZFHN1-D2DGE-44HRH-7NC5H-1GG49
 ```
 -->
 
-```console
+```
 shell> brew install dlite
 shell> brew upgrade dlite
 
@@ -162,20 +162,20 @@ shell> dlite start
 
 ---
 
-```console
+```
 shell> brew cask install ngrok
 ```
 
 ---
 
-```console
+```
 shell> brew cask install virtualbox
 shell> brew cask install virtualbox-extension-pack
 ```
 ---
 
 
-```console
+```
 shell> brew cask install dropbox
 ```
 
@@ -189,7 +189,7 @@ shell> brew cask install dropbox
   fi
 ```
 
-```console
+```
 shell> brew install caskroom/cask/brew-cask
 shell> brew cask install google-chrome
 shell> ls /opt/homebrew-cask/Caskroom
@@ -197,19 +197,19 @@ shell> ls /opt/homebrew-cask/Caskroom
 
 ---
 
-```console
+```
 shell> brew cask install handbrakecli
 
 shell> brew install handbrakecli
 ```
 
-```console
+```
 shell> HandBrakeCLI
 shell> HandBrakeCLI -i -o  --preset="High Profile" -s scan -F --subtitle-burned -N chi
 shell> HandBrakeCLI -i MyMovie.mkv -o MyMovie.avi --preset="High Profile" -s scan -F --subtitle-burned -N chi    
 ```
 
-```console
+```
 shell> HandBrakeCLI --help
 ```
 
@@ -218,7 +218,7 @@ shell> HandBrakeCLI --help
 
 ---
 
-```console
+```
 shell> killall Finder
 
 shell> brew install most
@@ -245,12 +245,12 @@ Or, if you don't want/need a background service you can just run:
   rethinkdb
 ```
 
-```console
+```
 shell> brew install dnscrypt-proxy
 ```
 ---
 
-```console
+```
 shell> brew cask install tuntap
 ```
 

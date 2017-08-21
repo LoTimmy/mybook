@@ -17,7 +17,7 @@
 
 ![](https://certbot.eff.org/images/certbot-logo-1A.svg)
 
-```console
+```
 shell> mkdir /opt/letsencrypt
 shell> wget https://dl.eff.org/certbot-auto
 shell> chmod a+x ./certbot-auto
@@ -29,27 +29,27 @@ shell> ./certbot-auto certonly --standalone-supported-challenges tls-sni-01 --re
 shell> ./certbot-auto renew
 ```
 
-```console
+```
 shell> ./certbot-auto renew --standalone --pre-hook "service nginx stop" --post-hook "service nginx start"
 ```
 
-```console
+```
 shell> ./certbot-auto --apache -d example.com -d www.example.com -d other.example.net
 shell> ./certbot-auto certonly --standalone --agree-tos --email admin@example.com -d example.com -d www.example.com -d other.example.net
 ```
 
-```console
+```
 shell> git clone https://github.com/certbot/certbot
 shell> cd certbot
 shell> ./certbot-auto --help
 ```
 
 
-```console
+```
 shell> openssl dhparam -out dhparam.pem 2048
 ```
 
-```console
+```
 shell> ./certbot-auto renew --dry-run
 ```
 
@@ -100,7 +100,7 @@ server {
 
 ---
 
-```console
+```
 shell> sudo apt-get install letsencrypt 
 shell> letsencrypt certonly --webroot -w /var/www/example -d example.com -d www.example.com -w /var/www/thing -d thing.is -d m.thing.is
 shell> letsencrypt certonly --standalone -d example.com -d www.example.com

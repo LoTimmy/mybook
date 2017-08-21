@@ -7,7 +7,7 @@ shell> apt-get install curlftpfs
 shell> apt install curlftpfs
 ```
 
-```console
+```
 shell> curlftpfs -v -o allow_other -o user="user:pass" ftp.myserver.com:21 /mnt/ftp
 shell> curlftpfs -o codepage=utf8,iocharset=big5,ipv4,user={username}:{password} ftp://{servicename} /root/file-sharing
 ```

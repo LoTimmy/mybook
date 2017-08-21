@@ -23,7 +23,7 @@
 </html>
 ```
 
-```console
+```
 shell> nw.exe
 ```
 

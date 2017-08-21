@@ -1,4 +1,4 @@
-```console
+```
 shell> vim-cmd
 Commands available under /:
 hbrsvc/       internalsvc/  solo/         vmsvc/        
@@ -41,7 +41,7 @@ get.runtime                      upgrade
 get.snapshotinfo
 ```
 
-```console
+```
 shell> vim-cmd vmsvc/tools.install <vmid>
 
 shell> vim-cmd hostsvc/net/info
@@ -49,123 +49,123 @@ shell> vim-cmd hostsvc/hosthardware
 ```
 
 `Retrieves and displays the listsummary status from the vm.`
-```console
+```
 shell> vim-cmd vmsvc/get.summary vmid
 ``` 
 
 `Register a VM`
-```console
+```
 shell> vim-cmd solo/registervm path_to_vmx_file
 ``` 
 
 `Unregister a VM`
-```console
+```
 shell> vim-cmd vmsvc/unregister vmid #
 ```
 
 `Delete a VM`
-```console 
+``` 
 shell> vim-cmd vmsvc/destroy vmid # 
 ```
 
 `Get a listing of VMs on a host`
-```console
+```
 shell> vim-cmd vmsvc/getallvms 
 ```
 
 `Power on a VM`
-```console
+```
 shell> vim-cmd vmsvc/power.on vmid $(vim-cmd vmsvc/getallvms | grep '' | awk '{$1}')
 ```
 
 `Shutdown a VM`
-```console
+```
 shell> vim-cmd vmsvc/power.shutdown vmid
 ```
 
 `Reboot a VM`
-```console
+```
 shell> vim-cmd vmsvc/power.reboot vmid
 ```
 
 `Power off a VM`
-```console
+```
 shell> vim-cmd vmsvc/power.off vmid
 ```
 
 `Get the current power state of a VM`
-```console
+```
 shell> vim-cmd vmsvc/power.getstate vmid
 ```
 
 `Get the uptime for a VM`
-```console
+```
 shell> vim-cmd vmsvc/get.summary vmid | grep uptimeSeconds
 ```
 
 `Reset a VM`
-```console
+```
 shell> vim-cmd vmsvc/power.reset vmid
 ```
 
 `Determine if a VM has a snapshot`
-```console
+```
 shell> vim-cmd vmsvc/get.snapshot vmid
 ```
 
 `Take a snapshot of a VM`
-```console
+```
 shell> vim-cmd vmsvc/snapshot.create vmid snapshot_name
 ```
 
 `Remove a snapshot of a VM`
-```console
+```
 shell> vim-cmd vmsvc/snapshot.remove vmid
 ```
 
-```console
+```
 shell> vim-cmd vmsvc/power.hibernate vmid
 ```
 
-```console
+```
 shell> vim-cmd vmsvc/snapshot.revert vmid snapshot_name
 ```
 
 `Upgrade VMware Tools in a VM`
-```console
+```
 shell> vim-cmd vmsvc/tools.upgrade vmid
 ```
 
 `Display the IP address of a VM`
-```console
+```
 shell> vim-cmd vmsvc/get.guest vmid |grep -m 1 "ipAddress = \""
 ```
 
-```console
+```
 shell> vim-cmd vmsvc/power.suspend vmid
 ```
 
 `Sets the Console window's resolution.`
-```console
+```
 shell> vim-cmd vmsvc/setscreenres vmid width height
 ```
 
 `Convert the virtual machine to a template.`
-```console
+```
 shell> vim-cmd vmsvc/convert.toTemplate vmid
 ```
 
 `Convert the template to a virtual machine.`
-```console
+```
 shell> vim-cmd vmsvc/convert.toVm vmid
 ```
 
 `Retrieves and displays the configuration object for the vm.`
-```console
+```
 shell> vim-cmd vmsvc/get.config vmid
 ```
 
-```console
+```
 shell> vim-cmd vimsvc/license --show
 
 shell> vim-cmd hostsvc/datastore/listsummary
@@ -175,7 +175,7 @@ shell> vim-cmd hostsvc/datastore/listvm datastore1
 
 ---
 
-```console
+```
 shell> vim-cmd vmsvc/getallvms
 shell> vim-cmd vmsvc/power.shutdown vmid
 shell> cd /vmfs/volumes/datastore1
@@ -184,7 +184,7 @@ shell> vmkfstools -i examplevm/examplevm.vmdk -d thin newexamplevm/newexamplevm.
 shell> vim-cmd vmsvc/power.on vmid
 ```
 
-```console
+```
 shell> vim-cmd vmsvc/getallvms
 shell> vim-cmd vmsvc/snapshot.get vmid
 shell> vim-cmd vmsvc/snapshot.removeall vmid
@@ -201,11 +201,11 @@ shell> vim-cmd vmsvc/snapshot.removeall vmid
 
 ---
 
-```console
+```
 shell> vim-cmd vmsvc/tools.install vmid
 ```
 
-```console
+```
 shell> sudo mount /dev/cdrom /media/cdrom
 shell> ls /mnt/cdrom
 shell> tar xzvf /media/cdrom/VMwareTools-x.x.x-xxxx.tar.gz -C /tmp/

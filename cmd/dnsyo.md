@@ -1,6 +1,6 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> pip install --upgrade dnsyo
 ```
 
@@ -11,7 +11,7 @@ shell> pip install --upgrade dnsyo
                       Number of worker threads to use
 ```
 
-```console
+```
 shell> dnsyo -t 100 -q ALL example.com
 shell> dnsyo --simple example.com
 shell> dnsyo --extended example.com

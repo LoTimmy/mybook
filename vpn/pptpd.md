@@ -11,7 +11,7 @@
 安裝作業系統及`pptpd`相關套件。
 因本文主要介紹`pptpd`如何安裝及設定，作業系統方面就不再詳述。
 
-```console
+```
 shell> lsb_release -a
 ```
 ```
@@ -23,7 +23,7 @@ Codename:	trusty
 ```
 
 ### 安裝 pptpd 
-```console
+```
 shell> sudo apt-get install pptpd
 ```
 

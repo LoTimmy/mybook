@@ -3,7 +3,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install pm2 -g # Install latest pm2 version
 shell> npm install pm2@latest -g
 ```
@@ -42,7 +42,7 @@ shell> npm install pm2@latest -g
  Use `pm2 show <id|name>` to get more details about an app
 ```
 
-```console
+```
 # Fork mode
 shell> pm2 start app.js
 shell> pm2 start app.js --name="api" # Start application and name it "api"
@@ -80,7 +80,7 @@ apps:
       NODE_ENV: production
 ```
 
-```console
+```
 pm2 start process.yml
 ```
 
@@ -95,7 +95,7 @@ apps:
 
 ![](https://github.com/unitech/pm2/raw/master/pres/pm2-list.png)
 
-```console
+```
 shell> pm2 list               # List all processes started with PM2
 ```
 
@@ -110,18 +110,18 @@ $HOME/.pm2/pub.sock Socket file for publishable events
 $HOME/.pm2/conf.js PM2 Configuration
 ```
 
-```console
+```
 shell> pm2 generate                  # Generate a sample json configuration file
 ```
 
-```console
+```
 # Logs
 shell> pm2 logs                      # Display logs of all apps
 shell> pm2 reloadLogs                # Reload all logs
 shell> pm2 flush                     # Clear all the logs
 ```
 
-```console
+```
 shell> pm2 ping                      # Ensure pm2 daemon has been launched
 { msg: 'pong' }
 ```
@@ -131,7 +131,7 @@ shell> pm2 ping                      # Ensure pm2 daemon has been launched
 Monitor all processes
 
 ![](http://pm2.keymetrics.io/images/pm2-monit.png)
-```console
+```
 shell> pm2 monit                     # Display memory and cpu usage of each app
 ```
 

@@ -5,6 +5,42 @@
 
 ---
 
+- `beginDate`
+- `endDate`
+- `completedDate`
+- `adminEmailAddress`
+- `COMPLETED`
+- `status`
+- `userEmailAddress`
+
+---
+
+- `HumanResources.Employee`
+- `Production.Product`
+- `EmpID`
+- `JobTitle`
+- `ProductID`
+- `ProductNumber`
+- `OrderQty`
+- `Total`
+- `UnitPrice`
+- `ListPrice`
+- `ProductName`
+- `Name`
+- `LastName`
+- `FirstName`
+- `ModifiedDate`
+
+---
+
+- `MyCompany, Inc.`
+- `http://www.mycompany.com`
+- `MyData`
+- `My PDFs`
+- `My Music`
+- `My Movies`
+- `My Images`
+- `Macintosh HD`
 - `MyPassword`
 - `MyUsername`
 - `ComputerName`
@@ -40,6 +76,8 @@
 - `重置按鈕`
 - `名稱`
 - `說明`
+- `WiFi`
+- `Ethernet`
 
 ---
 
@@ -202,7 +240,9 @@
 
 - `ip-addr`
 - `ipaddr`
+- `IP Address`
 - `hostname`
+- `Hostname`
 - `subnetmask`
 - `gateway`
 - `metric`
@@ -748,7 +788,7 @@
 - `gmail`
 - `username@gmail.com`
 - `example@gmail.com`
-- 
+- `steve@mycompany.com`
 - `smtp.gmail.com`
 
 - `bob`
@@ -759,6 +799,9 @@
 - `Tim`
 - `Timmy`
 - `timmy`
+- `Administrator`
+- `Steve`
+- `Steve Jobs`
 
 - `adduser`
 - `deluser`

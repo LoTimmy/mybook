@@ -4,11 +4,11 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install lnav
 ```
 
-```console
+```
 shell> lnav -s
 shell> lnav /var/log
 shell> lnav /var/log/apache2
@@ -18,7 +18,7 @@ shell> make 2>&1 | lnav -t
 ```sql
 SELECT c_ip, count(*), sum(sc_bytes) AS total FROM access_log GROUP BY c_ip ORDER BY total DESC;
 ```
-```console
+```
 shell> lnav -n \
  -c ';SELECT c_ip, count(*) AS total FROM access_log GROUP BY c_ip ORDER BY total DESC LIMIT 10' \
  -c ':write-csv-to -' \

@@ -1,6 +1,6 @@
 `rename - renames multiple files`
 
-```console
+```
 shell> brew install rename
 shell> rename 's/\.bak$//' *.bak
 shell> rename 'y/A-Z/a-z/' *

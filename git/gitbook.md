@@ -1,7 +1,3 @@
-<!--
-<img src="https://avatars0.githubusercontent.com/u/7111340?v=3&s=200" height="30">
--->
-
 <img src="https://www.gitbook.com/assets/images/logo/512-text.png" height="30">
 
 <img src="http://i.imgur.com/VMxh8oX.png" width="200">
@@ -12,7 +8,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install -g gitbook-cli
 shell> gitbook help
 
@@ -87,7 +83,7 @@ shell> gitbook serve
 
 {% youtube %}https://www.youtube.com/watch?v=9bZkp7q19f0{% endyoutube %}
 
-```console
+```
 shell> gitbook install
 ```
 
@@ -210,3 +206,5 @@ This text is {% em color="#ff0000" %}highlighted with a custom color!{% endem %}
 - https://plugins.gitbook.com/plugin/toggle-chapters
 - https://github.com/GitbookIO/plugin-fontsettings
 
+---
+- https://plugins.gitbook.com/plugin/tags

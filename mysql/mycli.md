@@ -2,7 +2,7 @@
 <img src="http://mycli.net/images/tables.png" alt="ansible" width=400>
 
 ### 安裝 {#installing}
-```console
+```
 shell> brew update && brew install mycli
 ```
 

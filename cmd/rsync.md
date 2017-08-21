@@ -1,6 +1,6 @@
 `rsync - fast, versatile, remote (and local) file-copying tool`
 
-```console
+```
 shell> rsync -avz foo:src/bar /data/tmp
 shell> rsync -avz --delete src/ dst_directory/
 

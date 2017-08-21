@@ -1,5 +1,5 @@
 
-```console
+```
 shell> brew install fswatch
 ```
 
@@ -15,7 +15,7 @@ shell> brew install fswatch
 `inotifywait - wait for changes to files using inotify`
 
 
-```console
+```
 shell> brew install fswatch
 ```
 
@@ -24,7 +24,7 @@ inotifywait
 ```
 
 最简单的调用是`inotifywait -r -m`，它循环监控参数(`-r`)，并使该实用程序在每个事件(`-m`)之后保持运行：
-```console
+```
 shell> inotifywait -r -m $HOME
 Setting up watches.  Beware: since -r was given, this may take a while!
 Watches established.

@@ -2,14 +2,14 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install jade
 shell> npm install jade -g
 
 shell> npm install pug
 ```
 
-```
+```jade
 doctype html
 html(lang="en")
   head
@@ -53,7 +53,7 @@ html(lang="en")
 
 `template.pug`
 
-```pug
+```jade
 p #{name}'s Pug source code!
 ```
 ```js

@@ -3,7 +3,7 @@
 
 ----------
 
-```console
+```
 shell> socat TCP-LISTEN:25,reuseaddr,fork TCP:mailhost.example.com:25
 shell> socat TCP-LISTEN:110,reuseaddr,fork TCP:mailhost.example.com:110
 shell> socat TCP-LISTEN:143,reuseaddr,fork TCP:mailhost.example.com:143

@@ -7,7 +7,7 @@
 安裝作業系統及`MySQL`相關套件。
 因本文主要介紹`MySQL`如何安裝及設定，作業系統方面就不再詳述。
 
-```console 
+``` 
 shell> lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
@@ -16,7 +16,7 @@ Release:	14.04
 Codename:	trusty
 ```
 
-```console
+```
 shell> MYSQL_PASSWORD=MYSQL_PASSWORD
 shell> echo "mysql-server-5.5 mysql-server/root_password password ${MYSQL_PASSWORD}
 mysql-server-5.5 mysql-server/root_password seen true
@@ -31,7 +31,7 @@ shell> DEBIAN_FRONTEND=noninteractive apt-get install -y --force-yes mysql-serve
 <img src="http://i.imgur.com/HS5iAz1.png" alt="ansible" width=40>
 
 ### 安裝 Percona Server 5.7 {#percona-server-server-5.7}
-```console
+```
 shell> sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 8507EFA5
 shell> echo "deb http://repo.percona.com/apt "$(lsb_release -sc)" main" | sudo tee /etc/apt/sources.list.d/percona.list
 shell> sudo apt-get update
@@ -54,7 +54,7 @@ bind-address = 127.0.0.1
 
 <img src="http://i.imgur.com/wtp11Uj.png" alt="ansible" width=40>
 
-```console
+```
 shell> sudo apt-get install software-properties-common
 shell> sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 shell> sudo add-apt-repository 'deb [arch=amd64,i386] http://nyc2.mirrors.digitalocean.com/mariadb/repo/10.1/ubuntu trusty main'
@@ -74,14 +74,14 @@ shell> sudo apt-get install mariadb-connect-engine-10.1
 
 ### 安裝 MySQL 5.6
 
-```console
+```
 shell> apt-get install mysql-server-5.7
 ```
 
 
 ### 安裝 MySQL 5.6
 
-```console
+```
 shell> apt-get install mysql-server-5.6
 shell> netstat -tap | grep mysql
 
@@ -110,7 +110,7 @@ init-connect = 'SET NAMES utf8'
 character-set-server = utf8
 ```
 
-```console
+```
 shell> dpkg-reconfigure mysql-server-5.6
 shell> mysql -p
 ```
@@ -365,7 +365,7 @@ SHOW PLUGINS;
 +---+----------+--------------------+---------+---------+
 ```
 
-```console
+```
 shell> vim /etc/mysql/my.cnf
 ```
 ```ini
@@ -619,7 +619,7 @@ DELIMITER ;
 ---
 
 `InnoDB File-Per-Table Mode` 
-```console
+```
 shell> vim /etc/mysql/my.cnf
 ```
 ```ini
@@ -648,7 +648,7 @@ innodb_log_buffer_size
  deprecated and will be removed in a future release. Please use the full name instead.
 ```
 解決方法
-```console
+```
 shell> vim /etc/mysql/my.cnf
 ```
 ```ini
@@ -662,7 +662,7 @@ key_buffer_size = 16M
 --explicit_defaults_for_timestamp server option (see documentation for more details).
 ```
 解決方法
-```console
+```
 shell> vim /etc/mysql/my.cnf
 ```
 ```ini
@@ -675,7 +675,7 @@ explicit_defaults_for_timestamp = 1
 ved in a future release. Please use the full name instead.
 ```
 解決方法
-```console
+```
 shell> vim /etc/mysql/my.cnf
 ```
 ```ini
@@ -689,7 +689,7 @@ myisam-recover-options = BACKUP
 ```
 
 解決方法
-```console
+```
 shell> vim /etc/mysql/my.cnf
 ```
 ```ini
@@ -747,7 +747,7 @@ SHOW VARIABLES LIKE 'have_ssl';
 ```
 
 ###### Create CA certificate
-```console
+```
 shell> openssl genrsa -out ca-key.pem 2048
 shell> openssl req -sha1 -new -x509 -nodes -days 7305 \
        -key ca-key.pem -out ca-cert.pem \
@@ -756,7 +756,7 @@ shell> openssl x509 -in ca-cert.pem -text -noout
 ```
 
 ###### Create server certificate, remove passphrase, and sign it
-```console
+```
 shell> openssl req -sha1 -newkey rsa:2048 -nodes -days 3653 \
        -keyout mysql-server-key.pem -out mysql-server-req.pem \
        -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=mysql-server"
@@ -771,12 +771,12 @@ SSL error: Unable to get certificate from '/etc/mysql/mysql-server-key.pem'
 [Warning] SSL error: Unable to get certificate
 ```
 解決方法
-```console
+```
 shell> openssl rsa -in mysql-server-key.pem -out mysql-server-key.pem
 ```
 
 ###### Create client certificate, remove passphrase, and sign it
-```console
+```
 shell> openssl req -sha1 -newkey rsa:2048 -nodes -days 3653 \
        -keyout mysql-client-key.pem -out mysql-client-req.pem \
        -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=mysql-client"
@@ -786,7 +786,7 @@ shell> openssl verify -verbose -CAfile ca-cert.pem mysql-client-cert.pem
 shell> openssl rsa -in mysql-client-key.pem -out mysql-client-key.pem
 ```
 
-```console
+```
 shell> openssl req -sha1 -newkey rsa:2048 -nodes -days 3653 \
        -keyout jeffrey-key.pem -out jeffrey-req.pem \
        -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=jeffrey"
@@ -796,7 +796,7 @@ shell> openssl verify -verbose -CAfile ca-cert.pem jeffrey-cert.pem
 shell> openssl rsa -in jeffrey-key.pem -out jeffrey-key.pem
 ```
 
-```console
+```
 shell> vim /etc/mysql/my.cnf
 ```
 
@@ -806,7 +806,7 @@ ssl-cert=/etc/mysql/mysql-server-cert.pem
 ssl-key=/etc/mysql/mysql-server-key.pem
 ```
 
-```console
+```
 shell> service mysql restart
 ```
 
@@ -821,7 +821,7 @@ SHOW VARIABLES LIKE 'have_ssl';
 
 ##### Connecting using SSL Encryption
 
-```console
+```
 shell> mysql --ssl-ca=ca-cert.pem \
        --ssl-cert=mysql-client-cert.pem \
        --ssl-key=mysql-client-key.pem -p
@@ -848,7 +848,7 @@ GRANT ALL ON *.* TO 'root'@'%' REQUIRE SSL WITH GRANT OPTION;
 SHOW GRANTS FOR 'root'@'%';
 ```
 
-```consol0e
+```
 shell> vim ~/.my.cnf
 ```
 ```ini
@@ -935,7 +935,7 @@ SET GLOBAL innodb_fast_shutdown=0;
 ---
 ### How to Reset the Root Password
 
-```console
+```
 shell> service mysql stop
 shell> mysqld_safe --skip-grant-tables &
 shell> mysql
@@ -946,7 +946,7 @@ UPDATE mysql.user SET Password=PASSWORD('MyNewPass') WHERE User='root';
 FLUSH PRIVILEGES;
 ```
 
-```console
+```
 shell> service mysql restart
 ```
 
@@ -1240,7 +1240,7 @@ INSERT INTO MyTable VALUES (123, 12345.12, N'Test data', N'More test data', 9223
 LOAD DATA INFILE 'data.txt' INTO TABLE db2.my_table;
 ```
 
-```console
+```
 shell> mysql -h remote.example.com \
        -u remoteuser \
        -p password \
@@ -1343,14 +1343,14 @@ SET GLOBAL slow_query_log = 'OFF';
 
 `mysql-config-editor`
 
-```console
+```
 shell> mysql_config_editor set --login-path=client --host=localhost --user=localuser --password 
 shell> mysql --login-path=remote
 ```
 
 .mylogin.cnf
 
-```console
+```
 shell> mysql_config_editor print --all
 ```
 ```
@@ -1803,7 +1803,7 @@ SELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'(?+i)b');
 
 mysql-proxy - high availability, load balancing and query modification for mysql
 
-```console
+```
 shell> sudo apt-get update
 shell> sudo apt-get install mysql-proxy
 shell> dpkg -L mysql-proxy
@@ -1840,12 +1840,12 @@ proxy-lua-script = /usr/lib/mysql-proxy/lua/proxy/balance.lua
 
 ```
 
-```console
+```
 shell> sudo chmod 0660 /etc/mysql/mysql-proxy.cnf
 shell> sudo service mysql-proxy start 
 ```
 
-```console
+```
 shell> mysql -P4040 -uroot -p 
 ```
 
@@ -1858,12 +1858,12 @@ shell> mysql -P4040 -uroot -p
 
 mydumper - High-performance MySQL backup tool
 
-```console
+```
 shell> sudo apt-get update
 shell> sudo apt-get install mydumper
 ```
 
-```console
+```
 shell> mydumper -u root -p mypass -B mysql -o mysql
 shell> myloader -u root -p mypass -B mysql -d mysql
 ```
@@ -1883,7 +1883,7 @@ innodb_flush_log_at_trx_commit=1
 sync_binlog=1
 ```
 
-```console
+```
 shell> service mysql restart
 ```
 
@@ -1895,7 +1895,7 @@ FLUSH TABLES WITH READ LOCK;
 SHOW MASTER STATUS;
 ```
 
-```console
+```
 shell> mysqldump --all-databases --master-data > dbdump.db
 ```
 
@@ -1911,7 +1911,7 @@ replicate-wild-do-table=foo%.bar%
 master-connect-retry=60
 ```
 
-```console
+```
 shell> service mysql restart
 ```
 
@@ -1920,7 +1920,7 @@ STOP SLAVE;
 RESET SLAVE ALL;
 ```
 
-```console
+```
 shell> mysql < dbdump.db
 ```
 
@@ -1965,7 +1965,7 @@ PURGE BINARY LOGS BEFORE '2013-04-22 09:55:22';
 <a name="mysqlslap"></a>
 **mysqlslap - load emulation client**
 
-```console
+```
 shell> mysqlslap
 shell> mysqlslap --delimiter=";" --create="CREATE TABLE a (b int);INSERT INTO a VALUES (23)" --query="SELECT * FROM a" --concurrency=50 --iterations=200
 shell> mysqlslap --concurrency=5 --iterations=5 --query=query.sql --create=create.sql --delimiter=";"

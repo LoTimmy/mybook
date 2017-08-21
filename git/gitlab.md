@@ -1,5 +1,5 @@
 
-```console
+```
 shell> sudo apt-get install curl openssh-server ca-certificates postfix
 shell> curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
 shell> sudo apt-get install gitlab-ce
@@ -27,13 +27,13 @@ external_url 'http://ubuntu.unassigned-domain'
 
 ```
 
-```console
+```
 sudo gitlab-ctl reconfigure
 ```
 
 ---
 
-```console
+```
 shell> sudo gitlab-ctl restart
 shell> sudo gitlab-ctl restart nginx
 ```
@@ -44,7 +44,7 @@ shell> sudo gitlab-ctl restart nginx
 `/var/opt/gitlab/git-data/repositories`
 
 
-```console
+```
 shell> sudo gitlab-rake gitlab:backup:create
 ```
 
@@ -75,18 +75,18 @@ Deleting tmp directories...[DONE]
 Deleting old backups... [SKIPPING]
 ```
 
-```console
+```
 shell> sudo gitlab-ctl stop unicorn
 shell> sudo gitlab-ctl stop sidekiq
 # Verify
 shell> sudo gitlab-ctl status
 ```
 
-```console
+```
 shell> sudo gitlab-rake gitlab:backup:restore BACKUP=1493107454_2017_04_25_9.1.0
 ```
 
-```console
+```
 shell> sudo gitlab-ctl start
 shell> sudo gitlab-rake gitlab:check SANITIZE=true
 ```

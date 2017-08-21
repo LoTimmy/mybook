@@ -1,6 +1,6 @@
 `ss`
 
-```console
+```
 # Display all TCP sockets.
 shell> ss -t -a
 

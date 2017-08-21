@@ -8,7 +8,7 @@
 
 ### 在 `Ubuntu` 14.04 LTS 上建置 `sysbench`
 
-```console
+```
 shell> lsb_release -a
 ```
 ```
@@ -19,7 +19,7 @@ Release:	14.04
 Codename:	trusty
 ```
 ### 安裝 sysbench 
-```console
+```
 shell> sudo apt-get install sysbench
 ```
 
@@ -28,19 +28,19 @@ shell> sudo apt-get install sysbench
 ![](http://www.netadmin.com.tw/images/news/NP150702000215070214031103.png)
 ![](http://www.netadmin.com.tw/images/news/NP150702000215070214033201.png)
 ![](http://www.netadmin.com.tw/images/news/NP150702000215070214033302.png)
-```console
+```
 shell> sysbench --test=cpu --cpu-max-prime=20000 run
 ```
-```console
+```
 shell> sysbench --test=memory --memory-block-size=8K --memory-total-size=1G --memory-oper=read run  
 ```
-```console
+```
 shell> sysbench --num-threads=16 --test=fileio --file-total-size=3G --file-test-mode=rndrw prepare
 shell> sysbench --num-threads=16 --test=fileio --file-total-size=3G --file-test-mode=rndrw run
 shell> sysbench --num-threads=16 --test=fileio --file-total-size=3G --file-test-mode=rndrw cleanup
 ```
 
-```console
+```
 shell> sysbench --test=oltp --mysql-table-type=myisam --oltp-table-size=1000000 --mysql-socket=/tmp/mysql.sock prepare
 shell> sysbench --num-threads=16 --max-requests=100000 --test=oltp --oltp-table-size=1000000 --mysql-socket=/tmp/mysql.sock --oltp-read-only run
 ```

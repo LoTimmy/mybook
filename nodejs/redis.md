@@ -1,7 +1,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install --save redis
 ```
 
@@ -28,7 +28,7 @@ Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.
 
 ---
 
-```console
+```
 shell> npm install fast-redis-cluster2 --save
 ```
 
@@ -74,7 +74,7 @@ redis.get('foo', function(err, resp){
 
 ---
 
-```console
+```
 shell> npm install fast-redis-cluster2 --save
 ```
 

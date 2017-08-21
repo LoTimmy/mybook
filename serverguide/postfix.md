@@ -50,7 +50,7 @@
 
 ---
 
-```console
+```
 shell> apt-get install postfix 
 shell> apt-get install procmail
 shell> apt-get install dovecot-common dovecot-pop3d dovecot-imapd dovecot-postfix
@@ -62,7 +62,7 @@ shell> postalias hash:/etc/aliases
 disable_plaintext_auth = no
 ```
 
-```console
+```
 shell> dpkg-reconfigure postfix
 
 shell> postconf
@@ -74,7 +74,7 @@ shell> postconf myhostname
 shell> postconf mydestination
 ```
 
-```console
+```
 shell> postconf default_destination_concurrency_limit
 shell> postconf default_destination_recipient_limit
 shell> postconf default_process_limit
@@ -132,15 +132,15 @@ info@example.com       joe
 sales@example.com      jane
 ```
 
-```console
+```
 shell> postmap /etc/postfix/virtual
 shell> postfix reload
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [Postfix Virtual Domain Hosting Howto](http://www.postfix.org/VIRTUAL_README.html)
 
-```console
+```
 shell> postfix reload
 
 shell> postfix check
@@ -148,7 +148,7 @@ shell> egrep '(reject|warning|error|fatal|panic):' /some/log/file
  
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [BASIC_CONFIGURATION_README](http://www.postfix.org/BASIC_CONFIGURATION_README.html)
 
 ```
@@ -156,7 +156,7 @@ permit_mynetworks
 permit_sasl_authenticated
 ```
 
-```console
+```
 shell> postconf -e 'myhostname = mail.example.com'
 shell> postconf -e 'mydomain = example.com'
 shell> postconf -e 'myorigin = $mydomain'
@@ -191,7 +191,7 @@ shell> postcat -q queue_id
 ---
 
 
-```console
+```
 shell> apt-get install clamav 
 shell> apt-get install spamassassin
 shell> apt-get install mailscanner
@@ -253,41 +253,41 @@ Scanned Subject Text = {Scanned}
 
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [mailscanner](https://www.mailscanner.info/)
 - [mailscanner](https://www.mailscanner.info/MailScanner.conf.index.html)
 - [mailscanner](https://www.mailscanner.info/postfix/)
 
 
-```console
+```
 shell> vim /etc/MailScanner/rules/spam.whitelist.rules
 ```
 
-```console
+```
 shell> vim /etc/default/mailscanner
 ```
 ```
 run_mailscanner=1
 ```
 
-```console
+```
 shell> vim /etc/default/spamassassin	
 ```
 ```
 ENABLED=1
 ```
 
-```console
+```
 shell> vim /etc/postfix/header_checks	
 ```
 ```
 /^Received:/ HOLD
 ```
-```console
+```
 shell> postconf -e 'header_checks = regexp:/etc/postfix/header_checks'	
 ```
 
-```console
+```
 shell> vim /etc/init.d/mailscanner
 ```
 ```
@@ -295,17 +295,17 @@ start-stop-daemon --start --quiet --nicelevel $run_nice --exec $DAEMON --name $N
 start-stop-daemon --start --quiet --nicelevel $run_nice -c ${user} --exec $DAEMON --name $NAME -- $DAEMON_ARGS
 ```
 
-```console
+```
 shell> service spamassassin restart
 shell> service mailscanner restart
 ```
 
-```console
+```
 shell> apt-get install mysql-server
 shell> apt-get install roundcube roundcube-mysql
 ```
 
-```console
+```
 shell> vim /etc/roundcube/apache.conf
 ```
 
@@ -314,7 +314,7 @@ Alias /roundcube/program/js/tiny_mce/ /usr/share/tinymce/www/
 Alias /roundcube /var/lib/roundcube
 ```
 
-```console
+```
 shell> vim /etc/roundcube/main.inc.php
 ```
 ```
@@ -327,22 +327,22 @@ $rcmail_config['htmleditor'] = TRUE;
 $rcmail_config['timezone'] = '8';
 ```
 
-```console
+```
 shell> apt-get install fetchmail
 shell> vim ~/.fetchmailrc
 ```
 
-```console
+```
 shell> grep sasl_method=LOGIN /var/log/mail.log
 ```
 
-```console
+```
 shell> qshape -s hold | head
 shell> qshape -s active
 shell> qshape active
 ```
 
-```console
+```
 shell> vim /etc/rsyslog.d/50-default.conf
 ```
 ```
@@ -381,7 +381,7 @@ plugin {
 
 sample-nonspam.txt.gz
 
-```console
+```
 shell> echo "hi there" | spamc
 ```
 
@@ -408,7 +408,7 @@ shell> echo "hi there" | spamc
  X-Spam-Prev-Subject: (nonexistent)
 ```
 
-```console
+```
 shell> spamassassin --help
 
 shell> spamassassin --test-mode < /usr/share/doc/spamassassin/examples/sample-nonspam.txt
@@ -423,7 +423,7 @@ shell> sendmail root < /usr/share/doc/spamassassin/examples/sample-nonspam.txt
 shell> sendmail root < /usr/share/doc/spamassassin/examples/sample-spam.txt
 ```
 
-```console
+```
 shell> sa-learn --clear
 shell> sa-learn --showdots --spam /home/spam/Maildir/{cur,new}
 shell> sa-learn --dump magic
@@ -441,7 +441,7 @@ MAILDIR=$HOME/Mail
 .Junk/
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [sample-nonspam.txt](http://spamassassin.apache.org/full/3.0.x/dist/sample-nonspam.txt)
 - [sample-spam.txt](http://spamassassin.apache.org/full/3.0.x/dist/sample-spam.txt)
 - [procmailrc](http://spamassassin.apache.org/full/3.0.x/dist/procmailrc.example)
@@ -475,37 +475,37 @@ mydomain.com.   3600    IN  TXT "v=spf1 ip4:192.168.1.100 -all"
 
 **opendkim-genkey - DKIM filter key generation tool**
 
-```console
+```
 shell> apt-get install opendkim-tools
 shell> opendkim-genkey -r -D -d mydomain.com
 ```
 ---
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [mail-tester](http://www.mail-tester.com/)
 
 ---
 
 **swaks - SMTP command-line test tool**
 
-```console
+```
 shell> apt-get install swaks 
 ```
 
-```console
+```
 shell> swaks --to user@example.com --server test-server.example.net
 shell> swaks --to user@example.com --from me@example.com --auth CRAM-MD5 --auth-user me@example.com --header-X-Test "test email"
 shell> swaks --to user@example.com --from me@gmail.com --auth --auth-user=me --auth-password= -tls --server smtp.gmail.com:587 --header ""
 ```
 
-```console
+```
 shell> swaks --attach-type text/html --attach report.html
 shell> swaks --body report.html --add-header "MIME-Version: 1.0" --add-header "Content-Type: text/html"
 ```
 
 ---
 
-```console
+```
 shell> sa-update && /etc/init.d/spamassassin reload
 ```
 ---
@@ -532,7 +532,7 @@ shell> sa-update && /etc/init.d/spamassassin reload
 
 ---
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [zen](https://www.spamhaus.org/zen/)
 - [setup.dns](http://www.iredmail.org/docs/setup.dns.html)
 - [SPF_Record_Syntax](http://www.openspf.org/SPF_Record_Syntax)
@@ -553,7 +553,7 @@ example.com
 canonical_maps = hash:/etc/postfix/canonical
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [ADDRESS_REWRITING_README](http://www.postfix.org/ADDRESS_REWRITING_README.html)
 - [canonical](http://www.postfix.org/canonical.5.html)
 
@@ -565,5 +565,5 @@ Default password: 	secret
 ```
 myserver.net.in.	3599	IN	TXT	"v=spf1 mx mx:ds1515.dyndns.info -all"
 ```
-### :books: 參考網站：
+#### :books: 參考網站：
 - [企业开源电子邮件系统安全保障实战精要: 第 2 部分，Postfix 安全防护实战及垃圾邮件防范](http://www.ibm.com/developerworks/cn/linux/1304_liyang_mailsecure2/)

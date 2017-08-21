@@ -1,6 +1,6 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install superagent
 ```
 
@@ -100,7 +100,7 @@ f1();
 })();
 ```
 
-```console
+```
 shell> node-v7.6.0-linux-x64/bin/node main.js
 ```
 

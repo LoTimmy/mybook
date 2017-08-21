@@ -1,6 +1,6 @@
 `Prolific USB-Serial Cable driver`
 
-```console
+```
 shell> brew cask info pl2303
 shell> brew cask install pl2303
 ```
@@ -22,7 +22,7 @@ Password:
 🍺  pl2303 was successfully installed!
 ```
 
-```console
+```
 shell> ls /dev/cu.*
 /dev/cu.Bluetooth-Incoming-Port  /dev/cu.iPhone-WirelessiAP  /dev/cu.usbserial
 
@@ -35,7 +35,7 @@ shell> screen /dev/cu.usbserial 38400
 
 ---
 
-```console
+```
 shell> kextstat | grep prolific
   155    0 0xffffff7f84140000 0x6000     0x6000     com.prolific.driver.PL2303 (1.6.0) F6A6805D-685D-3E6D-BF81-106EBBC0A386 <130 41 5 4 3>
 

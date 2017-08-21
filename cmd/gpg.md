@@ -1,17 +1,17 @@
 
 ![](http://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Gnupg_logo.svg/200px-Gnupg_logo.svg.png)
 
-~~~~~~~~~~
+```
 shell> apt-get install rng-tools
 shell> rngd -r /dev/urandom
-~~~~~~~~~~
+```
 
 Generating a new keypair
 
-~~~~~~~~~~
+```
 shell> gpg --gen-key
-~~~~~~~~~~    
-~~~~~~~~~~
+```    
+```
 gpg (GnuPG) 1.4.12; Copyright (C) 2012 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
@@ -53,18 +53,18 @@ generator a better chance to gain enough entropy.
 Not enough random bytes available.  Please do some other work to give
 the OS a chance to collect more entropy! (Need 284 more bytes)
     
-~~~~~~~~~~
+```
 
 
-~~~~~~~~~~
+```
 shell> gpg --list-keys
-~~~~~~~~~~
+```
 
 Exporting a public key
-~~~~~~~~~~
+```
 shell> gpg --armor --output   --export
 gpg --output alice.gpg --export myname@example.com
-~~~~~~~~~~
+```
 
  
 gpg --armor --output ~/your_name_public_key.asc --export your@email.address

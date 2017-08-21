@@ -16,22 +16,22 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install python
 shell> apt-get install ansible
 ```
 
-```console
+```
 shell> brew install ansible
 ```
 
 ---
 
-```console
+```
 shell> ansible all -m raw -a 'apt-get install python -y' -b --ask-become-pass
 ```
 
-```console
+```
 shell> ansible all -m ping
 shell> ansible all -m ping --ask-pass
 shell> ansible all -m ping -u bruce
@@ -49,7 +49,7 @@ shell> ansible foo.example.com -a "/usr/sbin/reboot"
 shell> ansible myhost --sudo -m raw -a "yum install -y python2 python-simplejson"
 ```
 
-```console
+```
 shell> echo "127.0.0.1" > ~/ansible_hosts
 shell> export ANSIBLE_INVENTORY=~/ansible_hosts
 ```
@@ -60,7 +60,7 @@ shell> export ANSIBLE_INVENTORY=~/ansible_hosts
 host_key_checking = False
 ```
 
-```console
+```
 shell> export ANSIBLE_HOST_KEY_CHECKING=False
 ```
 
@@ -96,7 +96,7 @@ three.example.com
 
 ---
 
-```console
+```
 shell> ansible all -m setup
 shell> ansible all -m setup -a 'filter=ansible_eth[0-2]'
 
@@ -106,7 +106,7 @@ shell> ansible all -m copy -a "src=/etc/hosts dest=/tmp/hosts"
 
 ```
 
-```console
+```
 shell> ansible all -m apt -a 'name=foo update_cache=yes' --sudo
 ```
 
@@ -136,7 +136,7 @@ shell> ansible all -m apt -a 'name=foo update_cache=yes' --sudo
 
 ```
 
-```console
+```
 shell> ansible-doc -l
 ```
 
@@ -213,7 +213,7 @@ search
     local_action: command rsync -a /path/to/files {{ inventory_hostname }}:/path/to/target/
 ```
 
-```console
+```
 shell> python -c 'import crypt; print crypt.crypt("word", "salt")'
 ```
 ---

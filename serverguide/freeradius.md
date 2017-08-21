@@ -10,7 +10,7 @@
 
 ### 在 `Ubuntu` 16.04.2 LTS 上建置 `freeradius`
 
-```console 
+``` 
 shell> lsb_release -a
 ```
 ```
@@ -26,7 +26,7 @@ freeradius-mysql - MySQL module for FreeRADIUS server
 ```
 
 ### 安裝 `freeradius` 
-```console
+```
 shell> sudo apt-get install -y mysql-server-5.7
 shell> sudo apt-get install -y freeradius freeradius-mysql 
 shell> sudo service freeradius stop
@@ -34,7 +34,7 @@ shell> sudo service freeradius stop
 
 `/etc/freeradius`
 
-```console
+```
 shell> sudo cp /etc/freeradius/users /etc/freeradius/users.original
 shell> sudo chmod a-w /etc/freeradius/users.original
 ```
@@ -57,10 +57,10 @@ janedoe	Crypt-Password := "Rqz3xDrdrkLAk"
 janedoe	MD5-Password := "cdac0771bac5c2d1f4f0399af81fe317"
 ```
 
-```console
+```
 shell> freeradius -X
 ```
-```console
+```
 shell> radtest steve testing localhost 1812 testing123
 shell> radtest janedoe 6KqrYDRq localhost 1812 testing123
 ```
@@ -107,7 +107,7 @@ client 192.168.88.120 {
 ```
 
 
-```console
+```
 shell> lsof -n -i -P | grep -E '^COMMAND|freeradiu'
 ```
 
@@ -139,7 +139,7 @@ shell> mysql -u radius -p radius
 
 `radpass`
 
-```console
+```
 shell> sudo cp /etc/freeradius/radiusd.conf /etc/freeradius/radiusd.conf.original
 shell> sudo chmod a-w /etc/freeradius/radiusd.conf.original
 
@@ -285,7 +285,7 @@ INSERT INTO radgroupreply (groupname, attribute, op, value) VALUES ('user', 'Fra
 INSERT INTO radusergroup (username, groupname) VALUES ('janedoe', 'user');
 ```
 
-```console
+```
 shell> radtest janedoe 6KqrYDRq localhost 0 testing123
 ```
 
@@ -316,7 +316,7 @@ rad_recv: Access-Accept packet from host 127.0.0.1 port 1812, id=37, length=32
 
 `daloradius`
 
-```console
+```
 shell> sudo apt install apache2 libapache2-mod-php php7.0-gd php-pear php-db php-mysql
 shell> wget --content-disposition https://sourceforge.net/projects/daloradius/files/latest/download?source=files
 shell> tar zxvf daloradius-0.9-9.tar.gz

@@ -15,7 +15,7 @@
 因本文主要介紹`OpenLDAP`如何安裝及設定，作業系統方面就不再詳述。
 
 ### 安裝 OpenLDAP
-```console
+```
 shell> apt-get install slapd ldap-utils  
 ```
 
@@ -23,7 +23,7 @@ shell> apt-get install slapd ldap-utils
 ![OpenLDAP](http://i.imgur.com/Bg2NX1C.jpg)
 
 ---
-```console
+```
 shell> ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/cosine.ldif
 shell> ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/nis.ldif
 shell> ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/ldap/schema/inetorgperson.ldif
@@ -63,13 +63,13 @@ olcAccess: to dn.base="" by * read
 olcAccess: to * by dn="cn=admin,dc=example,dc=com" write by * read
 ```
 
-```console
+```
 shell> ldapadd -Y EXTERNAL -H ldapi:/// -f backend.example.com.ldif
 ```
 
 ---
 
-```console
+```
 shell> apt-get install ldapscripts
 shell> vim /etc/ldapscripts/ldapscripts.conf
 ```
@@ -91,7 +91,7 @@ PASSWORDFILE="/var/log/ldapscripts_passwd.log"
 UTEMPLATE="/etc/ldapscripts/ldapadduser.template"
 ```
 
-```console
+```
 shell> cp /usr/share/doc/ldapscripts/examples/ldapadduser.template.sample /etc/ldapscripts/ldapadduser.template
 shell> sh -c "echo -n 'secret' > /etc/ldapscripts/ldapscripts.passwd"
 shell> chmod 400 /etc/ldapscripts/ldapscripts.passwd
@@ -99,7 +99,7 @@ shell> chmod 400 /etc/ldapscripts/ldapscripts.passwd
 
 ---
 
-```console
+```
 shell> ldapinit
 shell> ldapaddgroup example
 shell> ldapadduser george example
@@ -114,7 +114,7 @@ shell> ldapsearch -xLLL -b "dc=example,dc=com" sn givenName cn
 
 ### LDAP Authentication
 
-```console
+```
 shell> apt-get install libnss-ldap
 shell> dpkg-reconfigure ldap-auth-config
 shell> auth-client-config -t nss -p lac_ldap
@@ -130,7 +130,7 @@ session       required pam_mkhomedir.so umask=0022 skel=/etc/skel
 
 ### 疑難排解	
 
-```console
+```
 shell> id
 shell> getent group
 shell> getent shadow

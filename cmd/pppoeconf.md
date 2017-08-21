@@ -1,6 +1,6 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install pppoeconf
 ```
 
@@ -55,7 +55,7 @@ provider dsl-provider
 
 `myisp`
 
-```console
+```
 shell> pppoeconf
 shell> poff -a
 shell> pon dsl-provider

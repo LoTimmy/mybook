@@ -1,28 +1,28 @@
-<img src="http://zeromq.wdfiles.com/local--files/admin:css/logo.gif" width="50">
+![](http://zeromq.wdfiles.com/local--files/admin:css/logo.gif)
 
-<img src="http://i.imgur.com/9qzI8QR.jpg" width="200">
+![](http://i.imgur.com/9qzI8QR.jpg)
 
-`ØMQ`
+ØMQ
 
-### 安裝 {#installing}
-
-```console
+```
 shell> brew install pkg-config
 shell> brew install zeromq
 ```
 
-```console
+---
+
+```
 shell> apt-get install libtool autoconf automake uuid-dev build-essential pkg-config
 shell> git clone https://github.com/zeromq/libzmq
 shell> ./autogen.sh && ./configure && make -j 4
 shell> make check && make install && sudo ldconfig
 ```
 
-```console
+```
 shell> npm install zmq
 ```
 
-`package.json`
+package.json
 
 ```json
 {
@@ -36,13 +36,14 @@ shell> npm install zmq
 ```
 
 #### :books: 參考網站：
+
 - [zguide](http://zguide.zeromq.org/page:all)
 - [debian](http://zeromq.org/distro:debian)
 - [download](http://zeromq.org/area:download)
 
 ---
 
-```js
+```js:test.js
 var socket = zmq.socket('rep');
 var socket = zmq.socket('req');
 
@@ -60,7 +61,7 @@ var xpub = zmq.socket('xpub');
 var xsub = zmq.socket('xsub');
 ```
 
-```js
+```:test.js
 socket.bind('tcp://*:5555', function(err) {
 });
 
@@ -105,7 +106,7 @@ sock.on('message', function(topic, message) {
 
 ![](https://github.com/imatix/zguide/raw/master/images/fig2.png)
 
-`hwserver.js`
+hwserver.js
 ```js
 //  Created by Timmy on 2016/6/14.
 //  Copyright (c) 2015年 Timmy. All rights reserved.
@@ -134,7 +135,7 @@ process.on('SIGINT', function() {
 });
 ```
 
-`hwclient.js`
+hwclient.js
 ```js
 //  Created by Timmy on 2016/6/14.
 //  Copyright (c) 2015年 Timmy. All rights reserved.
@@ -167,7 +168,7 @@ process.on('SIGINT', function() {
 });
 ```
 
-`hwserver.c`
+hwserver.c
 ```c
 #include <zmq.h>
 #include <stdio.h>
@@ -194,7 +195,7 @@ int main (void)
 }
 ```
 
-```console
+```
 shell> gcc -o hwserver hwserver.c -lzmq
 ```
 
@@ -204,9 +205,9 @@ shell> gcc -o hwserver hwserver.c -lzmq
 
 ---
 
-`Push/Pull`
+Push/Pull
 
-`producer.js`
+producer.js
 ```js
 //  Created by Timmy on 2016/6/14.
 //  Copyright (c) 2015年 Timmy. All rights reserved.
@@ -228,7 +229,7 @@ process.on('SIGINT', function() {
 });
 ```
 
-`worker.js`
+worker.js
 ```js
 //  Created by Timmy on 2016/6/14.
 //  Copyright (c) 2015年 Timmy. All rights reserved.
@@ -303,7 +304,17 @@ process.on('SIGINT', function() {
 
 ---
 
-`rpc.js`
+
+
+shell> pm2 ping                      # Ensure pm2 daemon has been launched
+{ msg: 'pong' }
+
+
+
+
+---
+
+rpc.js
 
 ```js
 /**
@@ -330,7 +341,7 @@ if (cluster.isMaster) {
 - [protobufjs](https://www.npmjs.com/package/protobufjs)
 - [protocol-buffers](https://www.npmjs.com/package/protocol-buffers)
 
-`test.proto`
+test.proto
 ```
 enum FOO {
   BAR = 1;
@@ -363,10 +374,13 @@ var obj = messages.Test.decode(buf);
 console.log(obj);
 ```
 
+
 ```js
 const ProtoBuf = require('protobufjs');
 var messages = ProtoBuf.loadProtoFile('test.proto');
+
 ```
+
 
 ```js
 const Buffer = require('buffer').Buffer;

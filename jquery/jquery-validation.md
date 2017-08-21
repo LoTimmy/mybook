@@ -3,7 +3,7 @@
 
 `jQuery Validation Plugin`
 
-```console
+```
 shell> bower install jquery-validation
 shell> bower install --save jquery-validation
 ```

@@ -20,7 +20,7 @@
 
 **mongod - MongoDB Server**
 
-```console
+```
 shell> iptables -A INPUT -s <ip-address> -p tcp --destination-port 27017 -m state --state NEW,ESTABLISHED -j ACCEPT
 shell> iptables -A OUTPUT -d <ip-address> -p tcp --source-port 27017 -m state --state ESTABLISHED -j ACCEPT
 ```
@@ -33,7 +33,7 @@ shell> iptables -A OUTPUT -d <ip-address> -p tcp --source-port 27017 -m state --
 
 **Install MongoDB on Ubuntu**
 
-```console
+```
 shell> sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 
 shell> echo "deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
@@ -45,7 +45,7 @@ shell> sudo apt-get install -y mongodb-org
 ```
 
 **Install Percona Server for MongoDB on Ubuntu**
-```console
+```
 shell> sudo apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 shell> echo "deb http://repo.percona.com/apt "$(lsb_release -sc)" main" | sudo tee /etc/apt/sources.list.d/percona.list
 shell> apt-get update
@@ -57,21 +57,21 @@ shell> sudo apt-get install percona-server-mongodb
 
 
 **Start MongoDB**
-```console
+```
 shell> sudo service mongod start
 ```
 
 **Stop MongoDB**
-```console
+```
 shell> sudo service mongod stop
 ```
 
 **Restart MongoDB**
-```console
+```
 shell> sudo service mongod restart
 ```
 
-```console
+```
 shell> sudo systemctl --system daemon-reload
 shell> sudo systemctl enable mongod.service
 shell> sudo systemctl start mongod.service
@@ -111,7 +111,7 @@ replSet = rs0
 
 <img src="http://i.imgur.com/enCNaiB.png" width="400">
 
-```console
+```
 shell> mongo
 shell> mongo --eval 'db.collection.find().forEach(printjson)'
 ```
@@ -347,12 +347,12 @@ GROUP BY ord_dt, item_sku
 `匯入 CSV檔`
 `CSV`檔編碼使用`UTF-8`
 
-```console
+```
 shell> mongoimport --collection <collection> --db <database> --type csv --file <filename> --headerline     
 ```
 ---
 
-```console
+```
 shell> mongo --eval 'db.collection.find().forEach(printjson)'
 shell> mongo --username <user> --password <pass> --host <host> --port 28015
 shell> mongo script-file.js -u <user> -p
@@ -376,7 +376,7 @@ DBQuery.shellBatchSize = 10;
 
 ---
 
-```console
+```
 shell> mongodump --collection collection --db test
 shell> mongodump --out /opt/backup/mongodump-2011-10-24
 shell> mongodump --host mongodb.example.net --port 27017
@@ -384,13 +384,13 @@ shell> mongodump --out /data/backup/
 shell> mongodump --host mongodb1.example.net --port 3017 --username user --password pass --out /opt/backup/mongodump-2013-10-24
 ```
 
-```console
+```
 shell> mongorestore --port <port number> <path to the backup>
 shell> mongorestore dump-2013-10-25/
 shell> mongorestore --host mongodb1.example.net --port 3017 --username user --password pass /opt/backup/mongodump-2013-10-24
 ```
 
-```console
+```
 shell> mongodump -h 127.0.0.1 -d test -o /opt/backup/mongodump-2017-01-01
 shell> mongorestore -h 127.0.0.1 --port 27017 /opt/backup/mongodump-2017-01-01
 shell> mongorestore -h 127.0.0.1 --port 27017 --drop /opt/backup/mongodump-2017-01-01      
@@ -448,7 +448,7 @@ db.serverStatus()
 **mongostat - MongoDB Use Statistics**
 **mongotop - MongoDB Activity Monitor**
 
-```console
+```
 shell> mongostat
 shell> mongostat --port 27017
 shell> mongotop   
@@ -526,7 +526,7 @@ clusterMonitor
 hostManager
 ```
 
-```console
+```
 shell> mongo --port 27017 -u "myUserAdmin" -p "abc123" --authenticationDatabase "admin"
 shell> mongo --port 27017 -u "myTester" -p "xyz123" --authenticationDatabase "test"
 ```

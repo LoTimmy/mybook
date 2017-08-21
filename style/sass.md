@@ -1,6 +1,6 @@
 <img src="https://pbs.twimg.com/profile_images/583681608269471744/jCR2zNJV_400x400.png" width="200">
 
-```console
+```
 shell> brew install rbenv ruby-build
 ```
 ```
@@ -8,7 +8,7 @@ export RBENV_ROOT=/usr/local/var/rbenv
 eval "$(rbenv init -)"
 ```
 
-```console
+```
 shell> rbenv install 2.3.3
 shell> rbenv global 2.3.3
 shell> ruby -v

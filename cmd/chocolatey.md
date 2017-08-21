@@ -1,18 +1,18 @@
 
-```console
+```
 shell> @powershell -NoProfile -ExecutionPolicy unrestricted -Command "(iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))) >$null 2>&1" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 ```
 
-```console
+```
 shell> iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
-```console
+```
 shell> choco
 Chocolatey v0.9.9.11 
 ```
 
-```console
+```
 shell> choco install mkvtoolnix
 shell> choco install ffmpeg
 
@@ -48,7 +48,7 @@ shell> choco install mariadb
 ```
 
 
-### :books: 參考網站：
+#### :books: 參考網站：
 
 - [chocolatey](https://chocolatey.org/)
 - [packages](https://chocolatey.org/packages)

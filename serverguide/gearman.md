@@ -10,7 +10,7 @@
 安裝作業系統及`gearman`相關套件。
 因本文主要介紹`gearman`如何安裝及設定，作業系統方面就不再詳述。
 
-```console 
+``` 
 shell> lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
@@ -19,18 +19,18 @@ Release:	14.04
 Codename:	trusty
 ```
 
-```console 
+``` 
 shell> gearmand -V
 gearmand 1.0.6 - https://bugs.launchpad.net/gearmand
 ```
 
 Worker
-```console
+```
 shell> gearman -w -f wc -- wc -l
 ```
 
 Client
-```console
+```
 $ gearman -f wc < /etc/passwd
 ```
 
@@ -42,7 +42,7 @@ gearman-server - Gearman distributed job server and Perl interface
 gearman-tools - Tools for the Gearman distributed job queue
 ```
 
-```console 
+``` 
 shell> mysql -u gearman -p -e 'CREATE DATABASE gearman;'
 ```
 
@@ -90,7 +90,7 @@ print gearman_version() . "\n";
 ?>
 ```
 
-```console 
+``` 
 shell> php gearman_version.php
 ```
 

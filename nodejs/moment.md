@@ -1,7 +1,7 @@
 
 <img src="https://pbs.twimg.com/profile_images/482670411402858496/Xrtdc94q_400x400.png" width="200">    
 
-```console
+```
 shell> npm install moment --save
 ```
 

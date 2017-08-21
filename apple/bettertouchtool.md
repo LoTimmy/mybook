@@ -5,6 +5,6 @@
 ![](http://i.imgur.com/OvLvWnU.png)
 `BetterTouchTool`
 
-```console
+```
 shell> brew cask install bettertouchtool
 ```

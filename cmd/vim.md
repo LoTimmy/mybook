@@ -10,7 +10,7 @@
 
 `xterm-256color`
 
-```console
+```
 shell> echo $TERM   
 ```
 
@@ -203,13 +203,13 @@ inoremap <Esc>OM <Enter>
 ```
 
 
-```console
+```
 shell> vimdiff file1 file2
 ```
 
 ---
 
-```console
+```
 shell> git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
@@ -265,7 +265,7 @@ indent_size = 2
 :PluginInstall
 ```
 
-```console
+```
 shell> vim +PluginInstall +qall
 shell> cd ~/.vim/bundle/vim-jsbeautify && git submodule update --init --recursive
 ```

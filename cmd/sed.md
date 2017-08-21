@@ -5,7 +5,7 @@
 
 `/pattern/`
 
-```console
+```
 
 shell> sed -e 'd' /etc/services
 shell> sed -e '1d' /etc/services | more

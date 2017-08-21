@@ -7,7 +7,7 @@ ip addr [ add | del ] address dev ifname
 
 `Assigning a Static Address Using ip Commands` 
 
-```console
+```
 shell> ifconfig eth0 10.0.0.3
 
 shell> ip address add 10.0.0.3/24 dev eth0
@@ -20,16 +20,16 @@ shell> ip addr show dev eth0
        valid_lft forever preferred_lft forever
 ```
 
-```console
+```
 shell> ifconfig eth0 192.168.0.77 netmask 255.255.255.0 broadcast 192.168.0.255
 shell> ip addr 192.168.0.77/24 broadcast 192.168.0.255 dev eth0
 ```
-```console
+```
 shell> ip addr delete 192.168.0.77/24 dev eth0
 ```
 
 `Configuring Multiple Addresses Using ip Commands`
-```console
+```
 shell> ip address add 192.168.2.223/24 dev eth1
 shell> ip address add 192.168.4.223/24 dev eth1
 shell> ip addr
@@ -39,7 +39,7 @@ shell> ip addr
     inet 192.168.4.223/24 scope global eth1
 ```
 
-```console
+```
 shell> ifconfig eth0:1 192.168.2.223
 shell> ifconfig eth0:2 192.168.4.223
 
@@ -52,20 +52,20 @@ shell> ip address add 192.168.4.223/24 dev eth1 label eth0:2
 ### ip neigh {#ip-neighbour}
 
 
-```console
+```
 shell> arp -i eth1 -s 192.168.2.223 00:0c:29:2e:72:81
 shell> ip neigh add 192.168.2.223 lladdr 00:0c:29:2e:72:81 nud permanent dev eth1
 
 shell> ip neigh show 
 ```
 
-```console
+```
 shell> ip -6 neigh show 
 ```
 
 ---
 
-```console
+```
 shell> ip link ls
 shell> ip route show
 shell> ip link ls up
@@ -74,7 +74,7 @@ shell> ip link ls up
 
 ### ip route {#ip-route}
 
-```console
+```
 shell> route
 shell> ip route show
 

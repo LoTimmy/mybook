@@ -32,7 +32,7 @@ GSSAPICleanupCredentials yes
 #Banner /etc/issue.net
 ```
 
-```console
+```
 shell> man sshd_config
 shell> sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.original
 shell> sudo chmod a-w /etc/ssh/sshd_config.original
@@ -56,7 +56,7 @@ Host 192.168.31.1
     port 22
 ```
 
-```console
+```
 shell> ssh -Q cipher
 ```
 
@@ -83,7 +83,7 @@ Host remotehost
     LocalForward 0.0.0.0:9999 localhost:3306 
 ```
 
-```console
+```
 shell> ssh -NC matt@remotehost -L 9999:localhost:3306
 ```
 
@@ -94,7 +94,7 @@ Host remotehost
     RemoteForward 0.0.0.0:12429 127.0.0.1:22 
 ```
 
-```console
+```
 shell> ssh -NfR 12429:127.0.0.1:22 matt@remotehost
 ```
 
@@ -105,7 +105,7 @@ Host remotehost
     DynamicForward 0.0.0.0:1080
 ```
 
-```console
+```
 shell> ssh -N -D 0.0.0.0:1080 matt@remotehost
 shell> ssh -f -N -D 0.0.0.0:1080 matt@remotehost
 ```
@@ -144,7 +144,7 @@ Host mail
 
 ```
 
-```console
+```
 shell> ssh -p 12345 username@remotehost
 shell> ssh -o "User=username" -o "Port=12345" -o "HostName=remotehost"
 ```
@@ -170,14 +170,14 @@ shell> ssh -o "User=username" -o "Port=12345" -o "HostName=remotehost"
 `C:\keys\my-key-pair.pub`
 `C:\keys\my-key-pair.pem`
 
-```console
+```
 shell> cd ~/.ssh
 shell> ls
 authorized_keys2  id_dsa       known_hosts
 config            id_dsa.pub
 ```
 
-```console
+```
 shell> ssh-keygen
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/schacon/.ssh/id_rsa):
@@ -192,7 +192,7 @@ d0:82:24:8e:d7:f1:bb:9b:33:53:96:93:49:da:9b:e3 schacon@mylaptop.local
 shell> ssh-keygen -t ecdsa
 ```
 
-```console
+```
 shell> ssh-keygen
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/user/.ssh/id_rsa):
@@ -216,19 +216,19 @@ The key's randomart image is:
 +-----------------+
 ```
 
-```console
+```
 shell> ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 
-```console
+```
 shell> ssh-keygen -y
 ```
 
-```console
+```
 shell> ssh-keygen -y -f ~/.ssh/id_rsa > .ssh/id_rsa.pub
 ```
 
-```console
+```
 shell> ssh-keygen -t rsa
 shell> chmod 400 my-key-pair.pem
 shell> chmod 600 ~/.ssh/[private_key_file]
@@ -240,7 +240,7 @@ shell> chmod 600 .ssh/authorized_keys
 
 **Example SSH Public Key**
 
-```console
+```
 shell> cat ~/.ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSU
 GPl+nafzlHDTYW7hdI4yZ5ew18JH4JW9jbhUFrviQzM7xlELEVf4h9lFX5QVkbPppSwg0cda3
@@ -258,7 +258,7 @@ NrRFi9wrf+M7Q== schacon@mylaptop.local
 
 ### Adding your SSH key to the ssh-agent {#adding-your-ssh-key-to-the-ssh-agent}
 
-```console
+```
 # start the ssh-agent in the background
 shell> eval $(ssh-agent -s)
 Agent pid 59566
@@ -272,14 +272,14 @@ shell> ssh-add -l
 
 **sshpass - Non-interactive ssh password authentication**
 
-```console
+```
 shell> apt-get install sshpass
 
 shell> sshpass -p 12345 ssh -l username remotehost
 shell> sshpass -p 12345 sftp username@remotehost
 ```
 
-```console
+```
 shell> set +o history
 shell> sshpass -p 12345 ssh -l username remotehost
 shell> set -o history
@@ -289,7 +289,7 @@ shell> set -o history
 
 ### 安裝 Google Authenticator (`兩步驟驗證`)
 
-```console
+```
 shell> apt-get install libpam-google-authenticator
 shell> google-authenticator
 ```
@@ -307,7 +307,7 @@ RG2YMNCEBZRKAG5H
 37756905
 ```
 
-```console
+```
 shell> vi /etc/pam.d/sshd
 ```
 ```
@@ -321,7 +321,7 @@ auth required /lib/security/pam_google_authenticator.so
 auth sufficient /lib/security/pam_google_authenticator.so
 ```
 
-```console
+```
 shell> vi /etc/ssh/sshd_config
 ```
 ```
@@ -330,7 +330,7 @@ ChallengeResponseAuthentication yes
 
 ---
 
-```console
+```
 shell> ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.42.19
 ```
 
@@ -338,7 +338,7 @@ shell> ssh-keygen -f "/root/.ssh/known_hosts" -R 192.168.42.19
 
 `autossh`
 
-```console
+```
 shell> apt-get install autossh
 shell> autossh -M 20000 -t remotehost 'screen -raAd sessionname'
 shell> ssh -t remotehost screen -xRR
@@ -346,20 +346,20 @@ shell> ssh -t remotehost screen -xRR
 
 ---
 
-```console
+```
 shell> ssh user@fe80::20c:29ff:fe2e:7281
 shell> scp user@\[fe80::20c:29ff:fe2e:7281\]:~
 ```
 ---
 
-```console
+```
 shell> ssh-keygen -t ed25519
 shell> ssh-copy-id -i id_ecdsa.pub matt@remotehost
 ```
 
 ---
 
-```console
+```
 shell> ssh -vv remotehost
 ```
 

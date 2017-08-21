@@ -3,10 +3,10 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> apt-get install iotop
 ```
 
-```console
+```
 shell> iotop
 ```

@@ -93,7 +93,7 @@
 
 ---
 
-```console
+```
 shell> dscl . -read /Users/$(whoami) UserShell
 ```
 
@@ -101,7 +101,7 @@ shell> dscl . -read /Users/$(whoami) UserShell
 
 `sips -- scriptable image processing system.`
 
-```console
+```
 shell> sips -s format jpeg --out rose.jpg rose.png
 shell> sips -s format png  --out rose.png rose.jpg
 shell> sips -Z 640 *.jpg
@@ -111,7 +111,7 @@ shell> sips -Z 640 *.jpg
 
 `purge -- force disk cache to be purged (flushed and emptied)`
 
-```console
+```
 shell> sudo purge
 ```
 
@@ -119,7 +119,7 @@ shell> sudo purge
 
 `networksetup -- configuration tool for network settings in System Preferences.`
 
-```console
+```
 shell> networksetup -listallnetworkservices
 ```
 ```
@@ -128,7 +128,7 @@ Wi-Fi
 Bluetooth PAN
 Thunderbolt Bridge
 ```
-```console
+```
 shell> networksetup -getinfo Wi-Fi
 ```
 ```
@@ -142,7 +142,7 @@ IPv6 IP address: none
 IPv6 Router: none
 Wi-Fi ID: a0:99:9b:08:cb:87
 ```
-```console
+```
 shell> networksetup -listallhardwareports
 ```
 ```
@@ -168,13 +168,13 @@ Ethernet Address: 6a:00:00:93:8e:00
 
 VLAN Configurations
 ===================
-```console
+```
 shell> networksetup -getairportpower en0
 ```
 ```
 Wi-Fi Power (en0): On
 ```
-```console
+```
 shell> networksetup -setairportpower on
 shell> networksetup -setairportpower off
 ```
@@ -186,7 +186,7 @@ shell> networksetup -setairportpower off
 
 `scutil -- Manage system configuration parameters`
 
-```console
+```
 shell> sudo scutil --dns
 shell> sudo scutil --proxy
 shell> sudo scutil --get ComputerName
@@ -202,7 +202,7 @@ shell> sudo scutil --set HostName ""
 
 `在 OS X 重置 DNS 快取`
 
-```console
+```
 shell> sudo killall -HUP mDNSResponder
 shell> sudo discoveryutil mdnsflushcache
 shell> sudo dscacheutil -flushcache
@@ -213,7 +213,7 @@ shell> sudo dscacheutil -flushcache
 
 ---
 
-```console
+```
 shell> echo Hello, World | pbcopy
 shell> pbpaste
 ```
@@ -225,7 +225,7 @@ shell> pbpaste
 
 `dot_clean -- Merge ._* files with corresponding native files.`
 
-```console
+```
 shell> dot_clean /Volumes/test
 shell> dot_clean .
 ```
@@ -238,7 +238,7 @@ shell> dot_clean .
 `say - Convert text to audible speech`
 
 
-```console
+```
 shell> say Hello, World
 shell> say -v Alex -o hi -f hello_world.txt
 shell> say -v ting-ting Hello, World
@@ -254,7 +254,7 @@ shell> say Hello, World
 
 `hdiutil -- manipulate disk images (attach, verify, create, etc)`
 
-```console
+```
 shell> hdiutil imageinfo ubuntu-16.04-server-i386.iso
 shell> hdiutil imageinfo 2016-09-23-raspbian-jessie-lite.img
 shell> hdiutil burn ubuntu-16.04-server-i386.iso
@@ -270,7 +270,7 @@ shell> hdiutil makehybrid -iso -joliet -o myVolume.iso /Volumes/myVolume
 
 ---
 
-```console
+```
 shell> route get default
 shell> route get default | grep gateway
 shell> netstat -rn | grep default | awk '{ print $2 }'
@@ -278,7 +278,7 @@ shell> netstat -rn | grep default | awk '{ print $2 }'
 
 ---
 
-```console
+```
 shell> ditto src dst_directory 
 ```
 
@@ -287,7 +287,7 @@ shell> ditto src dst_directory
 
 ---
 
-```console
+```
 shell> softwareupdate --list 
 ```
 
@@ -301,7 +301,7 @@ Software Update found the following new or updated software:
 	OS X El Capitan 更新 (10.11.6), 471282K [recommended] [restart]
 ```
 
-```console
+```
 shell> softwareupdate --install Safari8.0.6Yosemite-8.0.6
 shell> softwareupdate --install --all 
 ```
@@ -311,7 +311,7 @@ shell> softwareupdate --install --all
 
 ---
 
-```console
+```
 shell> system_profiler SPSoftwareDataType
 ```
 
@@ -331,7 +331,7 @@ Software:
       Time since boot: 6 days 5:24
 ```
 
-```console
+```
 shell> sw_vers
 shell> sw_vers -productName
 shell> sw_vers -productVersion
@@ -354,18 +354,18 @@ BuildVersion:	16B2555
 
 ---
 
-```console
+```
 shell> defaults read com.apple.desktopservices 
 shell> defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 ```
 
-```console
+```
 shell> defaults read com.apple.appstore
 shell> defaults write com.apple.appstore ShowDebugMenus true
 shell> defaults delete com.apple.appstore ShowDebugMenus 
 ```
 
-```console
+```
 shell> defaults read com.apple.finder
 shell> defaults write com.apple.finder ShowHardDrivesOnDesktop true
 ```
@@ -376,7 +376,7 @@ shell> defaults write com.apple.finder ShowHardDrivesOnDesktop true
 ---
 
 ### 磁碟工具程式
-```console
+```
 shell> diskutil list
 shell> diskutil info /dev/disk2
 
@@ -412,7 +412,7 @@ shell> diskutil eject /dev/disk2
    1:             Windows_FAT_32 NO NAME                 16.1 GB    disk3s1
 ```
 
-```console
+```
 shell> disktype
 ```
 
@@ -420,7 +420,7 @@ shell> disktype
 - [diskutil](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man8/diskutil.8.html)
 
 ---
-```console
+```
 shell> df -hl
 ```
 ---
@@ -428,7 +428,7 @@ shell> df -hl
 > 如果管理者帳號沒有密碼（空密碼），必須先提供密碼給該使用者，然後才使用 sudo 指令。
 使用 sudo 指令完畢之後，可以再次變更帳號密碼，不過建議管理者帳號最好還是要設定非空白密碼。
 
-```console
+```
 shell> sudo -i
 shell> visudo
 ```
@@ -444,7 +444,7 @@ root    ALL=(ALL) ALL
 
 `Xcode`
 
-```console
+```
 shell> xcodebuild
 
 shell> xcode-select --version
@@ -458,12 +458,12 @@ shell> xcode-select --install
 
 ---
 
-```console
+```
 shell> tell application "Finder" to quit
 shell> tell application "Finder" to launch
 ```
 
-```console
+```
 shell> osascript -e "tell application \"Safari\" to activate"
 ```
 

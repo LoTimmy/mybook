@@ -1,6 +1,6 @@
 ![](https://hub.docker.com/public/images/official/mysql.png)
 
-```console
+```
 shell> sudo docker pull mysql:latest
 shell> mkdir -p /docker/mysql/datadir
 shell> mkdir -p /docker/mysql/custom

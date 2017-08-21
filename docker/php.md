@@ -1,6 +1,6 @@
 ![](https://hub.docker.com/public/images/official/php.png)
 
-```console
+```
 shell> docker run --name php \
  --restart=always \
  --link db:mysql \

@@ -1,7 +1,7 @@
 
 
 
-```console
+```
 shell> date --help
 
 shell> date -d "1977-10-12"
@@ -24,7 +24,7 @@ shell> date -d sunday
 shell> date -d last-sunday
 ```
 
-```console
+```
 shell> date -d "1977-10-12" +"%s"
 245433600
 

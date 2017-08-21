@@ -1,5 +1,5 @@
 
-```console 
+``` 
 shell> mkvmerge --no-subtitles --title '' -o mymovie.mkv input.mkv
 shell> mkvmerge -o mymovie.mkv input.mkv zh-TW.idx
 shell> mkvmerge -o mymovie.mkv input.mkv zh-TW.srt  
@@ -7,13 +7,13 @@ shell> mkvmerge -o mymovie.mkv input.mkv zh-TW.srt
 shell> mkvmerge -o mymovie.mkv -d 0 -a 2 input.mkv
 ```
 
-```console 
+``` 
 shell> mkvmerge -o MM-complete.mkv MyMovie-with-sound.mkv MyMovie-add-audio.ogg
 shell> mkvmerge -o MM-complete.mkv -A MyMovie.avi MyMovie.ogg MyMovie-add-audio.ogg
 shell> mkvmerge -o output.mkv --language 0:fre franASais.ogg --language 0:deu deutsch.ogg
 ```
 
-```console 
+``` 
 shell> mkvmerge --list-languages
 ```
 
@@ -26,11 +26,11 @@ Japanese                                                                        
 Korean                                                                           | kor           | ko           
 ```
 
-```console 
+``` 
 shell> mkvpropedit movie.mkv --tags all:
 ```
 
-```console 
+``` 
 shell> mkvpropedit movie.mkv --edit info --set "title=The movie" --edit track:a1 --set language=fre --edit track:a2 --set language=ita
 shell> mkvpropedit movie.mkv --edit track:s1 --set flag-default=0 --edit track:s2 --set flag-default=1
 shell> mkvpropedit movie.mkv --edit track:s1 --set language=fre
@@ -45,7 +45,7 @@ shell> mkvpropedit movie.mkv --edit track:a2 --set flag-default=1
 shell> mkvpropedit movie.mkv --delete-attachment 2
 ```
 
-```console 
+``` 
 shell> mkvinfo movie.mkv
 shell> mkvmerge -i movie.mkv
 ```

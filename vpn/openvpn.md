@@ -17,7 +17,7 @@
 ### 安裝 {#installing}
 
 安裝`OpenVPN`套件。
-```console 
+``` 
 shell> apt-get install openvpn easy-rsa
 ```
 
@@ -34,12 +34,12 @@ build-ca  build-dh  build-inter  build-key  build-key-pass  build-key-pkcs12  bu
 
 
 ### Certificate Authority Setup
-```console
+```
 shell> cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0 ./easy-rsa
 ```
 
 使用指令`vi vars`開始編輯`vars`檔。
-```console
+```
 shell> cd /etc/openvpn/easy-rsa/
 shell> vi vars
 ```
@@ -56,41 +56,41 @@ export KEY_CN=MyVPN
 export KEY_NAME=MyVPN
 export KEY_OU=MyVPN
 ```
-```console
+```
 shell> ln -s openssl-1.0.0.cnf openssl.cnf
 ```
 `匯出` (`Export`) 剛剛所編輯的 `vars` 環境，使用「`source vars`」
-```console
+```
 shell> source vars
 ```
 使用指令「`./clean-all`」清掉所有暫存的`CA`。
-```console
+```
 shell> ./clean-all
 ```
 接著建置`Root CA`。使用指令「`./build-ca`」來執行此動作。
-```console 
+``` 
 shell> ./build-ca
 ```
 ---
 ### Server Certificates
 
 執行指令「`./build-key-server server`」建置`Server Key`和`Server Crt`
-```console
+```
 shell> ./build-key-server server
 ```
 
 ---
 
 接著建置「密鑰交換」Diffie-Hellman，執行指令「./build-dh」。
-```console
+```
 shell> ./build-dh
 ```
-```console
+```
 shell> cd keys/
 shell> cp server.crt server.key ca.crt dh1024.pem /etc/openvpn/
 ```
 
-```console
+```
 shell> openssl dhparam -out dhparam.pem 2048
 ```
 
@@ -100,7 +100,7 @@ shell> openssl dhparam -out dhparam.pem 2048
 shell> ./build-key client1
 
 開始編輯設定檔。由於剛裝好的OpenVPN並沒有server.conf檔，使用者必須自行從範例檔複製
-```console
+```
 shell> cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz /etc/openvpn/
 shell> gzip -d /etc/openvpn/server.conf.gz
 shell> vi /etc/openvpn/server.conf
@@ -111,16 +111,16 @@ push "redirect-gateway def1"
 plugin /usr/lib/openvpn/openvpn-auth-pam.so common-account
 ```
 
-```console
+```
 shell> iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
 ```
 ---
 ### 安裝 Google Authenticator (`兩步驟驗證`)
-```console
+```
 shell> wget https://google-authenticator.googlecode.com/files/libpam-google-authenticator-1.0-source.tar.bz2
 shell> apt-get install  libpam0g-dev
 ```
-```console
+```
 shell> cd /etc/pam.d
 shell> cp common-account openvpn
 shell> vi openvpn
@@ -128,7 +128,7 @@ shell> vi openvpn
 ```
 auth required /etc/openvpn/pam_google_authenticator.so
 ```
-```console
+```
 shell> vi /etc/openvpn/server.conf
 ```
 ```
@@ -136,7 +136,7 @@ plugin /usr/lib/openvpn/openvpn-auth-pam.so openvpn
 ```
 
 ---
-```console
+```
 shell> vim client.ovpn
 ```
 ```
@@ -364,12 +364,12 @@ https://tunnelblick.net/downloads.html
 
 ---
 
-```console 
+``` 
 shell> apt-get install openvpn easy-rsa 
 shell> apt-get install libpam-pwdfile apache2-utils
 ```
 
-```console
+```
 shell> openssl req -nodes -new -x509 -keyout ca.key -out ca.crt -days 3650 -subj "/CN=172.16.5.115"
 shell> openssl req -nodes -new -x509 -keyout ca.key -out ca.crt -days 7305 -subj "/C=TW/L=Taipei/CN=172.16.5.115"
 shell> openssl x509 -in ca.crt -text -noout
@@ -380,7 +380,7 @@ shell> openssl ca -out server.crt -in server.csr
 shell> openssl x509 -in server.crt -text -noout
 ```
 
-```console
+```
 shell> openssl dhparam -out dh3072.pem 3072
 ```
 
@@ -432,7 +432,7 @@ account    required     pam_permit.so
 session    optional   pam_lastlog.so
 ```
 
-```console
+```
 shell> htpasswd -cd /etc/openvpn/passwdfile zeus
 shell> htpasswd -d /etc/openvpn/passwdfile janedoe
 ```
@@ -442,7 +442,7 @@ shell> htpasswd -d /etc/openvpn/passwdfile janedoe
 -d     Use crypt() encryption for passwords.
 ```
 
-```console 
+``` 
 shell> apt-get install sasl2-bin
 shell> saslauthd -v
 shell> saslauthd -a pam

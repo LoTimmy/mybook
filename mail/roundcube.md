@@ -1,9 +1,9 @@
-```console
+```
 shell> apt-get install mysql-server
 shell> apt-get install roundcube roundcube-mysql
 ```
 
-```console
+```
 shell> vim /etc/roundcube/apache.conf
 ```
 
@@ -12,7 +12,7 @@ Alias /roundcube/program/js/tiny_mce/ /usr/share/tinymce/www/
 Alias /roundcube /var/lib/roundcube
 ```
 
-```console
+```
 shell> vim /etc/roundcube/main.inc.php
 ```
 ```

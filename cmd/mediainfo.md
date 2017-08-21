@@ -1,10 +1,10 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install mediainfo
 ```
 
-```console
+```
 shell> mediainfo --help
 shell> mediainfo input.mkv
 shell> mediainfo output.mp4

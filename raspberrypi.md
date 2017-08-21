@@ -7,28 +7,28 @@
 `raspberry`
 
 **CREATE A NEW USER**
-```console
+```
 shell> sudo adduser bob
 ```
 
 **CHANGE YOUR PASSWORD**
-```console
+```
 shell> passwd
 ```
 
 **REMOVE A USER'S PASSWORD**
-```console
+```
 shell> sudo passwd bob -d
 ```
 
 **DELETE A USER**
-```console
+```
 shell> sudo userdel -r bob
 ```
 
 
 **SUDOERS**
-```console
+```
 shell> sudo visudo
 ```
 
@@ -38,7 +38,7 @@ root  ALL=(ALL:ALL) ALL
 bob ALL=(ALL) NOPASSWD: ALL
 ```
 
-```console
+```
 shell> update-alternatives --set editor /usr/bin/vim.tiny
 ```
 
@@ -47,13 +47,13 @@ shell> update-alternatives --set editor /usr/bin/vim.tiny
 
 ---
 
-```console
+```
 shell> sudo nmap -sP 192.168.11.0/24 | awk '/^Nmap/{ipaddr=$NF}/B8:27:EB/{print ipaddr}'
 ```
 
 ---
 
-```console
+```
 shell> lsusb
 ```
 
@@ -61,7 +61,7 @@ shell> lsusb
 Bus 001 Device 004: ID 0bda:8176 Realtek Semiconductor Corp. RTL8188CUS 802.11n WLAN Adapter
 ```
 
-```console
+```
 shell> iwconfig
 shell> iwconfig wlan0
 shell> iwlist wlan0 scan
@@ -107,7 +107,7 @@ network={
 #### :books: 參考網站：
 - [downloads](http://www.raspberrypi.org/downloads/)
 
-```console
+```
 shell> unzip ~/Downloads/2016-03-18-raspbian-jessie-lite.zip
 shell> diskutil list
 shell> diskutil unmountDisk /dev/disk3
@@ -116,7 +116,7 @@ shell> dd if=~/Downloads/2016-03-18-raspbian-jessie-lite.img | pv | sudo dd bs=4
 shell> diskutil eject /dev/disk3
 ```
 
-```console
+```
 shell> unzip ~/Downloads/2016-09-23-raspbian-jessie-lite.zip
 shell> diskutil list
 shell> diskutil unmountDisk /dev/disk3
@@ -125,7 +125,7 @@ shell> dd if=~/Downloads/2016-09-23-raspbian-jessie-lite.img | pv | sudo dd bs=4
 shell> diskutil eject /dev/disk3
 ```
 
-```console
+```
 shell> aria2c https://downloads.raspberrypi.org/raspbian_lite_latest.torrent
 shell> unzip ~/Downloads/2017-04-10-raspbian-jessie-lite.zip
 shell> diskutil list
@@ -136,19 +136,19 @@ shell> diskutil eject /dev/disk3
 
 **<kbd>Control ⌃</kbd> + <kbd>T</kbd>**
 
-```console
+```
 shell> dd bs=4M if=2014-09-09-wheezy-raspbian.img of=/dev/sdd
 ```
 
 ---
 
-```console
+```
 shell> vcgencmd commands
 
 commands="vcos, ap_output_control, ap_output_post_processing, vchi_test_init, vchi_test_exit, pm_set_policy, pm_get_status, pm_show_stats, pm_start_logging, pm_stop_logging, version, commands, set_vll_dir, led_control, set_backlight, set_logging, get_lcd_info, set_bus_arbiter_mode, cache_flush, otp_dump, test_result, codec_enabled, get_camera, get_mem, measure_clock, measure_volts, scaling_kernel, scaling_sharpness, get_hvs_asserts, measure_temp, get_config, hdmi_ntsc_freqs, hdmi_adjust_clock, hdmi_status_show, hvs_update_fields, pwm_speedup, force_audio, hdmi_stream_channels, hdmi_channel_map, display_power, read_ring_osc, memtest, get_rsts, schmoo, render_bar, disk_notify, inuse_notify, sus_suspend, sus_status, sus_is_enabled, sus_stop_test_thread, egl_platform_switch, mem_validate, mem_oom, mem_reloc_stats, file, vctest_memmap, vctest_start, vctest_stop, vctest_set, vctest_get"
 ```
 
-```console
+```
 shell> vcgencmd get_config arm_freq
 shell> vcgencmd get_config int
 shell> vcgencmd get_config str
@@ -156,17 +156,17 @@ shell> /opt/vc/bin/vcgencmd measure_temp
 shell> /opt/vc/bin/vcgencmd version
 ```
 
-```console
+```
 shell> sudo apt-get update && sudo apt-get install rpi-update
 shell> rpi-update
 ```
 ---
-```console
+```
 shell> sudo raspi-config
 ```
 ![](http://i.imgur.com/BoZvwv5.jpg)
 
-```console
+```
 shell> lsusb
 shell> lshw
 shell> dmesg
@@ -175,7 +175,7 @@ shell> sudo dmesg -C
 
 ---
 
-```console
+```
 shell> dd if=/dev/zero of=/512MiB.swap bs=512 count=1048576
 shell> dd if=/dev/zero of=/1GiB.swap bs=1024 count=1048576
 shell> losetup /dev/loop0 /1GiB.swap 
@@ -185,7 +185,7 @@ shell> free -m
 shell> free -h     
 ```
 
-```console
+```
 shell> fallocate -l 1G /1GiB.swap
 mkswap /1GiB.swap
 shell> swapon /1GiB.swap
@@ -198,7 +198,7 @@ NAME       TYPE       SIZE USED PRIO
 /1GiB.swap file      1024M   0B   -2
 ```
 
-```console
+```
 shell> swapoff /1GiB.swap
 ```
 
@@ -206,7 +206,7 @@ shell> swapoff /1GiB.swap
 
 ![](http://i.imgur.com/tahN41e.png)
 
-```console
+```
 shell> wget http://archlinuxarm.org/os/ArchLinuxARM-rpi-latest.tar.gz
 shell> bsdtar -xpf ArchLinuxARM-rpi-latest.tar.gz
 ```
@@ -214,39 +214,39 @@ shell> bsdtar -xpf ArchLinuxARM-rpi-latest.tar.gz
 ---
 
 ### 安裝  
-```console
+```
 shell> sudo apt-get install vim-nox
 ```
 
 ---
 
-```console
+```
 shell> echo 1 > /proc/sys/net/ipv6/conf/eth0/disable_ipv6
 ```
 
-```console
+```
 shell> echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 ```
 
 
-```console 
+``` 
 shell> vim /etc/default/grub
 ```
 
-``` .ini
+```ini
 [...]
 GRUB_CMDLINE_LINUX="ipv6.disable=1"
 [...]
 ```
 
-```console
+```
 shell> update-grub
 shell> reboot
 ```
 
 ---
 
-```console
+```
 shell> uname -m
 ```
 
@@ -254,7 +254,7 @@ shell> uname -m
 armv7l
 ```
 
-```console
+```
 shell> curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 ```
 
@@ -264,7 +264,7 @@ http://nodejs.org/dist/v4.2.1/node-v4.2.1-linux-armv7l.tar.gz
 ```
 ---
 
-```console
+```
 shell> lolcat
 ```
 
@@ -274,7 +274,7 @@ shell> lolcat
 **dphys-swapfile - Autogenerate and use a swap file**
 
 
-```console
+```
 shell> sudo apt-get install dphys-swapfile
 
 shell> vim /etc/dphys-swapfile
@@ -287,12 +287,12 @@ CONF_SWAPFILE=/var/swap
 CONF_SWAPSIZE=2048
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [dphys-swapfile](http://manpages.ubuntu.com/manpages/xenial/man8/dphys-swapfile.8.html)
 
 ---
 
-```console
+```
 shell> iwlist scan 
 
 ```
@@ -342,14 +342,14 @@ modprobe ndiswrapper
 
 `timedatectl - Control the system time and date`
 
-```console
+```
 shell> timedatectl
 shell> timedatectl list-timezones
 shell> timedatectl set-timezone Asia/Taipei
 shell> timedatectl set-ntp true
 ```
 
-```console
+```
 shell> sudo apt-get install ntpstat
 shell> ntpstat
 ```
@@ -358,7 +358,7 @@ shell> ntpstat
 
 `hciconfig - configure Bluetooth devices`
 
-```console
+```
 shell> hciconfig
 ```
 
@@ -394,7 +394,10 @@ shell> hciconfig
 
 ---
 
-```console
+### rpi-raspbian {#rpi-raspbian}
+[](!https://resin-packages.s3.amazonaws.com/logo/large_resin_logo.png)
+
+```
 shell> wget -qO- https://get.docker.com/ | sh
 shell> docker pull resin/rpi-raspbian
 shell> docker run --rm -i -t resin/rpi-raspbian
@@ -408,9 +411,7 @@ MAINTAINER Timmy Lo
 
 wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
 unzip /path/to/ngrok.zip
-
 ```
-
 
 #### :books: 參考網站：
 - https://hub.docker.com/r/resin/rpi-raspbian/
@@ -425,12 +426,4 @@ unzip /path/to/ngrok.zip
 <img src="http://i.imgur.com/AtIVN6N.jpg" width="200">
 
 <img src="http://i.imgur.com/T9fD1Nj.png" width="200">
-
-
-
-
-
-
-
-
 

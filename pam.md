@@ -44,7 +44,7 @@ libpam-radius-auth - The PAM RADIUS authentication module
 
 ---
 
-```console 
+``` 
 shell> apt-get install libpam-pwdfile apache2-utils
 ```
 
@@ -53,7 +53,7 @@ auth       required     pam_pwdfile.so pwdfile=/etc/openvpn/passwdfile
 account    required     pam_permit.so
 ```
 
-```console
+```
 shell> htpasswd -cd /etc/openvpn/passwdfile zeus
 ```
 
@@ -63,7 +63,7 @@ shell> htpasswd -cd /etc/openvpn/passwdfile zeus
 ```
 ---
 
-```console 
+``` 
 shell> apt-get install sasl2-bin
 shell> saslauthd -v
 shell> saslauthd -a pam
@@ -92,7 +92,7 @@ auth       required     pam_tally2.so deny=3 unlock_time=5 even_deny_root root_u
 auth     required       pam_tally2.so deny=4 even_deny_root unlock_time=1200
 ```
 
-```console 
+``` 
 shell> pam_tally2 --user janedoe
 shell> pam_tally2 --user janedoe --reset
 shell> faillog -r
@@ -242,7 +242,7 @@ libpam-mysql - PAM module allowing authentication from a MySQL server
 
 `/lib/security/pam_mysql.so`
 
-```console
+```
 shell> cd /etc/pam.d
 shell> vi openvpn
 ```

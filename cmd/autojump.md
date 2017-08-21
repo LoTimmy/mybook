@@ -2,7 +2,7 @@ autojump
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install autojump
 ```
 
@@ -11,7 +11,7 @@ shell> brew install autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 ```
 
-```console
+```
 shell> autojump -s
 shell> autojump --purge
 shell> autojump -i [WEIGHT]

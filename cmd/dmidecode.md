@@ -1,6 +1,6 @@
 `dmidecode - DMI table decoder`
 
-```console
+```
 shell> apt-get install dmidecode
 shell> dmidecode -t
 shell> dmidecode -t 16

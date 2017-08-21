@@ -3,7 +3,7 @@
 安裝作業系統及`fail2ban`相關套件。
 因本文主要介紹`Apache`如何安裝及設定，作業系統方面就不再詳述。
 
-```console
+```
 shell> lsb_release -a
 ```
 ```
@@ -16,20 +16,20 @@ Codename:	trusty
 
 ### 安裝 fail2ban 
 
-```console
+```
 shell> aptitude install fail2ban
 ```
 
 ---
 
-```console
+```
 shell> fail2ban-client status
 Status
 |- Number of jail:	1
 `- Jail list:		ssh
 ```
 
-```console
+```
 shell> fail2ban-client status ssh
 Status for the jail: ssh
 |- filter
@@ -42,21 +42,21 @@ Status for the jail: ssh
    `- Total banned:	4
 ```
 
-```console
+```
 shell> iptables -n -L INPUT
 ```
 
-```console
+```
 shell> fail2ban-regex /var/log/auth.log /etc/fail2ban/filter.d/sshd.conf
 shell> fail2ban-regex /var/log/auth.log /etc/fail2ban/filter.d/sshd-ddos.conf
 ```
 
-```console
+```
 shell> fail2ban-client set ssh unbanip <IP> 
 shell> fail2ban-client set postfix-sasl unbanip <IP> 
 ```
 
-```console
+```
 shell> fail2ban-client -i
 fail2ban> status postfix-sasl
 fail2ban> status set postfix-sasl unbanip <IP>
@@ -93,7 +93,7 @@ logpath  = /var/log/auth.log
 maxretry = 6
 ```
 
-```console
+```
 shell> tar xvfj fail2ban-0.9.4.tar.bz2
 shell> cd fail2ban-0.9.4
 shell> python setup.py install

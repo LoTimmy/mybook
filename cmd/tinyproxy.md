@@ -2,7 +2,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install arp-scan
 shell> apt-get install tinyproxy
 ```
@@ -25,7 +25,7 @@ Allow 10.0.0.0/8
 AddHeader "X-My-Header" "Powered by Tinyproxy"
 ```
 
-```console
+```
 shell> curl https://tw.yahoo.com/ --proxy 127.0.0.1:8888 -k
 shell> curl http://www.appledaily.com.tw/ --proxy 127.0.0.1:8888
 ```
@@ -38,7 +38,7 @@ shell> curl http://www.appledaily.com.tw/ --proxy 127.0.0.1:8888
 `dansguardian - Web content filtering`
 
 
-```console
+```
 shell> apt-get install dansguardian
 ```
 

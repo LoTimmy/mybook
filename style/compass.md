@@ -6,7 +6,7 @@
 
 > `Compass` 是開放原始碼 `CSS` 撰寫架構，可讓您使用 `Sass` 來建立 `CSS3` 樣式表。
 
-```console
+```
 shell> gem update --system
 shell> gem install compass
 
@@ -56,7 +56,7 @@ To import your new stylesheets add the following lines of HTML (or equivalent) t
 </head>
 ```
 
-```console
+```
 shell> compass version
 ```
 
@@ -68,7 +68,7 @@ Compass is charityware.
 Please make a tax deductable donation for a worthy cause: http://umdf.org/compass
 ```
 
-```console
+```
 shell> cd /path/to/project
 shell> compass watch
 

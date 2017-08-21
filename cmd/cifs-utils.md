@@ -6,11 +6,11 @@
 
 
 ### 安裝 {#installing}
-```console
+```
 shell> sudo apt-get install cifs-utils
 ```
 
-```console
+```
 shell> sudo mkdir /mnt/winshare
 
 shell> sudo mount -t cifs -o username=john,password=johnpass,domain=example.com //winserver/share /mnt/winshare
@@ -31,10 +31,10 @@ username=john
 password=johnpass
 domain=MYDOMWKG
 ```
-```console
+```
 shell> chmod 400 credfile
 ```
-```console
+```
 shell> mount -a
 
 shell> umount -lf /mnt/winshare

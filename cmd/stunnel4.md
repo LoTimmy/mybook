@@ -1,6 +1,6 @@
 ### 在 `Ubuntu` 14.04 LTS 上建置 `stunnel4`
 
-```console
+```
 shell> lsb_release -a
 No LSB modules are available.
 Distributor ID:	Ubuntu
@@ -9,17 +9,17 @@ Release:	14.04
 Codename:	trusty
 ```
 ### 安裝 stunnel4 
-```console
+```
 shell> aptitude install stunnel4
 ```
 
-```console
+```
 shell> openssl req -x509 -new -nodes -out stunnel-cert.pem \
  -newkey rsa:2048 -keyout stunnel-key.pem -days 7305 \
  -subj "/C=TW/ST=Taiwan/L=TPE/O=Example Company/OU=MYCA/CN=stunnel"
 ```
 
-```console
+```
 shell> vim /etc/stunnel/stunnel.conf
 ```
 
@@ -34,7 +34,7 @@ options = NO_SSLv2
   connect = 8080
 ```
 
-```console
+```
 shell> vim /etc/default/stunnel4
 ```
 
@@ -44,11 +44,11 @@ ENABLED=1
 
 ---
 ### 安裝 stunnel4 
-```console
+```
 shell> aptitude install stunnel4
 ```
 
-```console
+```
 shell> vim /etc/stunnel/stunnel.conf
 ```
 ```ini

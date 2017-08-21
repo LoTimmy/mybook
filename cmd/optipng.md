@@ -5,7 +5,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install optipng
 shell> yum install optipng
 shell> apt-get install optipng
@@ -15,7 +15,7 @@ shell> apt-get install optipng
 
 - **`Preserve`** `[prɪˋzɝv]` `保留` `pre・serve`
 
-```console
+```
 shell> optipng file.png
 shell> optipng -o7 file.png
 shell> optipng file1.png file2.gif file3.tif
@@ -27,12 +27,12 @@ shell> find . -type f -name "*.png" -exec optipng {} \;
 
 ---
 
-```console
+```
 shell> optipng -strip all file.png
 ** Error: Lossy operations are not currently supported
 ```
 
-```console
+```
 shell> optipng -v
 OptiPNG 0.6.4: Advanced PNG optimizer.
 Copyright (C) 2001-2010 Cosmin Truta.

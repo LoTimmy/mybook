@@ -11,7 +11,7 @@
 -i  --interval  wait (uX for X microseconds, for example -i u1000)
 ```
 
-```console
+```
 shell> brew install hping
 shell> sudo hping host -i u10000 -1 -a 123.123.123.123
 shell> sudo hping host -i u10000 -2 -a 123.123.123.123
@@ -22,5 +22,5 @@ shell> sudo hping host -i u1000
 
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [hping](http://www.hping.org/)

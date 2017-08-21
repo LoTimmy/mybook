@@ -1,5 +1,5 @@
 
-```console
+```
 shell> choco install gpg4win
 ```
 
@@ -16,5 +16,5 @@ shell> choco install gpg4win
 
 
 
-### :books: 參考網站：
+#### :books: 參考網站：
 

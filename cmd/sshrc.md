@@ -1,10 +1,10 @@
 ### 安裝 {#installing}
 
-```console
+```
 shell> brew install sshrc
 ```
 
-```console
+```
 shell> echo "echo welcome" >> ~/.sshrc
 shell> sshrc me@myserver
 welcome

@@ -5,7 +5,7 @@
 ![](img/Leig8tie.png)
 
 
-```console
+```
 shell> sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 shell> sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
@@ -21,7 +21,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 
-```console
+```
 shell> git clone https://github.com/powerline/fonts.git
 
 shell> cd fonts
@@ -30,7 +30,7 @@ shell> ./install.sh
 shell> cd ..
 shell> rm -rf fonts
 ```
-```console
+```
 shell> git clone git://github.com/altercation/solarized.git
 shell> mkdir -p ~/.vim/colors/
 shell> cd solarized

@@ -1,4 +1,4 @@
-```console
+```
 shell> sudo pip install sshuttle
 shell> sudo apt-get install sshuttle
 shell> brew install sshuttle

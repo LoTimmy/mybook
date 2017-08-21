@@ -1,6 +1,6 @@
 `pwgen 密碼產生器`
 
-```console
+```
 shell> brew install pwgen
 shell> apt-get install pwgen
 shell> pwgen

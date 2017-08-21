@@ -3,7 +3,7 @@
 
 ### 安裝 {#installing}
 
-```console
+```
 shell> npm install websocket
 ```
 

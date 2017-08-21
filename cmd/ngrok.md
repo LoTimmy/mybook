@@ -2,18 +2,18 @@
 ngrok
 
 Step 1: Download ngrok
-```console
+```
 shell> wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 shell> wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip
 ```
 
 Step 2: Unzip it
-```console
+```
 shell> unzip /path/to/ngrok.zip
 ```
 
 Step 3: Run it!
-```console
+```
 shell> ./ngrok -help
 shell> ngrok http 80
 ```
@@ -57,17 +57,17 @@ COMMANDS:
 ```
 
 `Password Protected`
-```console
+```
 shell> ngrok http -auth "user:password" 80
 ```
 
 `TCP Tunnels`
-```console
+```
 shell> ngrok tcp 22
 ```
 
 `Your Tunnel Authtoken`
-```console
+```
 shell> ngrok authtoken 2EGEMGEzckqpWC7BYyGjh_4vAPMtumGJX7mjM8rNBYD
 ```
 

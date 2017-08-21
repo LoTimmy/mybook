@@ -2,7 +2,7 @@
 
 `npm - javascript package manager`
 
-```console
+```
 shell> npm install <package_name>
 shell> npm install lodash
 shell> npm install <package_name> --save
@@ -30,6 +30,7 @@ shell> sudo npm install -g jshint
 shell> npm uninstall -g jshint
 
 shell> npm config list
+shell> npm config ls -l
 shell> npm config edit
 
 shell> npm cache ls
@@ -42,7 +43,7 @@ shell> npm help package.json
 ```
 
 `Updating global packages`
-```console
+```
 shell> npm outdated -g --depth=0
 shell> npm update -g
 ```
@@ -65,6 +66,7 @@ shell> npm update -g
 - [installing-node](https://docs.npmjs.com/getting-started/installing-node)
 - [using-a-package.json](https://docs.npmjs.com/getting-started/using-a-package.json)
 - [npm config](https://docs.npmjs.com/cli/config)
+- https://docs.npmjs.com/files/package.json
 - [npm ls](https://docs.npmjs.com/cli/ls)
 - [installing-npm-packages-globally](https://docs.npmjs.com/getting-started/installing-npm-packages-globally)
 - [updating-global-packages](https://docs.npmjs.com/getting-started/updating-global-packages)

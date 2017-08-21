@@ -7,18 +7,18 @@
 
 ![](http://i.imgur.com/bZfplic.png)
 
-```console
+```
 shell> cd C:\Program Files\Oracle\VirtualBox
 shell> VBoxManage internalcommands createrawvmdk -filename D:\VirtualBox\USB.vmdk -rawdisk \\.\PhysicalDrive3  
 ```
 
 ![](http://i.imgur.com/9ou2yiK.png)
 
-```console
+```
 shell> VBoxManage internalcommands createrawvmdk -filename /path/to/USB.vmdk -rawdisk /dev/sda
 ```
 
-```console
+```
 shell> VBoxManage startvm "Windows XP"
 shell> VBoxManage modifyvm "Windows XP" --memory 512
 shell> VBoxManage showvminfo "Windows XP"
@@ -59,7 +59,7 @@ Storage Controller Type (1):            IntelAhci
 NIC 1:           MAC: 080027201FF8, Attachment: Bridged Interface 'Realtek PCIe GBE Family Controller', Cable connected: on, Trace: off (file: none), Type: 82540EM, Reported speed: 0 Mbps, Boot priority: 0, Promisc Policy: deny, Bandwidth group: none
 ```
 
-```console
+```
 shell> VBoxManage createvm --name "Ubuntu" --ostype Ubuntu --register 
 shell> VBoxManage showvminfo Ubuntu
 shell> VBoxManage modifyvm Ubuntu --cpus 1 --memory 768 --vram 8 
@@ -74,7 +74,7 @@ shell> VBoxManage storageattach Ubuntu --storagectl IDE --port 0 --device 0 --ty
 shell> VBoxManage startvm Ubuntu    
 ```
 
-```console
+```
 shell> VBoxManage natnetwork add --netname natnet1 --network "192.168.15.0/24" --enable
 shell> VBoxManage natnetwork add --netname natnet1 --network "192.168.15.0/24" --enable --dhcp on
 

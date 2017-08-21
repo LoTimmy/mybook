@@ -82,7 +82,7 @@ React.render(<div>
 
 ---
 
-```console
+```
 shell> bower install react --allow-root
 ```
 
@@ -142,7 +142,7 @@ shell> bower install react --allow-root
 </html>
 ```
 
-```console
+```
 shell> npm install --global babel
 shell> babel script.js --out-file script-compiled.js
 shell> babel script.js --watch --out-file script-compiled.js
@@ -167,7 +167,7 @@ shell> babel src --watch --out-dir build
 ```
 
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [babel](https://babeljs.io/docs/usage/cli/)
 
 ---
@@ -206,7 +206,7 @@ ReactDOM.render(
 );
 ```
 
-```console
+```
 shell> npm install --save react react-dom
 shell> npm install -g browserify
 shell> npm install babelify
@@ -214,7 +214,7 @@ shell> npm install reactify
 shell> browserify -t reactify main.js -o build/helloworld.js
 ```
 
-### :books: 參考網站：
+#### :books: 參考網站：
 - [reactify](https://www.npmjs.com/package/reactify)
 - [babelify](https://www.npmjs.com/package/babelify)
 
@@ -240,7 +240,7 @@ var HelloWorld = require('./helloworld.js');
 ReactDOM.render( <HelloWorld />, document.getElementById('example'));
 ```
 
-```console
+```
 shell> browserify -t reactify main.js -o build/helloworld.js
 ```
 
@@ -279,13 +279,13 @@ var HelloMessage = React.createClass({
 ReactDOM.render(<HelloMessage name="John" />, mountNode);
 ```
 
-```console
+```
 shell> babel test.jsx
 ```
 
 ---
 
-### :books: 參考網站：
+#### :books: 參考網站：
 
 - [企業應用Web 2.0必備的網頁技術](http://www.ithome.com.tw/node/44234)
 - [react](http://facebook.github.io/react/)

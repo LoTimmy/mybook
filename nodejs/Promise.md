@@ -1,12 +1,11 @@
+```js
+new Promise(function(resolve, reject) {});
 ```
-new Promise( /* executor */ function(resolve, reject) { ... } );
-```
 
 
-`pending`: initial state, neither `fulfilled` nor `rejected`.
-`fulfilled`: meaning that the operation completed successfully.
-`rejected`: meaning that the operation failed.
-
+- `pending`: initial state, neither `fulfilled` nor `rejected`.
+- `fulfilled`: meaning that the operation completed successfully.
+- `rejected`: meaning that the operation failed.
 
 ```js
 const myFirstPromise = new Promise((resolve, reject) => {
@@ -33,7 +32,7 @@ myFirstPromise.then((successMessage) => {
 ---
 
 ```js
-var b = true;
+// var b = true;
 var b = false;
 
 var p1 = new Promise(function (resolve, reject) {

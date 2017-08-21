@@ -1,11 +1,11 @@
 `NSSM - the Non-Sucking Service Manager`
 
-```console
+```
 shell> nssm install
 ```
 <img src="http://i.imgur.com/80lhkUy.png" alt="nssm" width=300>
 
-```console
+```
 shell> nssm install <servicename> <program> [<arguments>]
 shell> nssm start <servicename>
 shell> nssm stop <servicename>

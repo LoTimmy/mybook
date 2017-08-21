@@ -11,7 +11,7 @@
 
 ### Installing Swift {#installing-swift}
 
-```console
+```
 shell> sudo apt-get install clang libicu-dev
 shell> wget https://swift.org/builds/swift-3.1-release/ubuntu1604/swift-3.1-RELEASE/swift-3.1-RELEASE-ubuntu16.04.tar.gz
 shell> tar xvzf swift-3.1-RELEASE-ubuntu16.04.tar.gz
@@ -19,7 +19,7 @@ shell> mv swift-3.1-RELEASE-ubuntu16.04 /usr/local/
 shell> export PATH=/usr/local/swift-3.1-RELEASE-ubuntu16.04/usr/bin:"${PATH}"
 ```
 
-```console
+```
 shell> swift -version
 Swift version 3.1 (swift-3.1-RELEASE)
 Target: x86_64-unknown-linux-gnu
@@ -29,7 +29,7 @@ Swift version 3.1 (swift-3.1-RELEASE)
 Target: x86_64-unknown-linux-gnu
 ```
 
-```console
+```
 shell> swift
 Welcome to Swift version 3.1 (swift-3.1-RELEASE). Type :help for assistance.
   1>  
@@ -40,7 +40,7 @@ Welcome to Swift version 3.1 (swift-3.1-RELEASE). Type :help for assistance.
 print("Hello, world!")
 ```
 
-```console
+```
 shell> swift helloworld.swift
 
 shell> swiftc helloworld.swift
@@ -77,10 +77,10 @@ random() % 10
 
 `libcurl4-openssl-dev`
 
-```console
+```
 shell> swift build --help
 ```
-```console
+```
 shell> mkdir Hello
 shell> cd Hello
 shell> swift package init

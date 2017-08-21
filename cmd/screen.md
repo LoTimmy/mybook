@@ -17,7 +17,7 @@ Next
 <kbd>Ctrl</kbd>+<kbd>a</kbd> <kbd>p</kbd>
 
 
-```console
+```
 shell> apt-get install screen
 shell> screen
 shell> screen -d -m aria2c http://example.org/mylinux.torrent

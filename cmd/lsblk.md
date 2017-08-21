@@ -11,7 +11,7 @@
 `dmidecode - DMI table decoder`
 
 
-```console
+```
 shell> lscpu
 shell> lsusb
 shell> lspci
@@ -22,7 +22,7 @@ shell> lsblk -f
 shell> lshw
 ```
 
-```console
+```
 shell> apt-get install dmidecode
 shell> dmidecode -t
 shell> dmidecode -t 16

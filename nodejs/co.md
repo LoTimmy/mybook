@@ -1,8 +1,8 @@
 `--harmony`
-```console
+```
 shell> node --v8-options | grep harmony
 ```
-```console
+```
 shell> node --harmony co.js
 ```
 
@@ -14,7 +14,7 @@ onmessage
 ```
 
 ---
-```console
+```
 shell> npm install co
 shell> npm install co-fs
 shell> npm install co-prompt

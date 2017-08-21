@@ -41,7 +41,7 @@
 shell> apt-get install tshark
 ```
  
-```console
+```
 shell> tshark -i 2 -f "port 25" -R "smtp.rsp.parameter contains "Sender""
 shell> tshark -i 2 -f "port 25" -T fields -e smtp.auth.username
 

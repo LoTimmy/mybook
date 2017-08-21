@@ -4,7 +4,7 @@
 
 ![](http://i.imgur.com/brQgda0.png)
 
-```console
+```
 shell> nmap -A -T4 scanme.nmap.org
 
 #TCP SYN scan
@@ -26,49 +26,49 @@ shell> nmap -sS -vv -P0 -O scanme.nmap.org
 shell> nmap -sT -P0 -F -O scanme.nmap.org
 ```
 
-```console
+```
 shell> nmap -sV --reason -PN -n --top-ports 100 scanme.nmap.org
 
 shell> nmap --script=ssl-cert,ssl-enum-ciphers -p 443 scanme.nmap.org 
 ```
 
-```console
+```
 shell> nmap -sP 192.168.1.0/24
 ```
-```console
+```
 shell> nmap -sU --script nbstat.nse -p137 192.168.1.*
 ```
 
-```console
+```
 shell> nmap -sP -PR --packet-trace 192.168.31.0/24
 shell> nmap -sP -PS --packet-trace --send-ip 192.168.31.0/24
 ```
 
-```console
+```
 shell> nmap --script broadcast-ping
 ```
 
-```console
+```
 shell> nmap -sV --script=http-php-version scanme.nmap.org
 ```
-```console
+```
 shell> nmap --script http-slowloris --max-parallelism 400 scanme.nmap.org
 shell> nmap --script http-slowloris --max-parallelism 400 --script-args http.useragent="-" scanme.nmap.org  
 ```
 
-```console
+```
 shell> openssl s_client -connect scanme.nmap.org:443 
 ```
 
-```console
+```
 shell> nmap --script=ip-geolocation-maxmind scanme.nmap.org 
 ```
 
-```console
+```
 shell> nmap --script=vuln scanme.nmap.org 
 ```
 
-```console
+```
 shell> nmap -p 80 --script=http-backup-finder scanme.nmap.org
 shell> nmap -p 80 --script=http-email-harvest scanme.nmap.org
 shell> nmap -p 80 --script=http-brute scanme.nmap.org
@@ -84,7 +84,7 @@ shell> nmap --script ssh-hostkey scanme.nmap.org
 ```
 
 
-```console
+```
 shell> nmap -sP 192.168.42.0/24
 ```
 
