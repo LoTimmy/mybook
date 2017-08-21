@@ -5,44 +5,51 @@
 ```
 shell> lsb_release -a
 ```
+
 ```
 No LSB modules are available.
-Distributor ID:	Ubuntu
-Description:	Ubuntu 10.04.4 LTS
-Release:	10.04
-Codename:	lucid
+Distributor ID:    Ubuntu
+Description:    Ubuntu 10.04.4 LTS
+Release:    10.04
+Codename:    lucid
 ```
-```
-No LSB modules are available.
-Distributor ID:	Ubuntu
-Description:	Ubuntu 12.04.5 LTS
-Release:	12.04
-Codename:	precise
-```
+
 ```
 No LSB modules are available.
-Distributor ID:	Ubuntu
-Description:	Ubuntu 12.10
-Release:	12.10
-Codename:	quantal
+Distributor ID:    Ubuntu
+Description:    Ubuntu 12.04.5 LTS
+Release:    12.04
+Codename:    precise
 ```
-```
-No LSB modules are available.
-Distributor ID:	Ubuntu
-Description:	Ubuntu 14.04 LTS
-Release:	14.04
-Codename:	trusty
-```
+
 ```
 No LSB modules are available.
-Distributor ID:	Ubuntu
-Description:	Ubuntu 16.04.1 LTS
-Release:	16.04
-Codename:	xenial
+Distributor ID:    Ubuntu
+Description:    Ubuntu 12.10
+Release:    12.10
+Codename:    quantal
 ```
+
+```
+No LSB modules are available.
+Distributor ID:    Ubuntu
+Description:    Ubuntu 14.04 LTS
+Release:    14.04
+Codename:    trusty
+```
+
+```
+No LSB modules are available.
+Distributor ID:    Ubuntu
+Description:    Ubuntu 16.04.1 LTS
+Release:    16.04
+Codename:    xenial
+```
+
 ```
 shell> lsb_release -si
 ```
+
 ```
 Ubuntu
 ```
@@ -65,8 +72,8 @@ Prompt=never
 ```
 
 #### :books: 參考網站：
-- https://help.ubuntu.com/lts/serverguide/installing-upgrading.html
 
+* [https://help.ubuntu.com/lts/serverguide/installing-upgrading.html](https://help.ubuntu.com/lts/serverguide/installing-upgrading.html)
 
 ```
 shell> sudo sed -i 's/Prompt=.*/Prompt=never/' /etc/update-manager/release-upgrades
@@ -80,10 +87,11 @@ shell> sudo sed -i '/^/s/^/#/" /etc/apt/sources.list
 
 ```
 shell> apt-get --version
-shell> apt-get -o Acquire::ForceIPv4=true update  
+shell> apt-get -o Acquire::ForceIPv4=true update
 ```
 
 `apt.conf`
+
 ```
 Acquire::ForceIPv4 "true";
 
@@ -96,22 +104,25 @@ Acquire
 Acquire::http
 {
   Proxy "http://dockerhost:3142";
-};  
+};
 ```
 
 #### :books: 參考網站：
-- [apt.conf](http://manpages.ubuntu.com/manpages/raring/man5/apt.conf.5.html)
-- [apt-cacher-ng](https://docs.docker.com/engine/examples/apt-cacher-ng/)
+
+* [apt.conf](http://manpages.ubuntu.com/manpages/raring/man5/apt.conf.5.html)
+* [apt-cacher-ng](https://docs.docker.com/engine/examples/apt-cacher-ng/)
 
 ```
 Acquire::http::Timeout "10";
 Acquire::ftp::Timeout "10";
 ```
+
 ---
 
 ```
 shell> /etc/network/interfaces
 ```
+
 ```
 # The loopback network interface
 auto lo
@@ -136,6 +147,7 @@ iface eth0 inet static
 ```
 shell> vim /etc/ethers
 ```
+
 ```
 90:94:e4:07:df:14 192.168.42.1
 b8:27:eb:6e:88:a3 192.168.42.25
@@ -163,6 +175,7 @@ shell> ip addr add 192.168.2.3/24 dev eth0.222
 ```
 shell> /etc/modules
 ```
+
 ```
 8021q
 ```
@@ -198,7 +211,7 @@ shell> sysctl --system
 shell> reboot
 ```
 
-``` 
+```
 shell> vim /etc/default/grub
 ```
 
@@ -216,7 +229,7 @@ shell> reboot
 ```
 
 ```
-shell> grub-mkconfig -o /boot/grub/grub.cfg 
+shell> grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ---
@@ -235,22 +248,24 @@ shell> cat /proc/sys/fs/inode-nr
 ```
 shell> apt-get install unattended-upgrades
 shell> dpkg-reconfigure unattended-upgrades
-shell> dpkg-reconfigure -plow unattended-upgrades  
+shell> dpkg-reconfigure -plow unattended-upgrades
 ```
 
-![Imgur](http://i.imgur.com/kFM6tSt.png)
+![Imgur](http://i.imgur.com/kFM6tSt.png)  
 ![Imgur](http://i.imgur.com/GbfS21y.png)
 
 `/etc/apt/apt.conf.d/20auto-upgrades`
+
 ```
 APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";
 ```
 
 #### :books: 參考網站：
-- [automatic-updates](https://help.ubuntu.com/lts/serverguide/automatic-updates.html)
-- [dpkg-reconfigure](http://manpages.ubuntu.com/manpages/saucy/man8/dpkg-reconfigure.8.html)
-- http://docs.openstack.org/icehouse/install-guide/install/apt-debian/content/debian_packages.html
+
+* [automatic-updates](https://help.ubuntu.com/lts/serverguide/automatic-updates.html)
+* [dpkg-reconfigure](http://manpages.ubuntu.com/manpages/saucy/man8/dpkg-reconfigure.8.html)
+* [http://docs.openstack.org/icehouse/install-guide/install/apt-debian/content/debian\_packages.html](http://docs.openstack.org/icehouse/install-guide/install/apt-debian/content/debian_packages.html)
 
 ---
 
@@ -267,7 +282,7 @@ shell> pvscan
 
 ![](http://i.imgur.com/BQAKJ1j.png)
 
-ks=http://172.16.7.15/ks.cfg
+ks=[http://172.16.7.15/ks.cfg](http://172.16.7.15/ks.cfg)
 
 ```
 #System language
@@ -348,19 +363,18 @@ ks=cdrom:/<path>
 ```
 
 #### :books: 參考網站：
-- [ch04s06](https://help.ubuntu.com/lts/installation-guide/i386/ch04s06.html)
-- [s1-kickstart2-startinginstall](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-kickstart2-startinginstall.html)
 
+* [ch04s06](https://help.ubuntu.com/lts/installation-guide/i386/ch04s06.html)
+* [s1-kickstart2-startinginstall](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-kickstart2-startinginstall.html)
 
 ```
 linux ks=floppy
 ```
 
-
 #### :books: 參考網站：
-- [10.2. Changing Network Kernel Settings](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/sect-Oracle_9i_and_10g_Tuning_Guide-Adjusting_Network_Settings-Changing_Network_Kernel_Settings.html)
-- [Starting a Kickstart Installation](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-kickstart2-startinginstall.html)
 
+* [10.2. Changing Network Kernel Settings](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/sect-Oracle_9i_and_10g_Tuning_Guide-Adjusting_Network_Settings-Changing_Network_Kernel_Settings.html)
+* [Starting a Kickstart Installation](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/3/html/System_Administration_Guide/s1-kickstart2-startinginstall.html)
 
 ---
 
@@ -390,6 +404,7 @@ shell> free -t
 shell> free -s 1
 shell> free
 ```
+
 ```
               total        used        free      shared  buff/cache   available
 Mem:         500308       54208      117568        6612      328532      416220
@@ -418,7 +433,6 @@ used    - (buffers + cached)
 free    + buffers + cached
 3005324 + 55864   + 768244 = 3829432
 ```
-
 
 ```
 shell> cat /proc/meminfo
@@ -491,9 +505,10 @@ shell> do-release-upgrade
 ```
 
 #### :books: 參考網站：
-- http://old-releases.ubuntu.com/releases/
-- http://us.archive.ubuntu.com/
-- http://security.ubuntu.com/ubuntu/
+
+* [http://old-releases.ubuntu.com/releases/](http://old-releases.ubuntu.com/releases/)
+* [http://us.archive.ubuntu.com/](http://us.archive.ubuntu.com/)
+* [http://security.ubuntu.com/ubuntu/](http://security.ubuntu.com/ubuntu/)
 
 ---
 
@@ -512,13 +527,12 @@ shell> hostnamectl set-hostname name
 ```
 
 ```
-Description:	Ubuntu 14.04.5 LTS
+Description:    Ubuntu 14.04.5 LTS
 ```
 
-
-
 #### :books: 參考網站：
-- https://access.redhat.com/documentation/zh-CN/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html
+
+* [https://access.redhat.com/documentation/zh-CN/Red\_Hat\_Enterprise\_Linux/7/html/Networking\_Guide/sec\_Configuring\_Host\_Names\_Using\_hostnamectl.html](https://access.redhat.com/documentation/zh-CN/Red_Hat_Enterprise_Linux/7/html/Networking_Guide/sec_Configuring_Host_Names_Using_hostnamectl.html)
 
 ---
 
@@ -529,7 +543,11 @@ shell> ls --quoting-style=shell
 ---
 
 #### :books: 參考網站：
-- [Official Ubuntu Documentation](https://help.ubuntu.com/)
-- https://aws.amazon.com/tw/premiumsupport/knowledge-center/linux-static-hostname/
-- [vlan-interfaces](http://manpages.ubuntu.com/manpages/intrepid/man5/vlan-interfaces.5.html)
-- [Setting File Handles](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/chap-Oracle_9i_and_10g_Tuning_Guide-Setting_File_Handles.html)
+
+* [Official Ubuntu Documentation](https://help.ubuntu.com/)
+* [https://aws.amazon.com/tw/premiumsupport/knowledge-center/linux-static-hostname/](https://aws.amazon.com/tw/premiumsupport/knowledge-center/linux-static-hostname/)
+* [vlan-interfaces](http://manpages.ubuntu.com/manpages/intrepid/man5/vlan-interfaces.5.html)
+* [Setting File Handles](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/chap-Oracle_9i_and_10g_Tuning_Guide-Setting_File_Handles.html)
+
+
+
