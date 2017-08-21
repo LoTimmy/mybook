@@ -167,3 +167,8 @@ shell> curl -b cookies.txt -c cookies.txt www.example.com
 - [Accept-Encoding](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Encoding)
 - https://curl.haxx.se/docs/http-cookies.html
 - https://curl.haxx.se/docs/manual.html
+
+---
+
+#### :books: 參考網站：
+- https://developers.coinbase.com/api/v2
