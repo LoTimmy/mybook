@@ -184,11 +184,21 @@ shell> ec2-terminate-instances i-afb4bcf1
 
 ---
 
+- http://docs.aws.amazon.com/cli/latest/userguide/cli-install-macos.html
+
+`Install the AWS CLI`
+
+```
+shell> brew install awscli
+```
+
 `/usr/local/share/awscli/examples`
 
 ```
 shell> aws help
 ```
+
+`Configure the AWS CLI`
 
 ```
 shell> aws configure
@@ -221,6 +231,161 @@ output=text
 ```
 
 ```
+[default]
+region = ap-northeast-1
+```
+
+---
+
+```
+shell> aws ec2 create-security-group --group-name devenv-sg --description "security group for development environment in EC2"
+{
+    "GroupId": "sg-b018ced5"
+}
+shell> aws ec2 authorize-security-group-ingress --group-name devenv-sg --protocol tcp --port 22 --cidr 0.0.0.0/0
+```
+
+```
+shell> aws ec2 create-key-pair --key-name devenv-key --query 'KeyMaterial' --output text > devenv-key.pem
+```
+
+```
+shell> aws ec2 run-instances --image-id ami-6e1a0117 --security-group-ids sg-b018ced5 --count 1 --instance-type t2.micro --key-name devenv-key --query 'Instances[0].InstanceId'
+"i-0787e4282810ef9cf"
+shell> ssh -i devenv-key.pem ubuntu@54.183.22.255
+```
+
+
+---
+
+```
+shell> aws iam create-group --group-name MyIamGroup
+```
+
+```json
+{
+    "Group": {
+        "Path": "/",
+        "CreateDate": "2017-08-22T07:27:35.403Z",
+        "GroupId": "AGPAJJWVIVC7PURU45TPG",
+        "Arn": "arn:aws:iam::889276800424:group/MyIamGroup",
+        "GroupName": "MyIamGroup"
+    }
+}
+```
+
+```
+shell> aws iam create-user --user-name MyUser
+```
+
+```json
+{
+    "User": {
+        "UserName": "MyUser",
+        "Path": "/",
+        "CreateDate": "2017-08-22T07:29:06.227Z",
+        "UserId": "AIDAJM2PCYETVAGSSBAYW",
+        "Arn": "arn:aws:iam::889276800424:user/MyUser"
+    }
+}
+```
+
+```
+shell> aws iam add-user-to-group --user-name MyUser --group-name MyIamGroup
+shell> aws iam get-group --group-name MyIamGroup
+```
+
+```json
+{
+    "Group": {
+        "Path": "/",
+        "CreateDate": "2017-08-22T07:27:35Z",
+        "GroupId": "AGPAJJWVIVC7PURU45TPG",
+        "Arn": "arn:aws:iam::889276800424:group/MyIamGroup",
+        "GroupName": "MyIamGroup"
+    },
+    "Users": [
+        {
+            "UserName": "MyUser",
+            "Path": "/",
+            "CreateDate": "2017-08-22T07:29:06Z",
+            "UserId": "AIDAJM2PCYETVAGSSBAYW",
+            "Arn": "arn:aws:iam::889276800424:user/MyUser"
+        }
+    ]
+}
+```
+
+`Set an IAM Policy for an IAM User`
+
+`MyPolicyFile.json`
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "NotAction": "iam:*",
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+```
+shell> aws iam put-user-policy --user-name MyUser --policy-name MyPowerUserRole --policy-document file://C:\Temp\MyPolicyFile.json
+shell> aws iam put-user-policy --user-name Bob --policy-name ExamplePolicy --policy-document file://AdminPolicy.json
+
+shell> aws iam list-user-policies --user-name MyUser
+```
+
+```json
+{
+  "PolicyNames": [
+    "MyPowerUserRole"
+  ]
+}
+```
+
+```
+shell> aws iam create-login-profile --user-name MyUser --password Ohwica8H
+```
+
+```json
+{
+    "LoginProfile": {
+        "UserName": "MyUser",
+        "CreateDate": "2017-08-22T08:23:47.432Z",
+        "PasswordResetRequired": false
+    }
+}
+```
+
+```
+shell> aws iam create-access-key --user-name MyUser
+```
+
+```json
+{
+    "AccessKey": {
+        "UserName": "MyUser",
+        "Status": "Active",
+        "CreateDate": "2017-08-22T08:28:33.417Z",
+        "SecretAccessKey": "c5mpLWkcPAXHv1v3Yy1v9rNBz+l61fsyDPdMZhBp",
+        "AccessKeyId": "AKIAJYZCWEORTVZPRULA"
+    }
+}
+```
+
+```
+shell> aws iam delete-access-key --user-name MyUser --access-key-id AKIAJYZCWEORTVZPRULA
+```
+
+- http://docs.aws.amazon.com/cli/latest/userguide/cli-iam-new-user-group.html
+
+---
+
+```
 shell> aws ec2 describe-instances
 shell> aws ec2 describe-instances --profile user2
 shell> aws ec2 describe-instances --instance-ids 
@@ -238,9 +403,113 @@ shell> aws ec2 create-security-group --group-name my-sg --description "My securi
 
 shell> aws ec2 delete-security-group --group-name MySecurityGroup
 shell> aws ec2 delete-security-group --group-id sg-903004f8
+```
+
+`向匿名用戶授予只讀權限`
+
+```json
+{
+  "Version":"2012-10-17",
+  "Statement":[
+    {
+      "Sid":"AddPerm",
+      "Effect":"Allow",
+      "Principal": "*",
+      "Action":["s3:GetObject"],
+      "Resource":["arn:aws:s3:::examplebucket/*"]
+    }
+  ]
+}
+```
+
+`限制对特定 IP 地址的访问权限`
+
+```json
+{
+  "Version": "2012-10-17",
+  "Id": "S3PolicyId1",
+  "Statement": [
+    {
+      "Sid": "IPAllow",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::examplebucket/*",
+      "Condition": {
+         "IpAddress": {"aws:SourceIp": "54.240.143.0/24"},
+         "NotIpAddress": {"aws:SourceIp": "54.240.143.188/32"} 
+      } 
+    } 
+  ]
+}
+```
+
+`示例：允许 IAM 用户访问您的一个存储桶`
+> 在本示例中，您需要授予您的 AWS 账户中的 IAM 用户访问一个存储桶 examplebucket 的权限，以便该用户能够添加、更新和删除对象。
+
+> 除了授予该用户 s3:PutObject、s3:GetObject 和 s3:DeleteObject 权限外，此策略还授予 s3:ListAllMyBuckets、s3:GetBucketLocation 和 s3:ListBucket 权限。这些是控制台所需的其他权限。
+
+```json
+{
+   "Version":"2012-10-17",
+   "Statement":[
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:ListAllMyBuckets"
+         ],
+         "Resource":"arn:aws:s3:::*"
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:ListBucket",
+            "s3:GetBucketLocation"
+         ],
+         "Resource":"arn:aws:s3:::examplebucket"
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "s3:PutObject",
+            "s3:GetObject",
+            "s3:DeleteObject"
+         ],
+         "Resource":"arn:aws:s3:::examplebucket/*"
+      }
+   ]
+}
+```
+
+
+
+
+
+- http://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/example-bucket-policies.html
+- http://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/example-policies-s3.html
+
+
+
+`Amazon S3 的檔案命令`
+
+`Creating Buckets`
 
 ```
-`Amazon S3 的檔案命令`
+aws s3 mb s3://bucket-name
+```
+
+`Removing Buckets`
+```
+aws s3 rb s3://bucket-name
+aws s3 rb s3://bucket-name --force
+```
+
+```
+aws s3 ls
+aws s3 ls s3://bucket-name
+aws s3 ls s3://bucket-name/path/
+```
+
 
 ```
 shell> aws s3 ls

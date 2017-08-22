@@ -50,6 +50,10 @@
 
 ---
 
+- BTC (1 BTC)
+- mBTC (0.001 BTC)
+- bits (0.000001 BTC)
+
 #### :books: 參考網站：
 - https://poloniex.com
 
