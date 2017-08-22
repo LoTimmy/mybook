@@ -160,6 +160,7 @@
         * [forever](nodejs/forever.md)
         * [fs-extra](nodejs/fs-extra.md)
         * [geocoder](nodejs/geocoder.md)
+        * [graphql](nodejs/graphql.md)
         * [jade](nodejs/jade.md)
         * [js-beautify](nodejs/js-beautify.md)
         * [jshint](nodejs/jshint.md)

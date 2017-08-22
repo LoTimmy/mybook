@@ -30,6 +30,18 @@ var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
 
 ---
 
+- `Bob`
+- `MyBucket`
+- `MyUser`
+- `MyKeyPair`
+- `MyUser`
+- `MyPowerUserRole`
+- `My!User1Login8P@ssword`
+- `UserName`
+- `CreateDate`
+
+---
+
 - `beginDate`
 - `endDate`
 - `completedDate`

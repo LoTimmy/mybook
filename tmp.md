@@ -27,6 +27,8 @@ Custom
 
 > **序列化的動作基本上，就是將物件的狀態轉換成為一個接一個連續的位元組資料來表示。而相反的，解序列化的動作，則是將物件所對應的一個接一個>連續的位元組資料，轉換回原始的物件狀態。**
 
+- 「以太幣」(Ether)
+- 「命令列介面」(Command-line interface，CLI)
 - 「跨越行程的通訊」 (Inter-Process Communication, IPC)
 - 「程序間通訊」 (Inter-Process Communication, IPC)
 - 「遠端程式呼叫」 (Remote Procedure Call，RPC)
