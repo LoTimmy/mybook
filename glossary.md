@@ -870,7 +870,7 @@ Yakkety 16.10
 - `myimage.png`
 - `mypage.md`
 - `myfile.css`
-- `mylib.js"`
+- `mylib.js`
 - `Markdown`
 - `markdown`
 - `AsciiDoc`
