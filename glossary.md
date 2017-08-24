@@ -15,9 +15,12 @@
 ---
 
 ```
+var x = 1;
+var y = 2;
 var alpha = ['a', 'b', 'c'];
 var numeric = [1, 2, 3];
 var alphaNumeric = alpha.concat(1, [2, 3]);
+var num; 
 
 var arr1 = ['a', 'b', 'c'];
 var arr2 = ['d', 'e', 'f'];
@@ -984,6 +987,118 @@ Ubuntu Xenial 16.04 (LTS)
 Yakkety 16.10
 ```
 
+- `app`
+- `resources`
+- `package.json`
+- `main.js`
+- `index.html`
+
+- `Hello World`
+
+
+- `url`
+- `apt_url`
+- `yum_url`
+- `do_install`
+
+- `images`
+- `cli`
+- `My page`
+- `GitBook`
+- `hello`
+- `Hello`
+- `hello.txt`
+- `goodbye`
+- `book.json`
+- `README.md`
+- `SUMMARY.md`
+- `something.md`
+- `docs`
+- `params`
+- `message`
+- `my.json`
+- `some.json`
+- `Docs`
+- `mybook.pdf`
+- `mybook.epub`
+- `mybook.mobi`
+- `example_image.png`
+- `myimage`
+- `myimage.png`
+- `mypage.md`
+- `myfile.css`
+- `mylib.js`
+- `Markdown`
+- `markdown`
+- `AsciiDoc`
+- `asciidoc`
+- `pdf`
+- `epub`
+- `capitalize`
+- `test.md`
+- `page.md`
+- `page.html`
+- `title`
+- `readme`
+- `glossary`
+- `content`
+- `summary`
+- `languages`
+- `output`
+- `config`
+- `page`
+- `inline`
+- `shell`
+- `powershell`
+- `type`
+- `file`
+- `source`
+- `destination`
+- `everyone`
+- `website`
+- `json`
+- `cover.jpg`
+- `ebook`
+- `version`
+- `mybucket`
+- `mys3bucket`
+- `create`
+- `delete`
+- `get`
+- `tag1`
+- `tag2`
+- `logs`
+- `enabled`
+- `disabled`
+- `present`
+- `absent`
+- `force`
+
+- `my-package.rpm`
+
+- `Me`
+- `myFunction`
+- `HelloWorld`
+- `ByeBye`
+- `health_checks`
+- `my_health_check`
+- `Dev`
+- `QA`
+- `Prod`
+- `stream`
+- `all`
+- `default`
+- `memcached`
+- `group`
+- `privcertkey`
+- `docker`
+- `c1`
+- `c2`
+- `ssh_pub_key`
+- `github_key`
+- `testuser`
+- `9s36?;fyNp`
+- `oedu2eGh`
 * `app`
 * `resources`
 * `package.json`

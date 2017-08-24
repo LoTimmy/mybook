@@ -297,3 +297,154 @@ console.log(myObj);
 
 #### :books: 參考網站：
 - [events](https://nodejs.org/api/events.html)
+
+---
+
+### for...of {#for...of}
+
+```js
+let iterable = [10, 20, 30];
+
+for (let value of iterable) {
+  value += 1;
+  console.log(value);
+}
+// 11
+// 21
+// 31
+```
+
+#### :books: 參考網站：
+- [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+
+---
+
+### coding-style {#coding-style}
+
+`coding-style`
+
+#### `Comma First`
+
+```js
+var magicWords = [ 'abracadabra'
+                 , 'gesundheit'
+                 , 'ventrilo'
+                 ]
+  , spells = { 'fireball' : function () { setOnFire() }
+             , 'water' : function () { putOut() }
+             }
+  , a = 1
+  , b = 'abc'
+  , etc
+  , somethingElse
+```
+
+#### `Quotes`
+
+```js
+var ok = 'String contains "double" quotes'
+var alsoOk = "String contains 'single' quotes or apostrophe"
+```
+
+- `Functions` `函數` `函式`
+- `Properties` `屬性`
+- `Methods` `方法`
+- `Class` `類別`
+
+- `lowerCamelCase` → `Objects` `Functions` `Methods` `Properties`
+- `UpperCamelCase` → `Class`
+- `all-lower-hyphen-css-case` → `FileName` `Config`
+- `CAPS_SNAKE_CASE`
+
+#### :books: 參考網站：
+- [coding-style](https://docs.npmjs.com/misc/coding-style)
+- [camel-case](https://capitalizemytitle.com/camel-case/)
+- [all-lower-hyphen-css-case](http://en.toolpage.org/tool/kebabcase)
+
+---
+
+### 費氏數列 {#fibonacci}
+
+![](https://upload.wikimedia.org/wikipedia/commons/d/db/34%2A21-FibonacciBlocks.png)
+![](https://upload.wikimedia.org/wikipedia/commons/2/2e/FibonacciSpiral.svg)
+
+- `費氏數列`
+- `費波那契數列`
+
+F~0~ = 0
+F~1~ = 1
+F~n~ = F~n-1~ + F~n-2~ (n≧2)
+
+用文字來說，就是`費氏數列`由0和1開始，之後的費波那契系數就是由之前的兩數相加而得出。
+首幾個費波那契系數是： **0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233……**
+
+![](http://i.imgur.com/szD2xKA.png)
+
+```
+2÷1=2
+3÷2=1.5
+5÷3=1.666666667
+8÷5=1.6
+13÷8=1.625
+21÷13=1.615384615
+34÷21=1.619047619
+55÷34=1.617647059
+89÷55=1.618181818
+144÷89=1.617977528
+233÷144=1.618055556
+377÷233=1.618025751
+610÷377=1.618037135
+```
+```
+1×1=1
+2×2=4
+3×3=9
+5×5=25
+8×8=64
+13×13=169
+21×21=441
+```
+
+`0.618:1`=`1:1.618`
+`1-0.618`=`0.382`
+
+```js
+function fibonacci(num){
+  var fn1 = 0;
+  var fn2 = 1;
+  var tmp;
+  while (num >= 0){
+    tmp = fn2;
+    fn2 = fn2 + fn1;
+    fn1 = tmp;
+    num--;
+  }
+  return fn1;
+}
+```
+
+```js
+function* fibonacci() {
+  var fn1 = 0;
+  var fn2 = 1;
+  while (true) {  
+    var current = fn1;
+    fn1 = fn2;
+    fn2 = current + fn1;
+    yield current;
+  }
+}
+
+var sequence = fibonacci();
+console.log(sequence.next().value);     // 0
+console.log(sequence.next().value);     // 1
+console.log(sequence.next().value);     // 1
+console.log(sequence.next().value);     // 2
+console.log(sequence.next().value);     // 3
+console.log(sequence.next().value);     // 5
+console.log(sequence.next().value);     // 8
+console.log(sequence.next().value);     // 8
+console.log(sequence.next().value);     // 13
+console.log(sequence.next().value);     // 21
+```
+
